@@ -430,3 +430,26 @@ def weekly_summary(engine: Engine, lists: dict) -> dict[str, Any]:
                        "perfect_weeks": sum(1 for w in done if w["lost"] == 0 and w["half_lost"] == 0 and w["won"] > 0)},
         }
     return out
+
+
+def export_audit(engine: Engine, out_dir: Path) -> dict[str, int]:
+    """Write every stored pick and settlement to plain JSONL files (one row per line, in insertion
+    order) so they can be published and checked: a pick's logged_at is always before its kickoff,
+    and rows are only ever appended. Diffs of these files in git show any change."""
+    import json
+
+    out_dir = Path(out_dir)
+    out_dir.mkdir(parents=True, exist_ok=True)
+    counts = {}
+    with engine.connect() as conn:
+        for name, table, order in (("picks_log", picks_log, [picks_log.c.id]),
+                                   ("official_picks", official_picks, [official_picks.c.kickoff, official_picks.c.match_id]),
+                                   ("weekly_lists", weekly_lists, [weekly_lists.c.week_start, weekly_lists.c.list,
+                                                                   weekly_lists.c.rank])):
+            rows = conn.execute(select(table).order_by(*order)).mappings().all()
+            with open(out_dir / f"{name}.jsonl", "w") as f:
+                for r in rows:
+                    f.write(json.dumps({k: (v.isoformat() if hasattr(v, "isoformat") else v) for k, v in r.items()},
+                                       default=str) + "\n")
+            counts[name] = len(rows)
+    return counts

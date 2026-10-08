@@ -188,6 +188,7 @@ picks:
     btts:     {label: "GG 10",        kind: btts,   description: "The 10 likeliest matches for both teams to score."}
     ah:       {label: "Handicap 10",  kind: ah,     min_odds: 1.70, max_odds: 2.10, description: "Likeliest Asian handicap picks priced @1.70-2.10."}
   weekly: data/picks/weekly.json           # weekly lists + results, read by the site
+  audit_dir: data/picks/audit              # full pick log + settlements, published in git every run
   summary: data/picks/summary.json         # live record (from the database), read by the site
   backtest: data/picks/backtest.json       # same rule over the test seasons
   database_url_env: DATABASE_URL           # Postgres etc.; falls back to a local SQLite file

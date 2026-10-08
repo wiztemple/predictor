@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { Integrity } from "@/components/Integrity";
 import { PicksPanel } from "@/components/PicksPanel";
 import { formatShortDay, pct } from "@/lib/format";
 import { panelPicks } from "@/lib/panel";
@@ -100,6 +101,8 @@ export default async function PicksPage() {
           </p>
         )}
       </section>
+
+      <Integrity />
 
       {/* backtest */}
       {bt ? (

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Integrity } from "@/components/Integrity";
 import { TeamBadge } from "@/components/ui";
 import { formatShortDay, formatTime, pct } from "@/lib/format";
 import { fairOdds } from "@/lib/markets";
@@ -226,6 +227,8 @@ export function WeeklyView({
       ) : null}
 
       {backtest ? <Backtest b={backtest} /> : null}
+
+      <Integrity />
     </div>
   );
 }

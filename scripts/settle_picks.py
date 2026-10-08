@@ -12,7 +12,15 @@ import sys
 import pandas as pd
 
 from predictor.config import load_config, project_path
-from predictor.store import connect, database_url, settle, settle_weekly, summary, weekly_summary
+from predictor.store import (
+    connect,
+    database_url,
+    export_audit,
+    settle,
+    settle_weekly,
+    summary,
+    weekly_summary,
+)
 
 
 def main() -> int:
@@ -26,6 +34,8 @@ def main() -> int:
                                   tr["date_tolerance_days"], tr["void_after_days"])
     project_path(pc["weekly"]).write_text(json.dumps(weekly_summary(engine, pc["weekly_lists"]), indent=1, default=float))
     print(f"weekly top {pc['per_week']}: newly settled {weekly_counts} -> {pc['weekly']}")
+    audit = export_audit(engine, project_path(pc["audit_dir"]))
+    print(f"audit export: {audit} -> {pc['audit_dir']}")
     s = summary(engine, pc["per_day"])
     out = project_path(pc["summary"])
     out.parent.mkdir(parents=True, exist_ok=True)

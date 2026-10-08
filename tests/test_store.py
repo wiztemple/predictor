@@ -135,3 +135,16 @@ def test_weekly_v1_rows_migrate_as_safe(engine):
                                            "label": "A or draw", "probability": 0.9}])
     assert migrate_weekly_v1(engine) == 1 and migrate_weekly_v1(engine) == 0
     assert weekly_summary(engine, LISTS)["lists"]["safe"]["weeks"][0]["picks"][0]["label"] == "A or draw"
+
+
+def test_export_audit_writes_every_row(engine, tmp_path):
+    import json
+
+    from predictor.store import export_audit
+
+    log_picks(engine, doc(rec("a", "2026-10-10T14:00:00Z"), rec("b", "2026-10-11T14:00:00Z", home="X", away="Y")),
+              MARKETS, T0)
+    counts = export_audit(engine, tmp_path)
+    assert counts["picks_log"] == 2
+    rows = [json.loads(l) for l in open(tmp_path / "picks_log.jsonl")]
+    assert [r["match_id"] for r in rows] == ["a", "b"] and all(r["logged_at"] < r["kickoff"] for r in rows)
