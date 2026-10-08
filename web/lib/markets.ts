@@ -1,7 +1,7 @@
 // Betting-style markets built from a match's probabilities. Fair odds = 1 / probability.
 import { type Margin, ahChance, awayOf, fmtLine, homeOutcome, mainLine } from "./handicap";
 
-export type MarketKey = "1x2" | "ten" | "o15" | "o25" | "gg" | "ah" | "cs";
+export type MarketKey = "1x2" | "ten" | "ht" | "dnb" | "o15" | "o25" | "gg" | "ah" | "cs";
 
 export type BoardMatch = {
   id: string;
@@ -18,6 +18,8 @@ export type BoardMatch = {
   scores: { home: number; away: number; p: number }[]; // top 3
   margin?: Margin;
   ten?: { home: number; draw: number; away: number }; // result after 10 minutes (estimate)
+  ht?: Record<string, number>; // half-time result: "1" | "X" | "2"
+  dnb?: Record<string, number>; // draw no bet: "1" | "2"
 };
 
 export type Cell = { label: string; p: number; pickLabel: string };
@@ -25,6 +27,8 @@ export type Cell = { label: string; p: number; pickLabel: string };
 export const MARKETS: { key: MarketKey; label: string; short: string }[] = [
   { key: "1x2", label: "Match result", short: "1X2" },
   { key: "ten", label: "Result after 10 minutes", short: "10′" },
+  { key: "ht", label: "Half-time result", short: "HT" },
+  { key: "dnb", label: "Draw no bet", short: "DNB" },
   { key: "o15", label: "Over/Under 1.5", short: "O/U 1.5" },
   { key: "o25", label: "Over/Under 2.5", short: "O/U 2.5" },
   { key: "gg", label: "Both teams to score", short: "GG/NG" },
@@ -56,6 +60,21 @@ export function cells(m: BoardMatch, market: MarketKey): Cell[] {
             { label: "1", p: m.ten.home, pickLabel: `${m.home} ahead at 10′` },
             { label: "X", p: m.ten.draw, pickLabel: "Draw at 10′" },
             { label: "2", p: m.ten.away, pickLabel: `${m.away} ahead at 10′` },
+          ]
+        : [];
+    case "ht":
+      return m.ht
+        ? [
+            { label: "1", p: m.ht["1"], pickLabel: `${m.home} leads at HT` },
+            { label: "X", p: m.ht["X"], pickLabel: "Level at HT" },
+            { label: "2", p: m.ht["2"], pickLabel: `${m.away} leads at HT` },
+          ]
+        : [];
+    case "dnb":
+      return m.dnb
+        ? [
+            { label: "1", p: m.dnb["1"], pickLabel: `${m.home} (draw no bet)` },
+            { label: "2", p: m.dnb["2"], pickLabel: `${m.away} (draw no bet)` },
           ]
         : [];
     case "o15":

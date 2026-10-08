@@ -11,7 +11,8 @@ import pandas as pd
 from predictor.calibration import GOALS_KEYS, apply_goals_calibration
 from predictor.handicap import rescale_margins
 from predictor.timing import early_result
-from predictor.models.dixon_coles import MARGIN_CAP
+from predictor.markets_extra import all_markets
+from predictor.models.dixon_coles import MARGIN_CAP, margin_distribution
 from predictor.models import MatchModel
 from predictor.picks import best_pick, rank_by_day
 
@@ -50,6 +51,7 @@ def build_document(
     goals_calibration: dict | None = None,
     pick_markets=None,
     ten_min_share: float | None = None,
+    half_share: float | None = None,
 ) -> dict[str, Any]:
     """fixtures: league, kickoff (UTC), home_mapped, away_mapped, source, season."""
     now = datetime.now(timezone.utc).isoformat(timespec="seconds")
@@ -103,6 +105,21 @@ def build_document(
                 # goal-difference chances, rescaled so AH -0.5 / 0 agree with the published 1X2
                 m = rescale_margins(np.asarray(p["margin_probs"]), p["p_home"], p["p_draw"], p["p_away"])
                 rec["extras"]["margin"] = {"cap": MARGIN_CAP, "probs": [round(float(v), 5) for v in m]}
+            if half_share and "lam" in main.columns and pd.notna(p.get("lam")):
+                # one scoreline grid adjusted to the published 1X2 and calibrated goals; every
+                # derived market (combos, team goals, half-time, AH margins, scores) reads from it
+                g, mk = all_markets(p["lam"], p["mu"], p["rho"], (p["p_home"], p["p_draw"], p["p_away"]),
+                                    {k: p[f"p_{k}"] for k in GOALS_KEYS}, half_share)
+                rec["extras"]["markets"] = {k: {o: _r(v) for o, v in d.items()} for k, d in mk.items()}
+                shown = g[: grid_max_goals + 1, : grid_max_goals + 1]
+                rec["extras"]["score_grid"] = {"max_goals": grid_max_goals, "cells": np.round(shown, 4).tolist(),
+                                               "other": _r(1 - shown.sum())}
+                flat = np.argsort(g, axis=None)[::-1][:5]
+                rec["extras"]["top_scorelines"] = [
+                    {"home": int(a), "away": int(b), "p": _r(g[a, b])} for a, b in zip(*np.unravel_index(flat, g.shape))]
+                rec["extras"]["margin"] = {"cap": MARGIN_CAP,
+                                           "probs": [round(float(v), 5) for v in margin_distribution(g)]}
+                rec["extras"]["grid_adjusted"] = True
             if ten_min_share:
                 # result after 10 minutes: an estimate (no goal-time data to check it against)
                 e = early_result(p["exp_home_goals"], p["exp_away_goals"], ten_min_share)
@@ -110,7 +127,7 @@ def build_document(
             rec["extras"]["goals_model"] = "dixon_coles"
             # over/under and BTTS are calibrated; expected goals and the scoreline grid are the raw model
             rec["extras"]["goals_calibrated"] = goals_calibrated
-            if hasattr(primary, "grid"):
+            if hasattr(primary, "grid") and "score_grid" not in rec["extras"]:
                 rec["extras"]["score_grid"] = _grid(primary, f["league"], f["home"], f["away"], grid_max_goals)
         records.append(rec)
 

@@ -168,3 +168,20 @@ def test_build_document_ten_minute_result(sim):
     t = rec["extras"]["ten_min"]
     assert t["home"] + t["draw"] + t["away"] == pytest.approx(1, abs=2e-4)
     assert 0.6 < t["no_goal"] <= t["draw"] < 0.95
+
+
+def test_build_document_extra_markets_consistent(sim):
+    from predictor.models import BlendModel
+
+    df, truth = sim
+    m = BlendModel().fit(df)
+    fx = pd.DataFrame({"league": ["XX"], "kickoff": pd.to_datetime(["2023-01-07 15:00"], utc=True),
+                       "home": ["a"], "away": ["b"], "home_mapped": [truth["teams"][0]],
+                       "away_mapped": [truth["teams"][3]], "source": ["t"], "season": ["2022-23"]})
+    rec = build_document(fx, m, [], [], {"XX": "X"}, df["date"].max(), "preview", 6,
+                         half_share=0.445)["predictions"][0]
+    mk, pr, x = rec["extras"]["markets"], rec["probabilities"], rec["extras"]
+    assert mk["result_btts"]["1&GG"] + mk["result_btts"]["1&NG"] == pytest.approx(pr["home"], abs=2e-4)
+    assert sum(v for k, v in mk["result_ou25"].items() if k.endswith("&O")) == pytest.approx(x["over_2_5"], abs=3e-4)
+    assert sum(v for k, v in mk["htft"].items() if k.endswith("/X")) == pytest.approx(pr["draw"], abs=3e-4)
+    assert x["grid_adjusted"] and sum(map(sum, x["score_grid"]["cells"])) + x["score_grid"]["other"] == pytest.approx(1, abs=2e-3)

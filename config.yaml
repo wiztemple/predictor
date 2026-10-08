@@ -187,3 +187,6 @@ timing:
   # has no goal times): a rough figure from published goal-timing studies (~8-9%), below the
   # even-spread 10/90 because openings are quiet. The half-time share is fitted in the backtest.
   share_10: 0.085
+  # First-half share of goals, fitted on seasons before the test period (scripts/backtest.py
+  # reports it). Drives half-time result, HT/FT, first-half goals and highest-scoring half.
+  share_45: 0.4448

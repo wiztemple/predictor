@@ -14,6 +14,9 @@ export type FootballExtras = {
   goals_calibrated?: boolean;
   /** result after 10 minutes - an estimate from expected goals (no goal-time data to verify it) */
   ten_min?: { home: number; draw: number; away: number; no_goal: number };
+  /** derived markets, all read from one scoreline grid that matches the headline numbers */
+  markets?: Record<string, Record<string, number>>;
+  grid_adjusted?: boolean;
   expected_goals?: { home: number; away: number };
   over_1_5?: number;
   over_2_5?: number;

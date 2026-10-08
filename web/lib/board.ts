@@ -13,6 +13,8 @@ export function toBoardMatch(m: Prediction): BoardMatch {
     scores: (m.extras.top_scorelines ?? []).slice(0, 3),
     margin: m.extras.margin,
     ten: m.extras.ten_min,
+    ht: m.extras.markets?.ht_result,
+    dnb: m.extras.markets?.dnb,
   };
 }
 

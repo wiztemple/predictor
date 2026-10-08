@@ -9,6 +9,7 @@ import { fairOdds } from "@/lib/markets";
 import { ConfidenceBadge, ConfidenceBar, LeagueDot, TeamBadge } from "@/components/ui";
 import { leagueColor } from "@/lib/leagues";
 import { getMatch, getPredictions } from "@/lib/predictions";
+import { getBacktest } from "@/lib/trackRecord";
 
 export async function generateStaticParams() {
   const doc = await getPredictions();
@@ -31,7 +32,11 @@ function Market({ title, options, note }: { title: string; options: Opt[]; note?
         <h3 className="text-sm font-semibold">{title}</h3>
         {note ? <span className="text-[11px] text-text-3">{note}</span> : null}
       </div>
-      <div className={`grid gap-1.5 ${options.length === 2 ? "grid-cols-2" : options.length === 3 ? "grid-cols-3" : "grid-cols-5"}`}>
+      <div
+        className={`grid gap-1.5 ${
+          options.length === 2 ? "grid-cols-2" : options.length === 5 ? "grid-cols-5" : "grid-cols-3"
+        }`}
+      >
         {options.map((o) => (
           <OutcomeCell key={o.label} label={o.label} p={o.p} best={o.label === best} />
         ))}
@@ -60,9 +65,16 @@ function PickCard({ market, pick, p }: { market: string; pick: string; p: number
 const best = (opts: { pick: string; p: number }[]) => opts.reduce((a, b) => (b.p > a.p ? b : a));
 
 export default async function MatchPage({ params }: PageProps<"/match/[id]">) {
-  const m = await getMatch((await params).id);
+  const [m, bt] = await Promise.all([getMatch((await params).id), getBacktest()]);
   if (!m) notFound();
   const x = m.extras;
+  const mk = x.markets;
+  // markets whose backtest beat the league average by less than 0.002 log loss: flag, don't oversell
+  const noSkill = new Set(
+    Object.entries(bt?.extra_markets ?? {})
+      .filter(([, v]) => v.model - v.baseline > -0.002)
+      .map(([k]) => k),
+  );
   const { home: h, draw: d, away: a } = m.probabilities;
   const top = x.top_scorelines?.[0];
 
@@ -182,6 +194,92 @@ export default async function MatchPage({ params }: PageProps<"/match/[id]">) {
           </p>
         ) : null}
       </section>
+
+      {mk ? (
+        <section className="space-y-6">
+          {(
+            [
+              {
+                title: "Half-time",
+                items: [
+                  ["Half-time result", "ht_result", { "1": "1", X: "X", "2": "2" }],
+                  ["Half-time / full-time", "htft", null],
+                  ["1st half over/under 0.5", "ht_ou0_5", { over: "Over", under: "Under" }],
+                  ["1st half over/under 1.5", "ht_ou1_5", { over: "Over", under: "Under" }],
+                  ["Highest-scoring half", "highest_half", { "1st": "1st", "2nd": "2nd", equal: "Equal" }],
+                ],
+              },
+              {
+                title: "Result & goals",
+                items: [
+                  ["Result & both teams score", "result_btts", null],
+                  ["Result & over/under 2.5", "result_ou25", null],
+                  ["Double chance & over/under 2.5", "dc_ou25", null],
+                  ["Draw no bet", "dnb", { "1": `1 (${m.home})`, "2": `2 (${m.away})` }],
+                ],
+              },
+              {
+                title: "Team goals",
+                items: [
+                  [`${m.home} over/under 0.5`, "home_ou0_5", { over: "Over", under: "Under" }],
+                  [`${m.home} over/under 1.5`, "home_ou1_5", { over: "Over", under: "Under" }],
+                  [`${m.away} over/under 0.5`, "away_ou0_5", { over: "Over", under: "Under" }],
+                  [`${m.away} over/under 1.5`, "away_ou1_5", { over: "Over", under: "Under" }],
+                ],
+              },
+              {
+                title: "Total goals",
+                items: [
+                  ["Exact total goals", "exact_goals", null],
+                  ["Odd / even goals", "odd_even", { odd: "Odd", even: "Even" }],
+                ],
+              },
+            ] as { title: string; items: [string, string, Record<string, string> | null][] }[]
+          ).map((group) => (
+            <div key={group.title}>
+              <h3 className="mb-2 text-base font-bold">{group.title}</h3>
+              <div className="grid items-start gap-3 md:grid-cols-2">
+                {group.items.map(([title, key, labels]) =>
+                  mk[key] ? (
+                    <Market
+                      key={key}
+                      title={title}
+                      note={noSkill.has(key) ? "No better than league average" : undefined}
+                      options={Object.entries(mk[key]).map(([o, p]) => ({ label: labels?.[o] ?? o, p }))}
+                    />
+                  ) : null,
+                )}
+                {group.title === "Team goals" ? (
+                  <>
+                    <Market
+                      title="Clean sheet"
+                      options={[
+                        { label: `${m.home} yes`, p: mk.clean_sheet.home },
+                        { label: `${m.away} yes`, p: mk.clean_sheet.away },
+                      ]}
+                    />
+                    <Market
+                      title="Win to nil"
+                      options={[
+                        { label: `${m.home} yes`, p: mk.win_to_nil.home },
+                        { label: `${m.away} yes`, p: mk.win_to_nil.away },
+                      ]}
+                    />
+                  </>
+                ) : null}
+              </div>
+            </div>
+          ))}
+          <p className="text-xs text-text-3">
+            Every market here comes from one scoreline model that matches the result and goals numbers above, so they
+            all agree. Each was backtested over three seasons; see the{" "}
+            <Link href="/track-record" className="text-accent font-semibold hover:underline">
+              track record
+            </Link>
+            .
+          </p>
+        </section>
+      ) : null}
 
       {/* score grid */}
       {x.score_grid ? (

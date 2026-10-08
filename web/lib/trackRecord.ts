@@ -33,6 +33,7 @@ export type BacktestSummary = {
   reliability: Record<string, ReliabilityBin[]>;
   labels: Record<string, string>;
   goals_markets?: Record<string, GoalsMarketBacktest>;
+  extra_markets?: Record<string, { label: string; n: number; model: number; baseline: number; ece: number }>;
   half_time_check?: {
     share_45: number;
     n: number;

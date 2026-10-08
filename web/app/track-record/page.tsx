@@ -281,6 +281,51 @@ function Backtest({ bt, leagueName }: { bt: BacktestSummary; leagueName: Map<str
         </section>
       ) : null}
 
+      {bt.extra_markets ? (
+        <section>
+          <h3 className="mb-1 font-semibold">More markets</h3>
+          <p className="mb-3 max-w-2xl text-sm text-text-2">
+            Half-time, result-and-goals combinations, team goals and total goals, all priced from one scoreline model
+            that matches our result and goals numbers. &ldquo;League average&rdquo; is each league&apos;s past
+            frequency of each outcome, with no model. There are no bookmaker odds for these markets in our data.
+          </p>
+          <div className="overflow-x-auto">
+            <table className="w-full max-w-3xl text-sm tabular">
+              <thead>
+                <tr className="text-left text-text-3">
+                  <th className="py-1 font-normal">Market</th>
+                  <th className="py-1 text-right font-normal">Matches</th>
+                  <th className="py-1 text-right font-normal">League average</th>
+                  <th className="py-1 text-right font-normal">Ours</th>
+                  <th className="py-1 text-right font-normal">Calibration error</th>
+                </tr>
+              </thead>
+              <tbody>
+                {Object.entries(bt.extra_markets).map(([k, v]) => {
+                  const weak = v.model - v.baseline > -0.002;
+                  return (
+                    <tr key={k} className="border-t border-border">
+                      <td className="py-1.5">
+                        {v.label}
+                        {weak ? <span className="ml-1.5 text-xs text-text-3">(no better than average)</span> : null}
+                      </td>
+                      <td className="py-1.5 text-right">{v.n.toLocaleString("en-GB")}</td>
+                      <td className="py-1.5 text-right">{v.baseline.toFixed(4)}</td>
+                      <td className={`py-1.5 text-right ${weak ? "" : "font-semibold text-win"}`}>{v.model.toFixed(4)}</td>
+                      <td className="py-1.5 text-right text-text-2">{(v.ece * 100).toFixed(1)} pts</td>
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table>
+          </div>
+          <p className="mt-2 text-xs text-text-3">
+            Log loss, lower is better; green = better than the league average. Calibration error is the average gap
+            between predicted and actual frequency.
+          </p>
+        </section>
+      ) : null}
+
       {bt.half_time_check ? (
         <section>
           <h3 className="mb-1 font-semibold">10-minute result</h3>

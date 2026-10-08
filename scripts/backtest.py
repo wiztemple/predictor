@@ -36,6 +36,7 @@ from predictor.calibration import (
 )
 from predictor.config import load_config, project_path
 from predictor.handicap import fair_odds, home_outcome, main_line, rescale_margins
+from predictor.markets_extra import BACKTEST_MARKETS, all_markets, settle
 from predictor.timing import early_result
 from predictor.models.dixon_coles import MARGIN_CAP
 from predictor.features import form_features, involves_promoted_team
@@ -75,7 +76,8 @@ def build_table(matches: pd.DataFrame, refresh: bool, out_dir, freq: str, from_s
             wf.drop(columns=["top_scorelines"], errors="ignore").to_parquet(cache, index=False)
         wf = pd.read_parquet(cache).set_index("match_idx")
         keep = [c for c in ["p_home", "p_draw", "p_away", "elo_diff", "exp_home_goals", "exp_away_goals",
-                            "p_over_1_5", "p_over_2_5", "p_over_3_5", "p_btts", "margin_probs"] if c in wf]
+                            "p_over_1_5", "p_over_2_5", "p_over_3_5", "p_btts", "margin_probs",
+                            "lam", "mu", "rho"] if c in wf]
         renamed = wf[keep].rename(columns=lambda c: c if c == "elo_diff" else f"{prefix}_{c}")
         t = t.join(renamed)
         if prefix == "elo":
@@ -337,6 +339,78 @@ def half_time_section(test: pd.DataFrame, matches: pd.DataFrame, test_seasons: l
     return out
 
 
+EXTRA_LABELS = {
+    "result_btts": "Result & both teams score", "result_ou25": "Result & over/under 2.5",
+    "home_ou0_5": "Home team over/under 0.5", "home_ou1_5": "Home team over/under 1.5",
+    "away_ou0_5": "Away team over/under 0.5", "away_ou1_5": "Away team over/under 1.5",
+    "exact_goals": "Exact total goals", "odd_even": "Odd/even goals", "ht_result": "Half-time result",
+    "htft": "Half-time/full-time", "ht_ou0_5": "1st half over/under 0.5", "ht_ou1_5": "1st half over/under 1.5",
+    "highest_half": "Highest-scoring half", "win_to_nil_home": "Home win to nil", "win_to_nil_away": "Away win to nil",
+}
+
+
+def extra_markets_section(test, matches, prob_cols, goals_test, share_45, say) -> dict:
+    """Every derived market, priced exactly as on the site, scored against what happened and
+    against each league's outcome frequencies from earlier seasons."""
+    hist = matches[["league", "season", "home_score", "away_score", "ht_home_score", "ht_away_score"]]
+
+    def keys(df, market):
+        out = []
+        for hs, as_, hh, ha in df[["home_score", "away_score", "ht_home_score", "ht_away_score"]].itertuples(index=False):
+            k = settle(market if not market.startswith("win_to_nil") else "win_to_nil", int(hs), int(as_), hh, ha)
+            if market.startswith("win_to_nil"):
+                k = None if k is None else ("yes" if k[market.rsplit("_", 1)[1]] else "no")
+            out.append(k)
+        return pd.Series(out, index=df.index)
+
+    markets = BACKTEST_MARKETS + ["win_to_nil_home", "win_to_nil_away"]
+    hist_keys = {m: keys(hist, m) for m in markets}
+    rows = {m: [] for m in markets}
+    t = test.dropna(subset=["dc_lam"])
+    for idx, r in t.iterrows():
+        goals = {k: goals_test.at[idx, k] for k in ("over_1_5", "over_2_5", "over_3_5", "btts")}
+        _, mk = all_markets(r["dc_lam"], r["dc_mu"], r["dc_rho"], tuple(r[c] for c in prob_cols), goals, share_45)
+        for m in markets:
+            if m.startswith("win_to_nil"):
+                side = m.rsplit("_", 1)[1]
+                dist = {"yes": mk["win_to_nil"][side], "no": 1 - mk["win_to_nil"][side]}
+            else:
+                dist = mk[m]
+            rows[m].append((idx, r["league"], r["season"], dist))
+    out = {}
+    say("\n## 7. Derived markets (one consistent scoreline grid), test period\n")
+    say("Baseline = each league's outcome frequencies in earlier seasons. Log loss, lower is better.\n")
+    say("| market | n | model | baseline | gap | calibration error |")
+    say("|---|---|---|---|---|---|")
+    for m in markets:
+        actual = keys(t, m)
+        ll_m, ll_b, preds, hits = [], [], [], []
+        base_cache = {}
+        for idx, lg, season, dist in rows[m]:
+            a = actual.at[idx]
+            if a is None:
+                continue
+            key = (lg, season)
+            if key not in base_cache:
+                prior = hist_keys[m][(hist["league"] == lg) & (hist["season"] < season)].dropna()
+                base_cache[key] = prior.value_counts(normalize=True).to_dict()
+            b = base_cache[key]
+            ll_m.append(-np.log(max(dist.get(a, 0.0), 1e-12)))
+            ll_b.append(-np.log(max(b.get(a, 0.0), 1e-12)))
+            for o, p in dist.items():  # pooled one-vs-rest reliability
+                preds.append(p)
+                hits.append(1.0 if o == a else 0.0)
+        if not ll_m:
+            continue
+        rel = binary_reliability(np.array(preds), np.array(hits))
+        ece = float(np.average((rel["mean_pred"] - rel["observed"]).abs(), weights=rel["n"]))
+        out[m] = {"label": EXTRA_LABELS[m], "n": len(ll_m), "model": float(np.mean(ll_m)),
+                  "baseline": float(np.mean(ll_b)), "ece": ece}
+        v = out[m]
+        say(f"| {v['label']} | {v['n']} | {v['model']:.4f} | {v['baseline']:.4f} | {v['model'] - v['baseline']:+.4f} | {ece * 100:.1f} pts |")
+    return out
+
+
 def _ah_benchmark(b: pd.DataFrame) -> dict:
     """Pushes-excluded log loss of our vs the bookmaker's AH chance at the bookmaker's line,
     a week-clustered CI on the gap, and what backing our 'value' sides at closing odds returned."""
@@ -538,6 +612,7 @@ def main() -> None:
     goals, goals_test = goals_section(t, test, matches, ev, test_seasons, holdout, out_dir, say)
     ah = ah_section(test, variants[prod_key], say)
     ht = half_time_section(test, matches, test_seasons, say)
+    extra = extra_markets_section(test, matches, variants[prod_key], goals_test, ht["share_45"], say)
 
     # ---------------- 5. outputs ---------------------------------------------------
     keep = ["league", "season", "date", "home", "away", "outcome", "odds_source", "promoted", "cutoff"]
@@ -564,6 +639,7 @@ def main() -> None:
         "goals_markets": goals,
         "asian_handicap": ah,
         "half_time_check": ht,
+        "extra_markets": extra,
     }
     (out_dir / "summary.json").write_text(json.dumps(summary, indent=1))
     (out_dir / "report.md").write_text("\n".join(lines) + "\n")

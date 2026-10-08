@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-08T13:55:52+00:00",
+ "generated_at": "2026-10-08T14:15:10+00:00",
  "test_seasons": [
   "2023-24",
   "2024-25",
@@ -1013,17 +1013,17 @@
    "label": "Gradient boosting (no odds)",
    "league": "ALL",
    "n": 21481,
-   "log_loss": 1.01169,
+   "log_loss": 1.0117,
    "brier": 0.60562,
-   "accuracy": 0.49518
+   "accuracy": 0.495
   },
   {
    "model": "gbm",
    "label": "Gradient boosting (no odds)",
    "league": "AUT",
    "n": 621,
-   "log_loss": 1.03127,
-   "brier": 0.61941,
+   "log_loss": 1.03133,
+   "brier": 0.6195,
    "accuracy": 0.50242
   },
   {
@@ -1031,8 +1031,8 @@
    "label": "Gradient boosting (no odds)",
    "league": "B1",
    "n": 998,
-   "log_loss": 1.00372,
-   "brier": 0.60024,
+   "log_loss": 1.00376,
+   "brier": 0.60027,
    "accuracy": 0.49699
   },
   {
@@ -1040,8 +1040,8 @@
    "label": "Gradient boosting (no odds)",
    "league": "D1",
    "n": 954,
-   "log_loss": 0.9858,
-   "brier": 0.58648,
+   "log_loss": 0.9857,
+   "brier": 0.58641,
    "accuracy": 0.52306
   },
   {
@@ -1049,8 +1049,8 @@
    "label": "Gradient boosting (no odds)",
    "league": "D2",
    "n": 972,
-   "log_loss": 1.05394,
-   "brier": 0.6347,
+   "log_loss": 1.05391,
+   "brier": 0.63469,
    "accuracy": 0.47325
   },
   {
@@ -1058,8 +1058,8 @@
    "label": "Gradient boosting (no odds)",
    "league": "DNK",
    "n": 631,
-   "log_loss": 1.02391,
-   "brier": 0.61423,
+   "log_loss": 1.02384,
+   "brier": 0.6142,
    "accuracy": 0.5103
   },
   {
@@ -1067,8 +1067,8 @@
    "label": "Gradient boosting (no odds)",
    "league": "E0",
    "n": 1190,
-   "log_loss": 0.98968,
-   "brier": 0.59059,
+   "log_loss": 0.98937,
+   "brier": 0.5904,
    "accuracy": 0.51933
   },
   {
@@ -1076,17 +1076,17 @@
    "label": "Gradient boosting (no odds)",
    "league": "E1",
    "n": 1751,
-   "log_loss": 1.04994,
-   "brier": 0.6325,
-   "accuracy": 0.46202
+   "log_loss": 1.04998,
+   "brier": 0.63253,
+   "accuracy": 0.46145
   },
   {
    "model": "gbm",
    "label": "Gradient boosting (no odds)",
    "league": "F1",
    "n": 963,
-   "log_loss": 1.00449,
-   "brier": 0.60022,
+   "log_loss": 1.00448,
+   "brier": 0.6003,
    "accuracy": 0.52129
   },
   {
@@ -1094,35 +1094,35 @@
    "label": "Gradient boosting (no odds)",
    "league": "F2",
    "n": 1053,
-   "log_loss": 1.06904,
-   "brier": 0.64481,
-   "accuracy": 0.44539
+   "log_loss": 1.06897,
+   "brier": 0.64477,
+   "accuracy": 0.44444
   },
   {
    "model": "gbm",
    "label": "Gradient boosting (no odds)",
    "league": "G1",
    "n": 744,
-   "log_loss": 0.95431,
-   "brier": 0.56506,
-   "accuracy": 0.53226
+   "log_loss": 0.95421,
+   "brier": 0.56496,
+   "accuracy": 0.53495
   },
   {
    "model": "gbm",
    "label": "Gradient boosting (no odds)",
    "league": "I1",
    "n": 1190,
-   "log_loss": 0.98672,
-   "brier": 0.58915,
-   "accuracy": 0.53025
+   "log_loss": 0.98691,
+   "brier": 0.58922,
+   "accuracy": 0.52941
   },
   {
    "model": "gbm",
    "label": "Gradient boosting (no odds)",
    "league": "I2",
    "n": 1190,
-   "log_loss": 1.06138,
-   "brier": 0.64045,
+   "log_loss": 1.0614,
+   "brier": 0.64046,
    "accuracy": 0.43193
   },
   {
@@ -1130,8 +1130,8 @@
    "label": "Gradient boosting (no odds)",
    "league": "N1",
    "n": 981,
-   "log_loss": 0.95302,
-   "brier": 0.56688,
+   "log_loss": 0.9532,
+   "brier": 0.567,
    "accuracy": 0.53925
   },
   {
@@ -1139,8 +1139,8 @@
    "label": "Gradient boosting (no odds)",
    "league": "P1",
    "n": 980,
-   "log_loss": 0.93108,
-   "brier": 0.54917,
+   "log_loss": 0.93105,
+   "brier": 0.54914,
    "accuracy": 0.54184
   },
   {
@@ -1148,17 +1148,17 @@
    "label": "Gradient boosting (no odds)",
    "league": "POL",
    "n": 996,
-   "log_loss": 1.05576,
+   "log_loss": 1.05575,
    "brier": 0.63648,
-   "accuracy": 0.4488
+   "accuracy": 0.4498
   },
   {
    "model": "gbm",
    "label": "Gradient boosting (no odds)",
    "league": "ROU",
    "n": 1036,
-   "log_loss": 1.04089,
-   "brier": 0.62514,
+   "log_loss": 1.041,
+   "brier": 0.6252,
    "accuracy": 0.47394
   },
   {
@@ -1166,8 +1166,8 @@
    "label": "Gradient boosting (no odds)",
    "league": "SC0",
    "n": 726,
-   "log_loss": 0.96709,
-   "brier": 0.57399,
+   "log_loss": 0.967,
+   "brier": 0.57392,
    "accuracy": 0.52755
   },
   {
@@ -1175,35 +1175,35 @@
    "label": "Gradient boosting (no odds)",
    "league": "SP1",
    "n": 1209,
-   "log_loss": 0.96938,
-   "brier": 0.57568,
-   "accuracy": 0.53019
+   "log_loss": 0.96958,
+   "brier": 0.57579,
+   "accuracy": 0.52936
   },
   {
    "model": "gbm",
    "label": "Gradient boosting (no odds)",
    "league": "SP2",
    "n": 1474,
-   "log_loss": 1.05086,
-   "brier": 0.63304,
-   "accuracy": 0.45862
+   "log_loss": 1.05077,
+   "brier": 0.63298,
+   "accuracy": 0.45726
   },
   {
    "model": "gbm",
    "label": "Gradient boosting (no odds)",
    "league": "SWZ",
    "n": 740,
-   "log_loss": 1.03591,
-   "brier": 0.62259,
-   "accuracy": 0.46892
+   "log_loss": 1.03618,
+   "brier": 0.62273,
+   "accuracy": 0.46757
   },
   {
    "model": "gbm",
    "label": "Gradient boosting (no odds)",
    "league": "T1",
    "n": 1082,
-   "log_loss": 0.9757,
-   "brier": 0.58061,
+   "log_loss": 0.97575,
+   "brier": 0.58064,
    "accuracy": 0.52126
   },
   {
@@ -1427,9 +1427,9 @@
    "ci_high": 0.02102
   },
   "gbm": {
-   "mean": 0.0204,
-   "ci_low": 0.01793,
-   "ci_high": 0.0227
+   "mean": 0.02041,
+   "ci_low": 0.01796,
+   "ci_high": 0.02275
   },
   "gbm_odds": {
    "mean": 0.0024,
@@ -2647,73 +2647,73 @@
  "asian_handicap": {
   "n_matches": 21481,
   "predicted": {
-   "win": 0.4324790969906448,
-   "push": 0.13671747317402355,
-   "lose": 0.4308034298353317
+   "win": 0.43247909695105924,
+   "push": 0.1367174731591196,
+   "lose": 0.4308034298898212
   },
   "actual": {
    "win": 0.4319864065918719,
    "push": 0.14266095619384572,
    "lose": 0.4253526372142824
   },
-  "profit_at_fair": -0.0007712835538243808,
+  "profit_at_fair": -0.0007712829268204958,
   "by_chance": {
    "<45%": {
     "n": 99,
-    "chance": 0.44655280245769885,
+    "chance": 0.4465528048070547,
     "won": 0.2828282828282828,
     "push": 0.29797979797979796,
     "lost": 0.41919191919191917,
-    "profit_at_fair": -0.06890815690091119
+    "profit_at_fair": -0.06890815444781728
    },
    "45-50%": {
     "n": 21382,
-    "chance": 0.4805911383935176,
+    "chance": 0.48059113823442934,
     "won": 0.4064633804134319,
     "push": 0.14194182022261714,
     "lost": 0.45159479936395097,
-    "profit_at_fair": -0.012863609384247366
+    "profit_at_fair": -0.012863608180973778
    },
    "50-55%": {
     "n": 21382,
-    "chance": 0.5194088616064825,
+    "chance": 0.5194088617655706,
     "won": 0.45159479936395097,
     "push": 0.14194182022261714,
     "lost": 0.4064633804134319,
-    "profit_at_fair": 0.01137866660220928
+    "profit_at_fair": 0.011378666602090547
    },
    "55-60%": {
     "n": 99,
-    "chance": 0.5534471975423012,
+    "chance": 0.5534471951929453,
     "won": 0.41919191919191917,
     "push": 0.29797979797979796,
     "lost": 0.2828282828282828,
-    "profit_at_fair": 0.054919899589146046
+    "profit_at_fair": 0.05491990937326231
    }
   },
   "vs_bookmaker": {
    "n": 16283,
-   "ours": 0.7106526211334737,
+   "ours": 0.7106526215638405,
    "bookmaker": 0.6922432043019978,
    "gap": {
-    "mean": 0.0184094168314759,
-    "ci_low": 0.01574267585714688,
-    "ci_high": 0.021221445205763252
+    "mean": 0.018409417261842642,
+    "ci_low": 0.0157426760058532,
+    "ci_high": 0.021221445360269424
    },
    "by_source": {
     "avg_closing": {
      "n": 3777,
-     "ours": 0.7104938137195604,
+     "ours": 0.7104938144550867,
      "bookmaker": 0.6922589437783495
     },
     "b365_closing": {
      "n": 1,
-     "ours": 1.0260472173013935,
+     "ours": 1.026047182129112,
      "bookmaker": 0.6545323444321658
     },
     "pinnacle_closing": {
      "n": 12505,
-     "ours": 0.7106736541362972,
+     "ours": 0.710673654476574,
      "bookmaker": 0.6922416815326058
     }
    },
@@ -2780,5 +2780,112 @@
     "observed": 0.5162
    }
   ]
+ },
+ "extra_markets": {
+  "result_btts": {
+   "label": "Result & both teams score",
+   "n": 21481,
+   "model": 1.667295085855517,
+   "baseline": 1.7372520203363795,
+   "ece": 0.0034267353218933754
+  },
+  "result_ou25": {
+   "label": "Result & over/under 2.5",
+   "n": 21481,
+   "model": 1.6513583970306787,
+   "baseline": 1.721181106107239,
+   "ece": 0.004586174158288166
+  },
+  "home_ou0_5": {
+   "label": "Home team over/under 0.5",
+   "n": 21481,
+   "model": 0.5091618928008511,
+   "baseline": 0.5325850002597087,
+   "ece": 0.015593621645477448
+  },
+  "home_ou1_5": {
+   "label": "Home team over/under 1.5",
+   "n": 21481,
+   "model": 0.6531992229110619,
+   "baseline": 0.6862638805250677,
+   "ece": 0.009347085572911373
+  },
+  "away_ou0_5": {
+   "label": "Away team over/under 0.5",
+   "n": 21481,
+   "model": 0.5909873596446658,
+   "baseline": 0.6116246488348317,
+   "ece": 0.008456927595266063
+  },
+  "away_ou1_5": {
+   "label": "Away team over/under 1.5",
+   "n": 21481,
+   "model": 0.618714808583004,
+   "baseline": 0.6457384045150276,
+   "ece": 0.011996664711830973
+  },
+  "exact_goals": {
+   "label": "Exact total goals",
+   "n": 21481,
+   "model": 1.7192367083001878,
+   "baseline": 1.7297802777253108,
+   "ece": 0.002609079181443788
+  },
+  "odd_even": {
+   "label": "Odd/even goals",
+   "n": 21481,
+   "model": 0.6932173232633593,
+   "baseline": 0.6933443826024558,
+   "ece": 0.0073328958042915005
+  },
+  "ht_result": {
+   "label": "Half-time result",
+   "n": 17452,
+   "model": 1.0432996973656556,
+   "baseline": 1.0800366497190894,
+   "ece": 0.00210166803901059
+  },
+  "htft": {
+   "label": "Half-time/full-time",
+   "n": 17452,
+   "model": 1.8946476947562978,
+   "baseline": 1.9692458732489833,
+   "ece": 0.004394355995929707
+  },
+  "ht_ou0_5": {
+   "label": "1st half over/under 0.5",
+   "n": 17452,
+   "model": 0.5981805730098716,
+   "baseline": 0.6016037971357788,
+   "ece": 0.01655250473618294
+  },
+  "ht_ou1_5": {
+   "label": "1st half over/under 1.5",
+   "n": 17452,
+   "model": 0.641087007890382,
+   "baseline": 0.6452007483026599,
+   "ece": 0.016789013539969814
+  },
+  "highest_half": {
+   "label": "Highest-scoring half",
+   "n": 17452,
+   "model": 1.072269729619231,
+   "baseline": 1.0729878027388497,
+   "ece": 0.003928303599705938
+  },
+  "win_to_nil_home": {
+   "label": "Home win to nil",
+   "n": 21481,
+   "model": 0.5147348156670852,
+   "baseline": 0.5406688644147046,
+   "ece": 0.004795962915595331
+  },
+  "win_to_nil_away": {
+   "label": "Away win to nil",
+   "n": 21481,
+   "model": 0.40565832750088715,
+   "baseline": 0.43074039913307605,
+   "ece": 0.01050427826528975
+  }
  }
 }

@@ -232,8 +232,10 @@ class DixonColesModel(MatchModel):
             lam, mu, known = lf.rates(home, away)
             if not known:
                 unknown |= {t for t in (home, away) if t not in lf.teams}
-            rows.append(markets_from_grid(score_grid(lam, mu, lf.rho, self.params["max_goals"]),
-                                          self.params["top_scorelines"]))
+            row = markets_from_grid(score_grid(lam, mu, lf.rho, self.params["max_goals"]),
+                                    self.params["top_scorelines"])
+            row.update(lam=float(lam), mu=float(mu), rho=float(lf.rho))  # lets others rebuild the grid
+            rows.append(row)
         if unknown:
             log.warning("dixon_coles: no history for %s; using new-team strengths", sorted(unknown))
         out = pd.concat([fixtures[["league", "date", "home", "away"]], pd.DataFrame(rows)], axis=1)
