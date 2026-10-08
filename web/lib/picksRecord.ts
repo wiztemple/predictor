@@ -46,7 +46,7 @@ export type PicksBacktest = {
   days_all_won: number;
 };
 
-const DIR = path.join(/*turbopackIgnore: true*/ process.cwd(), "..", "data", "picks");
+const DIR = path.join(/*turbopackIgnore: true*/ process.cwd(), "data", "picks");
 
 async function read<T>(file: string): Promise<T | null> {
   try {

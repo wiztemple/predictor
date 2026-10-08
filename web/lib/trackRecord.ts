@@ -55,7 +55,7 @@ export type GoalsMarketBacktest = {
 };
 
 const BACKTEST_PATH =
-  process.env.BACKTEST_PATH ?? path.join(/*turbopackIgnore: true*/ process.cwd(), "..", "data", "backtest", "summary.json");
+  process.env.BACKTEST_PATH ?? path.join(/*turbopackIgnore: true*/ process.cwd(), "data", "backtest", "summary.json");
 
 // Missing file = backtest not run yet; the page shows an empty state.
 export const getBacktest = cache(async (): Promise<BacktestSummary | null> => {
@@ -95,7 +95,7 @@ export type LiveSummary = {
 
 const LIVE_PATH =
   process.env.LIVE_SUMMARY_PATH ??
-  path.join(/*turbopackIgnore: true*/ process.cwd(), "..", "data", "predictions", "live_summary.json");
+  path.join(/*turbopackIgnore: true*/ process.cwd(), "data", "predictions", "live_summary.json");
 
 export const getLiveSummary = cache(async (): Promise<LiveSummary | null> => {
   try {

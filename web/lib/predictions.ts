@@ -62,7 +62,7 @@ export type PredictionsDoc = {
 
 const PREDICTIONS_PATH =
   process.env.PREDICTIONS_PATH ??
-  path.join(/*turbopackIgnore: true*/ process.cwd(), "..", "data", "predictions", "predictions.json");
+  path.join(/*turbopackIgnore: true*/ process.cwd(), "data", "predictions", "predictions.json");
 
 // Read once per request/build; every page shares the parsed document.
 export const getPredictions = cache(async (): Promise<PredictionsDoc> => {

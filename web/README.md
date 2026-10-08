@@ -1,29 +1,46 @@
 # web
 
-The Next.js frontend for the predictor. It only displays predictions that the
-Python pipeline has already computed. No model runs in the browser.
+The website. It only shows predictions the Python pipeline has already made;
+nothing is computed in the browser or on a server. Every page is pre-rendered
+and exported as static files (`out/`), which Cloudflare Workers serves.
 
-It reads these files at build time:
+## Data
+
+The site reads only from `web/data/`:
 
 | File | Written by |
 | --- | --- |
-| `../data/predictions/predictions.json` | `scripts/predict_fixtures.py` |
-| `../data/backtest/summary.json` | the Step 3 backtest (optional; the page shows an empty state until it exists) |
+| `data/predictions/predictions.json` | `scripts/predict_fixtures.py` |
+| `data/predictions/live_summary.json` | `scripts/score_predictions.py` |
+| `data/backtest/summary.json` | `scripts/backtest.py` |
+| `data/picks/summary.json` | `scripts/settle_picks.py` (from the picks database) |
+| `data/picks/backtest.json` | `scripts/backtest_picks.py` |
 
-To read them from somewhere else, set `PREDICTIONS_PATH` and `BACKTEST_PATH`.
+The scheduled run copies these files from `../data`, and `pnpm dev` and
+`pnpm build` refresh the copy too (`scripts/sync-data.mjs`). Because of this,
+the site builds from `web/` on its own.
+
+## Commands
 
 ```bash
 pnpm install
-pnpm dev          # http://localhost:3000; refresh the page to pick up new data
-pnpm build && pnpm start
+pnpm dev       # http://localhost:3000
+pnpm build     # static export to out/
+pnpm preview   # serve out/ the way Cloudflare does (wrangler dev)
+pnpm deploy    # manual deploy (wrangler deploy); normally Cloudflare builds on push
 ```
 
-| Route | Content |
-| --- | --- |
-| `/` | Every league with its next matches |
-| `/league/[code]` | Fixtures for one league, grouped by day |
-| `/match/[id]` | Win/draw/loss chances for one match from both models, goals markets and the full scoreline grid |
-| `/track-record` | Backtest results and logged live predictions |
+## Cloudflare
 
-All pages are statically generated. After regenerating `predictions.json`,
-rebuild the site so it shows the new data.
+`wrangler.jsonc` deploys `out/` as a static-assets Worker. The site is served
+at `https://predictor.<account>.workers.dev`; a custom domain can be added
+later in the dashboard.
+
+Cloudflare builds on every push to `main`, including the data commits from the
+scheduled run, with these settings:
+
+| Setting | Value |
+| --- | --- |
+| Root directory | `web` |
+| Build command | `pnpm build` |
+| Deploy command | `npx wrangler deploy` |

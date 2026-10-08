@@ -1,0 +1,13 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  // Static site on Cloudflare Workers (assets only, no server code).
+  // Free URL: https://predictor.<your-account>.workers.dev
+  "name": "predictor",
+  "compatibility_date": "2026-10-01",
+  "assets": {
+    "directory": "./out",
+    // /picks -> picks.html, unknown paths -> 404.html with a 404 status
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "404-page"
+  }
+}

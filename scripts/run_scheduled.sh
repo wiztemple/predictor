@@ -21,7 +21,8 @@ if [ "$(date +%u)" = "1" ] && [ "$(date +%H)" -lt 10 ]; then
   .venv/bin/python scripts/backtest.py --refresh && .venv/bin/python scripts/backtest_picks.py
 fi
 
-git add data/predictions data/backtest/summary.json data/backtest/report.md data/models data/picks
+(cd web && node scripts/sync-data.mjs)
+git add data/predictions data/backtest/summary.json data/backtest/report.md data/models data/picks web/data
 if git diff --cached --quiet; then
   echo "no data changes to publish"
 else

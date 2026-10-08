@@ -16,4 +16,6 @@ echo "=== update $(date -u +%Y-%m-%dT%H:%M:%SZ) ==="
 "$PY" scripts/predict_fixtures.py
 "$PY" scripts/score_predictions.py
 "$PY" scripts/settle_picks.py
+# publish the files the site reads into web/data (the site builds from web/ alone)
+(cd web && node scripts/sync-data.mjs)
 echo "=== done ==="
