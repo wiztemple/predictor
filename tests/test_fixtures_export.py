@@ -155,3 +155,16 @@ def test_build_document_exports_margins_consistent_with_1x2(sim):
     mg = np.array(rec["extras"]["margin"]["probs"])
     assert len(mg) == 2 * rec["extras"]["margin"]["cap"] + 1 and mg.sum() == pytest.approx(1, abs=1e-3)
     assert home_outcome(mg, -0.5)[0] == pytest.approx(rec["probabilities"]["home"], abs=1e-3)
+
+
+def test_build_document_ten_minute_result(sim):
+    df, truth = sim
+    dc = DixonColesModel().fit(df)
+    fx = pd.DataFrame({"league": ["XX"], "kickoff": pd.to_datetime(["2023-01-07 15:00"], utc=True),
+                       "home": ["a"], "away": ["b"], "home_mapped": [truth["teams"][0]],
+                       "away_mapped": [truth["teams"][1]], "source": ["t"], "season": ["2022-23"]})
+    rec = build_document(fx, dc, [], [], {"XX": "X"}, df["date"].max(), "preview", 6,
+                         ten_min_share=0.085)["predictions"][0]
+    t = rec["extras"]["ten_min"]
+    assert t["home"] + t["draw"] + t["away"] == pytest.approx(1, abs=2e-4)
+    assert 0.6 < t["no_goal"] <= t["draw"] < 0.95

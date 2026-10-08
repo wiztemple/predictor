@@ -12,6 +12,8 @@ export type FootballExtras = {
   /** P(home goals - away goals = i - cap); drives Asian handicap */
   margin?: { cap: number; probs: number[] };
   goals_calibrated?: boolean;
+  /** result after 10 minutes - an estimate from expected goals (no goal-time data to verify it) */
+  ten_min?: { home: number; draw: number; away: number; no_goal: number };
   expected_goals?: { home: number; away: number };
   over_1_5?: number;
   over_2_5?: number;

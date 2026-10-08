@@ -12,7 +12,7 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
-from predictor.loaders.football_data import AH_COLUMNS, OU_COLUMNS, parse_dates, read_raw_csv, select_odds
+from predictor.loaders.football_data import AH_COLUMNS, HT_COLUMNS, OU_COLUMNS, parse_dates, read_raw_csv, select_odds
 from predictor.schema import MATCH_COLUMNS, outcome_from_scores
 
 log = logging.getLogger(__name__)
@@ -29,7 +29,7 @@ def season_from_extra(s: pd.Series) -> pd.Series:
 
 def clean_extra(raw: pd.DataFrame, code: str, country: str, league: str, priority, first_season: str) -> pd.DataFrame:
     if raw.empty:
-        return pd.DataFrame(columns=MATCH_COLUMNS + ["odds_source"] + OU_COLUMNS + AH_COLUMNS)
+        return pd.DataFrame(columns=MATCH_COLUMNS + ["odds_source"] + OU_COLUMNS + AH_COLUMNS + HT_COLUMNS)
     raw = raw[(raw["Country"].str.strip() == country) & (raw["League"].str.strip() == league)]
     df = pd.DataFrame({
         "sport": "football",
@@ -48,13 +48,15 @@ def clean_extra(raw: pd.DataFrame, code: str, country: str, league: str, priorit
     for c in AH_COLUMNS[:3]:
         df[c] = np.nan  # no Asian handicap odds in the extra-leagues files
     df["ah_source"] = None
+    df["ht_home_score"] = np.nan  # extra-leagues files have no half-time scores
+    df["ht_away_score"] = np.nan
     keep = (df["season"] >= first_season) & df["date"].notna() & df["home_score"].notna() & df["away_score"].notna()
     keep &= (df["home"] != "") & (df["away"] != "")
     df = df[keep].copy()
     df["home_score"] = df["home_score"].astype(int)
     df["away_score"] = df["away_score"].astype(int)
     df["outcome"] = outcome_from_scores(df["home_score"], df["away_score"])
-    return df[MATCH_COLUMNS + ["odds_source"] + OU_COLUMNS + AH_COLUMNS]
+    return df[MATCH_COLUMNS + ["odds_source"] + OU_COLUMNS + AH_COLUMNS + HT_COLUMNS]
 
 
 def load_extra_leagues(raw_dir: Path, extra: dict, priority, first_season: str, wanted=None) -> list[pd.DataFrame]:

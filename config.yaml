@@ -180,3 +180,10 @@ picks:
   backtest: data/picks/backtest.json       # same rule over the test seasons
   database_url_env: DATABASE_URL           # Postgres etc.; falls back to a local SQLite file
   sqlite_fallback: data/picks/picks.db
+
+# Result after part of a match, from expected goals x share of goals by then.
+timing:
+  # Share of a match's goals in the first 10 minutes. NOT fitted on our data (football-data
+  # has no goal times): a rough figure from published goal-timing studies (~8-9%), below the
+  # even-spread 10/90 because openings are quiet. The half-time share is fitted in the backtest.
+  share_10: 0.085

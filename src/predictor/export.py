@@ -10,6 +10,7 @@ import pandas as pd
 
 from predictor.calibration import GOALS_KEYS, apply_goals_calibration
 from predictor.handicap import rescale_margins
+from predictor.timing import early_result
 from predictor.models.dixon_coles import MARGIN_CAP
 from predictor.models import MatchModel
 from predictor.picks import best_pick, rank_by_day
@@ -48,6 +49,7 @@ def build_document(
     sport: str = "football",
     goals_calibration: dict | None = None,
     pick_markets=None,
+    ten_min_share: float | None = None,
 ) -> dict[str, Any]:
     """fixtures: league, kickoff (UTC), home_mapped, away_mapped, source, season."""
     now = datetime.now(timezone.utc).isoformat(timespec="seconds")
@@ -101,6 +103,10 @@ def build_document(
                 # goal-difference chances, rescaled so AH -0.5 / 0 agree with the published 1X2
                 m = rescale_margins(np.asarray(p["margin_probs"]), p["p_home"], p["p_draw"], p["p_away"])
                 rec["extras"]["margin"] = {"cap": MARGIN_CAP, "probs": [round(float(v), 5) for v in m]}
+            if ten_min_share:
+                # result after 10 minutes: an estimate (no goal-time data to check it against)
+                e = early_result(p["exp_home_goals"], p["exp_away_goals"], ten_min_share)
+                rec["extras"]["ten_min"] = {k: _r(v) for k, v in e.items()}
             rec["extras"]["goals_model"] = "dixon_coles"
             # over/under and BTTS are calibrated; expected goals and the scoreline grid are the raw model
             rec["extras"]["goals_calibrated"] = goals_calibrated

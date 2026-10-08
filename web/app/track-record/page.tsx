@@ -281,6 +281,22 @@ function Backtest({ bt, leagueName }: { bt: BacktestSummary; leagueName: Map<str
         </section>
       ) : null}
 
+      {bt.half_time_check ? (
+        <section>
+          <h3 className="mb-1 font-semibold">10-minute result</h3>
+          <p className="max-w-2xl text-sm text-text-2">
+            The result after 10 minutes is estimated from each team&apos;s expected goals, scaled to the share of goals
+            scored that early. Our data has no goal times, so these predictions can&apos;t be checked or tracked. We
+            tested the same method at half-time, where real scores exist: over{" "}
+            {bt.half_time_check.n.toLocaleString("en-GB")} matches it predicted {pct(bt.half_time_check.draw_predicted)}{" "}
+            half-time draws and {pct(bt.half_time_check.draw_actual)} happened, and it beat each league&apos;s average
+            half-time results (log loss {bt.half_time_check.model.log_loss.toFixed(3)} vs{" "}
+            {bt.half_time_check.baseline.log_loss.toFixed(3)}). That supports the method, but the 10-minute numbers
+            remain estimates.
+          </p>
+        </section>
+      ) : null}
+
       <section>
         <h3 className="mb-2 font-semibold">How this was tested</h3>
         <ul className="max-w-2xl list-disc space-y-1.5 pl-5 text-sm text-text-2">

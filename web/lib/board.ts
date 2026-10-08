@@ -12,6 +12,7 @@ export function toBoardMatch(m: Prediction): BoardMatch {
     over_1_5: m.extras.over_1_5, over_2_5: m.extras.over_2_5, btts: m.extras.btts,
     scores: (m.extras.top_scorelines ?? []).slice(0, 3),
     margin: m.extras.margin,
+    ten: m.extras.ten_min,
   };
 }
 

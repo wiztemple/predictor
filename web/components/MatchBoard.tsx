@@ -29,6 +29,7 @@ function sideOf(market: MarketKey, label: string): "over" | "under" {
 
 function trackLine(market: MarketKey, picks: { cell: { label: string; p: number } }[], track: TrackTables) {
   if (!picks.length) return null;
+  if (market === "ten") return "Estimated from expected goals. Our data has no goal times, so there's no track record.";
   const side = sideOf(market, picks[0].cell.label);
   const floor = Math.min(...picks.filter((x) => sideOf(market, x.cell.label) === side).map((x) => x.cell.p));
   const t = (track[market]?.[side] ?? [])
@@ -245,7 +246,7 @@ function BoardRow({ m, market }: { m: BoardMatch; market: MarketKey }) {
             <span className="truncate">{m.away}</span>
           </div>
         </div>
-        {top && market !== "cs" ? (
+        {top && market !== "cs" && market !== "ten" ? (
           <span className="ml-auto w-14 shrink-0 text-center text-[11px] leading-tight text-text-3">
             Likely score
             <span className="mt-0.5 block text-base font-semibold text-text tabular">

@@ -207,3 +207,16 @@ Against bookmaker closing AH odds, at the bookmaker's own line (16283 matches, p
 Backing our side whenever our fair odds beat the closing price (any edge): 13548 bets, avg odds 1.95, profit -480.3 units, ROI -3.5%
 
 Backing our side whenever our fair odds beat the closing price (edge 5%+): 9798 bets, avg odds 1.95, profit -407.0 units, ROI -4.2%
+
+## 6. Half-time result (check of the early-result method), test period
+
+First-half share of goals, fitted before the test period: 0.4448. 17452 matches with half-time scores.
+Log loss: model 1.0446 vs league-average baseline 1.0800; accuracy 44.8% vs 40.7%.
+Half-time draws: predicted 41.4%, happened 40.7%.
+
+| predicted HT draw | n | avg predicted | happened |
+|---|---|---|---|
+| 0.2-0.3 | 357 | 27.2% | 27.7% |
+| 0.3-0.4 | 5952 | 36.9% | 36.2% |
+| 0.4-0.5 | 10675 | 43.9% | 43.2% |
+| 0.5-0.6 | 463 | 51.6% | 51.6% |

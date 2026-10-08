@@ -36,6 +36,7 @@ from predictor.calibration import (
 )
 from predictor.config import load_config, project_path
 from predictor.handicap import fair_odds, home_outcome, main_line, rescale_margins
+from predictor.timing import early_result
 from predictor.models.dixon_coles import MARGIN_CAP
 from predictor.features import form_features, involves_promoted_team
 from predictor.metrics import (
@@ -297,6 +298,45 @@ def ah_section(test: pd.DataFrame, prob_cols: list[str], say) -> dict:
     return out
 
 
+def half_time_section(test: pd.DataFrame, matches: pd.DataFrame, test_seasons: list[str], say) -> dict:
+    """Checks the early-result method (expected goals x share of goals) at half-time, where real
+    results exist. The first-half share is fitted on seasons before the test period only."""
+    pre = matches[(matches["season"] < min(test_seasons))].dropna(subset=["ht_home_score"])
+    share = float((pre["ht_home_score"] + pre["ht_away_score"]).sum() / (pre["home_score"] + pre["away_score"]).sum())
+    t = test.dropna(subset=["ht_home_score", "dc_exp_home_goals"]).copy()
+    probs = np.array([[r["home"], r["draw"], r["away"]] for r in
+                      (early_result(h, a, share) for h, a in zip(t["dc_exp_home_goals"], t["dc_exp_away_goals"]))])
+    t[["ht_p_home", "ht_p_draw", "ht_p_away"]] = probs
+    t["ht_outcome"] = np.select([t["ht_home_score"] > t["ht_away_score"], t["ht_home_score"] == t["ht_away_score"]],
+                                ["H", "D"], "A")
+    # baseline: each league's half-time result rates in earlier seasons
+    hist = matches.dropna(subset=["ht_home_score"]).assign(
+        o=lambda d: np.select([d["ht_home_score"] > d["ht_away_score"], d["ht_home_score"] == d["ht_away_score"]],
+                              ["H", "D"], "A"))
+    base = np.empty((len(t), 3))
+    for (lg, s), idx in t.groupby(["league", "season"]).groups.items():
+        prior = hist[(hist["league"] == lg) & (hist["season"] < s)]["o"].value_counts(normalize=True)
+        base[t.index.get_indexer(idx)] = [prior.get("H", 0), prior.get("D", 0), prior.get("A", 0)]
+    t[["b_home", "b_draw", "b_away"]] = base
+    ms = score(t, ["ht_p_home", "ht_p_draw", "ht_p_away"], "ht_outcome")
+    bs = score(t, ["b_home", "b_draw", "b_away"], "ht_outcome")
+    rel = binary_reliability(t["ht_p_draw"].to_numpy(), (t["ht_outcome"] == "D").astype(float).to_numpy())
+    rel = rel[rel["n"] >= 30]
+    out = {"share_45": share, "n": int(len(t)), "model": ms, "baseline": bs,
+           "draw_predicted": float(t["ht_p_draw"].mean()), "draw_actual": float((t["ht_outcome"] == "D").mean()),
+           "draw_reliability": rel.round(4).to_dict(orient="records")}
+    say("\n## 6. Half-time result (check of the early-result method), test period\n")
+    say(f"First-half share of goals, fitted before the test period: {share:.4f}. {len(t)} matches with half-time scores.")
+    say(f"Log loss: model {ms['log_loss']:.4f} vs league-average baseline {bs['log_loss']:.4f}; "
+        f"accuracy {ms['accuracy']:.1%} vs {bs['accuracy']:.1%}.")
+    say(f"Half-time draws: predicted {out['draw_predicted']:.1%}, happened {out['draw_actual']:.1%}.\n")
+    say("| predicted HT draw | n | avg predicted | happened |")
+    say("|---|---|---|---|")
+    for _, r in rel.iterrows():
+        say(f"| {r.bin_lo:.1f}-{r.bin_hi:.1f} | {int(r.n)} | {r.mean_pred:.1%} | {r.observed:.1%} |")
+    return out
+
+
 def _ah_benchmark(b: pd.DataFrame) -> dict:
     """Pushes-excluded log loss of our vs the bookmaker's AH chance at the bookmaker's line,
     a week-clustered CI on the gap, and what backing our 'value' sides at closing odds returned."""
@@ -497,6 +537,7 @@ def main() -> None:
     # ---------------- 4b. goals markets (Dixon-Coles) -------------------------------
     goals, goals_test = goals_section(t, test, matches, ev, test_seasons, holdout, out_dir, say)
     ah = ah_section(test, variants[prod_key], say)
+    ht = half_time_section(test, matches, test_seasons, say)
 
     # ---------------- 5. outputs ---------------------------------------------------
     keep = ["league", "season", "date", "home", "away", "outcome", "odds_source", "promoted", "cutoff"]
@@ -522,6 +563,7 @@ def main() -> None:
         "labels": {v: label(v) for v in variants},
         "goals_markets": goals,
         "asian_handicap": ah,
+        "half_time_check": ht,
     }
     (out_dir / "summary.json").write_text(json.dumps(summary, indent=1))
     (out_dir / "report.md").write_text("\n".join(lines) + "\n")

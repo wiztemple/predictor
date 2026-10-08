@@ -116,7 +116,7 @@ def main() -> int:
         log.warning("no goals calibration at %s (run scripts/backtest.py); goals markets uncalibrated", cal_path)
     doc = build_document(good, primary, secondary, unmatched, fd["leagues"], fitted_until,
                          pr_cfg["status"], pr_cfg["grid_max_goals"], goals_calibration=goals_cal,
-                         pick_markets=cfg["picks"]["markets"])
+                         pick_markets=cfg["picks"]["markets"], ten_min_share=cfg["timing"]["share_10"])
 
     out = project_path(args.output)
     out.parent.mkdir(parents=True, exist_ok=True)

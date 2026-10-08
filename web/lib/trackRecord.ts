@@ -33,6 +33,14 @@ export type BacktestSummary = {
   reliability: Record<string, ReliabilityBin[]>;
   labels: Record<string, string>;
   goals_markets?: Record<string, GoalsMarketBacktest>;
+  half_time_check?: {
+    share_45: number;
+    n: number;
+    model: { log_loss: number; accuracy: number };
+    baseline: { log_loss: number; accuracy: number };
+    draw_predicted: number;
+    draw_actual: number;
+  };
   asian_handicap?: {
     n_matches: number;
     predicted: { win: number; push: number; lose: number };

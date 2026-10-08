@@ -1,7 +1,7 @@
 // Betting-style markets built from a match's probabilities. Fair odds = 1 / probability.
 import { type Margin, ahChance, awayOf, fmtLine, homeOutcome, mainLine } from "./handicap";
 
-export type MarketKey = "1x2" | "o15" | "o25" | "gg" | "ah" | "cs";
+export type MarketKey = "1x2" | "ten" | "o15" | "o25" | "gg" | "ah" | "cs";
 
 export type BoardMatch = {
   id: string;
@@ -17,12 +17,14 @@ export type BoardMatch = {
   btts?: number;
   scores: { home: number; away: number; p: number }[]; // top 3
   margin?: Margin;
+  ten?: { home: number; draw: number; away: number }; // result after 10 minutes (estimate)
 };
 
 export type Cell = { label: string; p: number; pickLabel: string };
 
 export const MARKETS: { key: MarketKey; label: string; short: string }[] = [
   { key: "1x2", label: "Match result", short: "1X2" },
+  { key: "ten", label: "Result after 10 minutes", short: "10′" },
   { key: "o15", label: "Over/Under 1.5", short: "O/U 1.5" },
   { key: "o25", label: "Over/Under 2.5", short: "O/U 2.5" },
   { key: "gg", label: "Both teams to score", short: "GG/NG" },
@@ -48,6 +50,14 @@ export function cells(m: BoardMatch, market: MarketKey): Cell[] {
         { label: "X", p: draw, pickLabel: "Draw" },
         { label: "2", p: away, pickLabel: `${m.away} win` },
       ];
+    case "ten":
+      return m.ten
+        ? [
+            { label: "1", p: m.ten.home, pickLabel: `${m.home} ahead at 10′` },
+            { label: "X", p: m.ten.draw, pickLabel: "Draw at 10′" },
+            { label: "2", p: m.ten.away, pickLabel: `${m.away} ahead at 10′` },
+          ]
+        : [];
     case "o15":
       return ou(m.over_1_5, "1.5");
     case "o25":
