@@ -185,3 +185,15 @@ def test_build_document_extra_markets_consistent(sim):
     assert sum(v for k, v in mk["result_ou25"].items() if k.endswith("&O")) == pytest.approx(x["over_2_5"], abs=3e-4)
     assert sum(v for k, v in mk["htft"].items() if k.endswith("/X")) == pytest.approx(pr["draw"], abs=3e-4)
     assert x["grid_adjusted"] and sum(map(sum, x["score_grid"]["cells"])) + x["score_grid"]["other"] == pytest.approx(1, abs=2e-3)
+
+
+def test_parse_espn_keeps_unstarted_only():
+    from predictor.fixtures import parse_espn
+
+    def ev(state, home, away, date="2026-10-10T16:30Z"):
+        return {"date": date, "status": {"type": {"state": state}},
+                "competitions": [{"competitors": [{"homeAway": "home", "team": {"displayName": home}},
+                                                  {"homeAway": "away", "team": {"displayName": away}}]}]}
+    df = parse_espn({"events": [ev("pre", "AEK Athens", "OFI Crete"), ev("post", "PAOK", "Aris")]}, "G1")
+    assert list(df["home"]) == ["AEK Athens"] and df["kickoff"].iat[0] == pd.Timestamp("2026-10-10 16:30", tz="UTC")
+    assert (df["source"] == "espn").all()

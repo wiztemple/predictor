@@ -146,3 +146,46 @@ def combine(frames: list[pd.DataFrame]) -> pd.DataFrame:
     key_away = df["away_mapped"].fillna("?" + df["away"])
     dup = pd.DataFrame({"l": df["league"], "h": key_home, "a": key_away}).duplicated()
     return df[~dup].sort_values(["kickoff", "league", "home"]).reset_index(drop=True)
+
+
+def parse_espn(payload: dict, league: str) -> pd.DataFrame:
+    """ESPN scoreboard JSON -> fixtures not yet started (status 'pre')."""
+    rows = []
+    for ev in payload.get("events", []):
+        comp = (ev.get("competitions") or [{}])[0]
+        if (ev.get("status") or comp.get("status") or {}).get("type", {}).get("state") != "pre":
+            continue
+        sides = {c.get("homeAway"): c.get("team", {}).get("displayName") for c in comp.get("competitors", [])}
+        if sides.get("home") and sides.get("away") and ev.get("date"):
+            rows.append((league, pd.Timestamp(ev["date"]).tz_convert("UTC") if pd.Timestamp(ev["date"]).tzinfo
+                         else pd.Timestamp(ev["date"], tz="UTC"), sides["home"].strip(), sides["away"].strip(), "espn"))
+    return pd.DataFrame(rows, columns=FIXTURE_COLUMNS)
+
+
+def fetch_espn(url_tmpl: str, slugs: dict[str, str], start: pd.Timestamp, days: int, user_agent: str,
+               cache_dir: Path | None = None, delay: float = 0.5, retries: int = 2) -> pd.DataFrame:
+    """ESPN's public scoreboard feed (unofficial; may change without notice), one request per league
+    per day. A league whose fetch fails falls back to its last good copy in `cache_dir`."""
+    frames = []
+    for league, slug in slugs.items():
+        cache = Path(cache_dir) / f"espn-{slug}.json" if cache_dir else None
+        try:
+            payloads = []
+            for d in range(days + 1):
+                day = (start + pd.Timedelta(days=d)).strftime("%Y%m%d")
+                payloads.append(_get_json_with_retries(url_tmpl.format(slug=slug, date=day), user_agent, retries, 2.0))
+                time.sleep(delay)
+            if cache is not None:
+                cache.parent.mkdir(parents=True, exist_ok=True)
+                cache.write_text(json.dumps(payloads))
+        except Exception as e:
+            if cache is not None and cache.exists():
+                log.warning("espn %s failed (%s); USING CACHED COPY", slug, e)
+                payloads = json.loads(cache.read_text())
+            else:
+                log.error("espn %s failed and no cached copy: %s fixtures missing", slug, league)
+                continue
+        parts = [d for d in (parse_espn(p, league) for p in payloads) if len(d)]
+        if parts:
+            frames.append(pd.concat(parts, ignore_index=True).drop_duplicates(["league", "home", "away", "kickoff"]))
+    return pd.concat(frames, ignore_index=True) if frames else pd.DataFrame(columns=FIXTURE_COLUMNS)

@@ -25,6 +25,7 @@ from predictor.config import load_config, project_path, season_of
 from predictor.export import build_document
 from predictor.fixtures import (
     combine,
+    fetch_espn,
     fetch_extra_fixtures,
     fetch_fixturedownload,
     fetch_football_data,
@@ -75,6 +76,9 @@ def main() -> int:
         year = int(season_of(now.tz_convert(None))[:4])
         sources.append(fetch_fixturedownload(fx_cfg["fixturedownload_url"], fx_cfg["fixturedownload_slugs"], year,
                                              fd["user_agent"], cache_dir=project_path(fx_cfg["cache_dir"])))
+        if fx_cfg.get("espn_slugs"):
+            sources.append(fetch_espn(fx_cfg["espn_url"], fx_cfg["espn_slugs"], now.tz_convert("Europe/London").normalize(),
+                                      args.horizon_days, fd["user_agent"], cache_dir=project_path(fx_cfg["cache_dir"])))
     for s in sources:
         log.info("source %-16s %4d fixtures", s["source"].iat[0] if len(s) else "(empty)", len(s))
 

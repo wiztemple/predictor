@@ -185,3 +185,95 @@ football:
   Istanbul Basaksehir: Buyuksehyr
   Çaykur Rizespor: Rizespor
   Çorum: Corum
+
+  # --- ESPN names (fixtures for D2, I2, SP2, B1, G1, AUT, SWZ, DNK, ROU), hand-checked ---
+  # D2
+  1. FC Magdeburg: Magdeburg
+  1. FC Nürnberg: Nurnberg
+  Arminia Bielefeld: Bielefeld
+  Dynamo Dresden: Dresden
+  Energie Cottbus: Cottbus
+  Hannover 96: Hannover
+  Hertha Berlin: Hertha
+  Karlsruher SC: Karlsruhe
+  SV Darmstadt 98: Darmstadt
+  SpVgg Greuther Fürth: Greuther Furth
+  St. Pauli: St Pauli
+  TSV Eintracht Braunschweig: Braunschweig
+  VfL Bochum: Bochum
+  VfL Osnabruck: Osnabruck
+  # I2
+  US Avellino: Avellino
+  # SP2
+  Almería: Almeria
+  CD Sabadell: Sabadell
+  Castellón: Castellon
+  Cádiz: Cadiz
+  Córdoba: Cordoba
+  FC Andorra: Andorra
+  Leganés: Leganes
+  RC Celta Fortuna: Celta B
+  Real Sociedad II: Sociedad B
+  Real Valladolid: Valladolid
+  Sporting Gijón: Sp Gijon
+  # B1
+  Cercle Brugge KSV: Cercle Brugge
+  KAA Gent: Gent
+  KV Kortrijk: Kortrijk
+  KV Mechelen: Mechelen
+  KVC Westerlo: Westerlo
+  OH Leuven: Oud-Heverlee Leuven
+  RAAL La Louvière: RAAL La Louviere
+  Racing Genk: Genk
+  Royal Charleroi SC: Charleroi
+  Sint-Truidense: St Truiden
+  Standard Liege: Standard
+  Union St.-Gilloise: St. Gilloise
+  Zulte-Waregem: Waregem
+  # G1
+  AEK Athens: AEK
+  Asteras Tripoli: Asteras Tripolis
+  Levadiakos: Levadeiakos
+  Olympiacos: Olympiakos
+  # AUT
+  Austria Lustenau: A. Lustenau
+  LASK Linz: LASK
+  RB Salzburg: Salzburg
+  Rapid Vienna: SK Rapid
+  SC Rheindorf Altach: Altach
+  SK Sturm Graz: Sturm Graz
+  SV Josko Ried: Ried
+  TSV Hartberg: Hartberg
+  WSG Swarovski Tirol: Tirol
+  Wolfsberger: Wolfsberger AC
+  # SWZ
+  FC Basel: Basel
+  FC Lugano: Lugano
+  FC Luzern: Luzern
+  FC Sion: Sion
+  FC Thun: Thun
+  FC Zürich: Zurich
+  Lausanne Sports: Lausanne
+  # DNK
+  AC Horsens: Horsens
+  AGF: Aarhus
+  Brøndby IF: Brondby
+  F.C. København: FC Copenhagen
+  FC Midtjylland: Midtjylland
+  FC Nordsjælland: Nordsjaelland
+  Lyngby Boldklub: Lyngby
+  Odense Boldklub: Odense
+  Silkeborg IF: Silkeborg
+  Sønderjyske Fodbold: Sonderjyske
+  Viborg FF: Viborg
+  # ROU
+  CFR Cluj-Napoca: CFR Cluj
+  CSU Craiova: Univ. Craiova
+  Csíkszereda: Csikszereda M. Ciuc
+  FC Farul Constanta: Farul Constanta
+  Hermannstadt: FC Hermannstadt
+  Metaloglobus: Metaloglobus Bucharest
+  Otelul Galati: Otelul
+  Petrolul Ploiesti: Petrolul
+  Rapid Bucuresti: FC Rapid Bucuresti
+  Universitatea Cluj: U. Cluj

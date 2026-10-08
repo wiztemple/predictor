@@ -154,6 +154,20 @@ fixtures:
     # D2, I2, SP2, B1, G1: no fixturedownload feed; fixtures come from football-data fixtures.csv
   football_data_timezone: Europe/London   # fixtures.csv times are UK local time
   cache_dir: data/raw/fixtures            # last good copy of each schedule feed (fallback on fetch failure)
+  # ESPN's public scoreboard feed: full schedules for leagues fixturedownload doesn't cover.
+  # Unofficial (no published terms or API); football-data's lists stay as the backup.
+  espn_url: "https://site.api.espn.com/apis/site/v2/sports/soccer/{slug}/scoreboard?dates={date}"
+  espn_slugs:
+    D2: ger.2
+    I2: ita.2
+    SP2: esp.2
+    B1: bel.1
+    G1: gre.1
+    AUT: aut.1
+    SWZ: sui.1
+    DNK: den.1
+    ROU: rou.1
+    # POL: not on ESPN - football-data only
 
 predictions:
   output: data/predictions/predictions.json
