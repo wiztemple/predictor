@@ -20,23 +20,36 @@ export default async function Home() {
 
   return (
     <div>
-      <div className="flex flex-wrap items-end justify-between gap-x-6 gap-y-2">
-        <div>
-          <h1 className="text-2xl font-bold tracking-tight">Predictions</h1>
-          <p className="mt-1 text-sm text-text-2">
-            {matches.length} matches · {new Set(matches.map((m) => m.league)).size} leagues · times {TIME_ZONE_LABEL}
+      <section className="bg-brand relative overflow-hidden rounded-3xl px-5 py-6 text-white shadow-xl shadow-brand-2/20 sm:px-8 sm:py-8">
+        <div aria-hidden className="absolute -top-16 -right-10 size-56 rounded-full bg-white/10 blur-2xl" />
+        <div aria-hidden className="absolute -bottom-20 left-1/3 size-56 rounded-full bg-black/10 blur-2xl" />
+        <div className="relative">
+          <p className="text-xs font-semibold tracking-widest text-white/80 uppercase">Football predictions</p>
+          <h1 className="mt-1 text-3xl font-extrabold tracking-tight sm:text-4xl">This week&apos;s matches, by the numbers</h1>
+          <div className="mt-4 flex flex-wrap gap-2 text-sm">
+            {[
+              `${matches.length} matches`,
+              `${new Set(matches.map((m) => m.league)).size} leagues`,
+              ...(pbt?.top_per_day.hit_rate !== undefined
+                ? [`${Math.round(pbt.top_per_day.hit_rate * 100)}% of our top picks won in testing`]
+                : []),
+            ].map((t) => (
+              <span key={t} className="rounded-full bg-white/15 px-3 py-1 font-semibold ring-1 ring-white/25 backdrop-blur">
+                {t}
+              </span>
+            ))}
+          </div>
+          <p className="mt-4 max-w-xl text-sm text-white/85">
+            <strong className="font-bold text-white">%</strong> is our chance of it happening.{" "}
+            <strong className="font-bold text-white">@odds</strong> are the fair odds for that chance. The green cell is
+            the most likely option. Times are {TIME_ZONE_LABEL}.
           </p>
         </div>
-        <p className="max-w-md text-xs text-text-3">
-          <strong className="font-semibold text-text-2">%</strong> is our chance of it happening.{" "}
-          <strong className="font-semibold text-text-2">@odds</strong> are the fair odds for that chance (1 ÷ chance).
-          Highlighted = most likely.
-        </p>
-      </div>
-      <div className="mt-4">
+      </section>
+      <div className="mt-6">
         <PicksPanel picks={panelPicks(doc.predictions, perDay)} record={recordLine(live, pbt)} />
       </div>
-      <h2 className="mt-10 text-xl font-bold tracking-tight">All matches</h2>
+      <h2 className="mt-10 text-2xl font-extrabold tracking-tight">All matches</h2>
       <div className="mt-2">
         <MatchBoard matches={matches} leagues={leagues} track={track} />
       </div>

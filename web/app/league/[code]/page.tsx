@@ -24,7 +24,7 @@ export default async function LeaguePage({ params }: PageProps<"/league/[code]">
 
   return (
     <div>
-      <Link href="/leagues" className="text-sm text-home hover:underline">
+      <Link href="/leagues" className="text-sm text-accent font-semibold hover:underline">
         ← All leagues
       </Link>
       <h1 className="mt-3 text-2xl font-bold tracking-tight">{league.name}</h1>

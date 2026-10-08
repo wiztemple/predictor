@@ -3,18 +3,22 @@
 import Link from "next/link";
 import { useState } from "react";
 import { formatShortDay, formatTime, pct } from "@/lib/format";
-import { type BoardMatch, type MarketKey, MARKETS, bestCell, cells, confidence, fairOdds } from "@/lib/markets";
+import { type BoardMatch, type MarketKey, MARKETS, bestCell, cells, fairOdds } from "@/lib/markets";
 import type { Threshold } from "@/lib/picks";
 import { useUrlParam } from "@/lib/useUrlParam";
+import { leagueColor } from "@/lib/leagues";
 import { OutcomeCell } from "./OutcomeCell";
+import { ConfidenceBadge, ConfidenceBar, LeagueDot, TeamBadge } from "./ui";
 
 export type TrackTables = Partial<Record<MarketKey, { over?: Threshold[]; under?: Threshold[] }>>;
 
 type Props = { matches: BoardMatch[]; leagues: { code: string; name: string }[]; track: TrackTables };
 
 const chip = (active: boolean) =>
-  `shrink-0 rounded-full border px-3 py-1.5 text-sm whitespace-nowrap transition-colors ${
-    active ? "border-text bg-text text-surface" : "border-border text-text-2 hover:border-text-3 hover:text-text"
+  `shrink-0 rounded-full border px-3 py-1.5 text-sm font-medium whitespace-nowrap transition-colors ${
+    active
+      ? "bg-brand border-transparent text-white shadow-sm"
+      : "border-border bg-surface text-text-2 hover:border-accent hover:text-accent"
   }`;
 
 /** Which threshold table applies to a pick, by the option picked. */
@@ -79,16 +83,16 @@ export function MatchBoard({ matches, leagues, track }: Props) {
   return (
     <div>
       {/* controls */}
-      <div className="sticky top-0 z-10 -mx-4 border-b border-border bg-surface/95 px-4 pt-3 pb-3 backdrop-blur">
-        <div role="tablist" aria-label="Market" className="flex gap-1 overflow-x-auto rounded-lg bg-surface-2 p-1">
+      <div className="sticky top-0 z-10 -mx-4 border-b border-border bg-page/90 px-4 pt-3 pb-3 backdrop-blur">
+        <div role="tablist" aria-label="Market" className="flex gap-1 overflow-x-auto rounded-xl border border-border bg-surface p-1 shadow-sm">
           {MARKETS.map((mk) => (
             <button
               key={mk.key}
               role="tab"
               aria-selected={market === mk.key}
               onClick={() => setMarket(mk.key)}
-              className={`flex-1 shrink-0 rounded-md px-3 py-2 text-sm font-medium whitespace-nowrap transition-colors ${
-                market === mk.key ? "bg-home text-white shadow-sm" : "text-text-2 hover:text-text"
+              className={`flex-1 shrink-0 rounded-lg px-3 py-2 text-sm font-semibold whitespace-nowrap transition-colors ${
+                market === mk.key ? "bg-brand text-white shadow" : "text-text-2 hover:bg-surface-2 hover:text-text"
               }`}
             >
               {mk.short}
@@ -143,17 +147,18 @@ export function MatchBoard({ matches, leagues, track }: Props) {
       {picks.length > 0 ? (
         <section className="mt-6">
           <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
-            <h2 className="text-lg font-semibold">Top picks · {marketLabel}</h2>
+            <h2 className="text-lg font-bold">
+              Top picks <span className="text-brand">· {marketLabel}</span>
+            </h2>
             {line ? <p className="text-xs text-text-3">{line}</p> : null}
           </div>
           <ol className="mt-3 flex snap-x gap-3 overflow-x-auto pb-2">
             {picks.map(({ m, cell }, i) => {
-              const c = confidence(cell.p);
               return (
                 <li key={m.id} className="w-60 shrink-0 snap-start">
                   <Link
                     href={`/match/${m.id}`}
-                    className="flex h-full flex-col rounded-xl border border-border bg-surface p-3 hover:border-home"
+                    className="flex h-full flex-col rounded-xl border border-border bg-surface p-3 shadow-sm transition hover:-translate-y-0.5 hover:border-accent hover:shadow-md"
                   >
                     <div className="flex items-center justify-between text-xs text-text-3">
                       <span className="truncate">
@@ -163,27 +168,22 @@ export function MatchBoard({ matches, leagues, track }: Props) {
                         {formatShortDay(m.kickoff)} {formatTime(m.kickoff, m.kickoff_tbc)}
                       </span>
                     </div>
-                    <div className="mt-2 truncate text-sm text-text-2">
-                      {m.home} v {m.away}
+                    <div className="mt-2 flex items-center gap-1.5 truncate text-sm text-text-2">
+                      <TeamBadge name={m.home} />
+                      <TeamBadge name={m.away} />
+                      <span className="truncate">
+                        {m.home} v {m.away}
+                      </span>
                     </div>
                     <div className="mt-1 truncate text-base font-semibold">{cell.pickLabel}</div>
                     <div className="mt-auto flex items-end justify-between pt-3">
                       <div className="tabular">
-                        <span className="text-2xl font-bold">{pct(cell.p)}</span>
+                        <span className="text-2xl font-extrabold">{pct(cell.p)}</span>
                         <span className="ml-1.5 text-xs text-text-3">fair @{fairOdds(cell.p)}</span>
                       </div>
-                      <span
-                        className={`rounded-full px-2 py-0.5 text-[11px] font-medium ${
-                          c.level === 3
-                            ? "bg-home text-white"
-                            : c.level === 2
-                              ? "bg-home/15 text-home"
-                              : "bg-surface-2 text-text-2"
-                        }`}
-                      >
-                        {c.label}
-                      </span>
+                      <ConfidenceBadge p={cell.p} />
                     </div>
+                    <ConfidenceBar p={cell.p} className="mt-2" />
                   </Link>
                 </li>
               );
@@ -197,14 +197,24 @@ export function MatchBoard({ matches, leagues, track }: Props) {
         {shown.length === 0 ? <p className="text-text-3">No matches for this filter.</p> : null}
         {[...byDay.entries()].map(([d, groups]) => (
           <section key={d}>
-            <h2 className="text-sm font-semibold uppercase tracking-wide text-text-3">{d}</h2>
+            <h2 className="flex items-center gap-2 text-sm font-bold uppercase tracking-wide text-text-2">
+              <span aria-hidden className="h-4 w-1 rounded-full bg-brand" />
+              {d}
+            </h2>
             <div className="mt-2 space-y-4">
               {[...groups.entries()]
                 .sort((a, b) => (order.get(a[0]) ?? 999) - (order.get(b[0]) ?? 999))
                 .map(([code, list]) => (
-                  <div key={code} className="overflow-hidden rounded-xl border border-border">
+                  <div
+                    key={code}
+                    className="overflow-hidden rounded-xl border border-border bg-surface shadow-sm"
+                    style={{ borderLeft: `4px solid ${leagueColor(code)}` }}
+                  >
                     <div className="flex items-center justify-between bg-surface-2 px-3 py-2 text-xs">
-                      <span className="font-semibold text-text">{list[0].league_name}</span>
+                      <span className="flex items-center gap-2 font-bold text-text">
+                        <LeagueDot color={leagueColor(code)} />
+                        {list[0].league_name}
+                      </span>
                       <span className="text-text-3">{marketLabel}</span>
                     </div>
                     <ul className="divide-y divide-border">
@@ -232,9 +242,15 @@ function BoardRow({ m, market }: { m: BoardMatch; market: MarketKey }) {
     <Link href={`/match/${m.id}`} className="flex flex-col gap-2 px-3 py-3 hover:bg-surface-2 sm:flex-row sm:items-center sm:gap-4">
       <div className="flex min-w-0 flex-1 items-center gap-3">
         <span className="w-11 shrink-0 text-xs text-text-3 tabular">{formatTime(m.kickoff, m.kickoff_tbc)}</span>
-        <div className="min-w-0">
-          <div className="truncate font-medium">{m.home}</div>
-          <div className="truncate font-medium">{m.away}</div>
+        <div className="min-w-0 space-y-1">
+          <div className="flex items-center gap-2 truncate font-medium">
+            <TeamBadge name={m.home} />
+            <span className="truncate">{m.home}</span>
+          </div>
+          <div className="flex items-center gap-2 truncate font-medium">
+            <TeamBadge name={m.away} />
+            <span className="truncate">{m.away}</span>
+          </div>
         </div>
         {top && market !== "cs" ? (
           <span className="ml-auto w-14 shrink-0 text-center text-[11px] leading-tight text-text-3">

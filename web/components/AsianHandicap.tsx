@@ -6,7 +6,7 @@ export function AsianHandicap({ margin, home, away }: { margin: Margin; home: st
   const main = mainLine(margin);
   const lines = Array.from({ length: 9 }, (_, i) => main + (i - 4) * 0.25);
   return (
-    <div className="rounded-xl border border-border p-3">
+    <div className="rounded-xl border border-border bg-surface p-3 shadow-sm">
       <div className="mb-2 flex flex-wrap items-baseline justify-between gap-2">
         <h3 className="text-sm font-semibold">Asian handicap</h3>
         <span className="text-[11px] text-text-3">Main line highlighted · whole lines can push (stake back)</span>
@@ -30,7 +30,7 @@ export function AsianHandicap({ margin, home, away }: { margin: Margin; home: st
               const a = awayOf(h);
               const isMain = Math.abs(line - main) < 1e-9;
               return (
-                <tr key={line} className={`border-t border-border ${isMain ? "bg-home/10 font-semibold" : ""}`}>
+                <tr key={line} className={`border-t border-border ${isMain ? "bg-win/12 font-semibold" : ""}`}>
                   <td className="py-1.5">{fmtLine(line)}</td>
                   <td className="py-1.5 text-right">{pct(ahChance(h))}</td>
                   <td className="py-1.5 text-right">@{ahFairOdds(h).toFixed(2)}</td>

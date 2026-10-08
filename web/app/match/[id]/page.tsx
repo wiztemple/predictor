@@ -5,7 +5,9 @@ import { AsianHandicap } from "@/components/AsianHandicap";
 import { OutcomeCell } from "@/components/OutcomeCell";
 import { ScoreGrid } from "@/components/ScoreGrid";
 import { TIME_ZONE_LABEL, formatDay, formatTime, modelLabel, pct } from "@/lib/format";
-import { confidence, fairOdds } from "@/lib/markets";
+import { fairOdds } from "@/lib/markets";
+import { ConfidenceBadge, ConfidenceBar, LeagueDot, TeamBadge } from "@/components/ui";
+import { leagueColor } from "@/lib/leagues";
 import { getMatch, getPredictions } from "@/lib/predictions";
 
 export async function generateStaticParams() {
@@ -24,7 +26,7 @@ function Market({ title, options, note }: { title: string; options: Opt[]; note?
   if (!options.length) return null;
   const best = options.reduce((a, b) => (b.p > a.p ? b : a)).label;
   return (
-    <div className="rounded-xl border border-border p-3">
+    <div className="rounded-xl border border-border bg-surface p-3 shadow-sm">
       <div className="mb-2 flex items-baseline justify-between gap-2">
         <h3 className="text-sm font-semibold">{title}</h3>
         {note ? <span className="text-[11px] text-text-3">{note}</span> : null}
@@ -39,24 +41,18 @@ function Market({ title, options, note }: { title: string; options: Opt[]; note?
 }
 
 function PickCard({ market, pick, p }: { market: string; pick: string; p: number }) {
-  const c = confidence(p);
   return (
-    <div className="rounded-xl border border-border bg-surface p-3">
-      <div className="text-xs text-text-3">{market}</div>
-      <div className="mt-0.5 truncate font-semibold">{pick}</div>
+    <div className="rounded-xl border border-border bg-surface p-3 shadow-sm">
+      <div className="text-xs font-medium text-text-3">{market}</div>
+      <div className="mt-0.5 truncate font-bold">{pick}</div>
       <div className="mt-2 flex items-end justify-between gap-2">
         <div className="tabular">
-          <span className="text-2xl font-bold">{pct(p)}</span>
+          <span className="text-2xl font-extrabold">{pct(p)}</span>
           <span className="ml-1.5 text-xs text-text-3">fair @{fairOdds(p)}</span>
         </div>
-        <span
-          className={`rounded-full px-2 py-0.5 text-[11px] font-medium ${
-            c.level === 3 ? "bg-home text-white" : c.level === 2 ? "bg-home/15 text-home" : "bg-surface-2 text-text-2"
-          }`}
-        >
-          {c.label}
-        </span>
+        <ConfidenceBadge p={p} />
       </div>
+      <ConfidenceBar p={p} className="mt-2" />
     </div>
   );
 }
@@ -83,33 +79,50 @@ export default async function MatchPage({ params }: PageProps<"/match/[id]">) {
     <div className="space-y-8">
       {/* header */}
       <div>
-        <Link href={`/league/${m.league}`} className="text-sm text-home hover:underline">
-          ← {m.league_name}
+        <Link href={`/league/${m.league}`} className="inline-flex items-center gap-2 text-sm text-accent font-semibold hover:underline">
+          <LeagueDot color={leagueColor(m.league)} />← {m.league_name}
         </Link>
-        <div className="mt-3 flex flex-wrap items-end justify-between gap-4">
-          <div>
-            <h1 className="text-2xl font-bold tracking-tight sm:text-3xl">
-              {m.home} <span className="font-normal text-text-3">v</span> {m.away}
-            </h1>
-            <p className="mt-1 text-sm text-text-2">
-              {formatDay(m.kickoff)} · {m.kickoff_tbc ? "time TBC" : `${formatTime(m.kickoff)} ${TIME_ZONE_LABEL}`}
-            </p>
-          </div>
-          {top ? (
-            <div className="rounded-xl bg-surface-2 px-4 py-2 text-center">
-              <div className="text-[11px] text-text-3">Likely score</div>
-              <div className="text-2xl font-bold tabular">
-                {top.home} - {top.away}
-              </div>
-              <div className="text-[11px] text-text-3">{pct(top.p)} chance</div>
+        <h1 className="sr-only">
+          {m.home} v {m.away}
+        </h1>
+        <div className="bg-brand mt-3 overflow-hidden rounded-3xl p-5 text-white shadow-xl shadow-brand-2/20 sm:p-7">
+          <p className="text-xs font-semibold tracking-widest text-white/80 uppercase">
+            {formatDay(m.kickoff)} · {m.kickoff_tbc ? "time TBC" : `${formatTime(m.kickoff)} ${TIME_ZONE_LABEL}`}
+          </p>
+          <div className="mt-4 grid grid-cols-[1fr_auto_1fr] items-center gap-3">
+            <div className="flex min-w-0 flex-col items-center gap-2 text-center">
+              <TeamBadge name={m.home} size="lg" />
+              <div className="text-lg leading-tight font-extrabold sm:text-2xl">{m.home}</div>
+              <span className="text-xs text-white/75">Home · {pct(h)}</span>
             </div>
-          ) : null}
+            <div className="text-center">
+              {top ? (
+                <>
+                  <div className="text-[11px] font-semibold tracking-wide text-white/75 uppercase">Likely score</div>
+                  <div className="text-4xl font-black tabular sm:text-5xl">
+                    {top.home}-{top.away}
+                  </div>
+                  <div className="text-[11px] text-white/75">{pct(top.p)} chance</div>
+                </>
+              ) : (
+                <div className="text-2xl font-black">v</div>
+              )}
+            </div>
+            <div className="flex min-w-0 flex-col items-center gap-2 text-center">
+              <TeamBadge name={m.away} size="lg" />
+              <div className="text-lg leading-tight font-extrabold sm:text-2xl">{m.away}</div>
+              <span className="text-xs text-white/75">Away · {pct(a)}</span>
+            </div>
+          </div>
+          <div className="mt-4 text-center text-xs text-white/75">Draw · {pct(d)}</div>
         </div>
       </div>
 
       {/* picks */}
       <section>
-        <h2 className="mb-3 text-lg font-semibold">Our picks</h2>
+        <h2 className="mb-3 text-xl font-extrabold">
+          <span className="text-brand">Our picks</span>
+        </h2>
         <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
           {picks.map((p) => (
             <PickCard key={p.pick} {...p} />
@@ -168,7 +181,7 @@ export default async function MatchPage({ params }: PageProps<"/match/[id]">) {
       ) : null}
 
       {/* details */}
-      <details className="rounded-xl border border-border p-4 text-sm">
+      <details className="rounded-xl border border-border bg-surface p-4 text-sm shadow-sm">
         <summary className="cursor-pointer font-medium">How we got these numbers</summary>
         <div className="mt-3 space-y-3 text-text-2">
           <p>
@@ -198,7 +211,7 @@ export default async function MatchPage({ params }: PageProps<"/match/[id]">) {
           </table>
           <p className="text-xs text-text-3">
             Model {modelLabel(m.model.name)} v{m.model.version} · generated {new Date(m.generated_at).toUTCString()} ·{" "}
-            <Link href="/track-record" className="text-home hover:underline">
+            <Link href="/track-record" className="text-accent font-semibold hover:underline">
               track record
             </Link>
           </p>

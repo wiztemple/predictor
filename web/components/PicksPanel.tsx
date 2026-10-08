@@ -1,9 +1,17 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { type CSSProperties, useState } from "react";
 import { formatShortDay, formatTime, pct } from "@/lib/format";
-import { confidence, fairOdds } from "@/lib/markets";
+import { fairOdds } from "@/lib/markets";
+import { ConfidenceBadge, ConfidenceBar, TeamBadge } from "./ui";
+
+// gold / silver / bronze for the top three
+const MEDAL: Record<number, CSSProperties> = {
+  1: { background: "linear-gradient(135deg,#fde68a,#f59e0b)", color: "#451a03" },
+  2: { background: "linear-gradient(135deg,#f1f5f9,#94a3b8)", color: "#1e293b" },
+  3: { background: "linear-gradient(135deg,#fed7aa,#c2410c)", color: "#431407" },
+};
 
 export type PanelPick = {
   id: string;
@@ -28,12 +36,15 @@ export function PicksPanel({ picks, record, compact = false, heading = true }: P
 
   if (!picks.length) return null;
   return (
-    <section className="rounded-2xl border border-border bg-surface p-4 sm:p-5">
+    <section className="frame-brand rounded-2xl shadow-lg shadow-brand-1/10">
+      <div className="rounded-[calc(1rem-1.5px)] bg-surface p-4 sm:p-5">
       {heading ? (
         <>
           <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
-            <h2 className="text-xl font-bold tracking-tight">Our likeliest picks</h2>
-            <Link href="/picks" className="text-sm font-medium text-home hover:underline">
+            <h2 className="text-xl font-extrabold tracking-tight">
+              <span className="text-brand">Our likeliest picks</span>
+            </h2>
+            <Link href="/picks" className="text-sm font-semibold text-accent hover:underline">
               Picks record →
             </Link>
           </div>
@@ -51,8 +62,10 @@ export function PicksPanel({ picks, record, compact = false, heading = true }: P
             key={d}
             onClick={() => setDay(d)}
             aria-pressed={day === d}
-            className={`shrink-0 rounded-full border px-3 py-1.5 text-sm whitespace-nowrap ${
-              day === d ? "border-text bg-text text-surface" : "border-border text-text-2 hover:text-text"
+            className={`shrink-0 rounded-full border px-3 py-1.5 text-sm font-medium whitespace-nowrap transition-colors ${
+              day === d
+                ? "bg-brand border-transparent text-white shadow-sm"
+                : "border-border text-text-2 hover:border-accent hover:text-accent"
             }`}
           >
             {d}
@@ -61,37 +74,40 @@ export function PicksPanel({ picks, record, compact = false, heading = true }: P
       </div>
 
       <ol className={`mt-3 grid gap-2 ${compact ? "" : "md:grid-cols-2"}`}>
-        {shown.map((p) => {
-          const c = confidence(p.p);
-          return (
-            <li key={p.id}>
-              <Link
-                href={`/match/${p.id}`}
-                className="flex items-center gap-3 rounded-xl bg-surface-2 px-3 py-2.5 hover:ring-1 hover:ring-home"
+        {shown.map((p) => (
+          <li key={p.id}>
+            <Link
+              href={`/match/${p.id}`}
+              className="flex items-center gap-3 rounded-xl border border-border bg-surface-2/60 px-3 py-2.5 transition hover:-translate-y-0.5 hover:border-accent hover:shadow-md"
+            >
+              <span
+                className="flex size-7 shrink-0 items-center justify-center rounded-full text-sm font-extrabold tabular"
+                style={MEDAL[p.rank] ?? { background: "var(--surface)", color: "var(--text-3)" }}
               >
-                <span className="w-5 shrink-0 text-center text-sm font-bold text-text-3 tabular">{p.rank}</span>
-                <span className="min-w-0 flex-1">
-                  <span className="block truncate font-semibold">{p.label}</span>
-                  <span className="block truncate text-xs text-text-3">
+                {p.rank}
+              </span>
+              <span className="min-w-0 flex-1">
+                <span className="block truncate font-bold">{p.label}</span>
+                <span className="mt-0.5 flex items-center gap-1.5 truncate text-xs text-text-3">
+                  <TeamBadge name={p.home} />
+                  <span className="truncate">
                     {p.home} v {p.away} · {p.league_name} · {formatTime(p.kickoff, p.kickoff_tbc)}
                   </span>
                 </span>
-                <span className="shrink-0 text-right tabular">
-                  <span className="block text-lg leading-tight font-bold">{pct(p.p)}</span>
-                  <span className="block text-[11px] text-text-3">@{fairOdds(p.p)}</span>
-                </span>
-                <span
-                  className={`hidden shrink-0 rounded-full px-2 py-0.5 text-[11px] font-medium sm:inline ${
-                    c.level === 3 ? "bg-home text-white" : c.level === 2 ? "bg-home/15 text-home" : "bg-surface text-text-2"
-                  }`}
-                >
-                  {c.label}
-                </span>
-              </Link>
-            </li>
-          );
-        })}
+                <ConfidenceBar p={p.p} className="mt-1.5" />
+              </span>
+              <span className="shrink-0 text-right tabular">
+                <span className="block text-lg leading-tight font-extrabold">{pct(p.p)}</span>
+                <span className="block text-[11px] text-text-3">@{fairOdds(p.p)}</span>
+              </span>
+              <span className="hidden sm:inline">
+                <ConfidenceBadge p={p.p} />
+              </span>
+            </Link>
+          </li>
+        ))}
       </ol>
+      </div>
     </section>
   );
 }

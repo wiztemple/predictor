@@ -167,7 +167,7 @@ export default async function PicksPage() {
             These picks are mostly double chance, over 1.5 and under 3.5, so the prices are short (roughly 1.10–1.35).
             A high win rate at short odds doesn&apos;t mean profit: bookmakers build their margin into these prices, and
             our historical data has no odds for these markets, so we can&apos;t show a profit figure. See the{" "}
-            <Link href="/track-record" className="text-home hover:underline">
+            <Link href="/track-record" className="text-accent font-semibold hover:underline">
               full track record
             </Link>
             .

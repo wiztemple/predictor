@@ -19,27 +19,38 @@ export default async function RootLayout({ children }: LayoutProps<"/">) {
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}>
       <body className="flex min-h-full flex-col">
         <PreviewBanner status={doc.status} dataThrough={doc.data_through} />
-        <header className="border-b border-border">
-          <nav className="mx-auto flex max-w-5xl flex-wrap items-center gap-x-5 gap-y-2 px-4 py-3 text-sm">
-            <Link href="/" className="mr-2 text-base font-bold tracking-tight text-text">
+        <header className="bg-brand text-white shadow-lg shadow-brand-2/20">
+          <nav className="mx-auto flex max-w-5xl flex-col gap-2 px-4 py-3 text-sm sm:flex-row sm:items-center">
+            <Link href="/" className="mr-3 flex items-center gap-2 text-base font-extrabold tracking-tight">
+              <svg aria-hidden viewBox="0 0 24 24" className="size-7 drop-shadow">
+                <circle cx="12" cy="12" r="11" fill="white" />
+                <path
+                  fill="#14112b"
+                  d="M12 6.2l3.4 2.5-1.3 4h-4.2l-1.3-4zM5 9.6l2.2-.5 1.4 4.1-1.6 2.3-2.1-.7A8.6 8.6 0 015 9.6zm14 0a8.6 8.6 0 01.1 5.2l-2.1.7-1.6-2.3 1.4-4.1zM9.6 18.7l.9-2.4h3l.9 2.4a8.6 8.6 0 01-4.8 0z"
+                />
+              </svg>
               Match Probabilities
             </Link>
-            <Link href="/" className="text-text-2 hover:text-text sm:ml-auto">
-              Matches
-            </Link>
-            <Link href="/picks" className="text-text-2 hover:text-text">
-              Picks
-            </Link>
-            <Link href="/leagues" className="text-text-2 hover:text-text">
-              Leagues
-            </Link>
-            <Link href="/track-record" className="text-text-2 hover:text-text">
-              Track record
-            </Link>
+            <div className="-mx-1 flex gap-1 overflow-x-auto sm:ml-auto">
+            {[
+              ["/", "Matches"],
+              ["/picks", "Picks"],
+              ["/leagues", "Leagues"],
+              ["/track-record", "Track record"],
+            ].map(([href, label]) => (
+              <Link
+                key={href}
+                href={href}
+                className="shrink-0 rounded-full px-3 py-1.5 font-medium whitespace-nowrap text-white/90 transition-colors hover:bg-white/15 hover:text-white"
+              >
+                {label}
+              </Link>
+            ))}
+            </div>
           </nav>
         </header>
         <main className="mx-auto w-full max-w-5xl flex-1 px-4 py-8">{children}</main>
-        <footer className="border-t border-border">
+        <footer className="border-t border-border bg-surface">
           <div className="mx-auto max-w-5xl px-4 py-6">
             <Disclaimer />
           </div>
