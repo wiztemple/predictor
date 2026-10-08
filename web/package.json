@@ -5,7 +5,7 @@
   "scripts": {
     "predev": "node scripts/sync-data.mjs",
     "dev": "next dev",
-    "prebuild": "node scripts/sync-data.mjs",
+    "prebuild": "rm -rf .next out && node scripts/sync-data.mjs",
     "build": "next build",
     "lint": "eslint",
     "preview": "npx wrangler dev",

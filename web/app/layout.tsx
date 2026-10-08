@@ -19,7 +19,7 @@ export default async function RootLayout({ children }: LayoutProps<"/">) {
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}>
       <body className="flex min-h-full flex-col">
         <PreviewBanner status={doc.status} dataThrough={doc.data_through} />
-        <header className="bg-brand text-white shadow-lg shadow-brand-2/20">
+        <header className="bg-brand text-white">
           <nav className="mx-auto flex max-w-5xl flex-col gap-2 px-4 py-3 text-sm sm:flex-row sm:items-center">
             <Link href="/" className="mr-3 flex items-center gap-2 text-base font-extrabold tracking-tight">
               <svg aria-hidden viewBox="0 0 24 24" className="size-7 drop-shadow">

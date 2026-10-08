@@ -205,11 +205,7 @@ export function MatchBoard({ matches, leagues, track }: Props) {
               {[...groups.entries()]
                 .sort((a, b) => (order.get(a[0]) ?? 999) - (order.get(b[0]) ?? 999))
                 .map(([code, list]) => (
-                  <div
-                    key={code}
-                    className="overflow-hidden rounded-xl border border-border bg-surface shadow-sm"
-                    style={{ borderLeft: `4px solid ${leagueColor(code)}` }}
-                  >
+                  <div key={code} className="overflow-hidden rounded-xl border border-border bg-surface shadow-sm">
                     <div className="flex items-center justify-between bg-surface-2 px-3 py-2 text-xs">
                       <span className="flex items-center gap-2 font-bold text-text">
                         <LeagueDot color={leagueColor(code)} />
