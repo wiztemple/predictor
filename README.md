@@ -295,3 +295,26 @@ variables take priority over it. `.env` is gitignored, so never commit it.
   `data/picks/summary.json`, which the site reads.
 - `backtest_picks.py` replays the rule over the test seasons and writes
   `data/picks/backtest.json`.
+
+## Running on a Mac (launchd)
+
+GitHub Actions is the intended scheduler. While it isn't available, the
+pipeline runs on a Mac instead:
+
+- **The job:** `~/Library/LaunchAgents/com.wiztemple.predictor.plist` runs
+  `scripts/run_scheduled.sh` daily at 06:30, plus 11:30 on Friday, Saturday
+  and Sunday (local time). Runs missed while the Mac was asleep happen when it
+  wakes. Each run updates, predicts, logs picks to the database, settles
+  results, and pushes the fresh data to GitHub.
+- **The project folder:** the project must not live in `~/Desktop`,
+  `~/Documents` or `~/Downloads`. macOS blocks background jobs from reading
+  those folders.
+
+```bash
+tail -f data/update.log                                                          # watch runs
+launchctl kickstart gui/$(id -u)/com.wiztemple.predictor                         # run now
+launchctl bootout gui/$(id -u)/com.wiztemple.predictor                           # stop the schedule
+launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/com.wiztemple.predictor.plist  # start it again
+```
+
+To remove it for good, run the `bootout` command, then delete the plist file.
