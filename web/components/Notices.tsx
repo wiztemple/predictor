@@ -5,12 +5,13 @@ export function PreviewBanner({ status, dataThrough }: { status: string; dataThr
   return (
     <div className="border-b border-notice-border bg-notice-bg text-notice-text">
       <p className="mx-auto max-w-5xl px-4 py-1.5 text-xs">
-        <strong className="font-semibold">Preview.</strong> In backtests these estimates were less accurate than
-        bookmaker odds; see the{" "}
+        <strong className="font-semibold">Preview.</strong>{" "}
+        <span className="hidden sm:inline">In backtests these estimates were less accurate than bookmaker odds; see the </span>
+        <span className="sm:hidden">See the </span>
         <Link href="/track-record" className="underline">
           track record
         </Link>
-        . Results data runs to {dataThrough}.
+        <span className="hidden sm:inline">. Results data runs to {dataThrough}</span>.
       </p>
     </div>
   );

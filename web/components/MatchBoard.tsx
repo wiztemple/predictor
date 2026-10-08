@@ -84,7 +84,7 @@ export function MatchBoard({ matches, leagues, track }: Props) {
   return (
     <div>
       {/* controls */}
-      <div className="sticky top-0 z-10 -mx-4 border-b border-border bg-page/90 px-4 pt-3 pb-3 backdrop-blur">
+      <div className="z-10 -mx-4 border-b border-border bg-page/90 px-4 pt-3 pb-3 backdrop-blur sm:sticky sm:top-0">
         <div role="tablist" aria-label="Market" className="flex gap-1 overflow-x-auto rounded-xl border border-border bg-surface p-1 shadow-sm">
           {MARKETS.map((mk) => (
             <button
@@ -153,6 +153,7 @@ export function MatchBoard({ matches, leagues, track }: Props) {
             </h2>
             {line ? <p className="text-xs text-text-3">{line}</p> : null}
           </div>
+          <p className="mt-1 text-xs text-text-3 sm:hidden">Swipe for more →</p>
           <ol className="mt-3 flex snap-x gap-3 overflow-x-auto pb-2">
             {picks.map(({ m, cell }, i) => {
               return (

@@ -16,10 +16,10 @@ export function AsianHandicap({ margin, home, away }: { margin: Margin; home: st
           <thead>
             <tr className="text-left text-[11px] text-text-3">
               <th className="py-1 font-normal">{home}</th>
-              <th className="py-1 text-right font-normal">Chance</th>
+              <th className="hidden py-1 text-right font-normal sm:table-cell">Chance</th>
               <th className="py-1 text-right font-normal">Fair</th>
               <th className="py-1 pl-4 font-normal">{away}</th>
-              <th className="py-1 text-right font-normal">Chance</th>
+              <th className="hidden py-1 text-right font-normal sm:table-cell">Chance</th>
               <th className="py-1 text-right font-normal">Fair</th>
               <th className="py-1 text-right font-normal">Push</th>
             </tr>
@@ -32,10 +32,10 @@ export function AsianHandicap({ margin, home, away }: { margin: Margin; home: st
               return (
                 <tr key={line} className={`border-t border-border ${isMain ? "bg-win/12 font-semibold" : ""}`}>
                   <td className="py-1.5">{fmtLine(line)}</td>
-                  <td className="py-1.5 text-right">{pct(ahChance(h))}</td>
+                  <td className="hidden py-1.5 text-right sm:table-cell">{pct(ahChance(h))}</td>
                   <td className="py-1.5 text-right">@{ahFairOdds(h).toFixed(2)}</td>
                   <td className="py-1.5 pl-4">{fmtLine(-line)}</td>
-                  <td className="py-1.5 text-right">{pct(ahChance(a))}</td>
+                  <td className="hidden py-1.5 text-right sm:table-cell">{pct(ahChance(a))}</td>
                   <td className="py-1.5 text-right">@{ahFairOdds(a).toFixed(2)}</td>
                   <td className="py-1.5 text-right text-text-3">{h.push > 0.0005 ? pct(h.push) : "–"}</td>
                 </tr>
@@ -44,7 +44,7 @@ export function AsianHandicap({ margin, home, away }: { margin: Margin; home: st
           </tbody>
         </table>
       </div>
-      <p className="mt-2 text-[11px] text-text-3">
+      <p className="mt-2 hidden text-[11px] text-text-3 sm:block">
         Chance = 1 ÷ fair odds, which accounts for pushes and half-wins, so it compares directly with other markets.
       </p>
     </div>

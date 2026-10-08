@@ -52,10 +52,12 @@ function PickCard({ market, pick, p }: { market: string; pick: string; p: number
       <div className="mt-0.5 truncate font-bold">{pick}</div>
       <div className="mt-2 flex items-end justify-between gap-2">
         <div className="tabular">
-          <span className="text-2xl font-extrabold">{pct(p)}</span>
-          <span className="ml-1.5 text-xs text-text-3">fair @{fairOdds(p)}</span>
+          <span className="text-xl font-extrabold sm:text-2xl">{pct(p)}</span>
+          <span className="ml-1.5 text-xs text-text-3">@{fairOdds(p)}</span>
         </div>
-        <ConfidenceBadge p={p} />
+        <span className="hidden sm:inline">
+          <ConfidenceBadge p={p} />
+        </span>
       </div>
       <ConfidenceBar p={p} className="mt-2" />
     </div>
@@ -135,7 +137,7 @@ export default async function MatchPage({ params }: PageProps<"/match/[id]">) {
         <h2 className="mb-3 text-xl font-extrabold">
           <span className="text-accent">Our picks</span>
         </h2>
-        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid grid-cols-2 gap-2 sm:gap-3 lg:grid-cols-4">
           {picks.map((p) => (
             <PickCard key={p.pick} {...p} />
           ))}

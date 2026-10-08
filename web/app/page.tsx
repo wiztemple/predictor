@@ -20,11 +20,11 @@ export default async function Home() {
 
   return (
     <div>
-      <section className="rounded-3xl border border-border bg-surface px-5 py-6 text-text sm:px-8 sm:py-8">
+      <section className="rounded-2xl border border-border bg-surface px-4 py-5 text-text sm:rounded-3xl sm:px-8 sm:py-8">
         <div>
           <p className="text-xs font-semibold tracking-widest text-text-3 uppercase">Football predictions</p>
-          <h1 className="mt-1 text-3xl font-extrabold tracking-tight sm:text-4xl">This week&apos;s matches, by the numbers</h1>
-          <div className="mt-4 flex flex-wrap gap-2 text-sm">
+          <h1 className="mt-1 text-2xl font-extrabold tracking-tight sm:text-4xl">This week&apos;s matches, by the numbers</h1>
+          <div className="mt-3 flex flex-wrap gap-1.5 text-xs sm:mt-4 sm:gap-2 sm:text-sm">
             {[
               `${matches.length} matches`,
               `${new Set(matches.map((m) => m.league)).size} leagues`,
@@ -37,7 +37,7 @@ export default async function Home() {
               </span>
             ))}
           </div>
-          <p className="mt-4 max-w-xl text-sm text-text-2">
+          <p className="mt-3 max-w-xl text-xs text-text-2 sm:mt-4 sm:text-sm">
             <strong className="font-bold text-text">%</strong> is our chance of it happening.{" "}
             <strong className="font-bold text-text">@odds</strong> are the fair odds for that chance. The green cell is
             the most likely option. Times are {TIME_ZONE_LABEL}.

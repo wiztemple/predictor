@@ -73,12 +73,12 @@ export function PicksPanel({ picks, record, compact = false, heading = true }: P
         ))}
       </div>
 
-      <ol className={`mt-3 grid gap-2 ${compact ? "" : "md:grid-cols-2"}`}>
+      <ol className={`mt-3 grid grid-cols-1 gap-2 ${compact ? "" : "md:grid-cols-2"}`}>
         {shown.map((p) => (
-          <li key={p.id}>
+          <li key={p.id} className="min-w-0">
             <Link
               href={`/match/${p.id}`}
-              className="flex items-center gap-3 rounded-xl border border-border bg-surface-2/60 px-3 py-2.5 transition hover:-translate-y-0.5 hover:border-accent hover:shadow-md"
+              className="flex min-w-0 items-center gap-3 rounded-xl border border-border bg-surface-2/60 px-3 py-2.5 transition hover:-translate-y-0.5 hover:border-accent hover:shadow-md"
             >
               <span
                 className="flex size-7 shrink-0 items-center justify-center rounded-full text-sm font-extrabold tabular"

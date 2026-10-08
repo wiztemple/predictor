@@ -47,7 +47,7 @@ export default async function PicksPage() {
         <h2 className="text-lg font-bold">Live record</h2>
         {t && t.n > 0 ? (
           <>
-            <div className="mt-3 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+            <div className="mt-3 grid grid-cols-2 gap-2 sm:gap-3 lg:grid-cols-4">
               <Tile label="Picks settled" value={t.n.toLocaleString("en-GB")} note={`since ${live!.first_logged ? formatShortDay(live!.first_logged) : "start"}`} />
               <Tile label="Won" value={`${t.won}/${t.n}`} />
               <Tile label="Hit rate" value={pct(t.hit_rate!)} note={`we predicted ${pct(t.avg_probability!)} on average`} />
@@ -109,7 +109,7 @@ export default async function PicksPage() {
             The same rule replayed over {bt.seasons[0]} to {bt.seasons[bt.seasons.length - 1]}, using only what our
             model knew before each match.
           </p>
-          <div className="mt-3 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-3 grid grid-cols-2 gap-2 sm:gap-3 lg:grid-cols-4">
             <Tile label="Picks" value={bt.top_per_day.n.toLocaleString("en-GB")} note={`over ${bt.days} match days`} />
             <Tile label="Won" value={pct(bt.top_per_day.hit_rate!)} note={`we predicted ${pct(bt.top_per_day.avg_probability!)}`} />
             <Tile label="Perfect days" value={`${bt.days_all_won}/${bt.days}`} note={`every top-${perDay} pick won`} />
