@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import Link from "next/link";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Disclaimer, PreviewBanner } from "@/components/Notices";
@@ -7,6 +7,9 @@ import "./globals.css";
 
 const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
 const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
+
+// Light theme only: no dark mode, whatever the visitor's device setting.
+export const viewport: Viewport = { colorScheme: "light" };
 
 export const metadata: Metadata = {
   title: { default: "Match Probabilities", template: "%s · Match Probabilities" },
