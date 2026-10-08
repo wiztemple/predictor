@@ -20,10 +20,8 @@ export default async function Home() {
 
   return (
     <div>
-      <section className="bg-brand relative overflow-hidden rounded-3xl px-5 py-6 text-white shadow-xl shadow-brand-2/20 sm:px-8 sm:py-8">
-        <div aria-hidden className="absolute -top-16 -right-10 size-56 rounded-full bg-white/10 blur-2xl" />
-        <div aria-hidden className="absolute -bottom-20 left-1/3 size-56 rounded-full bg-black/10 blur-2xl" />
-        <div className="relative">
+      <section className="bg-brand rounded-3xl px-5 py-6 text-white sm:px-8 sm:py-8">
+        <div>
           <p className="text-xs font-semibold tracking-widest text-white/80 uppercase">Football predictions</p>
           <h1 className="mt-1 text-3xl font-extrabold tracking-tight sm:text-4xl">This week&apos;s matches, by the numbers</h1>
           <div className="mt-4 flex flex-wrap gap-2 text-sm">

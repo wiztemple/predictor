@@ -8,9 +8,9 @@ import { ConfidenceBadge, ConfidenceBar, TeamBadge } from "./ui";
 
 // gold / silver / bronze for the top three
 const MEDAL: Record<number, CSSProperties> = {
-  1: { background: "linear-gradient(135deg,#fde68a,#f59e0b)", color: "#451a03" },
-  2: { background: "linear-gradient(135deg,#f1f5f9,#94a3b8)", color: "#1e293b" },
-  3: { background: "linear-gradient(135deg,#fed7aa,#c2410c)", color: "#431407" },
+  1: { background: "#fbbf24", color: "#451a03" },
+  2: { background: "#cbd5e1", color: "#1e293b" },
+  3: { background: "#f0a46b", color: "#431407" },
 };
 
 export type PanelPick = {
@@ -36,13 +36,13 @@ export function PicksPanel({ picks, record, compact = false, heading = true }: P
 
   if (!picks.length) return null;
   return (
-    <section className="frame-brand rounded-2xl shadow-lg shadow-brand-1/10">
-      <div className="rounded-[calc(1rem-1.5px)] bg-surface p-4 sm:p-5">
+    <section className="rounded-2xl border-2 border-accent/50 bg-surface">
+      <div className="p-4 sm:p-5">
       {heading ? (
         <>
           <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
             <h2 className="text-xl font-extrabold tracking-tight">
-              <span className="text-brand">Our likeliest picks</span>
+              <span className="text-accent">Our likeliest picks</span>
             </h2>
             <Link href="/picks" className="text-sm font-semibold text-accent hover:underline">
               Picks record →

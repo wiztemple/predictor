@@ -85,7 +85,7 @@ export default async function MatchPage({ params }: PageProps<"/match/[id]">) {
         <h1 className="sr-only">
           {m.home} v {m.away}
         </h1>
-        <div className="bg-brand mt-3 overflow-hidden rounded-3xl p-5 text-white shadow-xl shadow-brand-2/20 sm:p-7">
+        <div className="bg-brand mt-3 overflow-hidden rounded-3xl p-5 text-white sm:p-7">
           <p className="text-xs font-semibold tracking-widest text-white/80 uppercase">
             {formatDay(m.kickoff)} · {m.kickoff_tbc ? "time TBC" : `${formatTime(m.kickoff)} ${TIME_ZONE_LABEL}`}
           </p>
@@ -121,7 +121,7 @@ export default async function MatchPage({ params }: PageProps<"/match/[id]">) {
       {/* picks */}
       <section>
         <h2 className="mb-3 text-xl font-extrabold">
-          <span className="text-brand">Our picks</span>
+          <span className="text-accent">Our picks</span>
         </h2>
         <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
           {picks.map((p) => (

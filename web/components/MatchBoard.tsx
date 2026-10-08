@@ -148,7 +148,7 @@ export function MatchBoard({ matches, leagues, track }: Props) {
         <section className="mt-6">
           <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
             <h2 className="text-lg font-bold">
-              Top picks <span className="text-brand">· {marketLabel}</span>
+              Top picks <span className="text-accent">· {marketLabel}</span>
             </h2>
             {line ? <p className="text-xs text-text-3">{line}</p> : null}
           </div>
