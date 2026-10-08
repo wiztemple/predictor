@@ -326,6 +326,7 @@ function Backtest({ bt, leagueName }: { bt: BacktestSummary; leagueName: Map<str
         </section>
       ) : null}
 
+      {/* 10-minute market hidden for now:
       {bt.half_time_check ? (
         <section>
           <h3 className="mb-1 font-semibold">10-minute result</h3>
@@ -341,6 +342,7 @@ function Backtest({ bt, leagueName }: { bt: BacktestSummary; leagueName: Map<str
           </p>
         </section>
       ) : null}
+      */}
 
       <section>
         <h3 className="mb-2 font-semibold">How this was tested</h3>

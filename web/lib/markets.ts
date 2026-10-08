@@ -26,7 +26,8 @@ export type Cell = { label: string; p: number; pickLabel: string };
 
 export const MARKETS: { key: MarketKey; label: string; short: string }[] = [
   { key: "1x2", label: "Match result", short: "1X2" },
-  { key: "ten", label: "Result after 10 minutes", short: "10′" },
+  // 10-minute market hidden for now (uncomment to bring back the 10′ tab):
+  // { key: "ten", label: "Result after 10 minutes", short: "10′" },
   { key: "ht", label: "Half-time result", short: "HT" },
   { key: "dnb", label: "Draw no bet", short: "DNB" },
   { key: "o15", label: "Over/Under 1.5", short: "O/U 1.5" },

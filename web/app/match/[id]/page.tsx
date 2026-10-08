@@ -154,6 +154,7 @@ export default async function MatchPage({ params }: PageProps<"/match/[id]">) {
         <div className="grid gap-3 md:grid-cols-2">
           <Market title="Match result (1X2)" options={[{ label: "1", p: h }, { label: "X", p: d }, { label: "2", p: a }]} />
           <Market title="Double chance" options={[{ label: "1X", p: h + d }, { label: "12", p: h + a }, { label: "X2", p: d + a }]} />
+          {/* 10-minute market hidden for now:
           {x.ten_min ? (
             <Market
               title="Result after 10 minutes"
@@ -165,6 +166,7 @@ export default async function MatchPage({ params }: PageProps<"/match/[id]">) {
               ]}
             />
           ) : null}
+          */}
           <Market title="Over/Under 1.5" options={ou(x.over_1_5)} />
           <Market title="Over/Under 2.5" options={ou(x.over_2_5)} />
           <Market title="Over/Under 3.5" options={ou(x.over_3_5)} />
