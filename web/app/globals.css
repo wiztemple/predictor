@@ -1,7 +1,6 @@
 @import "tailwindcss";
 
 /* Tokens.
-   - brand: dark slate behind white text (header, heroes, active tabs)
    - accent: links and accent headings (blue)
    - win: "most likely" / positive (emerald)
    - conf-1..3: confidence tiers (amber lean, sky likely, emerald very likely)
@@ -9,7 +8,7 @@
      categorical slots (validated for colour-blindness) - unchanged on purpose. */
 :root {
   color-scheme: light;
-  --page: #f5f6f8;
+  --page: #ffffff;
   --surface: #ffffff;
   --surface-2: #f1f3f6;
   --border: #e2e6eb;

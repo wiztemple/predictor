@@ -20,9 +20,9 @@ export default async function Home() {
 
   return (
     <div>
-      <section className="bg-brand rounded-3xl px-5 py-6 text-white sm:px-8 sm:py-8">
+      <section className="rounded-3xl border border-border bg-surface px-5 py-6 text-text sm:px-8 sm:py-8">
         <div>
-          <p className="text-xs font-semibold tracking-widest text-white/80 uppercase">Football predictions</p>
+          <p className="text-xs font-semibold tracking-widest text-text-3 uppercase">Football predictions</p>
           <h1 className="mt-1 text-3xl font-extrabold tracking-tight sm:text-4xl">This week&apos;s matches, by the numbers</h1>
           <div className="mt-4 flex flex-wrap gap-2 text-sm">
             {[
@@ -32,14 +32,14 @@ export default async function Home() {
                 ? [`${Math.round(pbt.top_per_day.hit_rate * 100)}% of our top picks won in testing`]
                 : []),
             ].map((t) => (
-              <span key={t} className="rounded-full bg-white/15 px-3 py-1 font-semibold ring-1 ring-white/25 backdrop-blur">
+              <span key={t} className="rounded-full bg-surface-2 px-3 py-1 font-semibold text-text-2 ring-1 ring-border">
                 {t}
               </span>
             ))}
           </div>
-          <p className="mt-4 max-w-xl text-sm text-white/85">
-            <strong className="font-bold text-white">%</strong> is our chance of it happening.{" "}
-            <strong className="font-bold text-white">@odds</strong> are the fair odds for that chance. The green cell is
+          <p className="mt-4 max-w-xl text-sm text-text-2">
+            <strong className="font-bold text-text">%</strong> is our chance of it happening.{" "}
+            <strong className="font-bold text-text">@odds</strong> are the fair odds for that chance. The green cell is
             the most likely option. Times are {TIME_ZONE_LABEL}.
           </p>
         </div>

@@ -97,24 +97,24 @@ export default async function MatchPage({ params }: PageProps<"/match/[id]">) {
         <h1 className="sr-only">
           {m.home} v {m.away}
         </h1>
-        <div className="bg-brand mt-3 overflow-hidden rounded-3xl p-5 text-white sm:p-7">
-          <p className="text-xs font-semibold tracking-widest text-white/80 uppercase">
+        <div className="mt-3 overflow-hidden rounded-3xl border border-border bg-surface p-5 text-text sm:p-7">
+          <p className="text-xs font-semibold tracking-widest text-text-3 uppercase">
             {formatDay(m.kickoff)} · {m.kickoff_tbc ? "time TBC" : `${formatTime(m.kickoff)} ${TIME_ZONE_LABEL}`}
           </p>
           <div className="mt-4 grid grid-cols-[1fr_auto_1fr] items-center gap-3">
             <div className="flex min-w-0 flex-col items-center gap-2 text-center">
               <TeamBadge name={m.home} size="lg" />
               <div className="text-lg leading-tight font-extrabold sm:text-2xl">{m.home}</div>
-              <span className="text-xs text-white/75">Home · {pct(h)}</span>
+              <span className="text-xs text-text-3">Home · {pct(h)}</span>
             </div>
             <div className="text-center">
               {top ? (
                 <>
-                  <div className="text-[11px] font-semibold tracking-wide text-white/75 uppercase">Likely score</div>
+                  <div className="text-[11px] font-semibold tracking-wide text-text-3 uppercase">Likely score</div>
                   <div className="text-4xl font-black tabular sm:text-5xl">
                     {top.home}-{top.away}
                   </div>
-                  <div className="text-[11px] text-white/75">{pct(top.p)} chance</div>
+                  <div className="text-[11px] text-text-3">{pct(top.p)} chance</div>
                 </>
               ) : (
                 <div className="text-2xl font-black">v</div>
@@ -123,10 +123,10 @@ export default async function MatchPage({ params }: PageProps<"/match/[id]">) {
             <div className="flex min-w-0 flex-col items-center gap-2 text-center">
               <TeamBadge name={m.away} size="lg" />
               <div className="text-lg leading-tight font-extrabold sm:text-2xl">{m.away}</div>
-              <span className="text-xs text-white/75">Away · {pct(a)}</span>
+              <span className="text-xs text-text-3">Away · {pct(a)}</span>
             </div>
           </div>
-          <div className="mt-4 text-center text-xs text-white/75">Draw · {pct(d)}</div>
+          <div className="mt-4 text-center text-xs text-text-3">Draw · {pct(d)}</div>
         </div>
       </div>
 
