@@ -9,6 +9,8 @@ export type Scoreline = { home: number; away: number; p: number };
 
 export type FootballExtras = {
   goals_model?: string;
+  /** P(home goals - away goals = i - cap); drives Asian handicap */
+  margin?: { cap: number; probs: number[] };
   goals_calibrated?: boolean;
   expected_goals?: { home: number; away: number };
   over_1_5?: number;

@@ -53,8 +53,9 @@ export function MatchBoard({ matches, leagues, track }: Props) {
       (!league || m.league === league) &&
       (minP === 0 || Math.round((bestCell(m, market)?.p ?? 0) * 100) >= minP * 100),
   );
+  // main AH lines sit near 50/50 by design, so a "top picks" list would just be coin flips
   const picks =
-    market === "cs"
+    market === "cs" || market === "ah"
       ? []
       : shown
           .map((m) => ({ m, cell: bestCell(m, market)! }))

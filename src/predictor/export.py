@@ -9,6 +9,8 @@ import numpy as np
 import pandas as pd
 
 from predictor.calibration import GOALS_KEYS, apply_goals_calibration
+from predictor.handicap import rescale_margins
+from predictor.models.dixon_coles import MARGIN_CAP
 from predictor.models import MatchModel
 from predictor.picks import best_pick, rank_by_day
 
@@ -95,6 +97,10 @@ def build_document(
                 "btts": _r(p["p_btts"]),
                 "top_scorelines": [{**s, "p": _r(s["p"])} for s in p["top_scorelines"]],
             }
+            if "margin_probs" in main.columns and p["margin_probs"] is not None:
+                # goal-difference chances, rescaled so AH -0.5 / 0 agree with the published 1X2
+                m = rescale_margins(np.asarray(p["margin_probs"]), p["p_home"], p["p_draw"], p["p_away"])
+                rec["extras"]["margin"] = {"cap": MARGIN_CAP, "probs": [round(float(v), 5) for v in m]}
             rec["extras"]["goals_model"] = "dixon_coles"
             # over/under and BTTS are calibrated; expected goals and the scoreline grid are the raw model
             rec["extras"]["goals_calibrated"] = goals_calibrated

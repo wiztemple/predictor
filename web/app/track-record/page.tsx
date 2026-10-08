@@ -218,6 +218,42 @@ function Backtest({ bt, leagueName }: { bt: BacktestSummary; leagueName: Map<str
         </section>
       ) : null}
 
+      {bt.asian_handicap ? (
+        <section>
+          <h3 className="mb-1 font-semibold">Asian handicap</h3>
+          <p className="mb-3 max-w-2xl text-sm text-text-2">
+            Every test match at its main line, home side. Win, push and lose are stake-weighted, so a half-win on a
+            quarter line counts as half.
+          </p>
+          <table className="w-full max-w-md text-sm tabular">
+            <thead>
+              <tr className="text-left text-text-3">
+                <th className="py-1 font-normal"></th>
+                <th className="py-1 text-right font-normal">Win</th>
+                <th className="py-1 text-right font-normal">Push</th>
+                <th className="py-1 text-right font-normal">Lose</th>
+              </tr>
+            </thead>
+            <tbody>
+              {(["predicted", "actual"] as const).map((k) => (
+                <tr key={k} className="border-t border-border">
+                  <td className="py-1.5 capitalize">{k === "predicted" ? "We predicted" : "Happened"}</td>
+                  <td className="py-1.5 text-right">{pct(bt.asian_handicap![k].win)}</td>
+                  <td className="py-1.5 text-right">{pct(bt.asian_handicap![k].push)}</td>
+                  <td className="py-1.5 text-right">{pct(bt.asian_handicap![k].lose)}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+          <p className="mt-2 max-w-2xl text-xs text-text-3">
+            Over {bt.asian_handicap.n_matches.toLocaleString("en-GB")} matches, betting every main line at our own fair
+            odds would have returned {signed(bt.asian_handicap.profit_at_fair)} per unit: the chances are well
+            calibrated. That isn&apos;t a profit claim, because bookmakers&apos; prices include their margin, and we
+            haven&apos;t compared against bookmaker handicap odds yet.
+          </p>
+        </section>
+      ) : null}
+
       <section>
         <h3 className="mb-2 font-semibold">How this was tested</h3>
         <ul className="max-w-2xl list-disc space-y-1.5 pl-5 text-sm text-text-2">

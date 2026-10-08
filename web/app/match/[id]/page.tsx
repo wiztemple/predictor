@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { AsianHandicap } from "@/components/AsianHandicap";
 import { OutcomeCell } from "@/components/OutcomeCell";
 import { ScoreGrid } from "@/components/ScoreGrid";
 import { TIME_ZONE_LABEL, formatDay, formatTime, modelLabel, pct } from "@/lib/format";
@@ -134,6 +135,11 @@ export default async function MatchPage({ params }: PageProps<"/match/[id]">) {
             options={x.btts === undefined ? [] : [{ label: "GG", p: x.btts }, { label: "NG", p: 1 - x.btts }]}
           />
         </div>
+        {x.margin ? (
+          <div className="mt-3">
+            <AsianHandicap margin={x.margin} home={m.home} away={m.away} />
+          </div>
+        ) : null}
         {x.top_scorelines?.length ? (
           <div className="mt-3">
             <Market

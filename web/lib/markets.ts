@@ -1,6 +1,7 @@
 // Betting-style markets built from a match's probabilities. Fair odds = 1 / probability.
+import { type Margin, ahChance, awayOf, fmtLine, homeOutcome, mainLine } from "./handicap";
 
-export type MarketKey = "1x2" | "o15" | "o25" | "gg" | "cs";
+export type MarketKey = "1x2" | "o15" | "o25" | "gg" | "ah" | "cs";
 
 export type BoardMatch = {
   id: string;
@@ -15,6 +16,7 @@ export type BoardMatch = {
   over_2_5?: number;
   btts?: number;
   scores: { home: number; away: number; p: number }[]; // top 3
+  margin?: Margin;
 };
 
 export type Cell = { label: string; p: number; pickLabel: string };
@@ -24,6 +26,7 @@ export const MARKETS: { key: MarketKey; label: string; short: string }[] = [
   { key: "o15", label: "Over/Under 1.5", short: "O/U 1.5" },
   { key: "o25", label: "Over/Under 2.5", short: "O/U 2.5" },
   { key: "gg", label: "Both teams to score", short: "GG/NG" },
+  { key: "ah", label: "Asian handicap (main line)", short: "AH" },
   { key: "cs", label: "Correct score", short: "Score" },
 ];
 
@@ -56,6 +59,15 @@ export function cells(m: BoardMatch, market: MarketKey): Cell[] {
             { label: "GG", p: m.btts, pickLabel: "Both teams score" },
             { label: "NG", p: 1 - m.btts, pickLabel: "Not both score" },
           ];
+    case "ah": {
+      if (!m.margin) return [];
+      const line = mainLine(m.margin);
+      const h = homeOutcome(m.margin, line);
+      return [
+        { label: `1 ${fmtLine(line)}`, p: ahChance(h), pickLabel: `${m.home} ${fmtLine(line)}` },
+        { label: `2 ${fmtLine(-line)}`, p: ahChance(awayOf(h)), pickLabel: `${m.away} ${fmtLine(-line)}` },
+      ];
+    }
     case "cs":
       return m.scores.map((s) => ({ label: `${s.home}-${s.away}`, p: s.p, pickLabel: `Score ${s.home}-${s.away}` }));
   }

@@ -33,6 +33,12 @@ export type BacktestSummary = {
   reliability: Record<string, ReliabilityBin[]>;
   labels: Record<string, string>;
   goals_markets?: Record<string, GoalsMarketBacktest>;
+  asian_handicap?: {
+    n_matches: number;
+    predicted: { win: number; push: number; lose: number };
+    actual: { win: number; push: number; lose: number };
+    profit_at_fair: number;
+  };
 };
 
 type BinaryMetrics = { n: number; log_loss: number; brier: number };

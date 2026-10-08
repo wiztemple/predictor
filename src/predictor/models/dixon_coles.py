@@ -125,6 +125,16 @@ def score_grid(lam: float, mu: float, rho: float, max_goals: int) -> np.ndarray:
     return p / p.sum()
 
 
+MARGIN_CAP = 6
+
+
+def margin_distribution(grid: np.ndarray, cap: int = MARGIN_CAP) -> np.ndarray:
+    """Goal-difference distribution from a scoreline grid; index 0 is <= -cap, last is >= +cap."""
+    i, j = np.indices(grid.shape)
+    d = np.clip(i - j, -cap, cap)
+    return np.bincount((d + cap).ravel(), weights=grid.ravel(), minlength=2 * cap + 1)
+
+
 def markets_from_grid(grid: np.ndarray, top_n: int = 5) -> dict[str, Any]:
     i, j = np.indices(grid.shape)
     flat = np.argsort(grid, axis=None)[::-1][:top_n]
@@ -138,6 +148,8 @@ def markets_from_grid(grid: np.ndarray, top_n: int = 5) -> dict[str, Any]:
         "p_over_2_5": grid[i + j >= 3].sum(),
         "p_over_3_5": grid[i + j >= 4].sum(),
         "p_btts": grid[(i >= 1) & (j >= 1)].sum(),
+        # P(home goals - away goals = k) for k = -MARGIN_CAP..MARGIN_CAP, tails folded into the ends
+        "margin_probs": margin_distribution(grid).tolist(),
         "top_scorelines": [
             {"home": int(a), "away": int(b), "p": float(grid[a, b])}
             for a, b in zip(*np.unravel_index(flat, grid.shape))

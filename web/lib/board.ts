@@ -11,6 +11,7 @@ export function toBoardMatch(m: Prediction): BoardMatch {
     home: m.home, away: m.away, probabilities: m.probabilities,
     over_1_5: m.extras.over_1_5, over_2_5: m.extras.over_2_5, btts: m.extras.btts,
     scores: (m.extras.top_scorelines ?? []).slice(0, 3),
+    margin: m.extras.margin,
   };
 }
 

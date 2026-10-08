@@ -17,7 +17,7 @@ import pandas as pd
 PREDICTION_COLUMNS = ["league", "date", "home", "away", "p_home", "p_draw", "p_away"]
 # Goals markets: unders are 1 - over.
 EXTRA_COLUMNS = ["exp_home_goals", "exp_away_goals", "p_over_1_5", "p_over_2_5", "p_over_3_5", "p_btts",
-                 "top_scorelines"]
+                 "top_scorelines", "margin_probs"]
 
 
 class LeakageError(ValueError):

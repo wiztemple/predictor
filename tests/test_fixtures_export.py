@@ -1,3 +1,4 @@
+import numpy as np
 import json
 
 import pandas as pd
@@ -139,3 +140,18 @@ def test_parse_extra_fixtures_maps_country_and_league():
     df = parse_extra_fixtures(csv.encode("utf-8"), extra, "Europe/London")
     assert list(df["league"]) == ["ROU", "DNK"]  # same league name, told apart by country; Argentina ignored
     assert df["kickoff"].iat[0] == pd.Timestamp("2026-10-10 17:30", tz="UTC")
+
+
+def test_build_document_exports_margins_consistent_with_1x2(sim):
+    from predictor.handicap import home_outcome
+    from predictor.models import BlendModel
+
+    df, truth = sim
+    m = BlendModel().fit(df)
+    fx = pd.DataFrame({"league": ["XX"], "kickoff": pd.to_datetime(["2023-01-07 15:00"], utc=True),
+                       "home": ["a"], "away": ["b"], "home_mapped": [truth["teams"][0]],
+                       "away_mapped": [truth["teams"][3]], "source": ["t"], "season": ["2022-23"]})
+    rec = build_document(fx, m, [], [], {"XX": "X"}, df["date"].max(), "preview", 6)["predictions"][0]
+    mg = np.array(rec["extras"]["margin"]["probs"])
+    assert len(mg) == 2 * rec["extras"]["margin"]["cap"] + 1 and mg.sum() == pytest.approx(1, abs=1e-3)
+    assert home_outcome(mg, -0.5)[0] == pytest.approx(rec["probabilities"]["home"], abs=1e-3)

@@ -35,6 +35,8 @@ from predictor.calibration import (
     reliability_table,
 )
 from predictor.config import load_config, project_path
+from predictor.handicap import fair_odds, home_outcome, main_line, rescale_margins
+from predictor.models.dixon_coles import MARGIN_CAP
 from predictor.features import form_features, involves_promoted_team
 from predictor.metrics import (
     binary_reliability,
@@ -72,7 +74,7 @@ def build_table(matches: pd.DataFrame, refresh: bool, out_dir, freq: str, from_s
             wf.drop(columns=["top_scorelines"], errors="ignore").to_parquet(cache, index=False)
         wf = pd.read_parquet(cache).set_index("match_idx")
         keep = [c for c in ["p_home", "p_draw", "p_away", "elo_diff", "exp_home_goals", "exp_away_goals",
-                            "p_over_1_5", "p_over_2_5", "p_over_3_5", "p_btts"] if c in wf]
+                            "p_over_1_5", "p_over_2_5", "p_over_3_5", "p_btts", "margin_probs"] if c in wf]
         renamed = wf[keep].rename(columns=lambda c: c if c == "elo_diff" else f"{prefix}_{c}")
         t = t.join(renamed)
         if prefix == "elo":
@@ -212,6 +214,52 @@ def goals_section(t, test, matches, ev, test_seasons, holdout, out_dir, say) -> 
     say(f"\nProduction calibrators ({choice}) fitted on {len(t)} out-of-sample matches -> data/models/goals_calibration.json")
     # calibrated test-period probabilities, as they would have been shown at the time
     return goals, pd.DataFrame({k: cal[k][is_test] for k in GOALS_KEYS}, index=tt.index)
+
+
+def ah_section(test: pd.DataFrame, prob_cols: list[str], say) -> dict:
+    """Asian handicap at each match's main line: predicted vs actual win/push/lose (home side),
+    plus average profit per unit staked at our own fair odds (0 = perfectly calibrated)."""
+    rows = []
+    for (_, r), (ph, pd_, pa) in zip(test.iterrows(), test[prob_cols].to_numpy()):
+        mp = r.get("dc_margin_probs")
+        if mp is None or (isinstance(mp, float) and np.isnan(mp)):
+            continue
+        m = rescale_margins(np.asarray(mp, float), ph, pd_, pa)
+        line = main_line(m)
+        w, p, l = home_outcome(m, line)
+        actual = np.zeros(2 * MARGIN_CAP + 1)
+        actual[int(np.clip(r["home_score"] - r["away_score"], -MARGIN_CAP, MARGIN_CAP)) + MARGIN_CAP] = 1
+        aw, ap, al = home_outcome(actual, line)
+        for side, (pw, pp, pl), (xw, xp, xl) in (("home", (w, p, l), (aw, ap, al)), ("away", (l, p, w), (al, ap, aw))):
+            o = fair_odds(pw, pl)
+            rows.append({"side": side, "line": line, "chance": 1 / o, "pw": pw, "pp": pp, "pl": pl,
+                         "aw": xw, "ap": xp, "al": xl, "profit_at_fair": xw * (o - 1) - xl})
+    df = pd.DataFrame(rows)
+    home = df[df["side"] == "home"]
+    out = {
+        "n_matches": int(len(home)),
+        "predicted": {"win": float(home["pw"].mean()), "push": float(home["pp"].mean()), "lose": float(home["pl"].mean())},
+        "actual": {"win": float(home["aw"].mean()), "push": float(home["ap"].mean()), "lose": float(home["al"].mean())},
+        "profit_at_fair": float(df["profit_at_fair"].mean()),
+    }
+    bands = pd.cut(df["chance"], [0, 0.45, 0.5, 0.55, 0.6, 1.0], labels=["<45%", "45-50%", "50-55%", "55-60%", "60%+"])
+    out["by_chance"] = {
+        str(k): {"n": int(len(g)), "chance": float(g["chance"].mean()),
+                 "won": float(g["aw"].mean()), "push": float(g["ap"].mean()), "lost": float(g["al"].mean()),
+                 "profit_at_fair": float(g["profit_at_fair"].mean())}
+        for k, g in df.groupby(bands, observed=True)
+    }
+    say("\n## 5. Asian handicap (main line), test period\n")
+    say(f"{out['n_matches']} matches. Home side, stake-weighted: predicted win/push/lose "
+        f"{out['predicted']['win']:.1%} / {out['predicted']['push']:.1%} / {out['predicted']['lose']:.1%}, actual "
+        f"{out['actual']['win']:.1%} / {out['actual']['push']:.1%} / {out['actual']['lose']:.1%}.")
+    say(f"Average profit per unit at our own fair odds: {out['profit_at_fair']:+.3f} (0 = calibrated; "
+        "negative = we were too optimistic). No bookmaker AH benchmark yet.\n")
+    say("| our chance | bets | avg chance | won | push | lost | profit at fair odds |")
+    say("|---|---|---|---|---|---|---|")
+    for k, v in out["by_chance"].items():
+        say(f"| {k} | {v['n']} | {v['chance']:.1%} | {v['won']:.1%} | {v['push']:.1%} | {v['lost']:.1%} | {v['profit_at_fair']:+.3f} |")
+    return out
 
 
 def _binary_ll(p: np.ndarray, y: np.ndarray) -> np.ndarray:
@@ -381,6 +429,7 @@ def main() -> None:
 
     # ---------------- 4b. goals markets (Dixon-Coles) -------------------------------
     goals, goals_test = goals_section(t, test, matches, ev, test_seasons, holdout, out_dir, say)
+    ah = ah_section(test, variants[prod_key], say)
 
     # ---------------- 5. outputs ---------------------------------------------------
     keep = ["league", "season", "date", "home", "away", "outcome", "odds_source", "promoted", "cutoff"]
@@ -405,6 +454,7 @@ def main() -> None:
         "reliability": {k: v.round(4).to_dict(orient="records") for k, v in reliability.items()},
         "labels": {v: label(v) for v in variants},
         "goals_markets": goals,
+        "asian_handicap": ah,
     }
     (out_dir / "summary.json").write_text(json.dumps(summary, indent=1))
     (out_dir / "report.md").write_text("\n".join(lines) + "\n")
