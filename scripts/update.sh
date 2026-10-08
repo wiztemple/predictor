@@ -9,7 +9,8 @@ cd "$(dirname "$0")/.."
 PY="${PYTHON:-.venv/bin/python}"
 
 echo "=== update $(date -u +%Y-%m-%dT%H:%M:%SZ) ==="
-"$PY" scripts/download_data.py
+# A flaky connection shouldn't stop today's picks being logged: carry on with the data on disk.
+"$PY" scripts/download_data.py || echo "WARN: some downloads failed; continuing with the data already on disk"
 "$PY" scripts/build_dataset.py
 "$PY" scripts/check_data.py
 "$PY" scripts/predict_fixtures.py
