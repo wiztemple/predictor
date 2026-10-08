@@ -84,3 +84,10 @@ def test_migrate_copies_once(tmp_path, monkeypatch):
     assert mig.main() == 0 and mig.main() == 0  # second run copies nothing
     with connect(f"sqlite:///{tmp_path / 'target.db'}").connect() as c:
         assert len(c.execute(select(picks_log)).all()) == 1
+
+
+def test_ci_without_database_url_fails_loudly(monkeypatch, tmp_path):
+    monkeypatch.delenv("DATABASE_URL", raising=False)
+    monkeypatch.setenv("GITHUB_ACTIONS", "true")
+    with pytest.raises(RuntimeError, match="DATABASE_URL"):
+        database_url({}, tmp_path)

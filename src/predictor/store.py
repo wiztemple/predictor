@@ -77,6 +77,10 @@ official_picks = Table(
 def database_url(cfg: dict, project_root: Path) -> str:
     load_env(project_root / ".env")
     url = os.environ.get(cfg.get("database_url_env", "DATABASE_URL"))
+    if not url and os.environ.get("GITHUB_ACTIONS") == "true":
+        # On CI a local SQLite file would vanish after the run and the published record
+        # would be overwritten with an empty one - fail loudly instead.
+        raise RuntimeError("DATABASE_URL is not set: add it as a repository secret (Settings -> Secrets -> Actions)")
     if not url:
         path = project_root / cfg.get("sqlite_fallback", "data/picks/picks.db")
         path.parent.mkdir(parents=True, exist_ok=True)
