@@ -1,0 +1,83 @@
+@import "tailwindcss";
+
+/* Tokens. Series colours are the dataviz reference palette's first three
+   categorical slots (validated all-pairs for CVD in both modes). */
+:root {
+  color-scheme: light;
+  --surface: #fcfcfb;
+  --surface-2: #f3f2ef;
+  --border: #e4e2dc;
+  --text: #0b0b0b;
+  --text-2: #52514e;
+  --text-3: #6f6d68;
+  --home: #2a78d6;
+  --draw: #eb6834;
+  --away: #1baf7a;
+  --seq-hi: #184f95;
+  --notice-bg: #fdf3dc;
+  --notice-border: #f0d595;
+  --notice-text: #5c3f00;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --surface: #1a1a19;
+    --surface-2: #232321;
+    --border: #383835;
+    --text: #ffffff;
+    --text-2: #c3c2b7;
+    --text-3: #9a998f;
+    --home: #3987e5;
+    --draw: #d95926;
+    --away: #199e70;
+    --seq-hi: #5598e7;
+    --notice-bg: #33290f;
+    --notice-border: #5c4a1a;
+    --notice-text: #f5d58a;
+  }
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --surface: #1a1a19;
+  --surface-2: #232321;
+  --border: #383835;
+  --text: #ffffff;
+  --text-2: #c3c2b7;
+  --text-3: #9a998f;
+  --home: #3987e5;
+  --draw: #d95926;
+  --away: #199e70;
+  --seq-hi: #5598e7;
+  --notice-bg: #33290f;
+  --notice-border: #5c4a1a;
+  --notice-text: #f5d58a;
+}
+
+@theme inline {
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-border: var(--border);
+  --color-text: var(--text);
+  --color-text-2: var(--text-2);
+  --color-text-3: var(--text-3);
+  --color-home: var(--home);
+  --color-draw: var(--draw);
+  --color-away: var(--away);
+  --color-notice-bg: var(--notice-bg);
+  --color-notice-border: var(--notice-border);
+  --color-notice-text: var(--notice-text);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: var(--surface);
+  color: var(--text);
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+}
+
+.tabular {
+  font-variant-numeric: tabular-nums;
+}

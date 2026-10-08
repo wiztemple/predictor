@@ -1,0 +1,177 @@
+# Central settings. Code reads these via predictor.config.load_config().
+
+paths:
+  raw_football: data/raw/football
+  processed: data/processed
+  matches: data/processed/matches.parquet
+
+football_data:
+  base_url: "https://www.football-data.co.uk/mmz4281/{season}/{league}.csv"
+  fixtures_url: "https://www.football-data.co.uk/fixtures.csv"
+  leagues:
+    E0: Premier League
+    SP1: La Liga
+    I1: Serie A
+    F1: Ligue 1
+    D1: Bundesliga
+    N1: Eredivisie
+    E1: Championship
+    D2: Bundesliga 2
+    I2: Serie B
+    SP2: La Liga 2
+    F2: Ligue 2
+    SC0: Scottish Premiership
+    B1: Belgian Pro League
+    P1: Primeira Liga
+    T1: Süper Lig
+    G1: Greek Super League
+    ROU: Romanian Superliga
+    AUT: Austrian Bundesliga
+    SWZ: Swiss Super League
+    DNK: Danish Superliga
+    POL: Ekstraklasa
+  # "Extra leagues": one file per league with every season, a different column layout,
+  # and their own short-range fixtures list. Only Aug-May leagues for now; calendar-year
+  # leagues (Norway, Sweden, Brazil, USA, ...) need season handling first.
+  extra_base_url: "https://www.football-data.co.uk/new/{code}.csv"
+  extra_fixtures_url: "https://www.football-data.co.uk/new_league_fixtures.csv"
+  extra_leagues:
+    ROU: {country: Romania, league: Superliga}
+    AUT: {country: Austria, league: Bundesliga}
+    SWZ: {country: Switzerland, league: Super League}   # file also holds Challenge League rows
+    DNK: {country: Denmark, league: Superliga}
+    POL: {country: Poland, league: Ekstraklasa}
+  extra_odds_priority:
+    - [pinnacle_closing, PSCH, PSCD, PSCA]
+    - [avg_closing, AvgCH, AvgCD, AvgCA]
+    - [b365_closing, B365CH, B365CD, B365CA]
+  # Second tier -> the top tier it feeds. Used to tell relegated clubs (strong for the
+  # lower league) from promoted ones (weak) when a team is new to a league.
+  tiers:
+    E1: E0
+    D2: D1
+    I2: I1
+    SP2: SP1
+    F2: F1
+  first_season: "1920"
+  last_season: "2627"     # current, incomplete season
+  request_delay_seconds: 1.5
+  request_timeout_seconds: 30
+  retries: 2
+  user_agent: "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0 Safari/537.36"
+
+  # Same club under an older name -> current name (per league). Checked by hand: the old
+  # name's last match comes before the new name's first, with no overlap.
+  team_renames:
+    ROU:
+      U Craiova: Univ. Craiova              # CS Universitatea Craiova (not "U Craiova 1948", a different club)
+      Din. Bucuresti: Dinamo Bucuresti
+      Viitorul Constanta: Farul Constanta   # 2021 merger; Farul took Viitorul's top-flight place
+    POL:
+      Gornik Z.: Gornik Zabrze
+  # Results that weren't played (awarded/forfeited) - excluded from training and evaluation.
+  excluded_matches:
+    - league: T1
+      season: "2022-23"
+      teams: [Hatayspor, Gaziantep]   # withdrew after the Feb 2023 earthquake; 29 awarded 3-0
+      from: "2023-02-06"
+  # Odds priority: first triple with all three prices present (> 1.0) wins.
+  odds_priority:
+    - [pinnacle_closing, PSCH, PSCD, PSCA]
+    - [avg_closing, AvgCH, AvgCD, AvgCA]
+    - [b365_closing, B365CH, B365CD, B365CA]
+    - [pinnacle_opening, PSH, PSD, PSA]
+    - [avg_opening, AvgH, AvgD, AvgA]
+    - [b365_opening, B365H, B365D, B365A]
+  # Over/under 2.5 goals, same idea: closing first, Pinnacle > market average > Bet365.
+  ou_odds_priority:
+    - [pinnacle_closing, "PC>2.5", "PC<2.5"]
+    - [avg_closing, "AvgC>2.5", "AvgC<2.5"]
+    - [b365_closing, "B365C>2.5", "B365C<2.5"]
+    - [pinnacle_opening, "P>2.5", "P<2.5"]
+    - [avg_opening, "Avg>2.5", "Avg<2.5"]
+    - [b365_opening, "B365>2.5", "B365<2.5"]
+
+# Time-based split. Hyperparameters are tuned ONLY on tune_seasons (walk-forward);
+# test_seasons are reserved for the Step 3 backtest and never used for tuning.
+evaluation:
+  tune_seasons: ["2021-22", "2022-23"]
+  test_seasons: ["2023-24", "2024-25", "2025-26", "2026-27"]
+  # Walk-forward refit cadence: periods of 7 days ending Monday (Tue..Mon),
+  # so a weekend round plus its Monday games share one cutoff.
+  refit_frequency: "W-MON"
+  # Walk-forward predictions start here; seasons before the test period are used
+  # (only) to fit calibrators / blend weights and to pick the production model.
+  oos_from_season: "2020-21"
+  # Pre-test selection: calibrators fitted on oos_from_season..(this - 1), scored on this season.
+  selection_holdout_season: "2022-23"
+
+models:
+  elo:
+    initial_rating: 1500
+    k: 20
+    home_advantage: 90          # Elo points added to the home side (tuned; flat 30-90)
+    new_team_offset: -100       # promoted/new team starts at league mean + offset
+    relegated_offset: 150       # tuned on tune_seasons; club relegated from the league above starts at league mean + this
+    season_regression: 0.0      # share of distance to league mean removed at season start
+    burn_in_days: 365           # ignore this long per league when fitting the draw model
+    scale: 400
+  dixon_coles:
+    half_life_days: 240         # tuned on tune_seasons (grid 60..540)
+    max_history_days: 1100
+    l2_penalty: 3.0             # ridge on attack/defence (identifiability + shrinkage)
+    rho_bounds: [-0.25, 0.25]
+    max_goals: 10
+    new_team_quantile: 0.1      # unseen team gets this quantile of attack (and 1-q of defence weakness)
+    top_scorelines: 5
+  blend:
+    weight_elo: 0.5             # chosen on tune seasons (16 leagues) by scripts/backtest.py (pre-test)
+
+football:
+  season_start_month: 7         # seasons run Aug-Jul; July counts as the new season
+
+fixtures:
+  team_names: team_names.yaml
+  horizon_days: 10                # predict fixtures kicking off within this many days
+  fixturedownload_url: "https://fixturedownload.com/feed/json/{slug}-{year}"
+  fixturedownload_slugs:
+    E0: epl
+    SP1: la-liga
+    I1: serie-a
+    F1: ligue-1
+    D1: bundesliga
+    N1: eredivisie
+    E1: championship
+    F2: ligue-2
+    SC0: scottish-premiership
+    P1: primeira-liga
+    T1: super-lig
+    # D2, I2, SP2, B1, G1: no fixturedownload feed; fixtures come from football-data fixtures.csv
+  football_data_timezone: Europe/London   # fixtures.csv times are UK local time
+  cache_dir: data/raw/fixtures            # last good copy of each schedule feed (fallback on fetch failure)
+
+predictions:
+  output: data/predictions/predictions.json
+  # Pre-registered in the Step 3 backtest (selected on 2022-23, before the test period).
+  primary_model: blend
+  secondary_models: [dixon_coles, elo]
+  grid_max_goals: 6               # scoreline grid shipped to the frontend (0..6 each side)
+  # Goals-market calibrators, refitted by scripts/backtest.py on all out-of-sample predictions.
+  goals_calibration: data/models/goals_calibration.json
+  # Set to "validated" only after the Step 3 backtest and calibration look reasonable.
+  status: preview
+
+tracking:
+  log_dir: data/predictions/log            # append-only JSONL, one file per month
+  live_summary: data/predictions/live_summary.json
+  date_tolerance_days: 1                   # result must be within this many days of the logged kickoff
+  void_after_days: 3                       # unmatched this long after kickoff -> void (postponed)
+
+# Cross-market picks: the single most likely selection per match, top N per (UK) day.
+picks:
+  markets: [1x2, double_chance, ou_1_5, ou_2_5, ou_3_5, btts]
+  per_day: 10
+  summary: data/picks/summary.json         # live record (from the database), read by the site
+  backtest: data/picks/backtest.json       # same rule over the test seasons
+  database_url_env: DATABASE_URL           # Postgres etc.; falls back to a local SQLite file
+  sqlite_fallback: data/picks/picks.db

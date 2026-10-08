@@ -1,0 +1,99 @@
+name: Refresh predictions
+
+# Daily refresh, plus late-morning runs Fri-Sun when kickoff times firm up.
+# Every run appends not-yet-kicked-off predictions to data/predictions/log/ and
+# commits it, so git history is a timestamped record made before each kickoff.
+on:
+  schedule:
+    - cron: "30 5 * * *"
+    - cron: "30 10 * * 5,6,0"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: refresh-predictions
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Install
+        run: |
+          python -m pip install -r requirements.txt
+          python -m pip install -e .
+
+      - name: Tests
+        run: python -m pytest -q
+
+      # Completed seasons never change; cache them so each run only fetches the current season.
+      - name: Cache raw data
+        uses: actions/cache@v4
+        with:
+          path: data/raw
+          key: raw-${{ github.run_id }}
+          restore-keys: raw-
+
+      - name: Refresh data, predict, log, score
+        env:
+          PYTHON: python
+          # Picks are stored in this database (repo secret). Without it, a local SQLite
+          # file is used and committed, which works but isn't the intended setup.
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+        run: scripts/update.sh
+
+      # Extends the backtest with the latest results. The model choice stays the one
+      # fixed in config.yaml; the backtest never re-tunes anything.
+      - name: Weekly backtest refresh (Monday early run)
+        if: github.event_name == 'schedule' && github.event.schedule == '30 5 * * *'
+        run: |
+          if [ "$(date -u +%u)" = "1" ]; then
+            python scripts/backtest.py --refresh && python scripts/backtest_picks.py
+          else echo "not Monday"; fi
+
+      - name: Commit predictions and log
+        run: |
+          git config user.name "predictions-bot"
+          git config user.email "predictions-bot@users.noreply.github.com"
+          git add data/predictions data/backtest/summary.json data/backtest/report.md data/models data/picks
+          if git diff --cached --quiet; then
+            echo "nothing changed"
+          else
+            git commit -m "Refresh predictions $(date -u +%Y-%m-%dT%H:%MZ)"
+            git push
+          fi
+
+  web:
+    # Check the site still builds against the fresh data. Hosting (e.g. Vercel)
+    # rebuilds on the bot's push if the repo is connected.
+    needs: refresh
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: web
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref }}
+      - run: git pull --ff-only
+        working-directory: .
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: pnpm
+          cache-dependency-path: web/pnpm-lock.yaml
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm build

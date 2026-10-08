@@ -1,0 +1,76 @@
+// Betting-style markets built from a match's probabilities. Fair odds = 1 / probability.
+
+export type MarketKey = "1x2" | "o15" | "o25" | "gg" | "cs";
+
+export type BoardMatch = {
+  id: string;
+  league: string;
+  league_name: string;
+  kickoff: string;
+  kickoff_tbc: boolean;
+  home: string;
+  away: string;
+  probabilities: { home: number; draw: number; away: number };
+  over_1_5?: number;
+  over_2_5?: number;
+  btts?: number;
+  scores: { home: number; away: number; p: number }[]; // top 3
+};
+
+export type Cell = { label: string; p: number; pickLabel: string };
+
+export const MARKETS: { key: MarketKey; label: string; short: string }[] = [
+  { key: "1x2", label: "Match result", short: "1X2" },
+  { key: "o15", label: "Over/Under 1.5", short: "O/U 1.5" },
+  { key: "o25", label: "Over/Under 2.5", short: "O/U 2.5" },
+  { key: "gg", label: "Both teams to score", short: "GG/NG" },
+  { key: "cs", label: "Correct score", short: "Score" },
+];
+
+export const fairOdds = (p: number) => (p > 0 ? (1 / p).toFixed(2) : "–");
+
+export function cells(m: BoardMatch, market: MarketKey): Cell[] {
+  const { home, draw, away } = m.probabilities;
+  const ou = (p: number | undefined, line: string): Cell[] =>
+    p === undefined
+      ? []
+      : [
+          { label: "Over", p, pickLabel: `Over ${line}` },
+          { label: "Under", p: 1 - p, pickLabel: `Under ${line}` },
+        ];
+  switch (market) {
+    case "1x2":
+      return [
+        { label: "1", p: home, pickLabel: `${m.home} win` },
+        { label: "X", p: draw, pickLabel: "Draw" },
+        { label: "2", p: away, pickLabel: `${m.away} win` },
+      ];
+    case "o15":
+      return ou(m.over_1_5, "1.5");
+    case "o25":
+      return ou(m.over_2_5, "2.5");
+    case "gg":
+      return m.btts === undefined
+        ? []
+        : [
+            { label: "GG", p: m.btts, pickLabel: "Both teams score" },
+            { label: "NG", p: 1 - m.btts, pickLabel: "Not both score" },
+          ];
+    case "cs":
+      return m.scores.map((s) => ({ label: `${s.home}-${s.away}`, p: s.p, pickLabel: `Score ${s.home}-${s.away}` }));
+  }
+}
+
+/** The single most likely option in a market for one match. */
+export function bestCell(m: BoardMatch, market: MarketKey): Cell | null {
+  const cs = cells(m, market);
+  return cs.length ? cs.reduce((a, b) => (b.p > a.p ? b : a)) : null;
+}
+
+/** Confidence wording bettors can scan; thresholds are on the probability itself. */
+export function confidence(p: number): { label: string; level: 0 | 1 | 2 | 3 } {
+  if (p >= 0.8) return { label: "Very likely", level: 3 };
+  if (p >= 0.65) return { label: "Likely", level: 2 };
+  if (p >= 0.5) return { label: "Lean", level: 1 };
+  return { label: "Open", level: 0 };
+}
