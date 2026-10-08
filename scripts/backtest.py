@@ -219,12 +219,34 @@ def goals_section(t, test, matches, ev, test_seasons, holdout, out_dir, say) -> 
 def ah_section(test: pd.DataFrame, prob_cols: list[str], say) -> dict:
     """Asian handicap at each match's main line: predicted vs actual win/push/lose (home side),
     plus average profit per unit staked at our own fair odds (0 = perfectly calibrated)."""
-    rows = []
+    rows, bench = [], []
     for (_, r), (ph, pd_, pa) in zip(test.iterrows(), test[prob_cols].to_numpy()):
         mp = r.get("dc_margin_probs")
         if mp is None or (isinstance(mp, float) and np.isnan(mp)):
             continue
         m = rescale_margins(np.asarray(mp, float), ph, pd_, pa)
+        # --- benchmark at the bookmaker's closing line ---
+        if pd.notna(r.get("ah_line")) and pd.notna(r.get("odds_ah_home")):
+            lb, oh, oa = float(r["ah_line"]), float(r["odds_ah_home"]), float(r["odds_ah_away"])
+            w_, _, l_ = home_outcome(m, lb)
+            act = np.zeros(2 * MARGIN_CAP + 1)
+            act[int(np.clip(r["home_score"] - r["away_score"], -MARGIN_CAP, MARGIN_CAP)) + MARGIN_CAP] = 1
+            aw_, _, al_ = home_outcome(act, lb)
+            if w_ + l_ > 0:
+                ours = w_ / (w_ + l_)                        # chance home wins, given no push
+                mkt = (1 / oh) / (1 / oh + 1 / oa)          # same, from the bookmaker (margin removed)
+                o_h, o_a = fair_odds(w_, l_), fair_odds(l_, w_)
+                bet = None
+                if oh > o_h:
+                    bet = ("home", oh, aw_, al_, oh / o_h - 1)
+                elif oa > o_a:
+                    bet = ("away", oa, al_, aw_, oa / o_a - 1)
+                bench.append({"cutoff": r["cutoff"], "source": r["ah_source"], "ours": ours, "mkt": mkt,
+                              "dw": aw_ + al_, "y": aw_ / (aw_ + al_) if aw_ + al_ > 0 else np.nan,
+                              "bet_odds": bet[1] if bet else np.nan,
+                              "bet_profit": (bet[2] * (bet[1] - 1) - bet[3]) if bet else np.nan,
+                              "bet_stake_decided": (bet[2] + bet[3]) if bet else np.nan,
+                              "edge": bet[4] if bet else np.nan})
         line = main_line(m)
         w, p, l = home_outcome(m, line)
         actual = np.zeros(2 * MARGIN_CAP + 1)
@@ -249,17 +271,62 @@ def ah_section(test: pd.DataFrame, prob_cols: list[str], say) -> dict:
                  "profit_at_fair": float(g["profit_at_fair"].mean())}
         for k, g in df.groupby(bands, observed=True)
     }
+    out["vs_bookmaker"] = _ah_benchmark(pd.DataFrame(bench))
     say("\n## 5. Asian handicap (main line), test period\n")
     say(f"{out['n_matches']} matches. Home side, stake-weighted: predicted win/push/lose "
         f"{out['predicted']['win']:.1%} / {out['predicted']['push']:.1%} / {out['predicted']['lose']:.1%}, actual "
         f"{out['actual']['win']:.1%} / {out['actual']['push']:.1%} / {out['actual']['lose']:.1%}.")
     say(f"Average profit per unit at our own fair odds: {out['profit_at_fair']:+.3f} (0 = calibrated; "
-        "negative = we were too optimistic). No bookmaker AH benchmark yet.\n")
+        "negative = we were too optimistic).\n")
     say("| our chance | bets | avg chance | won | push | lost | profit at fair odds |")
     say("|---|---|---|---|---|---|---|")
     for k, v in out["by_chance"].items():
         say(f"| {k} | {v['n']} | {v['chance']:.1%} | {v['won']:.1%} | {v['push']:.1%} | {v['lost']:.1%} | {v['profit_at_fair']:+.3f} |")
+    vb = out["vs_bookmaker"]
+    say(f"\nAgainst bookmaker closing AH odds, at the bookmaker's own line ({vb['n']} matches, pushes excluded). "
+        "Log loss, lower is better:\n")
+    say("| odds source | n | ours | bookmaker | gap |")
+    say("|---|---|---|---|---|")
+    for k, v in vb["by_source"].items():
+        say(f"| {k} | {v['n']} | {v['ours']:.4f} | {v['bookmaker']:.4f} | {v['ours'] - v['bookmaker']:+.4f} |")
+    g = vb["gap"]
+    say(f"| ALL | {vb['n']} | {vb['ours']:.4f} | {vb['bookmaker']:.4f} | {g['mean']:+.4f} [{g['ci_low']:+.4f}, {g['ci_high']:+.4f}] |")
+    for k, v in vb["value_bets"].items():
+        say(f"\nBacking our side whenever our fair odds beat the closing price ({k}): {v['n']} bets, "
+            f"avg odds {v['avg_odds']:.2f}, profit {v['profit_units']:+.1f} units, ROI {v['roi']:+.1%}")
     return out
+
+
+def _ah_benchmark(b: pd.DataFrame) -> dict:
+    """Pushes-excluded log loss of our vs the bookmaker's AH chance at the bookmaker's line,
+    a week-clustered CI on the gap, and what backing our 'value' sides at closing odds returned."""
+    b = b[b["dw"] > 0].copy()
+    eps = 1e-12
+
+    def ll(c, d):
+        c = np.clip(c, eps, 1 - eps)
+        return -d["dw"] * (d["y"] * np.log(c) + (1 - d["y"]) * np.log(1 - c))
+
+    b["ll_ours"], b["ll_mkt"] = ll(b["ours"], b), ll(b["mkt"], b)
+    res = {"n": int(len(b)), "ours": float(b["ll_ours"].sum() / b["dw"].sum()),
+           "bookmaker": float(b["ll_mkt"].sum() / b["dw"].sum())}
+    g = b.groupby("cutoff")[["ll_ours", "ll_mkt", "dw"]].sum()
+    rng = np.random.default_rng(0)
+    idx = rng.integers(0, len(g), size=(2000, len(g)))
+    diff = (g["ll_ours"].to_numpy()[idx].sum(1) - g["ll_mkt"].to_numpy()[idx].sum(1)) / g["dw"].to_numpy()[idx].sum(1)
+    res["gap"] = {"mean": res["ours"] - res["bookmaker"], "ci_low": float(np.percentile(diff, 2.5)),
+                  "ci_high": float(np.percentile(diff, 97.5))}
+    res["by_source"] = {str(s): {"n": int(len(d)), "ours": float(d["ll_ours"].sum() / d["dw"].sum()),
+                                 "bookmaker": float(d["ll_mkt"].sum() / d["dw"].sum())}
+                        for s, d in b.groupby("source")}
+    bets = b.dropna(subset=["bet_odds"])
+    res["value_bets"] = {}
+    for label, sel in (("any edge", bets), ("edge 5%+", bets[bets["edge"] >= 0.05])):
+        if len(sel):
+            res["value_bets"][label] = {"n": int(len(sel)), "avg_odds": float(sel["bet_odds"].mean()),
+                                        "profit_units": float(sel["bet_profit"].sum()),
+                                        "roi": float(sel["bet_profit"].sum() / len(sel))}
+    return res
 
 
 def _binary_ll(p: np.ndarray, y: np.ndarray) -> np.ndarray:

@@ -237,7 +237,7 @@ function Backtest({ bt, leagueName }: { bt: BacktestSummary; leagueName: Map<str
             <tbody>
               {(["predicted", "actual"] as const).map((k) => (
                 <tr key={k} className="border-t border-border">
-                  <td className="py-1.5 capitalize">{k === "predicted" ? "We predicted" : "Happened"}</td>
+                  <td className="py-1.5">{k === "predicted" ? "We predicted" : "Happened"}</td>
                   <td className="py-1.5 text-right">{pct(bt.asian_handicap![k].win)}</td>
                   <td className="py-1.5 text-right">{pct(bt.asian_handicap![k].push)}</td>
                   <td className="py-1.5 text-right">{pct(bt.asian_handicap![k].lose)}</td>
@@ -248,9 +248,36 @@ function Backtest({ bt, leagueName }: { bt: BacktestSummary; leagueName: Map<str
           <p className="mt-2 max-w-2xl text-xs text-text-3">
             Over {bt.asian_handicap.n_matches.toLocaleString("en-GB")} matches, betting every main line at our own fair
             odds would have returned {signed(bt.asian_handicap.profit_at_fair)} per unit: the chances are well
-            calibrated. That isn&apos;t a profit claim, because bookmakers&apos; prices include their margin, and we
-            haven&apos;t compared against bookmaker handicap odds yet.
+            calibrated.
           </p>
+          {bt.asian_handicap.vs_bookmaker ? (
+            <div className="mt-4 max-w-2xl rounded-xl border border-border p-4 text-sm">
+              <div className="font-semibold">Against the bookmakers&apos; closing handicap prices</div>
+              <p className="mt-1 text-text-2">
+                At each bookmaker&apos;s own closing line ({bt.asian_handicap.vs_bookmaker.n.toLocaleString("en-GB")}{" "}
+                matches, pushes excluded) their prices were more accurate than ours: log loss{" "}
+                {bt.asian_handicap.vs_bookmaker.bookmaker.toFixed(3)} against our{" "}
+                {bt.asian_handicap.vs_bookmaker.ours.toFixed(3)} (lower is better; gap{" "}
+                {signed(bt.asian_handicap.vs_bookmaker.gap.mean)}, 95% interval{" "}
+                {signed(bt.asian_handicap.vs_bookmaker.gap.ci_low)} to {signed(bt.asian_handicap.vs_bookmaker.gap.ci_high)}).
+              </p>
+              {Object.entries(bt.asian_handicap.vs_bookmaker.value_bets).map(([k, v]) => (
+                <p key={k} className="mt-2 text-text-2">
+                  Backing our side whenever our fair odds beat their price ({k}):{" "}
+                  <strong className="text-text">
+                    {v.n.toLocaleString("en-GB")} bets, {v.profit_units >= 0 ? "+" : "−"}
+                    {Math.abs(v.profit_units).toFixed(0)} units, ROI {v.roi >= 0 ? "+" : "−"}
+                    {Math.abs(v.roi * 100).toFixed(1)}%
+                  </strong>
+                  .
+                </p>
+              ))}
+              <p className="mt-2 text-xs text-text-3">
+                In other words, when our handicap odds look better than the bookmaker&apos;s, it&apos;s usually our
+                model that&apos;s wrong. Use our numbers as a guide, not as a source of value bets.
+              </p>
+            </div>
+          ) : null}
         </section>
       ) : null}
 

@@ -186,7 +186,7 @@ Production calibrators ({'over_1_5': 'platt', 'over_2_5': 'platt', 'over_3_5': '
 ## 5. Asian handicap (main line), test period
 
 21481 matches. Home side, stake-weighted: predicted win/push/lose 43.2% / 13.7% / 43.1%, actual 43.2% / 14.3% / 42.5%.
-Average profit per unit at our own fair odds: -0.001 (0 = calibrated; negative = we were too optimistic). No bookmaker AH benchmark yet.
+Average profit per unit at our own fair odds: -0.001 (0 = calibrated; negative = we were too optimistic).
 
 | our chance | bets | avg chance | won | push | lost | profit at fair odds |
 |---|---|---|---|---|---|---|
@@ -194,3 +194,16 @@ Average profit per unit at our own fair odds: -0.001 (0 = calibrated; negative =
 | 45-50% | 21382 | 48.1% | 40.6% | 14.2% | 45.2% | -0.013 |
 | 50-55% | 21382 | 51.9% | 45.2% | 14.2% | 40.6% | +0.011 |
 | 55-60% | 99 | 55.3% | 41.9% | 29.8% | 28.3% | +0.055 |
+
+Against bookmaker closing AH odds, at the bookmaker's own line (16283 matches, pushes excluded). Log loss, lower is better:
+
+| odds source | n | ours | bookmaker | gap |
+|---|---|---|---|---|
+| avg_closing | 3777 | 0.7105 | 0.6923 | +0.0182 |
+| b365_closing | 1 | 1.0260 | 0.6545 | +0.3715 |
+| pinnacle_closing | 12505 | 0.7107 | 0.6922 | +0.0184 |
+| ALL | 16283 | 0.7107 | 0.6922 | +0.0184 [+0.0157, +0.0212] |
+
+Backing our side whenever our fair odds beat the closing price (any edge): 13548 bets, avg odds 1.95, profit -480.3 units, ROI -3.5%
+
+Backing our side whenever our fair odds beat the closing price (edge 5%+): 9798 bets, avg odds 1.95, profit -407.0 units, ROI -4.2%

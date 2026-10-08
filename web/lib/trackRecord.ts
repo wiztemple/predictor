@@ -38,6 +38,13 @@ export type BacktestSummary = {
     predicted: { win: number; push: number; lose: number };
     actual: { win: number; push: number; lose: number };
     profit_at_fair: number;
+    vs_bookmaker?: {
+      n: number;
+      ours: number;
+      bookmaker: number;
+      gap: { mean: number; ci_low: number; ci_high: number };
+      value_bets: Record<string, { n: number; avg_odds: number; profit_units: number; roi: number }>;
+    };
   };
 };
 

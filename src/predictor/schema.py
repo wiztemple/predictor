@@ -25,7 +25,8 @@ MATCH_COLUMNS = [
 
 # Optional columns a loader may add after the required ones.
 # (odds_over/under_2_5 are football-specific goals-market odds.)
-OPTIONAL_COLUMNS = ["odds_source", "odds_over_2_5", "odds_under_2_5", "ou_source"]
+OPTIONAL_COLUMNS = ["odds_source", "odds_over_2_5", "odds_under_2_5", "ou_source",
+                    "ah_line", "odds_ah_home", "odds_ah_away", "ah_source"]
 
 OUTCOMES = ("H", "D", "A")
 

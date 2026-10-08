@@ -83,6 +83,11 @@ football_data:
     - [pinnacle_opening, PSH, PSD, PSA]
     - [avg_opening, AvgH, AvgD, AvgA]
     - [b365_opening, B365H, B365D, B365A]
+  # Asian handicap at the market's closing line (AHCh), same idea.
+  ah_odds_priority:
+    - [pinnacle_closing, PCAHH, PCAHA]
+    - [avg_closing, AvgCAHH, AvgCAHA]
+    - [b365_closing, B365CAHH, B365CAHA]
   # Over/under 2.5 goals, same idea: closing first, Pinnacle > market average > Bet365.
   ou_odds_priority:
     - [pinnacle_closing, "PC>2.5", "PC<2.5"]

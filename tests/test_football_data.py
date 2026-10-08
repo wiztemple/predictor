@@ -147,3 +147,15 @@ def test_apply_renames_is_per_league():
     out = apply_renames(df, {"POL": {"Gornik Z.": "Gornik Zabrze"}})
     assert list(out["home"]) == ["Gornik Zabrze", "Gornik Z."]
     assert out.loc[1, "away"] == "Gornik Z."
+
+
+def test_select_ah_odds_pairs_line_with_odds():
+    from predictor.loaders.football_data import select_ah_odds
+
+    raw = pd.DataFrame({"AHCh": ["-0.75", "", "0.25"], "PCAHH": ["1.95", "1.9", ""], "PCAHA": ["1.95", "2.0", ""],
+                        "AvgCAHH": ["1.9", "1.8", "2.1"], "AvgCAHA": ["1.9", "2.0", "1.75"]})
+    pr = [["pinnacle_closing", "PCAHH", "PCAHA"], ["avg_closing", "AvgCAHH", "AvgCAHA"]]
+    out = select_ah_odds(raw, pr)
+    assert out.loc[0, "ah_line"] == -0.75 and out.loc[0, "ah_source"] == "pinnacle_closing"
+    assert pd.isna(out.loc[1, "ah_line"]) and pd.isna(out.loc[1, "odds_ah_home"])  # odds without a line dropped
+    assert out.loc[2, "ah_source"] == "avg_closing" and out.loc[2, "odds_ah_away"] == 1.75
