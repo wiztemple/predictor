@@ -197,10 +197,7 @@ export function MatchBoard({ matches, leagues, track }: Props) {
         {shown.length === 0 ? <p className="text-text-3">No matches for this filter.</p> : null}
         {[...byDay.entries()].map(([d, groups]) => (
           <section key={d}>
-            <h2 className="flex items-center gap-2 text-sm font-bold uppercase tracking-wide text-text-2">
-              <span aria-hidden className="h-4 w-1 rounded-full bg-brand" />
-              {d}
-            </h2>
+            <h2 className="text-sm font-bold uppercase tracking-wide text-text-2">{d}</h2>
             <div className="mt-2 space-y-4">
               {[...groups.entries()]
                 .sort((a, b) => (order.get(a[0]) ?? 999) - (order.get(b[0]) ?? 999))
