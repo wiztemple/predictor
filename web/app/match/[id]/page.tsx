@@ -27,7 +27,7 @@ function Market({ title, options, note }: { title: string; options: Opt[]; note?
   if (!options.length) return null;
   const best = options.reduce((a, b) => (b.p > a.p ? b : a)).label;
   return (
-    <div className="rounded-xl border border-border bg-surface p-3 shadow-sm">
+    <div className="rounded-xl border border-border bg-surface p-3">
       <div className="mb-2 flex items-baseline justify-between gap-2">
         <h3 className="text-sm font-semibold">{title}</h3>
         {note ? <span className="text-[11px] text-text-3">{note}</span> : null}
@@ -47,7 +47,7 @@ function Market({ title, options, note }: { title: string; options: Opt[]; note?
 
 function PickCard({ market, pick, p }: { market: string; pick: string; p: number }) {
   return (
-    <div className="rounded-xl border border-border bg-surface p-3 shadow-sm">
+    <div className="rounded-xl border border-border bg-surface p-3">
       <div className="text-xs font-medium text-text-3">{market}</div>
       <div className="mt-0.5 truncate font-bold">{pick}</div>
       <div className="mt-2 flex items-end justify-between gap-2">
@@ -294,7 +294,7 @@ export default async function MatchPage({ params }: PageProps<"/match/[id]">) {
       ) : null}
 
       {/* details */}
-      <details className="rounded-xl border border-border bg-surface p-4 text-sm shadow-sm">
+      <details className="rounded-xl border border-border bg-surface p-4 text-sm">
         <summary className="cursor-pointer font-medium">How we got these numbers</summary>
         <div className="mt-3 space-y-3 text-text-2">
           <p>

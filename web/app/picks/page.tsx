@@ -22,7 +22,7 @@ function Tile({ label, value, note }: { label: string; value: string; note?: str
 const STATE = {
   won: { icon: "✓", label: "Won", cls: "bg-[#0ca30c] text-white" },
   lost: { icon: "✗", label: "Lost", cls: "bg-[#d03b3b] text-white" },
-  void: { icon: "–", label: "Void", cls: "bg-surface-2 text-text-3" },
+  void: { icon: "–", label: "Void", cls: "bg-surface text-text-3 ring-1 ring-border" },
 } as const;
 
 export default async function PicksPage() {
@@ -64,7 +64,7 @@ export default async function PicksPage() {
 
             <div className="mt-5 flex flex-wrap gap-2">
               {live!.days.map((d) => (
-                <span key={d.day} className="rounded-lg bg-surface-2 px-2.5 py-1.5 text-xs tabular">
+                <span key={d.day} className="rounded-lg border border-border px-2.5 py-1.5 text-xs tabular">
                   <span className="text-text-3">{formatShortDay(d.day)}</span>{" "}
                   <span className={d.won === d.n ? "font-bold text-[#0ca30c]" : "font-semibold"}>
                     {d.won}/{d.n}

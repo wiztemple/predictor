@@ -31,10 +31,10 @@ export function TeamBadge({ name, size = "sm" }: { name: string; size?: "sm" | "
 }
 
 const TONE = {
-  3: "bg-conf-3/15 text-conf-3 ring-conf-3/30",
-  2: "bg-conf-2/15 text-conf-2 ring-conf-2/30",
-  1: "bg-conf-1/15 text-conf-1 ring-conf-1/30",
-  0: "bg-surface-2 text-text-3 ring-border",
+  3: "bg-surface text-conf-3 ring-conf-3/40",
+  2: "bg-surface text-conf-2 ring-conf-2/40",
+  1: "bg-surface text-conf-1 ring-conf-1/40",
+  0: "bg-surface text-text-3 ring-border",
 } as const;
 const BAR = { 3: "bg-conf-3", 2: "bg-conf-2", 1: "bg-conf-1", 0: "bg-text-3" } as const;
 
@@ -52,7 +52,7 @@ export function ConfidenceBadge({ p }: { p: number }) {
 export function ConfidenceBar({ p, className = "" }: { p: number; className?: string }) {
   const c = confidence(p);
   return (
-    <span aria-hidden className={`block h-1.5 overflow-hidden rounded-full bg-surface-2 ${className}`}>
+    <span aria-hidden className={`block h-1.5 overflow-hidden rounded-full bg-border ${className}`}>
       <span className={`block h-full rounded-full ${BAR[c.level]}`} style={{ width: `${Math.round(p * 100)}%` }} />
     </span>
   );

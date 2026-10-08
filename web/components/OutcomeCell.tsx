@@ -6,7 +6,7 @@ export function OutcomeCell({ label, p, best }: { label: string; p: number; best
   return (
     <div
       className={`flex flex-col items-center justify-center rounded-md px-1 py-1.5 tabular ${
-        best ? "bg-win/12 ring-2 ring-win" : "bg-surface-2"
+        best ? "bg-surface ring-2 ring-win" : "bg-surface ring-1 ring-border"
       }`}
     >
       <span className={`text-[11px] font-semibold ${best ? "text-win" : "text-text-3"}`}>{label}</span>

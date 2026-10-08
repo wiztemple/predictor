@@ -36,7 +36,7 @@ export function PicksPanel({ picks, record, compact = false, heading = true }: P
 
   if (!picks.length) return null;
   return (
-    <section className="rounded-2xl border-2 border-accent/50 bg-surface">
+    <section className="rounded-2xl border border-border bg-surface">
       <div className="p-4 sm:p-5">
       {heading ? (
         <>
@@ -64,7 +64,7 @@ export function PicksPanel({ picks, record, compact = false, heading = true }: P
             aria-pressed={day === d}
             className={`shrink-0 rounded-full border px-3 py-1.5 text-sm font-medium whitespace-nowrap transition-colors ${
               day === d
-                ? "bg-text border-transparent text-page shadow-sm"
+                ? "border-text bg-surface text-text font-semibold"
                 : "border-border text-text-2 hover:border-accent hover:text-accent"
             }`}
           >
@@ -78,7 +78,7 @@ export function PicksPanel({ picks, record, compact = false, heading = true }: P
           <li key={p.id} className="min-w-0">
             <Link
               href={`/match/${p.id}`}
-              className="flex min-w-0 items-center gap-3 rounded-xl border border-border bg-surface-2/60 px-3 py-2.5 transition hover:-translate-y-0.5 hover:border-accent hover:shadow-md"
+              className="flex min-w-0 items-center gap-3 rounded-xl border border-border bg-surface px-3 py-2.5 transition hover:-translate-y-0.5 hover:border-accent"
             >
               <span
                 className="flex size-7 shrink-0 items-center justify-center rounded-full text-sm font-extrabold tabular"

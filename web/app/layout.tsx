@@ -25,7 +25,7 @@ export default async function RootLayout({ children }: LayoutProps<"/">) {
         <header className="border-b border-border bg-surface text-text">
           <nav className="mx-auto flex max-w-5xl flex-col gap-2 px-4 py-3 text-sm sm:flex-row sm:items-center">
             <Link href="/" className="mr-3 flex items-center gap-2 text-base font-extrabold tracking-tight">
-              <svg aria-hidden viewBox="0 0 24 24" className="size-7 drop-shadow">
+              <svg aria-hidden viewBox="0 0 24 24" className="size-7">
                 <circle cx="12" cy="12" r="11" fill="var(--text)" />
                 <path
                   fill="var(--surface)"

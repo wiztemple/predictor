@@ -10,8 +10,8 @@
   color-scheme: light;
   --page: #ffffff;
   --surface: #ffffff;
-  --surface-2: #f1f3f6;
-  --border: #e2e6eb;
+  --surface-2: #ffffff;
+  --border: #e5e7eb;
   --text: #0f172a;
   --text-2: #475569;
   --text-3: #64748b;
@@ -25,9 +25,9 @@
   --draw: #eb6834;
   --away: #1baf7a;
   --seq-hi: #184f95;
-  --notice-bg: #fff4e0;
-  --notice-border: #f5d19a;
-  --notice-text: #6b3d00;
+  --notice-bg: #ffffff;
+  --notice-border: #e5e7eb;
+  --notice-text: #92400e;
 }
 
 @theme inline {

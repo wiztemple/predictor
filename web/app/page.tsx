@@ -40,7 +40,7 @@ export default async function Home() {
                 ? [`${Math.round(pbt.top_per_day.hit_rate * 100)}% of our top picks won in testing`]
                 : []),
             ].map((t) => (
-              <span key={t} className="rounded-full bg-surface-2 px-3 py-1 font-semibold text-text-2 ring-1 ring-border">
+              <span key={t} className="rounded-full px-3 py-1 font-semibold text-text-2 ring-1 ring-border">
                 {t}
               </span>
             ))}

@@ -6,13 +6,13 @@ import { fairOdds } from "@/lib/markets";
 import { type PickState, type WeeklyBacktest, type WeeklyList, type WeeklyListSummary, MARKET_NAMES } from "@/lib/picksRecord";
 
 const STATE: Record<PickState, { text: string; pill: string; seg: string }> = {
-  pending: { text: "To play", pill: "bg-surface-2 text-text-2 ring-border", seg: "bg-border" },
-  won: { text: "Won ✓", pill: "bg-win/12 text-win ring-win/30", seg: "bg-win" },
-  half_won: { text: "½ won", pill: "bg-win/12 text-win ring-win/30", seg: "bg-win/60" },
-  push: { text: "Push", pill: "bg-surface-2 text-text-2 ring-border", seg: "bg-text-3/50" },
-  half_lost: { text: "½ lost", pill: "bg-[#d03b3b]/10 text-[#b42323] ring-[#d03b3b]/30", seg: "bg-[#d03b3b]/60" },
-  lost: { text: "Lost ✗", pill: "bg-[#d03b3b]/10 text-[#b42323] ring-[#d03b3b]/30", seg: "bg-[#d03b3b]" },
-  void: { text: "Void", pill: "bg-surface-2 text-text-3 ring-border", seg: "bg-text-3/30" },
+  pending: { text: "To play", pill: "bg-surface text-text-2 ring-border", seg: "bg-border" },
+  won: { text: "Won ✓", pill: "bg-surface text-win ring-win/40", seg: "bg-win" },
+  half_won: { text: "½ won", pill: "bg-surface text-win ring-win/40", seg: "bg-win/60" },
+  push: { text: "Push", pill: "bg-surface text-text-2 ring-border", seg: "bg-text-3/50" },
+  half_lost: { text: "½ lost", pill: "bg-surface text-[#b42323] ring-[#d03b3b]/40", seg: "bg-[#d03b3b]/60" },
+  lost: { text: "Lost ✗", pill: "bg-surface text-[#b42323] ring-[#d03b3b]/40", seg: "bg-[#d03b3b]" },
+  void: { text: "Void", pill: "bg-surface text-text-3 ring-border", seg: "bg-text-3/30" },
 };
 
 const weekLabel = (w: WeeklyList) => `${formatShortDay(w.week_start)} – ${formatShortDay(w.week_end)}`;
@@ -112,7 +112,7 @@ function Backtest({ b }: { b: WeeklyBacktest }) {
           .map(([won, count]) => (
             <div key={won} className="flex items-center gap-3 text-sm tabular">
               <span className="w-12 shrink-0 text-text-2">{won}/10</span>
-              <span className="h-3 flex-1 rounded-full bg-surface-2">
+              <span className="h-3 flex-1 rounded-full bg-border">
                 <span className="block h-3 rounded-full bg-win" style={{ width: `${(count / maxCount) * 100}%` }} />
               </span>
               <span className="w-20 shrink-0 text-right text-text-2">
@@ -172,7 +172,7 @@ export function WeeklyView({
             href={l.key === "safe" ? "/weekly" : `/weekly/${l.key}`}
             aria-current={l.key === active ? "page" : undefined}
             className={`shrink-0 rounded-full border px-3 py-1.5 text-sm font-medium whitespace-nowrap transition-colors ${
-              l.key === active ? "border-transparent bg-text text-page" : "border-border text-text-2 hover:border-accent hover:text-accent"
+              l.key === active ? "border-text bg-surface font-semibold text-text" : "border-border text-text-2 hover:border-accent hover:text-accent"
             }`}
           >
             {l.label}

@@ -17,7 +17,7 @@ type Props = { matches: BoardMatch[]; leagues: { code: string; name: string }[];
 const chip = (active: boolean) =>
   `shrink-0 rounded-full border px-3 py-1.5 text-sm font-medium whitespace-nowrap transition-colors ${
     active
-      ? "bg-text border-transparent text-page shadow-sm"
+      ? "border-text bg-surface text-text font-semibold"
       : "border-border bg-surface text-text-2 hover:border-accent hover:text-accent"
   }`;
 
@@ -85,7 +85,7 @@ export function MatchBoard({ matches, leagues, track }: Props) {
     <div>
       {/* controls */}
       <div className="z-10 -mx-4 border-b border-border bg-page/90 px-4 pt-3 pb-3 backdrop-blur sm:sticky sm:top-0">
-        <div role="tablist" aria-label="Market" className="flex gap-1 overflow-x-auto rounded-xl border border-border bg-surface p-1 shadow-sm">
+        <div role="tablist" aria-label="Market" className="flex gap-1 overflow-x-auto rounded-xl border border-border bg-surface p-1">
           {MARKETS.map((mk) => (
             <button
               key={mk.key}
@@ -93,7 +93,7 @@ export function MatchBoard({ matches, leagues, track }: Props) {
               aria-selected={market === mk.key}
               onClick={() => setMarket(mk.key)}
               className={`flex-1 shrink-0 rounded-lg px-3 py-2 text-sm font-semibold whitespace-nowrap transition-colors ${
-                market === mk.key ? "bg-text text-page shadow" : "text-text-2 hover:bg-surface-2 hover:text-text"
+                market === mk.key ? "bg-surface text-text ring-1 ring-text" : "text-text-2 hover:text-text"
               }`}
             >
               {mk.short}
@@ -160,7 +160,7 @@ export function MatchBoard({ matches, leagues, track }: Props) {
                 <li key={m.id} className="w-60 shrink-0 snap-start">
                   <Link
                     href={`/match/${m.id}`}
-                    className="flex h-full flex-col rounded-xl border border-border bg-surface p-3 shadow-sm transition hover:-translate-y-0.5 hover:border-accent hover:shadow-md"
+                    className="flex h-full flex-col rounded-xl border border-border bg-surface p-3 transition hover:-translate-y-0.5 hover:border-accent"
                   >
                     <div className="flex items-center justify-between text-xs text-text-3">
                       <span className="truncate">
@@ -204,8 +204,8 @@ export function MatchBoard({ matches, leagues, track }: Props) {
               {[...groups.entries()]
                 .sort((a, b) => (order.get(a[0]) ?? 999) - (order.get(b[0]) ?? 999))
                 .map(([code, list]) => (
-                  <div key={code} className="overflow-hidden rounded-xl border border-border bg-surface shadow-sm">
-                    <div className="flex items-center justify-between bg-surface-2 px-3 py-2 text-xs">
+                  <div key={code} className="overflow-hidden rounded-xl border border-border bg-surface">
+                    <div className="flex items-center justify-between border-b border-border px-3 py-2 text-xs">
                       <span className="flex items-center gap-2 font-bold text-text">
                         <LeagueDot color={leagueColor(code)} />
                         {list[0].league_name}
