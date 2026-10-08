@@ -10,6 +10,7 @@ const FILES = [
   "backtest/summary.json",
   "picks/summary.json",
   "picks/backtest.json",
+  "picks/weekly.json",
 ];
 
 const src = join(process.cwd(), "..", "data");

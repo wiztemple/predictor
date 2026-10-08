@@ -12,7 +12,7 @@ import sys
 import pandas as pd
 
 from predictor.config import load_config, project_path
-from predictor.store import connect, database_url, settle, summary
+from predictor.store import connect, database_url, settle, settle_weekly, summary, weekly_summary
 
 
 def main() -> int:
@@ -22,6 +22,10 @@ def main() -> int:
     matches = pd.read_parquet(project_path(cfg["paths"]["matches"]))
     counts = settle(engine, matches, pd.Timestamp.now(tz="UTC").to_pydatetime(),
                     tr["date_tolerance_days"], tr["void_after_days"])
+    weekly_counts = settle_weekly(engine, matches, pd.Timestamp.now(tz="UTC").to_pydatetime(),
+                                  tr["date_tolerance_days"], tr["void_after_days"])
+    project_path(pc["weekly"]).write_text(json.dumps(weekly_summary(engine), indent=1, default=float))
+    print(f"weekly top {pc['per_week']}: newly settled {weekly_counts} -> {pc['weekly']}")
     s = summary(engine, pc["per_day"])
     out = project_path(pc["summary"])
     out.parent.mkdir(parents=True, exist_ok=True)

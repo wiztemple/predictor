@@ -176,6 +176,8 @@ tracking:
 picks:
   markets: [1x2, double_chance, ou_1_5, ou_2_5, ou_3_5, btts]
   per_day: 10
+  per_week: 10                             # weekly top 10 (Tue-Mon), locked at the first run of the week
+  weekly: data/picks/weekly.json           # weekly lists + results, read by the site
   summary: data/picks/summary.json         # live record (from the database), read by the site
   backtest: data/picks/backtest.json       # same rule over the test seasons
   database_url_env: DATABASE_URL           # Postgres etc.; falls back to a local SQLite file

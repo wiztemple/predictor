@@ -32,7 +32,7 @@ from predictor.fixtures import (
 )
 from predictor.models import get_model
 from predictor.teams import TeamNameMapper
-from predictor.store import connect, database_url, log_picks
+from predictor.store import connect, database_url, lock_weekly, log_picks
 from predictor.tracking import log_predictions
 
 log = logging.getLogger("predict_fixtures")
@@ -128,6 +128,9 @@ def main() -> int:
         engine = connect(database_url(cfg["picks"], project_path(".")))
         added, same = log_picks(engine, doc, cfg["picks"]["markets"], now.to_pydatetime())
         log.info("picks database (%s): %d new picks, %d unchanged", engine.url.get_backend_name(), added, same)
+        locked = lock_weekly(engine, doc, cfg["picks"]["markets"], now.to_pydatetime(), cfg["picks"]["per_week"])
+        if locked:
+            log.info("weekly top %d locked for this week (%d picks)", cfg["picks"]["per_week"], locked)
 
     print(f"\n{len(doc['predictions'])} predictions -> {args.output}  (data through {doc['data_through']}, status={doc['status']})")
     if len(good):

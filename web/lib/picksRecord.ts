@@ -44,6 +44,7 @@ export type PicksBacktest = {
   top_by_band: Record<string, Stats>;
   days: number;
   days_all_won: number;
+  weekly?: WeeklyBacktest;
 };
 
 const DIR = path.join(/*turbopackIgnore: true*/ process.cwd(), "data", "picks");
@@ -67,3 +68,44 @@ export const MARKET_NAMES: Record<string, string> = {
   ou_3_5: "Over/Under 3.5",
   btts: "Both teams to score",
 };
+
+/** Weekly top 10 (Tue-Mon, locked once), exported from the picks database by scripts/settle_picks.py. */
+export type WeeklyPick = {
+  rank: number;
+  match_id: string;
+  league: string;
+  kickoff: string;
+  home: string;
+  away: string;
+  market: string;
+  label: string;
+  probability: number;
+  state: "pending" | "won" | "lost" | "void";
+  score: string | null;
+};
+export type WeeklyList = {
+  week_start: string;
+  week_end: string;
+  locked_at: string;
+  won: number;
+  lost: number;
+  void: number;
+  pending: number;
+  picks: WeeklyPick[];
+};
+export type WeeklySummary = {
+  generated_at: string;
+  weeks: WeeklyList[];
+  record: { weeks: number; picks: number; won: number; perfect_weeks: number };
+};
+export type WeeklyBacktest = {
+  n: number;
+  hit_rate: number;
+  avg_probability: number;
+  weeks: number;
+  perfect_weeks: number;
+  avg_won_per_week: number;
+  won_distribution: Record<string, number>;
+};
+
+export const getWeekly = cache(() => read<WeeklySummary>("weekly.json"));

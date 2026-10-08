@@ -1,0 +1,152 @@
+{
+ "generated_at": "2026-10-08T19:41:15+00:00",
+ "weeks": [
+  {
+   "week_start": "2026-10-06",
+   "week_end": "2026-10-12",
+   "locked_at": "2026-10-08T19:40:23.628150Z",
+   "won": 0,
+   "lost": 0,
+   "void": 0,
+   "pending": 10,
+   "picks": [
+    {
+     "rank": 1,
+     "match_id": "baedcb740ec1",
+     "league": "SP1",
+     "kickoff": "2026-10-10T16:30:00Z",
+     "home": "Barcelona",
+     "away": "Getafe",
+     "market": "double_chance",
+     "label": "Barcelona or draw",
+     "probability": 0.9406,
+     "state": "pending",
+     "score": null
+    },
+    {
+     "rank": 2,
+     "match_id": "d0999ca23e1c",
+     "league": "P1",
+     "kickoff": "2026-10-11T17:00:00Z",
+     "home": "Benfica",
+     "away": "Guimaraes",
+     "market": "double_chance",
+     "label": "Benfica or draw",
+     "probability": 0.9321,
+     "state": "pending",
+     "score": null
+    },
+    {
+     "rank": 3,
+     "match_id": "f8559f5850c3",
+     "league": "I1",
+     "kickoff": "2026-10-10T16:00:00Z",
+     "home": "Inter",
+     "away": "Parma",
+     "market": "double_chance",
+     "label": "Inter or draw",
+     "probability": 0.9242,
+     "state": "pending",
+     "score": null
+    },
+    {
+     "rank": 4,
+     "match_id": "5e6c6aa0255f",
+     "league": "T1",
+     "kickoff": "2026-10-09T17:00:00Z",
+     "home": "Galatasaray",
+     "away": "Kasimpasa",
+     "market": "double_chance",
+     "label": "Galatasaray or draw",
+     "probability": 0.9113,
+     "state": "pending",
+     "score": null
+    },
+    {
+     "rank": 5,
+     "match_id": "73f0f952f955",
+     "league": "P1",
+     "kickoff": "2026-10-10T17:00:00Z",
+     "home": "Maritimo",
+     "away": "Porto",
+     "market": "double_chance",
+     "label": "Porto or draw",
+     "probability": 0.9084,
+     "state": "pending",
+     "score": null
+    },
+    {
+     "rank": 6,
+     "match_id": "a6e625deeb1f",
+     "league": "N1",
+     "kickoff": "2026-10-09T18:00:00Z",
+     "home": "PSV Eindhoven",
+     "away": "Heerenveen",
+     "market": "double_chance",
+     "label": "PSV Eindhoven or draw",
+     "probability": 0.9083,
+     "state": "pending",
+     "score": null
+    },
+    {
+     "rank": 7,
+     "match_id": "72c95011b1c3",
+     "league": "SC0",
+     "kickoff": "2026-10-10T14:00:00Z",
+     "home": "Rangers",
+     "away": "Kilmarnock",
+     "market": "double_chance",
+     "label": "Rangers or draw",
+     "probability": 0.9075,
+     "state": "pending",
+     "score": null
+    },
+    {
+     "rank": 8,
+     "match_id": "23da65e8695a",
+     "league": "F1",
+     "kickoff": "2026-10-10T18:45:00Z",
+     "home": "Paris SG",
+     "away": "Le Mans",
+     "market": "double_chance",
+     "label": "Paris SG or draw",
+     "probability": 0.8987,
+     "state": "pending",
+     "score": null
+    },
+    {
+     "rank": 9,
+     "match_id": "92c19d2916cc",
+     "league": "D1",
+     "kickoff": "2026-10-09T00:00:00Z",
+     "home": "Dortmund",
+     "away": "Werder Bremen",
+     "market": "double_chance",
+     "label": "Dortmund or draw",
+     "probability": 0.8971,
+     "state": "pending",
+     "score": null
+    },
+    {
+     "rank": 10,
+     "match_id": "c3ea68917b30",
+     "league": "I1",
+     "kickoff": "2026-10-12T16:30:00Z",
+     "home": "Atalanta",
+     "away": "Venezia",
+     "market": "double_chance",
+     "label": "Atalanta or draw",
+     "probability": 0.8955,
+     "state": "pending",
+     "score": null
+    }
+   ]
+  }
+ ],
+ "record": {
+  "weeks": 0,
+  "picks": 0,
+  "won": 0,
+  "perfect_weeks": 0
+ }
+}

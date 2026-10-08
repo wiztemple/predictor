@@ -59,6 +59,18 @@ def main() -> None:
     def by(df, col):
         return {str(k): summarise(g) for k, g in df.groupby(col)}
 
+    # weekly top-n: same Tue-Mon blocks the walk-forward predicted in (one cutoff per week)
+    p["week"] = pd.to_datetime(p["date"]).dt.to_period("W-MON")
+    p["week_rank"] = p.groupby("week")["probability"].rank(ascending=False, method="first").astype(int)
+    wk = p[p["week_rank"] <= pc["per_week"]]
+    # only full weeks (a quiet week at a season break can have fewer than 10 eligible matches)
+    full = wk.groupby("week")["won"].transform("count") == pc["per_week"]
+    wk = wk[full]
+    wk_by = wk.groupby("week")["won"].agg(["sum", "count"])
+    weekly = {**summarise(wk), "weeks": int(len(wk_by)), "perfect_weeks": int((wk_by["sum"] == wk_by["count"]).sum()),
+              "avg_won_per_week": float(wk_by["sum"].mean()),
+              "won_distribution": {int(k): int(v) for k, v in wk_by["sum"].value_counts().sort_index().items()}}
+
     bands = pd.cut(top["probability"], [0, 0.6, 0.7, 0.8, 0.9, 1.0], labels=["<60%", "60-70%", "70-80%", "80-90%", "90%+"])
     report = {
         "generated_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
@@ -71,6 +83,7 @@ def main() -> None:
         "top_by_band": {str(k): summarise(g) for k, g in top.groupby(bands, observed=True)},
         "days": int(top["date"].nunique()),
         "days_all_won": int(top.groupby("date")["won"].all().sum()),
+        "weekly": weekly,
     }
     out = project_path(pc["backtest"])
     out.parent.mkdir(parents=True, exist_ok=True)
@@ -95,6 +108,9 @@ def main() -> None:
     for k, v in report["top_by_band"].items():
         print(f"    {k:7} {v['n']:5} picks  won {v['hit_rate']:.1%}  predicted {v['avg_probability']:.1%}")
     print(f"  days where every top pick won: {report['days_all_won']} of {report['days']}")
+    print(f"Weekly top {pc['per_week']}: {weekly['n']} picks over {weekly['weeks']} weeks, won {weekly['hit_rate']:.1%} "
+          f"vs predicted {weekly['avg_probability']:.1%}; avg {weekly['avg_won_per_week']:.1f}/10 per week; "
+          f"all 10 won in {weekly['perfect_weeks']} weeks; distribution {weekly['won_distribution']}")
     print(f"-> {pc['backtest']}")
 
 
