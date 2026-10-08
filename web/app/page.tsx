@@ -17,7 +17,7 @@ export default async function Home() {
     getPicksBacktest(),
     getWeekly(),
   ]);
-  const thisWeek = weekly?.weeks[0];
+  const weeklyLists = Object.entries(weekly?.lists ?? {});
   const perDay = pbt?.rule.per_day ?? live?.per_day ?? 10;
 
   const matches = doc.predictions.map(toBoardMatch);
@@ -55,19 +55,34 @@ export default async function Home() {
       <div className="mt-6">
         <PicksPanel picks={panelPicks(doc.predictions, perDay)} record={recordLine(live, pbt)} />
       </div>
-      {thisWeek ? (
-        <Link
-          href="/weekly"
-          className="mt-4 flex flex-wrap items-center justify-between gap-2 rounded-2xl border border-border bg-surface px-4 py-3 transition hover:border-accent"
-        >
-          <span>
-            <span className="font-bold">This week&apos;s top 10</span>
-            <span className="ml-2 text-sm text-text-2 tabular">
-              {thisWeek.won} won · {thisWeek.lost} lost · {thisWeek.pending} to play
-            </span>
-          </span>
-          <span className="text-sm font-semibold text-accent">See the list →</span>
-        </Link>
+      {weeklyLists.length ? (
+        <section className="mt-4 rounded-2xl border border-border bg-surface p-4">
+          <div className="flex flex-wrap items-baseline justify-between gap-2">
+            <h2 className="font-bold">This week&apos;s top 10s</h2>
+            <Link href="/weekly" className="text-sm font-semibold text-accent hover:underline">
+              See all lists →
+            </Link>
+          </div>
+          <div className="mt-3 flex flex-wrap gap-2">
+            {weeklyLists.map(([key, l]) => {
+              const w = l.weeks[0];
+              return (
+                <Link
+                  key={key}
+                  href={key === "safe" ? "/weekly" : `/weekly/${key}`}
+                  className="rounded-full border border-border px-3 py-1.5 text-sm transition hover:border-accent hover:text-accent"
+                >
+                  <span className="font-semibold">{l.label}</span>
+                  {w ? (
+                    <span className="ml-1.5 text-text-3 tabular">
+                      {w.won + w.half_won}/{w.picks.length - w.pending - w.void}
+                    </span>
+                  ) : null}
+                </Link>
+              );
+            })}
+          </div>
+        </section>
       ) : null}
       <h2 className="mt-10 text-2xl font-extrabold tracking-tight">All matches</h2>
       <div className="mt-2">

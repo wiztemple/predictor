@@ -44,7 +44,7 @@ export type PicksBacktest = {
   top_by_band: Record<string, Stats>;
   days: number;
   days_all_won: number;
-  weekly?: WeeklyBacktest;
+  weekly_lists?: Record<string, WeeklyBacktest>;
 };
 
 const DIR = path.join(/*turbopackIgnore: true*/ process.cwd(), "data", "picks");
@@ -69,7 +69,8 @@ export const MARKET_NAMES: Record<string, string> = {
   btts: "Both teams to score",
 };
 
-/** Weekly top 10 (Tue-Mon, locked once), exported from the picks database by scripts/settle_picks.py. */
+/** Weekly lists (Tue-Mon, locked once), exported from the picks database by scripts/settle_picks.py. */
+export type PickState = "pending" | "won" | "lost" | "void" | "push" | "half_won" | "half_lost";
 export type WeeklyPick = {
   rank: number;
   match_id: string;
@@ -78,34 +79,37 @@ export type WeeklyPick = {
   home: string;
   away: string;
   market: string;
+  selection: string;
   label: string;
   probability: number;
-  state: "pending" | "won" | "lost" | "void";
+  state: PickState;
   score: string | null;
 };
 export type WeeklyList = {
   week_start: string;
   week_end: string;
   locked_at: string;
-  won: number;
-  lost: number;
-  void: number;
-  pending: number;
   picks: WeeklyPick[];
-};
-export type WeeklySummary = {
-  generated_at: string;
+} & Record<PickState, number>;
+export type WeeklyListSummary = {
+  label: string;
+  description: string;
   weeks: WeeklyList[];
-  record: { weeks: number; picks: number; won: number; perfect_weeks: number };
+  record: { weeks: number; picks: number; won: number; half_won: number; perfect_weeks: number };
 };
+export type WeeklySummary = { generated_at: string; lists: Record<string, WeeklyListSummary> };
 export type WeeklyBacktest = {
+  label: string;
   n: number;
   hit_rate: number;
   avg_probability: number;
+  avg_fair_odds: number;
   weeks: number;
   perfect_weeks: number;
   avg_won_per_week: number;
   won_distribution: Record<string, number>;
+  calibration_gap: number;
+  priced?: { n: number; avg_odds: number; profit_units: number; roi: number; roi_ci: [number, number] };
 };
 
 export const getWeekly = cache(() => read<WeeklySummary>("weekly.json"));

@@ -128,9 +128,10 @@ def main() -> int:
         engine = connect(database_url(cfg["picks"], project_path(".")))
         added, same = log_picks(engine, doc, cfg["picks"]["markets"], now.to_pydatetime())
         log.info("picks database (%s): %d new picks, %d unchanged", engine.url.get_backend_name(), added, same)
-        locked = lock_weekly(engine, doc, cfg["picks"]["markets"], now.to_pydatetime(), cfg["picks"]["per_week"])
+        locked = lock_weekly(engine, doc, cfg["picks"]["weekly_lists"], now.to_pydatetime(),
+                             cfg["picks"]["per_week"], markets=cfg["picks"]["markets"])
         if locked:
-            log.info("weekly top %d locked for this week (%d picks)", cfg["picks"]["per_week"], locked)
+            log.info("weekly lists locked for this week: %s", locked)
 
     print(f"\n{len(doc['predictions'])} predictions -> {args.output}  (data through {doc['data_through']}, status={doc['status']})")
     if len(good):

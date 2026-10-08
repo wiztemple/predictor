@@ -254,10 +254,34 @@ def summary(engine: Engine, per_day: int, recent: int = 60) -> dict[str, Any]:
 
 
 # ---------------------------------------------------------------------------
-# Weekly top 10: the 10 likeliest picks of each Tue-Mon week, locked once.
+# Weekly lists: for each list (safe, medium, bold, ...), the top 10 picks of each Tue-Mon week,
+# locked once at the first run of the week and never changed; settled after each match.
 
+# v1 table (single list). Kept so existing rows can be copied into weekly_lists as "safe".
 weekly_picks = Table(
     "weekly_picks", meta,
+    Column("week_start", Date, primary_key=True),
+    Column("rank", Integer, primary_key=True),
+    Column("week_end", Date, nullable=False),
+    Column("locked_at", DateTime, nullable=False),
+    Column("match_id", String(32), nullable=False),
+    Column("league", String(16), nullable=False),
+    Column("kickoff", DateTime, nullable=False),
+    Column("home", String(80), nullable=False),
+    Column("away", String(80), nullable=False),
+    Column("market", String(24), nullable=False),
+    Column("selection", String(16), nullable=False),
+    Column("label", String(200), nullable=False),
+    Column("probability", Float, nullable=False),
+    Column("state", String(8), nullable=True),
+    Column("home_score", Integer, nullable=True),
+    Column("away_score", Integer, nullable=True),
+    Column("settled_at", DateTime, nullable=True),
+)
+
+weekly_lists = Table(
+    "weekly_lists", meta,
+    Column("list", String(16), primary_key=True),
     Column("week_start", Date, primary_key=True),        # Tuesday (UK date)
     Column("rank", Integer, primary_key=True),
     Column("week_end", Date, nullable=False),            # Monday
@@ -268,15 +292,27 @@ weekly_picks = Table(
     Column("home", String(80), nullable=False),
     Column("away", String(80), nullable=False),
     Column("market", String(24), nullable=False),
-    Column("selection", String(16), nullable=False),
+    Column("selection", String(24), nullable=False),
     Column("label", String(200), nullable=False),
-    Column("probability", Float, nullable=False),        # as published at lock time
+    Column("probability", Float, nullable=False),        # chance as published at lock time
     # settlement (filled once, after the match)
-    Column("state", String(8), nullable=True),           # won / lost / void; NULL = to play
+    Column("state", String(10), nullable=True),          # won/lost/void (+ push/half_won/half_lost for AH)
     Column("home_score", Integer, nullable=True),
     Column("away_score", Integer, nullable=True),
     Column("settled_at", DateTime, nullable=True),
 )
+
+
+def migrate_weekly_v1(engine: Engine) -> int:
+    """Copy rows from the single-list v1 table into weekly_lists as list 'safe' (once)."""
+    with engine.begin() as conn:
+        if conn.execute(select(func.count()).select_from(weekly_lists)
+                        .where(weekly_lists.c.list == "safe")).scalar_one():
+            return 0
+        rows = [dict(r) for r in conn.execute(select(weekly_picks)).mappings()]
+        if rows:
+            conn.execute(weekly_lists.insert(), [{**r, "list": "safe"} for r in rows])
+    return len(rows)
 
 
 def week_bounds(ts, tz: str = "Europe/London"):
@@ -286,42 +322,57 @@ def week_bounds(ts, tz: str = "Europe/London"):
     return start, start + timedelta(days=6)
 
 
-def lock_weekly(engine: Engine, doc: dict, markets, now: datetime, n: int = 10,
-                tz: str = "Europe/London") -> int:
-    """Lock this week's top-n list if it isn't locked yet. Only matches that haven't kicked off and
-    fall inside the week are eligible. Returns the number of picks locked (0 if already locked)."""
+def lock_weekly(engine: Engine, doc: dict, lists: dict, now: datetime, n: int = 10,
+                tz: str = "Europe/London", markets=None) -> dict[str, int]:
+    """Lock this week's top-n for every list not locked yet. Only matches inside the week that
+    haven't kicked off are eligible. Returns {list: picks locked}."""
+    from predictor.picks import MARKETS as ALL_MARKETS, weekly_candidate
+
+    migrate_weekly_v1(engine)
     start, end = week_bounds(pd.Timestamp(now), tz)
+    now_n = _utc_naive(now)
+    out = {}
     with engine.begin() as conn:
-        if conn.execute(select(func.count()).select_from(weekly_picks)
-                        .where(weekly_picks.c.week_start == start)).scalar_one():
-            return 0
-        df = picks_from_document(doc, markets, tz)
-        if df.empty:
-            return 0
-        k = pd.to_datetime(df["kickoff"], utc=True)
-        day = k.dt.tz_convert(tz).dt.date
-        df = df[(k > pd.Timestamp(now)) & (day >= start) & (day <= end)]
-        top = df.sort_values(["probability", "kickoff"], ascending=[False, True]).head(n)
-        if top.empty:
-            return 0
-        now_n = _utc_naive(now)
-        rows = [{
-            "week_start": start, "rank": i + 1, "week_end": end, "locked_at": now_n,
-            "match_id": r["match_id"], "league": r["league"], "kickoff": _utc_naive(r["kickoff"]),
-            "home": r["home"], "away": r["away"], "market": r["market"], "selection": r["selection"],
-            "label": r["label"], "probability": float(r["probability"]),
-        } for i, (_, r) in enumerate(top.iterrows())]
-        conn.execute(weekly_picks.insert(), rows)
-    return len(rows)
+        done = {r[0] for r in conn.execute(select(weekly_lists.c.list).where(weekly_lists.c.week_start == start)
+                                           .distinct())}
+        recs = []
+        for r in doc["predictions"]:
+            k = pd.Timestamp(r["kickoff"])
+            day = k.tz_convert(tz).date()
+            if k > pd.Timestamp(now) and start <= day <= end:
+                recs.append(r)
+        for name, spec in lists.items():
+            if name in done:
+                continue
+            cands = []
+            for r in recs:
+                c = weekly_candidate(r["home"], r["away"], r["probabilities"], r.get("extras") or {}, spec,
+                                     tuple(markets or ALL_MARKETS))
+                if c is not None:
+                    cands.append((c.p, r["kickoff"], r, c))
+            top = sorted(cands, key=lambda x: (-x[0], x[1]))[:n]
+            if not top:
+                continue
+            conn.execute(weekly_lists.insert(), [{
+                "list": name, "week_start": start, "rank": i + 1, "week_end": end, "locked_at": now_n,
+                "match_id": r["id"], "league": r["league"], "kickoff": _utc_naive(r["kickoff"]),
+                "home": r["home"], "away": r["away"], "market": c.market, "selection": c.selection,
+                "label": c.label, "probability": round(float(c.p), 4),
+            } for i, (_, _, r, c) in enumerate(top)])
+            out[name] = len(top)
+    return out
 
 
 def settle_weekly(engine: Engine, matches: pd.DataFrame, now: datetime, tolerance_days: int = 1,
                   void_after_days: int = 3, tz: str = "Europe/London") -> dict[str, int]:
+    from predictor.picks import settle_state
+
+    migrate_weekly_v1(engine)
     now_n = _utc_naive(now)
-    counts = {"won": 0, "lost": 0, "void": 0, "pending": 0}
+    counts: dict[str, int] = {"settled": 0, "void": 0, "pending": 0}
     with engine.begin() as conn:
-        open_rows = conn.execute(select(weekly_picks).where(weekly_picks.c.state.is_(None),
-                                                            weekly_picks.c.kickoff <= now_n)).mappings().all()
+        open_rows = conn.execute(select(weekly_lists).where(weekly_lists.c.state.is_(None),
+                                                            weekly_lists.c.kickoff <= now_n)).mappings().all()
         for o in open_rows:
             kick_day = pd.Timestamp(o["kickoff"]).tz_localize("UTC").tz_convert(tz).tz_localize(None).normalize()
             cand = matches[(matches["league"] == o["league"]) & (matches["home"] == o["home"])
@@ -329,49 +380,53 @@ def settle_weekly(engine: Engine, matches: pd.DataFrame, now: datetime, toleranc
                            & ((matches["date"] - kick_day).abs() <= pd.Timedelta(days=tolerance_days))]
             if len(cand):
                 m = cand.iloc[0]
-                w = won(o["market"], o["selection"], m["home_score"], m["away_score"])
-                vals = {"state": "won" if w else "lost", "home_score": int(m["home_score"]),
-                        "away_score": int(m["away_score"]), "settled_at": now_n}
-                counts[vals["state"]] += 1
+                vals = {"state": settle_state(o["market"], o["selection"], int(m["home_score"]), int(m["away_score"])),
+                        "home_score": int(m["home_score"]), "away_score": int(m["away_score"]), "settled_at": now_n}
+                counts["settled"] += 1
             elif now_n - o["kickoff"] > timedelta(days=void_after_days):
                 vals = {"state": "void", "settled_at": now_n}
                 counts["void"] += 1
             else:
                 counts["pending"] += 1
                 continue
-            conn.execute(weekly_picks.update()
-                         .where(weekly_picks.c.week_start == o["week_start"], weekly_picks.c.rank == o["rank"])
-                         .values(**vals))
+            conn.execute(weekly_lists.update().where(weekly_lists.c.list == o["list"],
+                                                     weekly_lists.c.week_start == o["week_start"],
+                                                     weekly_lists.c.rank == o["rank"]).values(**vals))
     return counts
 
 
-def weekly_summary(engine: Engine) -> dict[str, Any]:
+STATES = ("won", "half_won", "push", "half_lost", "lost", "void", "pending")
+
+
+def weekly_summary(engine: Engine, lists: dict) -> dict[str, Any]:
+    """{lists: {name: {label, description, weeks: [...], record}}} for the site."""
+    migrate_weekly_v1(engine)
     with engine.connect() as conn:
-        df = pd.DataFrame(conn.execute(select(weekly_picks).order_by(weekly_picks.c.week_start.desc(),
-                                                                     weekly_picks.c.rank)).mappings().all())
-    out: dict[str, Any] = {"generated_at": datetime.now(timezone.utc).isoformat(timespec="seconds"), "weeks": []}
-    if df.empty:
-        out["record"] = {"weeks": 0, "picks": 0, "won": 0, "perfect_weeks": 0}
-        return out
-    for start, g in df.groupby("week_start", sort=False):
-        picks = [{
-            "rank": int(r["rank"]), "match_id": r["match_id"], "league": r["league"],
-            "kickoff": pd.Timestamp(r["kickoff"]).isoformat() + "Z", "home": r["home"], "away": r["away"],
-            "market": r["market"], "label": r["label"], "probability": float(r["probability"]),
-            "state": r["state"] or "pending",
-            "score": None if pd.isna(r["home_score"]) else f"{int(r['home_score'])}-{int(r['away_score'])}",
-        } for _, r in g.sort_values("rank").iterrows()]
-        st = [p["state"] for p in picks]
-        out["weeks"].append({
-            "week_start": str(start), "week_end": str(g["week_end"].iloc[0]),
-            "locked_at": pd.Timestamp(g["locked_at"].iloc[0]).isoformat() + "Z",
-            "won": st.count("won"), "lost": st.count("lost"), "void": st.count("void"),
-            "pending": st.count("pending"), "picks": picks,
-        })
-    done = [w for w in out["weeks"] if w["pending"] == 0]
-    settled = df[df["state"].isin(["won", "lost"])]
-    out["record"] = {
-        "weeks": len(done), "picks": int(len(settled)), "won": int((settled["state"] == "won").sum()),
-        "perfect_weeks": sum(1 for w in done if w["lost"] == 0 and w["won"] > 0),
-    }
+        df = pd.DataFrame(conn.execute(select(weekly_lists).order_by(
+            weekly_lists.c.week_start.desc(), weekly_lists.c.rank)).mappings().all())
+    out: dict[str, Any] = {"generated_at": datetime.now(timezone.utc).isoformat(timespec="seconds"), "lists": {}}
+    for name, spec in lists.items():
+        d = df[df["list"] == name] if not df.empty else df
+        weeks = []
+        for start, g in (d.groupby("week_start", sort=False) if not d.empty else []):
+            picks = [{
+                "rank": int(r["rank"]), "match_id": r["match_id"], "league": r["league"],
+                "kickoff": pd.Timestamp(r["kickoff"]).isoformat() + "Z", "home": r["home"], "away": r["away"],
+                "market": r["market"], "selection": r["selection"], "label": r["label"],
+                "probability": float(r["probability"]), "state": r["state"] or "pending",
+                "score": None if pd.isna(r["home_score"]) else f"{int(r['home_score'])}-{int(r['away_score'])}",
+            } for _, r in g.sort_values("rank").iterrows()]
+            counts = {s: sum(p["state"] == s for p in picks) for s in STATES}
+            weeks.append({"week_start": str(start), "week_end": str(g["week_end"].iloc[0]),
+                          "locked_at": pd.Timestamp(g["locked_at"].iloc[0]).isoformat() + "Z",
+                          **counts, "picks": picks})
+        done = [w for w in weeks if w["pending"] == 0]
+        settled = d[d["state"].isin(["won", "lost", "half_won", "half_lost"])] if not d.empty else d
+        out["lists"][name] = {
+            "label": spec["label"], "description": spec.get("description", ""), "weeks": weeks,
+            "record": {"weeks": len(done), "picks": int(len(settled)),
+                       "won": int((settled["state"] == "won").sum()) if len(settled) else 0,
+                       "half_won": int((settled["state"] == "half_won").sum()) if len(settled) else 0,
+                       "perfect_weeks": sum(1 for w in done if w["lost"] == 0 and w["half_lost"] == 0 and w["won"] > 0)},
+        }
     return out

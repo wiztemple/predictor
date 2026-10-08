@@ -24,7 +24,7 @@ def main() -> int:
                     tr["date_tolerance_days"], tr["void_after_days"])
     weekly_counts = settle_weekly(engine, matches, pd.Timestamp.now(tz="UTC").to_pydatetime(),
                                   tr["date_tolerance_days"], tr["void_after_days"])
-    project_path(pc["weekly"]).write_text(json.dumps(weekly_summary(engine), indent=1, default=float))
+    project_path(pc["weekly"]).write_text(json.dumps(weekly_summary(engine, pc["weekly_lists"]), indent=1, default=float))
     print(f"weekly top {pc['per_week']}: newly settled {weekly_counts} -> {pc['weekly']}")
     s = summary(engine, pc["per_day"])
     out = project_path(pc["summary"])

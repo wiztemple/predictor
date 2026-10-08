@@ -38,7 +38,7 @@ export default async function RootLayout({ children }: LayoutProps<"/">) {
             {[
               ["/", "Matches"],
               ["/picks", "Picks"],
-              ["/weekly", "Weekly 10"],
+              ["/weekly", "Weekly 10s"],
               ["/leagues", "Leagues"],
               ["/track-record", "Track record"],
             ].map(([href, label]) => (

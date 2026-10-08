@@ -623,6 +623,7 @@ def main() -> None:
         pred_out[f"goals:{k}"] = goals_test.loc[test.index, k].to_numpy()
     pred_out[["home_score", "away_score", "odds_home", "odds_draw", "odds_away", "odds_over_2_5", "odds_under_2_5"]] = \
         test[["home_score", "away_score", "odds_home", "odds_draw", "odds_away", "odds_over_2_5", "odds_under_2_5"]].to_numpy()
+    pred_out[["dc_lam", "dc_mu", "dc_rho"]] = test[["dc_lam", "dc_mu", "dc_rho"]].to_numpy()
     pred_out.to_parquet(out_dir / "predictions.parquet")
 
     summary = {

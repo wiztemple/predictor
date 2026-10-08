@@ -33,6 +33,62 @@ def summarise(df: pd.DataFrame) -> dict:
     return out
 
 
+def weekly_lists_backtest(df: pd.DataFrame, prod: str, pc: dict) -> dict:
+    """Each weekly list replayed over the test weeks: the same candidate rule as live, the top
+    per_week by chance in each Tue-Mon week (full weeks only), settled on the real scores."""
+    from predictor.markets_extra import adjust_grid
+    from predictor.models.dixon_coles import MARGIN_CAP, margin_distribution, score_grid
+    from predictor.picks import settle_state, stake_return, weekly_candidate
+
+    need_margin = any(sp["kind"] == "ah" for sp in pc["weekly_lists"].values())
+    rows = []
+    for _, r in df.iterrows():
+        probs = {"home": r[f"{prod}:p_home"], "draw": r[f"{prod}:p_draw"], "away": r[f"{prod}:p_away"]}
+        extras = {k: r[f"goals:{k}"] for k in ("over_1_5", "over_2_5", "over_3_5", "btts")}
+        if need_margin and pd.notna(r.get("dc_lam")):
+            g = adjust_grid(score_grid(r["dc_lam"], r["dc_mu"], r["dc_rho"], 10),
+                            (probs["home"], probs["draw"], probs["away"]), extras)
+            extras["margin"] = {"cap": MARGIN_CAP, "probs": margin_distribution(g).tolist()}
+        rows.append((r, probs, extras))
+    out = {}
+    for name, spec in pc["weekly_lists"].items():
+        picks = []
+        for r, probs, extras in rows:
+            c = weekly_candidate(r["home"], r["away"], probs, extras, spec, tuple(pc["markets"]))
+            if c is None:
+                continue
+            state = settle_state(c.market, c.selection, int(r["home_score"]), int(r["away_score"]))
+            odds = closing_odds(c.market, c.selection, r)
+            picks.append({"date": r["date"], "p": c.p, "market": c.market, "state": state,
+                          "closing": odds, "profit": stake_return(state, odds) if odds else np.nan})
+        p = pd.DataFrame(picks)
+        p["week"] = pd.to_datetime(p["date"]).dt.to_period("W-MON")
+        p["rank"] = p.groupby("week")["p"].rank(ascending=False, method="first")
+        top = p[p["rank"] <= pc["per_week"]]
+        top = top[top.groupby("week")["p"].transform("count") == pc["per_week"]]
+        # a half win/loss counts half
+        top = top.assign(score=top["state"].map({"won": 1, "half_won": 0.5, "push": 0.5, "half_lost": 0,
+                                                  "lost": 0}).astype(float),
+                         decided=~top["state"].isin(["push"]))
+        by = top.groupby("week")["score"].sum()
+        res = {"label": spec["label"], "weeks": int(len(by)), "n": int(len(top)),
+               "hit_rate": float(top.loc[top["decided"], "score"].mean()),
+               "avg_probability": float(top["p"].mean()), "avg_fair_odds": float((1 / top["p"]).mean()),
+               "avg_won_per_week": float(by.mean()), "perfect_weeks": int((by == pc["per_week"]).sum()),
+               "won_distribution": {str(k): int(v) for k, v in by.round().astype(int).value_counts().sort_index().items()},
+               "markets": {k: int(v) for k, v in top["market"].value_counts().items()}}
+        priced = top.dropna(subset=["profit"])
+        if len(priced) >= 50:
+            se = float(priced["profit"].std(ddof=1) / np.sqrt(len(priced)))
+            res["priced"] = {"n": int(len(priced)), "avg_odds": float(priced["closing"].mean()),
+                             "profit_units": float(priced["profit"].sum()), "roi": float(priced["profit"].mean()),
+                             "roi_ci": [float(priced["profit"].mean() - 1.96 * se),
+                                        float(priced["profit"].mean() + 1.96 * se)]}
+        res["calibration_gap"] = res["hit_rate"] - res["avg_probability"]  # + = we were too cautious
+        out[name] = res
+    return out
+
+
 def main() -> None:
     cfg = load_config()
     pc = cfg["picks"]
@@ -59,6 +115,8 @@ def main() -> None:
     def by(df, col):
         return {str(k): summarise(g) for k, g in df.groupby(col)}
 
+    weekly_lists = weekly_lists_backtest(df, prod, pc)
+
     # weekly top-n: same Tue-Mon blocks the walk-forward predicted in (one cutoff per week)
     p["week"] = pd.to_datetime(p["date"]).dt.to_period("W-MON")
     p["week_rank"] = p.groupby("week")["probability"].rank(ascending=False, method="first").astype(int)
@@ -84,6 +142,7 @@ def main() -> None:
         "days": int(top["date"].nunique()),
         "days_all_won": int(top.groupby("date")["won"].all().sum()),
         "weekly": weekly,
+        "weekly_lists": weekly_lists,
     }
     out = project_path(pc["backtest"])
     out.parent.mkdir(parents=True, exist_ok=True)
@@ -111,6 +170,13 @@ def main() -> None:
     print(f"Weekly top {pc['per_week']}: {weekly['n']} picks over {weekly['weeks']} weeks, won {weekly['hit_rate']:.1%} "
           f"vs predicted {weekly['avg_probability']:.1%}; avg {weekly['avg_won_per_week']:.1f}/10 per week; "
           f"all 10 won in {weekly['perfect_weeks']} weeks; distribution {weekly['won_distribution']}")
+    print(f"\nWeekly lists ({pc['per_week']} per Tue-Mon week, full weeks only):")
+    for name, v in weekly_lists.items():
+        roi = (f", ROI at closing {v['priced']['roi']:+.1%} [{v['priced']['roi_ci'][0]:+.1%}, {v['priced']['roi_ci'][1]:+.1%}]"
+               f" on {v['priced']['n']}" if v.get("priced") else "")
+        print(f"  {name:8} {v['weeks']:3} weeks  avg fair @{v['avg_fair_odds']:.2f}  won {v['hit_rate']:.1%} "
+              f"(predicted {v['avg_probability']:.1%})  avg {v['avg_won_per_week']:.1f}/10  "
+              f"all-10 weeks {v['perfect_weeks']}{roi}")
     print(f"-> {pc['backtest']}")
 
 

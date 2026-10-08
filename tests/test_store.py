@@ -93,29 +93,45 @@ def test_ci_without_database_url_fails_loudly(monkeypatch, tmp_path):
         database_url({}, tmp_path)
 
 
-def test_weekly_top10_locks_once_and_settles(engine):
+LISTS = {"safe": {"label": "Safe 10", "kind": "any"},
+         "bold": {"label": "Bold 10", "kind": "band", "min_odds": 1.6, "max_odds": 2.0},
+         "wins": {"label": "Winners 10", "kind": "wins"}}
+
+
+def test_weekly_lists_lock_once_and_settle(engine):
     from predictor.store import lock_weekly, settle_weekly, week_bounds, weekly_summary
 
-    # Thu 8 Oct 2026 -> week Tue 6 .. Mon 12 Oct
     assert [str(d) for d in week_bounds(pd.Timestamp("2026-10-08T10:00Z"))] == ["2026-10-06", "2026-10-12"]
     now = datetime(2026, 10, 8, 6, tzinfo=timezone.utc)
     d = doc(*[rec(f"m{i}", f"2026-10-{10 + i % 3}T14:00:00Z", home=f"H{i}", away=f"A{i}", ph=0.3 + i * 0.04)
               for i in range(12)],
-            rec("past", "2026-10-07T14:00:00Z", home="Old", away="Game", ph=0.9),     # kicked off: not eligible
-            rec("next", "2026-10-14T14:00:00Z", home="Next", away="Week", ph=0.95))   # next week: not eligible
-    assert lock_weekly(engine, d, MARKETS, now) == 10
-    # a later run with changed numbers doesn't touch the locked list
-    assert lock_weekly(engine, doc(rec("new", "2026-10-11T14:00:00Z", home="X", away="Y", ph=0.99)), MARKETS,
-                       now + timedelta(days=1)) == 0
-    s = weekly_summary(engine)
-    w = s["weeks"][0]
-    assert len(w["picks"]) == 10 and w["pending"] == 10
-    assert [p["rank"] for p in w["picks"]] == list(range(1, 11))
-    assert {p["home"] for p in w["picks"]}.isdisjoint({"Old", "Next", "X"})
-    top = w["picks"][0]
+            rec("past", "2026-10-07T14:00:00Z", home="Old", away="Game", ph=0.9),
+            rec("next", "2026-10-14T14:00:00Z", home="Next", away="Week", ph=0.95))
+    locked = lock_weekly(engine, d, LISTS, now, markets=MARKETS)
+    assert locked["safe"] == 10 and locked["wins"] == 10 and 0 < locked.get("bold", 0) <= 10
+    assert lock_weekly(engine, d, LISTS, now + timedelta(days=1), markets=MARKETS) == {}  # already locked
+    s = weekly_summary(engine, LISTS)
+    safe, wins = s["lists"]["safe"]["weeks"][0], s["lists"]["wins"]["weeks"][0]
+    assert len(safe["picks"]) == 10 and safe["pending"] == 10
+    assert {p["home"] for p in safe["picks"]}.isdisjoint({"Old", "Next"})
+    assert all(p["market"] == "1x2" for p in wins["picks"])
+    assert all(0.5 <= p["probability"] <= 0.625 for p in s["lists"]["bold"]["weeks"][0]["picks"])
+    top = wins["picks"][0]
     results = pd.DataFrame({"league": ["E0"], "home": [top["home"]], "away": [top["away"]],
                             "date": [pd.Timestamp(top["kickoff"][:10])], "home_score": [2], "away_score": [0]})
-    c = settle_weekly(engine, results, datetime(2026, 10, 16, tzinfo=timezone.utc))
-    assert c["won"] == 1 and c["void"] == 9  # the others never got results -> void after 3 days
-    w = weekly_summary(engine)["weeks"][0]
-    assert w["won"] == 1 and w["picks"][0]["state"] == "won" and w["picks"][0]["score"] == "2-0"
+    settle_weekly(engine, results, datetime(2026, 10, 16, tzinfo=timezone.utc))
+    w = weekly_summary(engine, LISTS)["lists"]["wins"]["weeks"][0]
+    assert w["picks"][0]["state"] == "won" and w["picks"][0]["score"] == "2-0" and w["pending"] == 0
+
+
+def test_weekly_v1_rows_migrate_as_safe(engine):
+    from predictor.store import migrate_weekly_v1, weekly_picks, weekly_summary
+
+    with engine.begin() as c:
+        c.execute(weekly_picks.insert(), [{"week_start": pd.Timestamp("2026-10-06").date(), "rank": 1,
+                                           "week_end": pd.Timestamp("2026-10-12").date(), "locked_at": datetime(2026, 10, 8),
+                                           "match_id": "x", "league": "E0", "kickoff": datetime(2026, 10, 10, 14),
+                                           "home": "A", "away": "B", "market": "double_chance", "selection": "1x",
+                                           "label": "A or draw", "probability": 0.9}])
+    assert migrate_weekly_v1(engine) == 1 and migrate_weekly_v1(engine) == 0
+    assert weekly_summary(engine, LISTS)["lists"]["safe"]["weeks"][0]["picks"][0]["label"] == "A or draw"

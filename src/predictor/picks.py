@@ -102,3 +102,79 @@ def market_probability(market: str, selection: str, row) -> float | None:
         po = (1 / o) / (1 / o + 1 / u)
         return float(po if selection == "over" else 1 - po)
     return None
+
+
+# ---------------------------------------------------------------------------
+# Weekly lists: one candidate per match per list, ranked by chance within the week.
+
+def _ah_candidate(home: str, away: str, margin: dict, min_odds: float, max_odds: float) -> Selection | None:
+    """Likeliest Asian handicap selection (either side, quarter-step lines -3..+3) whose fair odds
+    fall in [min_odds, max_odds]. Its p is the push-adjusted chance (1 / fair odds)."""
+    from predictor.handicap import fair_odds, home_outcome
+
+    m = np.asarray(margin["probs"], float)
+    best = None
+    for q in range(-12, 13):
+        line = q / 4
+        w, _, l = home_outcome(m, line)
+        for side, (ww, ll), team, side_line in (("home", (w, l), home, line), ("away", (l, w), away, -line)):
+            if ww <= 0:
+                continue
+            o = fair_odds(ww, ll)
+            if min_odds <= o <= max_odds and (best is None or 1 / o > best.p):
+                sign = "+" if side_line > 0 else "−" if side_line < 0 else ""
+                best = Selection("ah", f"{side}:{side_line:g}", f"{team} {sign}{abs(side_line):g}", 1 / o)
+    return best
+
+
+def weekly_candidate(home: str, away: str, probs: dict, extras: dict, spec: dict,
+                     markets=MARKETS) -> Selection | None:
+    """The one selection a match offers to a weekly list (None if it has nothing that qualifies)."""
+    kind = spec["kind"]
+    if kind == "any":
+        return best_pick(home, away, probs, extras, markets)
+    if kind == "band":
+        lo, hi = 1 / spec["max_odds"], 1 / spec["min_odds"]  # chance range for the odds range
+        cs = [c for c in candidates(home, away, probs, extras, markets) if lo <= c.p <= hi]
+        return max(cs, key=lambda c: c.p) if cs else None
+    if kind == "wins":
+        cs = [c for c in candidates(home, away, probs, extras, ("1x2",)) if c.selection != "draw"]
+        return max(cs, key=lambda c: c.p) if cs else None
+    if kind == "over25":
+        return next((c for c in candidates(home, away, probs, extras, ("ou_2_5",)) if c.selection == "over"), None)
+    if kind == "btts":
+        return next((c for c in candidates(home, away, probs, extras, ("btts",)) if c.selection == "yes"), None)
+    if kind == "ah":
+        if not extras.get("margin"):
+            return None
+        return _ah_candidate(home, away, extras["margin"], spec["min_odds"], spec["max_odds"])
+    raise ValueError(kind)
+
+
+def settle_state(market: str, selection: str, home_score: int, away_score: int) -> str:
+    """won / lost, or for Asian handicap also push / half_won / half_lost."""
+    if market != "ah":
+        return "won" if won(market, selection, home_score, away_score) else "lost"
+    from predictor.handicap import home_outcome
+    from predictor.models.dixon_coles import MARGIN_CAP
+
+    side, line = selection.split(":")
+    line = float(line)
+    actual = np.zeros(2 * MARGIN_CAP + 1)
+    actual[int(np.clip(home_score - away_score, -MARGIN_CAP, MARGIN_CAP)) + MARGIN_CAP] = 1
+    w, p, l = home_outcome(actual, line if side == "home" else -line)
+    if side == "away":
+        w, l = l, w
+    if w == 1:
+        return "won"
+    if l == 1:
+        return "lost"
+    if p == 1:
+        return "push"
+    return "half_won" if w > 0 else "half_lost"
+
+
+def stake_return(state: str, odds: float) -> float:
+    """Profit per unit staked for a settled state at decimal `odds`."""
+    return {"won": odds - 1, "half_won": (odds - 1) / 2, "push": 0.0, "half_lost": -0.5, "lost": -1.0,
+            "void": 0.0}[state]

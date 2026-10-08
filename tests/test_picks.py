@@ -47,3 +47,38 @@ def test_rank_by_day_uses_uk_day():
                        "probability": [0.7, 0.9, 0.95]})
     # 23:30Z is 00:30 on 11 Oct in UK time -> its own day
     assert list(rank_by_day(df)) == [2, 1, 1]
+
+
+from predictor.picks import settle_state, weekly_candidate  # noqa: E402
+
+MARGIN = {"cap": 6, "probs": [0.002, 0.005, 0.015, 0.04, 0.08, 0.13, 0.25, 0.2, 0.13, 0.08, 0.04, 0.02, 0.008]}
+
+
+@pytest.mark.parametrize("spec,check", [
+    ({"kind": "any"}, lambda s: s.p >= 0.75),
+    ({"kind": "band", "min_odds": 1.30, "max_odds": 1.60}, lambda s: 1 / 1.60 <= s.p <= 1 / 1.30),
+    ({"kind": "band", "min_odds": 1.60, "max_odds": 2.00}, lambda s: 0.5 <= s.p <= 1 / 1.60),
+    ({"kind": "wins"}, lambda s: s.market == "1x2" and s.selection in ("home", "away")),
+    ({"kind": "over25"}, lambda s: (s.market, s.selection) == ("ou_2_5", "over")),
+    ({"kind": "btts"}, lambda s: (s.market, s.selection) == ("btts", "yes")),
+    ({"kind": "ah", "min_odds": 1.70, "max_odds": 2.10}, lambda s: s.market == "ah" and 1 / 2.10 <= s.p <= 1 / 1.70),
+])
+def test_weekly_candidates(spec, check):
+    s = weekly_candidate("A", "B", PROBS, {**EXTRAS, "margin": MARGIN}, spec)
+    assert s is not None and check(s)
+
+
+def test_band_with_no_qualifying_selection():
+    assert weekly_candidate("A", "B", PROBS, EXTRAS, {"kind": "band", "min_odds": 20.0, "max_odds": 30.0}) is None
+
+
+@pytest.mark.parametrize("sel,score,state", [
+    ("home:-0.5", (1, 0), "won"), ("home:-1", (1, 0), "push"), ("home:-0.75", (1, 0), "half_won"),
+    ("home:-0.25", (1, 1), "half_lost"), ("away:0.25", (1, 1), "half_won"), ("away:1.5", (2, 0), "lost"),
+])
+def test_ah_settlement(sel, score, state):
+    assert settle_state("ah", sel, *score) == state
+
+
+def test_non_ah_settlement():
+    assert settle_state("1x2", "home", 2, 1) == "won" and settle_state("btts", "yes", 1, 0) == "lost"
