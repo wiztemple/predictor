@@ -13,7 +13,7 @@ export const COUNTRIES: { country: string; codes: string[]; color: string }[] = 
   { country: "Greece", color: "#0ea5e9", codes: ["G1"] },
   { country: "Austria", color: "#f43f5e", codes: ["AUT"] },
   { country: "Switzerland", color: "#b91c1c", codes: ["SWZ"] },
-  { country: "Denmark", color: "#c026d3", codes: ["DNK"] },
+  { country: "Denmark", color: "#0891b2", codes: ["DNK"] },
   { country: "Poland", color: "#db2777", codes: ["POL"] },
   { country: "Romania", color: "#eab308", codes: ["ROU"] },
 ];
@@ -23,4 +23,4 @@ export const leagueOrder = (code: string) => ORDER.get(code) ?? 999;
 
 const COLOR = new Map(COUNTRIES.flatMap((c) => c.codes.map((code) => [code, c.color] as const)));
 /** Country colour for a league code (decorative accent; the league name is always shown). */
-export const leagueColor = (code: string) => COLOR.get(code) ?? "#8b5cf6";
+export const leagueColor = (code: string) => COLOR.get(code) ?? "#64748b";

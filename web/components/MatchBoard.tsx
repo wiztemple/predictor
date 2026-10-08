@@ -17,7 +17,7 @@ type Props = { matches: BoardMatch[]; leagues: { code: string; name: string }[];
 const chip = (active: boolean) =>
   `shrink-0 rounded-full border px-3 py-1.5 text-sm font-medium whitespace-nowrap transition-colors ${
     active
-      ? "bg-brand border-transparent text-white shadow-sm"
+      ? "bg-text border-transparent text-page shadow-sm"
       : "border-border bg-surface text-text-2 hover:border-accent hover:text-accent"
   }`;
 
@@ -93,7 +93,7 @@ export function MatchBoard({ matches, leagues, track }: Props) {
               aria-selected={market === mk.key}
               onClick={() => setMarket(mk.key)}
               className={`flex-1 shrink-0 rounded-lg px-3 py-2 text-sm font-semibold whitespace-nowrap transition-colors ${
-                market === mk.key ? "bg-brand text-white shadow" : "text-text-2 hover:bg-surface-2 hover:text-text"
+                market === mk.key ? "bg-text text-page shadow" : "text-text-2 hover:bg-surface-2 hover:text-text"
               }`}
             >
               {mk.short}

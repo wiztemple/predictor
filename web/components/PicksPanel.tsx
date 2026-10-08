@@ -64,7 +64,7 @@ export function PicksPanel({ picks, record, compact = false, heading = true }: P
             aria-pressed={day === d}
             className={`shrink-0 rounded-full border px-3 py-1.5 text-sm font-medium whitespace-nowrap transition-colors ${
               day === d
-                ? "bg-brand border-transparent text-white shadow-sm"
+                ? "bg-text border-transparent text-page shadow-sm"
                 : "border-border text-text-2 hover:border-accent hover:text-accent"
             }`}
           >

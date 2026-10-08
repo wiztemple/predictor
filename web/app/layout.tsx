@@ -25,7 +25,7 @@ export default async function RootLayout({ children }: LayoutProps<"/">) {
               <svg aria-hidden viewBox="0 0 24 24" className="size-7 drop-shadow">
                 <circle cx="12" cy="12" r="11" fill="white" />
                 <path
-                  fill="#14112b"
+                  fill="#0f172a"
                   d="M12 6.2l3.4 2.5-1.3 4h-4.2l-1.3-4zM5 9.6l2.2-.5 1.4 4.1-1.6 2.3-2.1-.7A8.6 8.6 0 015 9.6zm14 0a8.6 8.6 0 01.1 5.2l-2.1.7-1.6-2.3 1.4-4.1zM9.6 18.7l.9-2.4h3l.9 2.4a8.6 8.6 0 01-4.8 0z"
                 />
               </svg>

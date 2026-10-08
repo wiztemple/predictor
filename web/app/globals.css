@@ -1,23 +1,23 @@
 @import "tailwindcss";
 
 /* Tokens.
-   - brand: solid violet behind white text (header, heroes, active tabs); 8.6:1 with white
-   - accent: links, active tabs (violet)
+   - brand: dark slate behind white text (header, heroes, active tabs)
+   - accent: links and accent headings (blue)
    - win: "most likely" / positive (emerald)
    - conf-1..3: confidence tiers (amber lean, sky likely, emerald very likely)
    - home/draw/away: chart series, the dataviz reference palette's first three
      categorical slots (validated for colour-blindness) - unchanged on purpose. */
 :root {
   color-scheme: light;
-  --page: #f4f3fb;
+  --page: #f5f6f8;
   --surface: #ffffff;
-  --surface-2: #f1effa;
-  --border: #e3e0f0;
-  --text: #14112b;
-  --text-2: #4b4766;
-  --text-3: #6e6a88;
-  --brand: #5b21b6;
-  --accent: #6d28d9;
+  --surface-2: #f1f3f6;
+  --border: #e2e6eb;
+  --text: #0f172a;
+  --text-2: #475569;
+  --text-3: #64748b;
+  --brand: #0f172a;
+  --accent: #1d4ed8;
   --win: #059669;
   --conf-1: #b45309;
   --conf-2: #0369a1;
@@ -25,7 +25,7 @@
   --home: #2a78d6;
   --draw: #eb6834;
   --away: #1baf7a;
-  --seq-hi: #4c1d95;
+  --seq-hi: #184f95;
   --notice-bg: #fff4e0;
   --notice-border: #f5d19a;
   --notice-text: #6b3d00;
@@ -34,15 +34,15 @@
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
     color-scheme: dark;
-    --page: #0b0d1a;
-    --surface: #141831;
-    --surface-2: #1d2242;
-    --border: #2b3159;
-    --text: #f5f4ff;
-    --text-2: #c2c1e0;
-    --text-3: #9493b8;
-  --brand: #5b21b6;
-    --accent: #a78bfa;
+    --page: #0b0f14;
+    --surface: #141a21;
+    --surface-2: #1c242d;
+    --border: #2a3440;
+    --text: #f1f5f9;
+    --text-2: #cbd5e1;
+    --text-3: #94a3b8;
+  --brand: #1e293b;
+    --accent: #60a5fa;
     --win: #34d399;
     --conf-1: #fbbf24;
     --conf-2: #38bdf8;
@@ -50,7 +50,7 @@
     --home: #3987e5;
     --draw: #d95926;
     --away: #199e70;
-    --seq-hi: #8b5cf6;
+    --seq-hi: #5598e7;
     --notice-bg: #2d220c;
     --notice-border: #5a4413;
     --notice-text: #fcd58a;
@@ -59,15 +59,15 @@
 
 :root[data-theme="dark"] {
   color-scheme: dark;
-  --page: #0b0d1a;
-  --surface: #141831;
-  --surface-2: #1d2242;
-  --border: #2b3159;
-  --text: #f5f4ff;
-  --text-2: #c2c1e0;
-  --text-3: #9493b8;
-  --brand: #5b21b6;
-  --accent: #a78bfa;
+  --page: #0b0f14;
+  --surface: #141a21;
+  --surface-2: #1c242d;
+  --border: #2a3440;
+  --text: #f1f5f9;
+  --text-2: #cbd5e1;
+  --text-3: #94a3b8;
+  --brand: #1e293b;
+  --accent: #60a5fa;
   --win: #34d399;
   --conf-1: #fbbf24;
   --conf-2: #38bdf8;
@@ -75,7 +75,7 @@
   --home: #3987e5;
   --draw: #d95926;
   --away: #199e70;
-  --seq-hi: #8b5cf6;
+  --seq-hi: #5598e7;
   --notice-bg: #2d220c;
   --notice-border: #5a4413;
   --notice-text: #fcd58a;

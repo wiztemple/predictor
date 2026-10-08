@@ -1,7 +1,7 @@
 import { confidence } from "@/lib/markets";
 
 // Deep, saturated badge colours: white initials stay readable (>= 4.5:1) on all of them.
-const BADGE = ["#6d28d9", "#be185d", "#b91c1c", "#c2410c", "#b45309", "#15803d", "#0f766e", "#0369a1", "#1d4ed8", "#4338ca", "#7e22ce", "#9d174d"];
+const BADGE = ["#0e7490", "#be185d", "#b91c1c", "#c2410c", "#b45309", "#15803d", "#0f766e", "#0369a1", "#1d4ed8", "#334155", "#4d7c0f", "#a16207"];
 const SKIP = new Set(["fc", "ac", "as", "sc", "cf", "cd", "rc", "afc", "the", "de", "1."]);
 
 function hash(s: string) {
