@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { AdSlot } from "@/components/AdSlot";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { AsianHandicap } from "@/components/AsianHandicap";
@@ -198,6 +199,8 @@ export default async function MatchPage({ params }: PageProps<"/match/[id]">) {
           </p>
         ) : null}
       </section>
+
+      <AdSlot id="match-mid" />
 
       {mk ? (
         <section className="space-y-6">

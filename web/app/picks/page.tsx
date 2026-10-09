@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { AdSlot } from "@/components/AdSlot";
 import Link from "next/link";
 import { Integrity } from "@/components/Integrity";
 import { PicksPanel } from "@/components/PicksPanel";
@@ -101,6 +102,8 @@ export default async function PicksPage() {
           </p>
         )}
       </section>
+
+      <AdSlot id="picks-mid" />
 
       <Integrity />
 

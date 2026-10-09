@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import { AdSlot } from "@/components/AdSlot";
 import Link from "next/link";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Disclaimer, PreviewBanner } from "@/components/Notices";
@@ -53,9 +54,15 @@ export default async function RootLayout({ children }: LayoutProps<"/">) {
           </nav>
         </header>
         <main className="mx-auto w-full max-w-5xl flex-1 px-4 py-8">{children}</main>
+        <div className="px-4 pb-8">
+          <AdSlot id="footer" />
+        </div>
         <footer className="border-t border-border bg-surface">
-          <div className="mx-auto max-w-5xl px-4 py-6">
+          <div className="mx-auto max-w-5xl space-y-3 px-4 py-6">
             <Disclaimer />
+            <Link href="/advertise" className="inline-block text-xs font-medium text-text-2 hover:text-accent">
+              Advertise with us
+            </Link>
           </div>
         </footer>
       </body>

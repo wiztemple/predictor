@@ -1,4 +1,5 @@
 import { MatchBoard } from "@/components/MatchBoard";
+import { AdSlot } from "@/components/AdSlot";
 import { PicksPanel } from "@/components/PicksPanel";
 import { panelPicks, recordLine } from "@/lib/panel";
 import Link from "next/link";
@@ -84,6 +85,7 @@ export default async function Home() {
           </div>
         </section>
       ) : null}
+      <AdSlot id="home-mid" className="mt-8" />
       <h2 className="mt-10 text-2xl font-extrabold tracking-tight">All matches</h2>
       <div className="mt-2">
         <MatchBoard matches={matches} leagues={leagues} track={track} />
