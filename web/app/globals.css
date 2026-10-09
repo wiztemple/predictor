@@ -11,6 +11,7 @@
   --page: #ffffff;
   --surface: #ffffff;
   --surface-2: #ffffff;
+  --tab-active: #f4f4f2; /* milk grey behind the selected tab */
   --border: #e5e7eb;
   --text: #0f172a;
   --text-2: #475569;
@@ -58,6 +59,15 @@ body {
   background: var(--page);
   color: var(--text);
   font-family: var(--font-geist-sans), system-ui, sans-serif;
+}
+
+/* Selected tab/chip: no border, milk-grey fill, faint shadow. */
+.tab-active {
+  background: var(--tab-active);
+  border-color: transparent;
+  color: var(--text);
+  font-weight: 600;
+  box-shadow: 0 1px 2px rgb(15 23 42 / 0.08), 0 1px 1px rgb(15 23 42 / 0.04);
 }
 
 .tabular {

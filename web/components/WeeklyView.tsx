@@ -172,7 +172,7 @@ export function WeeklyView({
             href={l.key === "safe" ? "/weekly" : `/weekly/${l.key}`}
             aria-current={l.key === active ? "page" : undefined}
             className={`shrink-0 rounded-full border px-3 py-1.5 text-sm font-medium whitespace-nowrap transition-colors ${
-              l.key === active ? "border-text bg-surface font-semibold text-text" : "border-border text-text-2 hover:border-accent hover:text-accent"
+              l.key === active ? "tab-active" : "border-border text-text-2 hover:border-accent hover:text-accent"
             }`}
           >
             {l.label}
