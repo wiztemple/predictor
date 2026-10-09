@@ -8,6 +8,7 @@ const FILES = [
   "predictions/predictions.json",
   "predictions/live_summary.json",
   "backtest/summary.json",
+  "backtest/corners.json",
   "picks/summary.json",
   "picks/backtest.json",
   "picks/weekly.json",

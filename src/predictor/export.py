@@ -9,6 +9,7 @@ import numpy as np
 import pandas as pd
 
 from predictor.calibration import GOALS_KEYS, apply_goals_calibration
+from predictor.corners import line_key
 from predictor.handicap import rescale_margins
 from predictor.timing import early_result
 from predictor.markets_extra import all_markets
@@ -52,6 +53,7 @@ def build_document(
     pick_markets=None,
     ten_min_share: float | None = None,
     half_share: float | None = None,
+    corners=None,
 ) -> dict[str, Any]:
     """fixtures: league, kickoff (UTC), home_mapped, away_mapped, source, season."""
     now = datetime.now(timezone.utc).isoformat(timespec="seconds")
@@ -67,6 +69,8 @@ def build_document(
         for k in keys:
             main[f"p_{k}"] = cal[k]
     others = {m.describe(): (m, m.predict(model_in)) for m in secondary} if len(fx) else {}
+    # total corners: only for leagues with corner data (NaN elsewhere)
+    cn = corners.predict(model_in) if corners is not None and len(fx) else None
 
     records = []
     for i, f in fx.reset_index(drop=True).iterrows():
@@ -129,6 +133,13 @@ def build_document(
             rec["extras"]["goals_calibrated"] = goals_calibrated
             if hasattr(primary, "grid") and "score_grid" not in rec["extras"]:
                 rec["extras"]["score_grid"] = _grid(primary, f["league"], f["home"], f["away"], grid_max_goals)
+        if cn is not None and pd.notna(cn.at[i, "exp_corners"]):
+            c = cn.iloc[i]
+            rec["extras"]["corners"] = {
+                "expected": {"home": _r(c["exp_home_corners"], 2), "away": _r(c["exp_away_corners"], 2),
+                             "total": _r(c["exp_corners"], 2)},
+                "over": {f"{line:g}": _r(c[f"p_{line_key(line)}"]) for line in corners.lines},
+            }
         records.append(rec)
 
     # cross-market best pick per match + its rank within the UK day (the tracked rule)

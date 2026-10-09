@@ -126,3 +126,37 @@ export const getLiveSummary = cache(async (): Promise<LiveSummary | null> => {
     return null;
   }
 });
+
+// Written by scripts/backtest_corners.py (data/backtest/corners.json).
+export type CornersBacktest = {
+  generated_at: string;
+  test_seasons: string[];
+  n_matches: number;
+  benchmark: string;
+  mean_total: number;
+  mean_predicted: number;
+  count_log_loss: { model: number; baseline: number; gain: number; gain_ci: [number, number] };
+  lines: Record<
+    string,
+    {
+      line: number;
+      base_rate: number;
+      model: { n: number; log_loss: number; brier: number };
+      baseline: { n: number; log_loss: number; brier: number };
+      log_loss_gain: number;
+      log_loss_gain_ci: [number, number];
+      reliability: { bin_lo: number; bin_hi: number; n: number; mean_pred: number; observed: number }[];
+      thresholds: GoalsMarketBacktest["thresholds"];
+    }
+  >;
+};
+
+const CORNERS_PATH = path.join(/*turbopackIgnore: true*/ process.cwd(), "data", "backtest", "corners.json");
+
+export const getCornersBacktest = cache(async (): Promise<CornersBacktest | null> => {
+  try {
+    return JSON.parse(await readFile(CORNERS_PATH, "utf8")) as CornersBacktest;
+  } catch {
+    return null;
+  }
+});

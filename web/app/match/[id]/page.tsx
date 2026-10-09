@@ -10,7 +10,7 @@ import { fairOdds } from "@/lib/markets";
 import { ConfidenceBadge, ConfidenceBar, LeagueDot, TeamBadge } from "@/components/ui";
 import { leagueColor } from "@/lib/leagues";
 import { getMatch, getPredictions } from "@/lib/predictions";
-import { getBacktest } from "@/lib/trackRecord";
+import { getBacktest, getCornersBacktest } from "@/lib/trackRecord";
 
 export async function generateStaticParams() {
   const doc = await getPredictions();
@@ -68,7 +68,7 @@ function PickCard({ market, pick, p }: { market: string; pick: string; p: number
 const best = (opts: { pick: string; p: number }[]) => opts.reduce((a, b) => (b.p > a.p ? b : a));
 
 export default async function MatchPage({ params }: PageProps<"/match/[id]">) {
-  const [m, bt] = await Promise.all([getMatch((await params).id), getBacktest()]);
+  const [m, bt, cbt] = await Promise.all([getMatch((await params).id), getBacktest(), getCornersBacktest()]);
   if (!m) notFound();
   const x = m.extras;
   const mk = x.markets;
@@ -284,6 +284,43 @@ export default async function MatchPage({ params }: PageProps<"/match/[id]">) {
               track record
             </Link>
             .
+          </p>
+        </section>
+      ) : null}
+
+      {/* corners */}
+      {x.corners ? (
+        <section>
+          <div className="mb-3 flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
+            <h2 className="text-lg font-semibold">Corners</h2>
+            <p className="text-sm text-text-2">
+              Expected:{" "}
+              <span className="font-semibold text-text tabular">
+                {m.home} {x.corners.expected.home.toFixed(1)} – {x.corners.expected.away.toFixed(1)} {m.away}
+              </span>{" "}
+              · total <span className="font-semibold text-text tabular">{x.corners.expected.total.toFixed(1)}</span>
+            </p>
+          </div>
+          <div className="grid items-start gap-3 md:grid-cols-2">
+            {Object.entries(x.corners.over).map(([line, p]) => (
+              <Market
+                key={line}
+                title={`Total corners over/under ${line}`}
+                options={[
+                  { label: "Over", p },
+                  { label: "Under", p: 1 - p },
+                ]}
+              />
+            ))}
+          </div>
+          <p className="mt-3 text-xs text-text-3">
+            {cbt
+              ? `Tested on ${cbt.n_matches.toLocaleString("en-GB")} past matches: more accurate than each league's average on every line, and well calibrated. `
+              : ""}
+            Our data has no bookmaker corner odds, so we can&apos;t say how it compares with the bookies.{" "}
+            <Link href="/track-record#corners" className="font-semibold text-accent hover:underline">
+              Track record
+            </Link>
           </p>
         </section>
       ) : null}

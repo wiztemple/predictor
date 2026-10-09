@@ -3,7 +3,13 @@ import { ReliabilityChart } from "@/components/ReliabilityChart";
 import { pct } from "@/lib/format";
 import { getPredictions } from "@/lib/predictions";
 import { LiveRecord } from "@/components/LiveRecord";
-import { getBacktest, getLiveSummary, type BacktestSummary } from "@/lib/trackRecord";
+import {
+  getBacktest,
+  getCornersBacktest,
+  getLiveSummary,
+  type BacktestSummary,
+  type CornersBacktest,
+} from "@/lib/trackRecord";
 
 export const metadata: Metadata = { title: "Track record" };
 
@@ -23,6 +29,66 @@ function Stat({ label, value, note }: { label: string; value: string; note?: str
       <div className="mt-1 text-2xl font-semibold tabular">{value}</div>
       {note ? <div className="mt-1 text-xs text-text-3">{note}</div> : null}
     </div>
+  );
+}
+
+function CornersRecord({ c }: { c: CornersBacktest }) {
+  const ci = c.count_log_loss.gain_ci;
+  return (
+    <section id="corners" className="scroll-mt-4">
+      <h2 className="mb-1 text-lg font-semibold">Corners</h2>
+      <p className="mb-3 max-w-2xl text-sm text-text-2">
+        Total corners, tested week by week on {c.n_matches.toLocaleString("en-GB")} matches in {c.test_seasons[0]} to{" "}
+        {c.test_seasons[c.test_seasons.length - 1]}, with settings chosen on earlier seasons only. On average matches had{" "}
+        {c.mean_total.toFixed(2)} corners and we predicted {c.mean_predicted.toFixed(2)}. Our data has no bookmaker
+        corner odds, so the comparison is with each league&apos;s average, not with the bookies.
+      </p>
+      <div className="overflow-x-auto">
+        <table className="w-full max-w-3xl text-sm tabular">
+          <thead>
+            <tr className="text-left text-text-3">
+              <th className="py-1 font-normal">Line</th>
+              <th className="py-1 text-right font-normal">Went over</th>
+              <th className="py-1 text-right font-normal">League average</th>
+              <th className="py-1 text-right font-normal">Ours</th>
+              <th className="py-1 text-right font-normal">Our 65%+ calls</th>
+            </tr>
+          </thead>
+          <tbody>
+            {Object.values(c.lines).map((l) => {
+              const calls = l.thresholds
+                .filter((t) => t.min_p === 0.65)
+                .sort((a, b) => b.n - a.n)[0];
+              return (
+                <tr key={l.line} className="border-t border-border">
+                  <td className="py-1.5">Over/under {l.line}</td>
+                  <td className="py-1.5 text-right">{pct(l.base_rate)}</td>
+                  <td className="py-1.5 text-right">{l.baseline.log_loss.toFixed(4)}</td>
+                  <td className="py-1.5 text-right">{l.model.log_loss.toFixed(4)}</td>
+                  <td className="py-1.5 text-right text-text-2">
+                    {calls ? (
+                      <>
+                        {calls.direction === "over" ? "Over" : "Under"}: won {pct(calls.hit_rate)}{" "}
+                        <span className="text-text-3">
+                          (said {pct(calls.mean_pred)}, {calls.n.toLocaleString("en-GB")})
+                        </span>
+                      </>
+                    ) : (
+                      "–"
+                    )}
+                  </td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      </div>
+      <p className="mt-2 text-xs text-text-3">
+        Log loss, lower is better. Across all corner counts we beat the league average by{" "}
+        {c.count_log_loss.gain.toFixed(4)} (95% interval {ci[0].toFixed(4)} to {ci[1].toFixed(4)}): a real but small
+        edge, because most of what decides corners is luck on the day.
+      </p>
+    </section>
   );
 }
 
@@ -365,7 +431,7 @@ function Backtest({ bt, leagueName }: { bt: BacktestSummary; leagueName: Map<str
 }
 
 export default async function TrackRecordPage() {
-  const [bt, doc, live] = await Promise.all([getBacktest(), getPredictions(), getLiveSummary()]);
+  const [bt, doc, live, cbt] = await Promise.all([getBacktest(), getPredictions(), getLiveSummary(), getCornersBacktest()]);
   const leagueName = new Map(doc.leagues.map((l) => [l.code, l.name]));
 
   return (
@@ -386,6 +452,8 @@ export default async function TrackRecordPage() {
           past seasons.
         </p>
       )}
+
+      {cbt ? <CornersRecord c={cbt} /> : null}
 
       <section>
         <h2 className="mb-3 text-lg font-semibold">Live predictions</h2>

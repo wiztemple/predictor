@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { formatShortDay, formatTime, pct } from "@/lib/format";
-import { type BoardMatch, type MarketKey, MARKETS, bestCell, cells, fairOdds } from "@/lib/markets";
+import { type BoardMatch, type MarketKey, CORNER_LINES, MARKETS, bestCell, cells, fairOdds, isCorners } from "@/lib/markets";
 import type { Threshold } from "@/lib/picks";
 import { useUrlParam } from "@/lib/useUrlParam";
 import { leagueColor } from "@/lib/leagues";
@@ -52,8 +52,11 @@ export function MatchBoard({ matches, leagues, track }: Props) {
   const leagueCount = new Map<string, number>();
   for (const m of matches) leagueCount.set(m.league, (leagueCount.get(m.league) ?? 0) + 1);
 
+  const corners = isCorners(market);
+  const noCorners = corners ? [...new Set(matches.filter((m) => !m.corners).map((m) => m.league_name))] : [];
   const shown = matches.filter(
     (m) =>
+      (!corners || m.corners) &&
       (!day || formatShortDay(m.kickoff) === day) &&
       (!league || m.league === league) &&
       (minP === 0 || Math.round((bestCell(m, market)?.p ?? 0) * 100) >= minP * 100),
@@ -86,20 +89,38 @@ export function MatchBoard({ matches, leagues, track }: Props) {
       {/* controls */}
       <div className="z-10 -mx-4 border-b border-border bg-page/90 px-4 pt-3 pb-3 backdrop-blur sm:sticky sm:top-0">
         <div role="tablist" aria-label="Market" className="flex gap-1 overflow-x-auto rounded-xl border border-border bg-surface p-1">
-          {MARKETS.map((mk) => (
-            <button
-              key={mk.key}
-              role="tab"
-              aria-selected={market === mk.key}
-              onClick={() => setMarket(mk.key)}
-              className={`flex-1 shrink-0 rounded-lg px-3 py-2 text-sm font-semibold whitespace-nowrap transition-colors ${
-                market === mk.key ? "tab-active" : "text-text-2 hover:text-text"
-              }`}
-            >
-              {mk.short}
-            </button>
-          ))}
+          {[...MARKETS.filter((mk) => !mk.group), { key: "c8.5" as MarketKey, short: "Corners" }].map((mk) => {
+            const active = mk.short === "Corners" ? corners : market === mk.key;
+            return (
+              <button
+                key={mk.short}
+                role="tab"
+                aria-selected={active}
+                onClick={() => (mk.short === "Corners" && corners ? null : setMarket(mk.key))}
+                className={`flex-1 shrink-0 rounded-lg px-3 py-2 text-sm font-semibold whitespace-nowrap transition-colors ${
+                  active ? "tab-active" : "text-text-2 hover:text-text"
+                }`}
+              >
+                {mk.short}
+              </button>
+            );
+          })}
         </div>
+        {corners ? (
+          <div className="mt-2 flex items-center gap-2 overflow-x-auto" aria-label="Corners line">
+            <span className="shrink-0 text-xs font-medium text-text-3">Total corners over/under</span>
+            {CORNER_LINES.map((l) => (
+              <button
+                key={l}
+                className={chip(market === `c${l}`)}
+                aria-pressed={market === `c${l}`}
+                onClick={() => setMarket(`c${l}` as MarketKey)}
+              >
+                {l}
+              </button>
+            ))}
+          </div>
+        ) : null}
         <div className="mt-3 flex flex-col gap-2 sm:flex-row sm:items-center">
           <div className="flex min-w-0 flex-1 gap-2 overflow-x-auto">
             <button className={chip(day === null)} aria-pressed={day === null} onClick={() => setDay(null)}>
@@ -143,6 +164,12 @@ export function MatchBoard({ matches, leagues, track }: Props) {
           </div>
         </div>
       </div>
+
+      {noCorners.length ? (
+        <p className="mt-3 text-xs text-text-3">
+          No corner data for {noCorners.join(", ")}, so those matches are left out of this tab.
+        </p>
+      ) : null}
 
       {/* top picks */}
       {picks.length > 0 ? (
@@ -247,7 +274,12 @@ function BoardRow({ m, market }: { m: BoardMatch; market: MarketKey }) {
             <span className="truncate">{m.away}</span>
           </div>
         </div>
-        {top && market !== "cs" && market !== "ten" ? (
+        {isCorners(market) && m.corners ? (
+          <span className="ml-auto w-14 shrink-0 text-center text-[11px] leading-tight text-text-3">
+            Exp. corners
+            <span className="mt-0.5 block text-base font-semibold text-text tabular">{m.corners.total.toFixed(1)}</span>
+          </span>
+        ) : top && market !== "cs" && market !== "ten" ? (
           <span className="ml-auto w-14 shrink-0 text-center text-[11px] leading-tight text-text-3">
             Likely score
             <span className="mt-0.5 block text-base font-semibold text-text tabular">

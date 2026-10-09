@@ -8,15 +8,16 @@ import { toBoardMatch, trackTables } from "@/lib/board";
 import { TIME_ZONE_LABEL } from "@/lib/format";
 import { leagueOrder } from "@/lib/leagues";
 import { getPredictions } from "@/lib/predictions";
-import { getBacktest } from "@/lib/trackRecord";
+import { getBacktest, getCornersBacktest } from "@/lib/trackRecord";
 
 export default async function Home() {
-  const [doc, bt, live, pbt, weekly] = await Promise.all([
+  const [doc, bt, live, pbt, weekly, cbt] = await Promise.all([
     getPredictions(),
     getBacktest(),
     getPicksSummary(),
     getPicksBacktest(),
     getWeekly(),
+    getCornersBacktest(),
   ]);
   const weeklyLists = Object.entries(weekly?.lists ?? {});
   const perDay = pbt?.rule.per_day ?? live?.per_day ?? 10;
@@ -25,7 +26,7 @@ export default async function Home() {
   const leagues = doc.leagues
     .map(({ code, name }) => ({ code, name }))
     .sort((a, b) => leagueOrder(a.code) - leagueOrder(b.code));
-  const track = trackTables(bt);
+  const track = trackTables(bt, cbt);
 
   return (
     <div>

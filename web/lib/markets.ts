@@ -1,7 +1,12 @@
 // Betting-style markets built from a match's probabilities. Fair odds = 1 / probability.
 import { type Margin, ahChance, awayOf, fmtLine, homeOutcome, mainLine } from "./handicap";
 
-export type MarketKey = "1x2" | "ten" | "ht" | "dnb" | "o15" | "o25" | "gg" | "ah" | "cs";
+export type CornerKey = "c7.5" | "c8.5" | "c9.5" | "c10.5" | "c11.5";
+export type MarketKey = "1x2" | "ten" | "ht" | "dnb" | "o15" | "o25" | "gg" | "ah" | "cs" | CornerKey;
+
+/** Total-corners lines offered; the board shows one Corners tab with these as sub-options. */
+export const CORNER_LINES = ["7.5", "8.5", "9.5", "10.5", "11.5"] as const;
+export const isCorners = (k: MarketKey): k is CornerKey => k.startsWith("c") && k !== "cs";
 
 export type BoardMatch = {
   id: string;
@@ -20,11 +25,12 @@ export type BoardMatch = {
   ten?: { home: number; draw: number; away: number }; // result after 10 minutes (estimate)
   ht?: Record<string, number>; // half-time result: "1" | "X" | "2"
   dnb?: Record<string, number>; // draw no bet: "1" | "2"
+  corners?: { total: number; over: Record<string, number> }; // expected total, P(over line)
 };
 
 export type Cell = { label: string; p: number; pickLabel: string };
 
-export const MARKETS: { key: MarketKey; label: string; short: string }[] = [
+export const MARKETS: { key: MarketKey; label: string; short: string; group?: "corners" }[] = [
   { key: "1x2", label: "Match result", short: "1X2" },
   // 10-minute market hidden for now (uncomment to bring back the 10′ tab):
   // { key: "ten", label: "Result after 10 minutes", short: "10′" },
@@ -35,6 +41,12 @@ export const MARKETS: { key: MarketKey; label: string; short: string }[] = [
   { key: "gg", label: "Both teams to score", short: "GG/NG" },
   { key: "ah", label: "Asian handicap (main line)", short: "AH" },
   { key: "cs", label: "Correct score", short: "Score" },
+  ...CORNER_LINES.map((l) => ({
+    key: `c${l}` as CornerKey,
+    label: `Corners over/under ${l}`,
+    short: `Corners ${l}`,
+    group: "corners" as const,
+  })),
 ];
 
 export const fairOdds = (p: number) => (p > 0 ? (1 / p).toFixed(2) : "–");
@@ -100,6 +112,16 @@ export function cells(m: BoardMatch, market: MarketKey): Cell[] {
     }
     case "cs":
       return m.scores.map((s) => ({ label: `${s.home}-${s.away}`, p: s.p, pickLabel: `Score ${s.home}-${s.away}` }));
+    default: {
+      const line = market.slice(1);
+      const p = m.corners?.over[line];
+      return p === undefined
+        ? []
+        : [
+            { label: "Over", p, pickLabel: `Over ${line} corners` },
+            { label: "Under", p: 1 - p, pickLabel: `Under ${line} corners` },
+          ];
+    }
   }
 }
 

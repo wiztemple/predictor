@@ -22,6 +22,7 @@ import sys
 import pandas as pd
 
 from predictor.config import load_config, project_path, season_of
+from predictor.corners import CornersModel
 from predictor.export import build_document
 from predictor.fixtures import (
     combine,
@@ -121,7 +122,7 @@ def main() -> int:
     doc = build_document(good, primary, secondary, unmatched, fd["leagues"], fitted_until,
                          pr_cfg["status"], pr_cfg["grid_max_goals"], goals_calibration=goals_cal,
                          pick_markets=cfg["picks"]["markets"], ten_min_share=cfg["timing"]["share_10"],
-                         half_share=cfg["timing"]["share_45"])
+                         half_share=cfg["timing"]["share_45"], corners=CornersModel.from_config(cfg).fit(matches))
 
     out = project_path(args.output)
     out.parent.mkdir(parents=True, exist_ok=True)

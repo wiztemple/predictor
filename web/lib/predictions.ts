@@ -24,6 +24,8 @@ export type FootballExtras = {
   btts?: number;
   top_scorelines?: Scoreline[];
   score_grid?: { max_goals: number; cells: number[][]; other: number };
+  /** total corners (leagues with corner data only): expected counts and P(total over line) keyed "8.5" */
+  corners?: { expected: { home: number; away: number; total: number }; over: Record<string, number> };
 };
 
 export type ModelRef = { name: string; version: string };

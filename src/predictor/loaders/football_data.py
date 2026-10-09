@@ -90,6 +90,7 @@ OU_COLUMNS = ["odds_over_2_5", "odds_under_2_5", "ou_source"]
 
 AH_COLUMNS = ["ah_line", "odds_ah_home", "odds_ah_away", "ah_source"]
 HT_COLUMNS = ["ht_home_score", "ht_away_score"]
+CORNER_COLUMNS = ["home_corners", "away_corners"]
 
 
 def select_ah_odds(df: pd.DataFrame, priority: Sequence[Sequence[str]], line_col: str = "AHCh") -> pd.DataFrame:
@@ -119,7 +120,7 @@ def _first_present(df: pd.DataFrame, names: Iterable[str]) -> pd.Series:
 def clean_file(raw: pd.DataFrame, league: str, season: str, priority, ou_priority=(), ah_priority=()) -> pd.DataFrame:
     """Turn one raw football-data frame into schema rows (played matches only)."""
     if raw.empty:
-        return pd.DataFrame(columns=MATCH_COLUMNS + ["odds_source"] + OU_COLUMNS + AH_COLUMNS + HT_COLUMNS)
+        return pd.DataFrame(columns=MATCH_COLUMNS + ["odds_source"] + OU_COLUMNS + AH_COLUMNS + HT_COLUMNS + CORNER_COLUMNS)
     home = _first_present(raw, ["HomeTeam", "HT"])
     away = _first_present(raw, ["AwayTeam", "AT"])
     hs = pd.to_numeric(_first_present(raw, ["FTHG", "HG"]), errors="coerce")
@@ -136,6 +137,8 @@ def clean_file(raw: pd.DataFrame, league: str, season: str, priority, ou_priorit
             "away_score": as_,
             "ht_home_score": pd.to_numeric(_first_present(raw, ["HTHG"]), errors="coerce"),
             "ht_away_score": pd.to_numeric(_first_present(raw, ["HTAG"]), errors="coerce"),
+            "home_corners": pd.to_numeric(_first_present(raw, ["HC"]), errors="coerce"),
+            "away_corners": pd.to_numeric(_first_present(raw, ["AC"]), errors="coerce"),
         }
     )
     df = pd.concat([df, select_odds(raw, priority), select_ou_odds(raw, ou_priority),
@@ -154,7 +157,7 @@ def clean_file(raw: pd.DataFrame, league: str, season: str, priority, ou_priorit
         mismatch = (ftr != "") & (ftr != df["outcome"])
         if mismatch.any():
             log.warning("%s %s: %d rows where FTR disagrees with score", league, season, mismatch.sum())
-    return df[MATCH_COLUMNS + ["odds_source"] + OU_COLUMNS + AH_COLUMNS + HT_COLUMNS]
+    return df[MATCH_COLUMNS + ["odds_source"] + OU_COLUMNS + AH_COLUMNS + HT_COLUMNS + CORNER_COLUMNS]
 
 
 def load_matches(raw_dir: Path | None = None, leagues: Iterable[str] | None = None) -> pd.DataFrame:
@@ -176,7 +179,7 @@ def load_matches(raw_dir: Path | None = None, leagues: Iterable[str] | None = No
         frames += load_extra_leagues(raw_dir, cfg["extra_leagues"], cfg["extra_odds_priority"],
                                      season_label(cfg["first_season"]), wanted)
     if not frames:
-        return pd.DataFrame(columns=MATCH_COLUMNS + ["odds_source"] + OU_COLUMNS + AH_COLUMNS + HT_COLUMNS)
+        return pd.DataFrame(columns=MATCH_COLUMNS + ["odds_source"] + OU_COLUMNS + AH_COLUMNS + HT_COLUMNS + CORNER_COLUMNS)
     df = pd.concat(frames, ignore_index=True)
     df = apply_renames(df, cfg.get("team_renames", {}))
     df = drop_excluded(df, cfg.get("excluded_matches", []))

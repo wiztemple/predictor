@@ -5,7 +5,7 @@ import { MatchBoard } from "@/components/MatchBoard";
 import { toBoardMatch, trackTables } from "@/lib/board";
 import { TIME_ZONE_LABEL } from "@/lib/format";
 import { getLeague, getPredictions } from "@/lib/predictions";
-import { getBacktest } from "@/lib/trackRecord";
+import { getBacktest, getCornersBacktest } from "@/lib/trackRecord";
 
 export async function generateStaticParams() {
   const doc = await getPredictions();
@@ -18,7 +18,7 @@ export async function generateMetadata({ params }: PageProps<"/league/[code]">):
 }
 
 export default async function LeaguePage({ params }: PageProps<"/league/[code]">) {
-  const [data, bt] = await Promise.all([getLeague((await params).code), getBacktest()]);
+  const [data, bt, cbt] = await Promise.all([getLeague((await params).code), getBacktest(), getCornersBacktest()]);
   if (!data) notFound();
   const { league, matches } = data;
 
@@ -41,7 +41,7 @@ export default async function LeaguePage({ params }: PageProps<"/league/[code]">
           <MatchBoard
             matches={matches.map(toBoardMatch)}
             leagues={[{ code: league.code, name: league.name }]}
-            track={trackTables(bt)}
+            track={trackTables(bt, cbt)}
           />
         </div>
       )}

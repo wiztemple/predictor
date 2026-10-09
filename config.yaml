@@ -129,6 +129,18 @@ models:
     max_goals: 10
     new_team_quantile: 0.1      # unseen team gets this quantile of attack (and 1-q of defence weakness)
     top_scorelines: 5
+  corners:
+    # Total-corners model (src/predictor/corners.py). Settings picked on tune_seasons by
+    # scripts/backtest_corners.py --tune (grid: half-life 90..730, l2 1..400), before any test run.
+    half_life_days: 180
+    l2_penalty: 100.0           # heavy shrinkage: team corner tendencies are small next to the noise
+    max_history_days: 1100
+    dispersion_k: 64.4          # negative binomial k for the match total (fitted on tune seasons; near Poisson)
+    new_team_quantile: 0.3      # unseen team: this quantile of corners won (1-q of conceded)
+    lines: [7.5, 8.5, 9.5, 10.5, 11.5]
+    baseline_days: 365          # benchmark: league-average total over this many days
+    baseline_dispersion_k: 60.0
+    backtest_output: data/backtest/corners.json
   blend:
     weight_elo: 0.5             # chosen on tune seasons (16 leagues) by scripts/backtest.py (pre-test)
 
