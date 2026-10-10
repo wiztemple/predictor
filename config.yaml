@@ -75,6 +75,15 @@ football_data:
       season: "2022-23"
       teams: [Hatayspor, Gaziantep]   # withdrew after the Feb 2023 earthquake; 29 awarded 3-0
       from: "2023-02-06"
+  # Backup results while football-data.co.uk is behind (src/predictor/loaders/espn_results.py).
+  # Used only for dates after a league's last football-data result; no odds or half-time scores.
+  results_backup:
+    enabled: true
+    url: "https://site.api.espn.com/apis/site/v2/sports/soccer/{slug}/scoreboard?dates={date}"
+    cache_dir: data/raw/football/espn_results
+    slugs: {E0: eng.1, E1: eng.2, SC0: sco.1, D1: ger.1, D2: ger.2, I1: ita.1, I2: ita.2, SP1: esp.1,
+            SP2: esp.2, F1: fra.1, F2: fra.2, N1: ned.1, B1: bel.1, P1: por.1, T1: tur.1, G1: gre.1,
+            AUT: aut.1, SWZ: sui.1, DNK: den.1, ROU: rou.1}   # POL: not on ESPN
   # Odds priority: first triple with all three prices present (> 1.0) wins.
   odds_priority:
     - [pinnacle_closing, PSCH, PSCD, PSCA]

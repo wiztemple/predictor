@@ -160,8 +160,10 @@ def clean_file(raw: pd.DataFrame, league: str, season: str, priority, ou_priorit
     return df[MATCH_COLUMNS + ["odds_source"] + OU_COLUMNS + AH_COLUMNS + HT_COLUMNS + CORNER_COLUMNS]
 
 
-def load_matches(raw_dir: Path | None = None, leagues: Iterable[str] | None = None) -> pd.DataFrame:
-    """Merge all {league}_{season}.csv files into one de-duplicated table."""
+def load_matches(raw_dir: Path | None = None, leagues: Iterable[str] | None = None,
+                 results_backup: bool = True) -> pd.DataFrame:
+    """Merge all {league}_{season}.csv files into one de-duplicated table, plus (if enabled)
+    cached ESPN results for dates after each league's last football-data result."""
     cfg = load_config()["football_data"]
     raw_dir = Path(raw_dir or project_path(load_config()["paths"]["raw_football"]))
     wanted = set(leagues or cfg["leagues"])
@@ -183,6 +185,10 @@ def load_matches(raw_dir: Path | None = None, leagues: Iterable[str] | None = No
     df = pd.concat(frames, ignore_index=True)
     df = apply_renames(df, cfg.get("team_renames", {}))
     df = drop_excluded(df, cfg.get("excluded_matches", []))
+    df["results_source"] = "football-data"
+    rb = cfg.get("results_backup") or {}
+    if results_backup and rb.get("enabled") and len(df):
+        df = pd.concat([df, _backup_results(df, rb, wanted)], ignore_index=True)
     before = len(df)
     df = df.drop_duplicates(["league", "date", "home", "away"], keep="last")
     if len(df) < before:
@@ -190,6 +196,24 @@ def load_matches(raw_dir: Path | None = None, leagues: Iterable[str] | None = No
     df = df.sort_values(["date", "league", "home"]).reset_index(drop=True)
     validate_matches(df)
     return df
+
+
+def _backup_results(df: pd.DataFrame, rb: dict, wanted: set) -> pd.DataFrame:
+    from predictor.loaders.espn_results import load_espn_results
+    from predictor.teams import TeamNameMapper
+
+    cfg = load_config()
+    mapper = TeamNameMapper.from_history(df, project_path(cfg["fixtures"]["team_names"]))
+    after = df.groupby("league")["date"].max().to_dict()
+    slugs = {lg: s for lg, s in rb["slugs"].items() if lg in wanted}
+    rows, unmatched = load_espn_results(project_path(rb["cache_dir"]), slugs, mapper, after, list(df.columns))
+    for u in unmatched:
+        log.warning("ESPN result skipped, unknown team %s %r (add to team_names.yaml; suggestions %s)",
+                    u["league"], u["name"], u["suggestions"])
+    if len(rows):
+        log.info("ESPN backup results: %d matches (%s)", len(rows),
+                 ", ".join(f"{k} {v}" for k, v in rows.groupby("league").size().items()))
+    return rows
 
 
 def apply_renames(df: pd.DataFrame, renames: dict) -> pd.DataFrame:

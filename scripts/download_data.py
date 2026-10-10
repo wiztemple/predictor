@@ -95,6 +95,24 @@ def main() -> int:
             print(f"  FAIL {league}  {e}")
         time.sleep(delay)
 
+    # backup results from ESPN for days football-data hasn't published yet
+    rb = cfg.get("results_backup") or {}
+    if rb.get("enabled"):
+        import pandas as pd
+
+        from predictor.fixtures import _get_json_with_retries
+        from predictor.loaders.espn_results import fetch_espn_results
+        from predictor.loaders.football_data import load_matches
+
+        fd_only = load_matches(results_backup=False)
+        since = fd_only.groupby("league")["date"].max().to_dict()
+        today = pd.Timestamp.now(tz="Europe/London").tz_localize(None).normalize()
+        n, bad = fetch_espn_results(rb["url"], rb["slugs"], since, today, project_path(rb["cache_dir"]),
+                                    lambda u: _get_json_with_retries(u, cfg["user_agent"], 2, 2.0))
+        print(f"\nESPN backup results: fetched {n} league-day(s), {len(bad)} failed")
+        for b in bad[:10]:
+            print(f"  failure: {b}")
+
     print(f"\nDownloaded {ok}, skipped {skipped} (already on disk), failed {len(failures)}.")
     for league, season, url, err in failures:
         print(f"  failure: {league} {season}: {err}  [{url}]")

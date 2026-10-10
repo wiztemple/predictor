@@ -27,7 +27,7 @@ MATCH_COLUMNS = [
 # (odds_over/under_2_5 are football-specific goals-market odds.)
 OPTIONAL_COLUMNS = ["odds_source", "odds_over_2_5", "odds_under_2_5", "ou_source",
                     "ah_line", "odds_ah_home", "odds_ah_away", "ah_source", "ht_home_score", "ht_away_score",
-                    "home_corners", "away_corners"]
+                    "home_corners", "away_corners", "results_source"]
 
 OUTCOMES = ("H", "D", "A")
 
