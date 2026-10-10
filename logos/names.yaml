@@ -7,3 +7,8 @@ italy_mantova-1911: Mantova
 spain_deportivo: Alaves            # the crest is Deportivo Alavés (not Deportivo La Coruña)
 spain_racing: Santander            # "Real Racing Club Santander" on the crest
 france_rc-strasbourg: Strasbourg
+portugal_estrela-da-amadora: Estrela
+portugal_nacional-da-madeira: Nacional
+turkey_amed: Amedspor
+turkey_basaksehir: Buyuksehyr       # İstanbul Başakşehir (football-data's spelling)
+turkey_goztepe-izmir: Goztep

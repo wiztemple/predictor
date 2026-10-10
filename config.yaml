@@ -67,8 +67,12 @@ football_data:
       U Craiova: Univ. Craiova              # CS Universitatea Craiova (not "U Craiova 1948", a different club)
       Din. Bucuresti: Dinamo Bucuresti
       Viitorul Constanta: Farul Constanta   # 2021 merger; Farul took Viitorul's top-flight place
+    B1:
+      Waasland-Beveren: Beveren          # renamed SK Beveren in 2022 (same club)
     POL:
       Gornik Z.: Gornik Zabrze
+    T1:
+      Erzurum BB: Erzurumspor              # BB Erzurumspor, renamed Erzurumspor FK in 2021 (same club)
   # Results that weren't played (awarded/forfeited) - excluded from training and evaluation.
   excluded_matches:
     - league: T1
