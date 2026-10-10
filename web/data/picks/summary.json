@@ -1,27 +1,27 @@
 {
- "generated_at": "2026-10-10T16:42:47+00:00",
+ "generated_at": "2026-10-10T18:11:53+00:00",
  "per_day": 10,
- "log_entries": 1444,
+ "log_entries": 1527,
  "first_logged": "2026-10-06T07:32:25.475774Z",
- "settled": 64,
+ "settled": 72,
  "top": {
-  "n": 14,
-  "won": 13,
-  "hit_rate": 0.9285714285714286,
-  "avg_probability": 0.8610571428571429
+  "n": 15,
+  "won": 14,
+  "hit_rate": 0.9333333333333333,
+  "avg_probability": 0.8652666666666667
  },
  "all": {
-  "n": 64,
-  "won": 49,
-  "hit_rate": 0.765625,
-  "avg_probability": 0.80211875
+  "n": 72,
+  "won": 56,
+  "hit_rate": 0.7777777777777778,
+  "avg_probability": 0.8048194444444445
  },
  "by_market": {
   "double_chance": {
-   "n": 8,
-   "won": 8,
+   "n": 9,
+   "won": 9,
    "hit_rate": 1.0,
-   "avg_probability": 0.88485
+   "avg_probability": 0.8892222222222222
   },
   "ou_1_5": {
    "n": 4,
@@ -39,8 +39,8 @@
  "days": [
   {
    "day": "2026-10-10",
-   "n": 3,
-   "won": 3
+   "n": 4,
+   "won": 4
   },
   {
    "day": "2026-10-09",
@@ -54,6 +54,19 @@
   }
  ],
  "recent": [
+  {
+   "match_id": "f8559f5850c3",
+   "league": "I1",
+   "kickoff": "2026-10-10T16:00:00Z",
+   "home": "Inter",
+   "away": "Parma",
+   "label": "Inter or draw",
+   "market": "double_chance",
+   "probability": 0.9242,
+   "state": "won",
+   "score": "3-0",
+   "logged_at": "2026-10-08T07:13:37.205051Z"
+  },
   {
    "match_id": "72c95011b1c3",
    "league": "SC0",
