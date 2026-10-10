@@ -49,7 +49,7 @@ LEAGUE_FILES = {
     "belgium": {"belgianproleague": "B1", "proleague": "B1", "jupilerproleague": "B1"},
     "portugal": {"primeiraliga": "P1", "ligaportugal": "P1", "ligaportugalbetclic": "P1"},
     "turkey": {"superlig": "T1", "turkishsuperlig": "T1"},
-    "greece": {"superleague": "G1", "superleaguegreece": "G1", "greeksuperleague": "G1"},
+    "greece": {"superleague": "G1", "superleague1": "G1", "superleaguegreece": "G1", "greeksuperleague": "G1"},
     "scotland": {"premiership": "SC0", "scottishpremiership": "SC0"},
     "austria": {"bundesliga": "AUT", "austrianbundesliga": "AUT", "austrianfootballbundesliga": "AUT"},
     "switzerland": {"superleague": "SWZ", "swisssuperleague": "SWZ"},
