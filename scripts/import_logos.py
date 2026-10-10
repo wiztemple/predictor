@@ -52,7 +52,7 @@ LEAGUE_FILES = {
     "greece": {"superleague": "G1", "superleague1": "G1", "superleaguegreece": "G1", "greeksuperleague": "G1"},
     "scotland": {"premiership": "SC0", "scottishpremiership": "SC0"},
     "austria": {"bundesliga": "AUT", "austrianbundesliga": "AUT", "austrianfootballbundesliga": "AUT"},
-    "switzerland": {"superleague": "SWZ", "swisssuperleague": "SWZ"},
+    "switzerland": {"superleague": "SWZ", "swissfootballleague": "SWZ", "swisssuperleague": "SWZ"},
     "denmark": {"superliga": "DNK", "danishsuperliga": "DNK"},
     "romania": {"superliga": "ROU", "liga1": "ROU", "romaniansuperliga": "ROU"},
     "poland": {"ekstraklasa": "POL"},
