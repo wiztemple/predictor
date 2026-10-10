@@ -1,9 +1,9 @@
 {
- "generated_at": "2026-10-10T20:00:02+00:00",
+ "generated_at": "2026-10-10T20:13:48+00:00",
  "per_day": 10,
- "log_entries": 1645,
+ "log_entries": 1822,
  "first_logged": "2026-10-06T07:32:25.475774Z",
- "settled": 84,
+ "settled": 86,
  "top": {
   "n": 20,
   "won": 19,
@@ -11,10 +11,10 @@
   "avg_probability": 0.8751999999999999
  },
  "all": {
-  "n": 84,
-  "won": 67,
-  "hit_rate": 0.7976190476190477,
-  "avg_probability": 0.8103952380952381
+  "n": 86,
+  "won": 69,
+  "hit_rate": 0.8023255813953488,
+  "avg_probability": 0.8105395348837208
  },
  "by_market": {
   "double_chance": {
