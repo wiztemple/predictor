@@ -6,7 +6,7 @@
 File names are `country_team-name.ext` (or `country/team-name.ext`). A file matches
 a team only by exact name or a team_names.yaml alias (ignoring case, accents,
 punctuation and words like FC/AC), within that country's leagues; anything else
-needs an entry in logos/names.yaml (file stem -> our team name). Unmatched files
+needs an entry in logos/names.yaml (file stem -> our team name, or `skip`). Unmatched files
 are listed, never guessed.
 
 Output: web/public/teams/<slug>.webp (128px) and web/data/team_logos.json; competition logos
@@ -112,6 +112,8 @@ def main() -> int:
         leagues = COUNTRY_LEAGUES.get(country) if country else list(teams)
         pool = set().union(*(teams.get(lg, set()) for lg in leagues))
         hit = overrides.get(f.stem)
+        if hit == "skip":  # deliberately unused (e.g. a competition we don't cover)
+            continue
         if hit is not None and hit not in pool:
             unmatched.append((f.name, f"names.yaml target {hit!r} not found in {leagues}"))
             continue
