@@ -21,3 +21,11 @@ austria_austria-wien: Austria Vienna
 austria_lustenau: A. Lustenau       # SC Austria Lustenau (the only Lustenau club in our data)
 austria_wolfsberg: Wolfsberger AC
 switzerland_lausanne-sport: Lausanne     # FC Lausanne-Sport (not Stade Lausanne-Ouchy)
+poland_katowice: GKS Katowice
+poland_legia-warszawa: Legia
+poland_piast: Piast Gliwice
+poland_pogon: Pogon Szczecin
+poland_radomiak: Radomiak Radom
+poland_widzew: Widzew Lodz
+poland_wisla-krakow: Wisla          # Wisła Kraków (football-data "Wisla"); Wisła Płock is separate
+poland_zaglebie-lubin: Zaglebie
