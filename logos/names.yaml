@@ -38,3 +38,4 @@ romania_uta: UTA Arad
 poland_1-liga: skip                      # Poland's second division; we cover the Ekstraklasa
 switzerland_swiss-football-league: skip  # the organising body, not the Super League's own logo
 tournaments_uefa-champions-league: skip  # competition we don't cover
+germany_mainz-05: Mainz
