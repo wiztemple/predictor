@@ -41,3 +41,5 @@ tournaments_uefa-champions-league: skip  # competition we don't cover
 germany_mainz-05: Mainz
 france_rodez-af: Rodez
 france_stade-lavallois: Laval
+italy_suditrol: Sudtirol               # file name misspelt
+italy_us-avellino-1912: Avellino
