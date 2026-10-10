@@ -25,7 +25,7 @@ fi
 .venv/bin/python scripts/import_logos.py || echo "WARN: logo import failed"
 
 (cd web && node scripts/sync-data.mjs)
-git add web/public/teams data/predictions data/backtest/summary.json data/backtest/report.md data/backtest/corners.json data/models data/picks web/data
+git add web/public/teams web/public/leagues data/predictions data/backtest/summary.json data/backtest/report.md data/backtest/corners.json data/models data/picks web/data
 if git diff --cached --quiet; then
   echo "no data changes to publish"
 else

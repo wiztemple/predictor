@@ -95,7 +95,7 @@ export default async function MatchPage({ params }: PageProps<"/match/[id]">) {
       {/* header */}
       <div>
         <Link href={`/league/${m.league}`} className="inline-flex items-center gap-2 text-sm text-accent font-semibold hover:underline">
-          <LeagueDot color={leagueColor(m.league)} />← {m.league_name}
+          <LeagueDot color={leagueColor(m.league)} code={m.league} />← {m.league_name}
         </Link>
         <h1 className="sr-only">
           {m.home} v {m.away}

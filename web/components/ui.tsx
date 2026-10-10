@@ -1,8 +1,11 @@
+import leagueLogos from "@/data/league_logos.json";
 import logos from "@/data/team_logos.json";
 import { confidence } from "@/lib/markets";
 
 // Team name -> /teams/<slug>.webp, written by scripts/import_logos.py.
 const LOGOS: Record<string, string> = logos;
+// League code -> /leagues/<code>.webp (same script).
+const LEAGUE_LOGOS: Record<string, string> = leagueLogos;
 
 // Deep, saturated badge colours: white initials stay readable (>= 4.5:1) on all of them.
 const BADGE = ["#0e7490", "#be185d", "#b91c1c", "#c2410c", "#b45309", "#15803d", "#0f766e", "#0369a1", "#1d4ed8", "#334155", "#4d7c0f", "#a16207"];
@@ -70,6 +73,12 @@ export function ConfidenceBar({ p, className = "" }: { p: number; className?: st
 }
 
 /** Small coloured square for a league's country. */
-export function LeagueDot({ color }: { color: string }) {
+/** The competition's logo when we have one, else a small square in the league's colour. Decorative. */
+export function LeagueDot({ color, code }: { color: string; code?: string }) {
+  const logo = code ? LEAGUE_LOGOS[code] : undefined;
+  if (logo) {
+    // eslint-disable-next-line @next/next/no-img-element -- static export: plain <img>, files are pre-sized
+    return <img src={logo} alt="" aria-hidden width={18} height={18} loading="lazy" className="size-[18px] shrink-0 object-contain" />;
+  }
   return <span aria-hidden className="inline-block size-2.5 shrink-0 rounded-sm" style={{ background: color }} />;
 }

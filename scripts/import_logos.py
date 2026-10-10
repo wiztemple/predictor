@@ -9,7 +9,8 @@ punctuation and words like FC/AC), within that country's leagues; anything else
 needs an entry in logos/names.yaml (file stem -> our team name). Unmatched files
 are listed, never guessed.
 
-Output: web/public/teams/<slug>.webp (128px) and web/data/team_logos.json.
+Output: web/public/teams/<slug>.webp (128px) and web/data/team_logos.json; competition logos
+(e.g. england_premier-league.svg) go to web/public/leagues/<code>.webp and web/data/league_logos.json.
 Safe to re-run; only new or changed files are converted.
 """
 from __future__ import annotations
@@ -34,6 +35,27 @@ COUNTRY_LEAGUES = {
     "portugal": ["P1"], "turkey": ["T1"], "greece": ["G1"], "austria": ["AUT"], "switzerland": ["SWZ"],
     "denmark": ["DNK"], "romania": ["ROU"], "poland": ["POL"],
     "liechtenstein": ["SWZ"],  # Vaduz plays in the Swiss leagues
+}
+# Competition logos: file name (normalised) -> league code, per country.
+LEAGUE_FILES = {
+    "england": {"premierleague": "E0", "englishpremierleague": "E0", "epl": "E0",
+                "championship": "E1", "eflchampionship": "E1", "skybetchampionship": "E1"},
+    "germany": {"bundesliga": "D1", "2bundesliga": "D2", "bundesliga2": "D2", "zweitebundesliga": "D2"},
+    "italy": {"seriea": "I1", "serieb": "I2"},
+    "spain": {"laliga": "SP1", "laligaeasports": "SP1", "primeradivision": "SP1",
+              "laliga2": "SP2", "laligahypermotion": "SP2", "segundadivision": "SP2", "segunda": "SP2"},
+    "france": {"ligue1": "F1", "ligue2": "F2"},
+    "netherlands": {"eredivisie": "N1"},
+    "belgium": {"belgianproleague": "B1", "proleague": "B1", "jupilerproleague": "B1"},
+    "portugal": {"primeiraliga": "P1", "ligaportugal": "P1", "ligaportugalbetclic": "P1"},
+    "turkey": {"superlig": "T1", "turkishsuperlig": "T1"},
+    "greece": {"superleague": "G1", "superleaguegreece": "G1", "greeksuperleague": "G1"},
+    "scotland": {"premiership": "SC0", "scottishpremiership": "SC0"},
+    "austria": {"bundesliga": "AUT", "austrianbundesliga": "AUT", "austrianfootballbundesliga": "AUT"},
+    "switzerland": {"superleague": "SWZ", "swisssuperleague": "SWZ"},
+    "denmark": {"superliga": "DNK", "danishsuperliga": "DNK"},
+    "romania": {"superliga": "ROU", "liga1": "ROU", "romaniansuperliga": "ROU"},
+    "poland": {"ekstraklasa": "POL"},
 }
 EXTS = {".svg", ".png", ".webp", ".jpg", ".jpeg"}
 FILLER = {"fc", "afc", "cf", "sc", "ac", "as", "cd", "sk", "fk", "sv", "ssc", "club", "calcio", "the", "kv", "krc"}
@@ -64,7 +86,10 @@ def main() -> int:
     inbox = root / "logos" / "inbox"
     out_dir = root / "web" / "public" / "teams"
     manifest_path = root / "web" / "data" / "team_logos.json"
+    league_dir = root / "web" / "public" / "leagues"
+    league_manifest_path = root / "web" / "data" / "league_logos.json"
     out_dir.mkdir(parents=True, exist_ok=True)
+    league_dir.mkdir(parents=True, exist_ok=True)
 
     matches = pd.read_parquet(project_path(cfg["paths"]["matches"]))
     teams = {lg: set(g["home"]) | set(g["away"]) for lg, g in matches.groupby("league")}
@@ -75,9 +100,15 @@ def main() -> int:
     names_file = root / "logos" / "names.yaml"
     overrides = (yaml.safe_load(names_file.read_text()) or {}) if names_file.exists() else {}
 
-    plan, manifest, unmatched = [], {}, []
+    plan, manifest, league_manifest, unmatched = [], {}, {}, []
     for f in sorted(p for p in inbox.rglob("*") if p.suffix.lower() in EXTS):
         country, team = parse(f, inbox)
+        code = LEAGUE_FILES.get(country or "", {}).get(norm(team))
+        if code:
+            dest = league_dir / f"{code.lower()}.webp"
+            plan.append({"src": str(f), "dest": str(dest)})
+            league_manifest[code] = f"/leagues/{dest.name}"
+            continue
         leagues = COUNTRY_LEAGUES.get(country) if country else list(teams)
         pool = set().union(*(teams.get(lg, set()) for lg in leagues))
         hit = overrides.get(f.stem)
@@ -113,8 +144,10 @@ def main() -> int:
         if r.returncode:
             return r.returncode
     manifest_path.write_text(json.dumps(dict(sorted(manifest.items())), indent=1, ensure_ascii=False) + "\n")
+    league_manifest_path.write_text(json.dumps(dict(sorted(league_manifest.items())), indent=1) + "\n")
 
     print(f"\n{len(manifest)} logos matched -> {manifest_path.relative_to(root)}")
+    print(f"{len(league_manifest)} league logos: {', '.join(sorted(league_manifest))}")
     if unmatched:
         print(f"\nNOT MATCHED ({len(unmatched)}) - rename the file or add `stem: Team Name` to logos/names.yaml:")
         for name, why in unmatched:
