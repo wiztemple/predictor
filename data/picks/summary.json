@@ -1,33 +1,33 @@
 {
- "generated_at": "2026-10-10T10:56:49+00:00",
+ "generated_at": "2026-10-10T16:42:47+00:00",
  "per_day": 10,
- "log_entries": 1237,
+ "log_entries": 1444,
  "first_logged": "2026-10-06T07:32:25.475774Z",
- "settled": 19,
+ "settled": 64,
  "top": {
-  "n": 9,
-  "won": 8,
-  "hit_rate": 0.8888888888888888,
-  "avg_probability": 0.8538666666666668
+  "n": 14,
+  "won": 13,
+  "hit_rate": 0.9285714285714286,
+  "avg_probability": 0.8610571428571429
  },
  "all": {
-  "n": 19,
-  "won": 13,
-  "hit_rate": 0.6842105263157895,
-  "avg_probability": 0.8124473684210527
+  "n": 64,
+  "won": 49,
+  "hit_rate": 0.765625,
+  "avg_probability": 0.80211875
  },
  "by_market": {
   "double_chance": {
-   "n": 4,
-   "won": 4,
+   "n": 8,
+   "won": 8,
    "hit_rate": 1.0,
-   "avg_probability": 0.8835
+   "avg_probability": 0.88485
   },
   "ou_1_5": {
-   "n": 3,
-   "won": 2,
-   "hit_rate": 0.6666666666666666,
-   "avg_probability": 0.8165666666666667
+   "n": 4,
+   "won": 3,
+   "hit_rate": 0.75,
+   "avg_probability": 0.818725
   },
   "ou_3_5": {
    "n": 2,
@@ -38,9 +38,14 @@
  },
  "days": [
   {
+   "day": "2026-10-10",
+   "n": 3,
+   "won": 3
+  },
+  {
    "day": "2026-10-09",
-   "n": 8,
-   "won": 7
+   "n": 10,
+   "won": 9
   },
   {
    "day": "2026-10-08",
@@ -49,6 +54,45 @@
   }
  ],
  "recent": [
+  {
+   "match_id": "72c95011b1c3",
+   "league": "SC0",
+   "kickoff": "2026-10-10T14:00:00Z",
+   "home": "Rangers",
+   "away": "Kilmarnock",
+   "label": "Rangers or draw",
+   "market": "double_chance",
+   "probability": 0.9074,
+   "state": "won",
+   "score": "3-1",
+   "logged_at": "2026-10-09T10:31:18.789445Z"
+  },
+  {
+   "match_id": "fac0653d81c6",
+   "league": "SC0",
+   "kickoff": "2026-10-10T14:00:00Z",
+   "home": "Hearts",
+   "away": "St Mirren",
+   "label": "Hearts or draw",
+   "market": "double_chance",
+   "probability": 0.8809,
+   "state": "won",
+   "score": "5-0",
+   "logged_at": "2026-10-09T10:31:18.789445Z"
+  },
+  {
+   "match_id": "d2ca05c3835e",
+   "league": "D1",
+   "kickoff": "2026-10-10T13:30:00Z",
+   "home": "Augsburg",
+   "away": "Bayern Munich",
+   "label": "Bayern Munich or draw",
+   "market": "double_chance",
+   "probability": 0.8782,
+   "state": "won",
+   "score": "2-2",
+   "logged_at": "2026-10-09T10:31:18.789445Z"
+  },
   {
    "match_id": "fcc62586675c",
    "league": "E1",
@@ -152,6 +196,32 @@
    "state": "lost",
    "score": "0-0",
    "logged_at": "2026-10-09T10:31:18.789445Z"
+  },
+  {
+   "match_id": "9555a8c1938a",
+   "league": "D1",
+   "kickoff": "2026-10-09T00:00:00Z",
+   "home": "Augsburg",
+   "away": "Bayern Munich",
+   "label": "Bayern Munich or draw",
+   "market": "double_chance",
+   "probability": 0.8783,
+   "state": "won",
+   "score": "2-2",
+   "logged_at": "2026-10-08T07:13:37.205051Z"
+  },
+  {
+   "match_id": "adc463dd9905",
+   "league": "D1",
+   "kickoff": "2026-10-09T00:00:00Z",
+   "home": "Hoffenheim",
+   "away": "Hamburg",
+   "label": "Over 1.5",
+   "market": "ou_1_5",
+   "probability": 0.8252,
+   "state": "won",
+   "score": "2-3",
+   "logged_at": "2026-10-06T07:32:25.475774Z"
   },
   {
    "match_id": "530a6c9af31e",
