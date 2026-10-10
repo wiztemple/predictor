@@ -1,33 +1,33 @@
 {
- "generated_at": "2026-10-10T18:11:53+00:00",
+ "generated_at": "2026-10-10T20:00:02+00:00",
  "per_day": 10,
- "log_entries": 1527,
+ "log_entries": 1645,
  "first_logged": "2026-10-06T07:32:25.475774Z",
- "settled": 72,
+ "settled": 84,
  "top": {
-  "n": 15,
-  "won": 14,
-  "hit_rate": 0.9333333333333333,
-  "avg_probability": 0.8652666666666667
+  "n": 20,
+  "won": 19,
+  "hit_rate": 0.95,
+  "avg_probability": 0.8751999999999999
  },
  "all": {
-  "n": 72,
-  "won": 56,
-  "hit_rate": 0.7777777777777778,
-  "avg_probability": 0.8048194444444445
+  "n": 84,
+  "won": 67,
+  "hit_rate": 0.7976190476190477,
+  "avg_probability": 0.8103952380952381
  },
  "by_market": {
   "double_chance": {
-   "n": 9,
-   "won": 9,
+   "n": 13,
+   "won": 13,
    "hit_rate": 1.0,
-   "avg_probability": 0.8892222222222222
+   "avg_probability": 0.8980153846153845
   },
   "ou_1_5": {
-   "n": 4,
-   "won": 3,
-   "hit_rate": 0.75,
-   "avg_probability": 0.818725
+   "n": 5,
+   "won": 4,
+   "hit_rate": 0.8,
+   "avg_probability": 0.82574
   },
   "ou_3_5": {
    "n": 2,
@@ -39,13 +39,13 @@
  "days": [
   {
    "day": "2026-10-10",
-   "n": 4,
-   "won": 4
+   "n": 8,
+   "won": 8
   },
   {
    "day": "2026-10-09",
-   "n": 10,
-   "won": 9
+   "n": 11,
+   "won": 10
   },
   {
    "day": "2026-10-08",
@@ -54,6 +54,58 @@
   }
  ],
  "recent": [
+  {
+   "match_id": "73f0f952f955",
+   "league": "P1",
+   "kickoff": "2026-10-10T17:00:00Z",
+   "home": "Maritimo",
+   "away": "Porto",
+   "label": "Porto or draw",
+   "market": "double_chance",
+   "probability": 0.9085,
+   "state": "won",
+   "score": "1-2",
+   "logged_at": "2026-10-10T06:43:46.420345Z"
+  },
+  {
+   "match_id": "baedcb740ec1",
+   "league": "SP1",
+   "kickoff": "2026-10-10T16:30:00Z",
+   "home": "Barcelona",
+   "away": "Getafe",
+   "label": "Barcelona or draw",
+   "market": "double_chance",
+   "probability": 0.9408,
+   "state": "won",
+   "score": "3-0",
+   "logged_at": "2026-10-10T06:43:46.420345Z"
+  },
+  {
+   "match_id": "7d4e77845f08",
+   "league": "G1",
+   "kickoff": "2026-10-10T16:30:00Z",
+   "home": "AEK",
+   "away": "OFI Crete",
+   "label": "AEK or draw",
+   "market": "double_chance",
+   "probability": 0.9232,
+   "state": "won",
+   "score": "3-0",
+   "logged_at": "2026-10-09T10:31:18.789445Z"
+  },
+  {
+   "match_id": "9837f550f6c8",
+   "league": "B1",
+   "kickoff": "2026-10-10T16:15:00Z",
+   "home": "RAAL La Louviere",
+   "away": "Club Brugge",
+   "label": "Club Brugge or draw",
+   "market": "double_chance",
+   "probability": 0.8987,
+   "state": "won",
+   "score": "1-4",
+   "logged_at": "2026-10-10T06:43:46.420345Z"
+  },
   {
    "match_id": "f8559f5850c3",
    "league": "I1",
@@ -221,6 +273,19 @@
    "probability": 0.8783,
    "state": "won",
    "score": "2-2",
+   "logged_at": "2026-10-08T07:13:37.205051Z"
+  },
+  {
+   "match_id": "2a8257a25fc5",
+   "league": "D1",
+   "kickoff": "2026-10-09T00:00:00Z",
+   "home": "RB Leipzig",
+   "away": "Ein Frankfurt",
+   "label": "Over 1.5",
+   "market": "ou_1_5",
+   "probability": 0.8538,
+   "state": "won",
+   "score": "6-0",
    "logged_at": "2026-10-08T07:13:37.205051Z"
   },
   {
