@@ -161,7 +161,7 @@ class EloModel(MatchModel):
         for i, (league, date, home, away) in enumerate(
             fixtures[["league", "date", "home", "away"]].itertuples(index=False)
         ):
-            view, base = self._rating_view(league, season_of(pd.Timestamp(date)))
+            view, base = self._rating_view(league, season_of(pd.Timestamp(date), league=league))
             hk, ak = _key(league, home), _key(league, away)
             unknown |= {k for k in (hk, ak) if k not in view}
             rh = view[hk] if hk in view else self._start_rating(league, home, base)

@@ -313,3 +313,12 @@ football:
   "Çorum FK": "Corum"
   "Erzurum BB": "Erzurumspor"   # ESPN still uses the pre-2021 name
   "Waasland-Beveren": "Beveren"   # ESPN still uses the pre-2022 name
+
+  # NOR (ESPN names) - hand-checked 2026-10-10
+  "Hamarkameratene": "HamKam"
+  "IK Start": "Start"
+  "Kristiansund BK": "Kristiansund"
+  "SK Brann": "Brann"
+  "Sarpsborg FK": "Sarpsborg 08"
+  "Viking FK": "Viking"
+  "Vålerenga": "Valerenga"

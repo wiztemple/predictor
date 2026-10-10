@@ -243,7 +243,12 @@ def season_window_violations(df: pd.DataFrame) -> pd.Series:
     Seasons run Aug-Jul; a month of slack each side allows for early starts
     and the 2019-20 COVID extension.
     """
+    from predictor.config import calendar_year_leagues
+
     start_year = df["season"].str[:4].astype(int)
     lo = pd.to_datetime(start_year.astype(str) + "-07-01")
     hi = pd.to_datetime((start_year + 1).astype(str) + "-08-31")
+    cal = df["league"].isin(calendar_year_leagues())  # calendar-year leagues: Jan-Dec of the start year
+    lo = lo.where(~cal, pd.to_datetime(start_year.astype(str) + "-01-01"))
+    hi = hi.where(~cal, pd.to_datetime(start_year.astype(str) + "-12-31"))
     return (df["date"] < lo) | (df["date"] > hi)

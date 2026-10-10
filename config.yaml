@@ -30,9 +30,10 @@ football_data:
     SWZ: Swiss Super League
     DNK: Danish Superliga
     POL: Ekstraklasa
+    NOR: Eliteserien
   # "Extra leagues": one file per league with every season, a different column layout,
-  # and their own short-range fixtures list. Only Aug-May leagues for now; calendar-year
-  # leagues (Norway, Sweden, Brazil, USA, ...) need season handling first.
+  # and their own short-range fixtures list. Calendar-year leagues are listed in
+  # calendar_year_leagues below.
   extra_base_url: "https://www.football-data.co.uk/new/{code}.csv"
   extra_fixtures_url: "https://www.football-data.co.uk/new_league_fixtures.csv"
   extra_leagues:
@@ -41,6 +42,9 @@ football_data:
     SWZ: {country: Switzerland, league: Super League}   # file also holds Challenge League rows
     DNK: {country: Denmark, league: Superliga}
     POL: {country: Poland, league: Ekstraklasa}
+    NOR: {country: Norway, league: Eliteserien}
+  # Seasons that run Mar-Dec: season Y is labelled "Y-(Y+1)" (see config.season_of).
+  calendar_year_leagues: [NOR]
   extra_odds_priority:
     - [pinnacle_closing, PSCH, PSCD, PSCA]
     - [avg_closing, AvgCH, AvgCD, AvgCA]
@@ -71,6 +75,8 @@ football_data:
       Waasland-Beveren: Beveren          # renamed SK Beveren in 2022 (same club)
     POL:
       Gornik Z.: Gornik Zabrze
+    NOR:
+      Ham-Kam: HamKam                     # football-data uses both spellings (even within 2023-24)
     T1:
       Erzurum BB: Erzurumspor              # BB Erzurumspor, renamed Erzurumspor FK in 2021 (same club)
   # Results that weren't played (awarded/forfeited) - excluded from training and evaluation.
@@ -87,7 +93,7 @@ football_data:
     cache_dir: data/raw/football/espn_results
     slugs: {E0: eng.1, E1: eng.2, SC0: sco.1, D1: ger.1, D2: ger.2, I1: ita.1, I2: ita.2, SP1: esp.1,
             SP2: esp.2, F1: fra.1, F2: fra.2, N1: ned.1, B1: bel.1, P1: por.1, T1: tur.1, G1: gre.1,
-            AUT: aut.1, SWZ: sui.1, DNK: den.1, ROU: rou.1}   # POL: not on ESPN
+            AUT: aut.1, SWZ: sui.1, DNK: den.1, ROU: rou.1, NOR: nor.1}   # POL: not on ESPN
   # Odds priority: first triple with all three prices present (> 1.0) wins.
   odds_priority:
     - [pinnacle_closing, PSCH, PSCD, PSCA]
@@ -192,6 +198,7 @@ fixtures:
     SWZ: sui.1
     DNK: den.1
     ROU: rou.1
+    NOR: nor.1
     # POL: not on ESPN - football-data only
 
 predictions:

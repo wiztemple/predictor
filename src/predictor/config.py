@@ -48,8 +48,19 @@ def season_label(code: str) -> str:
     return f"20{code[:2]}-{code[2:]}"
 
 
-def season_of(date, start_month: int | None = None) -> str:
-    """Football season label for a date: 2026-10-05 -> '2026-27' (seasons run Aug-Jul)."""
+def calendar_year_leagues() -> set[str]:
+    """Leagues whose season is a calendar year (e.g. Norway, Mar-Dec)."""
+    return set(load_config()["football_data"].get("calendar_year_leagues") or [])
+
+
+def season_of(date, start_month: int | None = None, league: str | None = None) -> str:
+    """Football season label for a date: 2026-10-05 -> '2026-27' (seasons run Aug-Jul).
+
+    A calendar-year league's season Y is labelled 'Y-(Y+1)' (Norway 2026 -> '2026-27'), so it
+    sorts with, and falls in the same tune/test split as, the Aug-Jul season starting that year.
+    """
+    if league is not None and league in calendar_year_leagues():
+        return f"{date.year}-{(date.year + 1) % 100:02d}"
     if start_month is None:
         start_month = load_config()["football"]["season_start_month"]
     y = date.year if date.month >= start_month else date.year - 1

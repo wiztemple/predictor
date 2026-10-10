@@ -97,7 +97,10 @@ def calibrate_expanding(t: pd.DataFrame, src: list[str], method: str, seasons: l
     """For each season in `seasons`, fit on all earlier rows; returns probs for those seasons' rows."""
     out = np.full((len(t), 3), np.nan)
     for s in seasons:
-        fit_rows, apply_rows = t["season"] < s, t["season"] == s
+        apply_rows = t["season"] == s
+        # earlier seasons only, and nothing dated after the first match calibrated (a calendar-year
+        # league's season starts months before the Aug-Jul season with the same label)
+        fit_rows = (t["season"] < s) & (t["date"] < t.loc[apply_rows, "date"].min())
         cal = CALIBRATORS[method]().fit(t.loc[fit_rows, src].to_numpy(), t.loc[fit_rows, "outcome"])
         out[apply_rows.to_numpy()] = cal.transform(t.loc[apply_rows, src].to_numpy())
     return out
@@ -114,7 +117,11 @@ def goals_section(t, test, matches, ev, test_seasons, holdout, out_dir, say) -> 
     y = {k: v.loc[t.index].astype(int).to_numpy() for k, v in yes_all.items()}
     raw = {k: t[f"dc_p_{k}"].to_numpy() for k in GOALS_KEYS}
     season = t["season"].to_numpy()
+    dates = t["date"].to_numpy()
     is_test = np.isin(season, test_seasons)
+
+    def before(rows):  # fit only on matches dated before the first one being calibrated
+        return dates < dates[rows].min() if rows.any() else np.zeros(len(dates), bool)
 
     # 1. choice per market on the pre-test holdout season
     say("\n## 4. Goals markets (Dixon-Coles)\n")
@@ -122,7 +129,8 @@ def goals_section(t, test, matches, ev, test_seasons, holdout, out_dir, say) -> 
         "Log loss:\n")
     say("| market | none | platt | isotonic | chosen |")
     say("|---|---|---|---|---|")
-    fit_m, hold_m = season < holdout, season == holdout
+    hold_m = season == holdout
+    fit_m = (season < holdout) & before(hold_m)
     choice = {}
     for k in GOALS_KEYS:
         res = {}
@@ -135,9 +143,10 @@ def goals_section(t, test, matches, ev, test_seasons, holdout, out_dir, say) -> 
     # 2. test period: each season calibrated on all earlier seasons only
     cal = {k: raw[k].copy() for k in GOALS_KEYS}
     for s in test_seasons:
-        prior, rows = season < s, season == s
+        rows = season == s
         if not rows.any():
             continue
+        prior = (season < s) & before(rows)
         cals = {k: BINARY_CALIBRATORS[choice[k]]().fit(raw[k][prior], y[k][prior]).to_dict() for k in GOALS_KEYS}
         out = apply_goals_calibration({k: raw[k][rows] for k in GOALS_KEYS}, cals)
         for k in GOALS_KEYS:

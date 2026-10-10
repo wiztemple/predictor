@@ -14,6 +14,7 @@ export const COUNTRIES: { country: string; codes: string[]; color: string }[] = 
   { country: "Austria", color: "#f43f5e", codes: ["AUT"] },
   { country: "Switzerland", color: "#b91c1c", codes: ["SWZ"] },
   { country: "Denmark", color: "#0891b2", codes: ["DNK"] },
+  { country: "Norway", color: "#9f1239", codes: ["NOR"] },
   { country: "Poland", color: "#db2777", codes: ["POL"] },
   { country: "Romania", color: "#eab308", codes: ["ROU"] },
 ];

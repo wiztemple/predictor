@@ -107,7 +107,7 @@ def main() -> int:
                     "source": f["source"], "suggestions": mapper.suggest(f["league"], f[side]),
                 })
     good = fixtures[ok].copy()
-    good["season"] = [season_of(k.tz_convert(None)) for k in good["kickoff"]]
+    good["season"] = [season_of(k.tz_convert(None), league=lg) for k, lg in zip(good["kickoff"], good["league"])]
     too_early = (good["kickoff"].dt.tz_convert(None).dt.normalize() <= fitted_until) if len(good) else pd.Series(False, index=good.index)
     if too_early.any():
         log.warning("%d fixtures dated on/before last result (%s) skipped", too_early.sum(), f"{fitted_until:%Y-%m-%d}")

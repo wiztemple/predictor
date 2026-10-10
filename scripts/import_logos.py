@@ -34,6 +34,7 @@ COUNTRY_LEAGUES = {
     "spain": ["SP1", "SP2"], "france": ["F1", "F2"], "netherlands": ["N1"], "belgium": ["B1"],
     "portugal": ["P1"], "turkey": ["T1"], "greece": ["G1"], "austria": ["AUT"], "switzerland": ["SWZ"],
     "denmark": ["DNK"], "romania": ["ROU"], "poland": ["POL"],
+    "norway": ["NOR"],
     "liechtenstein": ["SWZ"],  # Vaduz plays in the Swiss leagues
 }
 # Competition logos: file name (normalised) -> league code, per country.
@@ -56,6 +57,7 @@ LEAGUE_FILES = {
     "denmark": {"superliga": "DNK", "danishsuperliga": "DNK"},
     "romania": {"superliga": "ROU", "liga1": "ROU", "romaniansuperliga": "ROU"},
     "poland": {"ekstraklasa": "POL"},
+    "norway": {"eliteserien": "NOR"},
 }
 EXTS = {".svg", ".png", ".webp", ".jpg", ".jpeg"}
 FILLER = {"fc", "afc", "cf", "sc", "ac", "as", "cd", "sk", "fk", "sv", "ssc", "club", "calcio", "the", "kv", "krc"}

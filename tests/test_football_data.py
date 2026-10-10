@@ -159,3 +159,22 @@ def test_select_ah_odds_pairs_line_with_odds():
     assert out.loc[0, "ah_line"] == -0.75 and out.loc[0, "ah_source"] == "pinnacle_closing"
     assert pd.isna(out.loc[1, "ah_line"]) and pd.isna(out.loc[1, "odds_ah_home"])  # odds without a line dropped
     assert out.loc[2, "ah_source"] == "avg_closing" and out.loc[2, "odds_ah_away"] == 1.75
+
+
+def test_calendar_year_seasons(monkeypatch):
+    import predictor.config as config
+    from predictor.loaders.football_data_extra import season_from_extra
+
+    monkeypatch.setattr(config, "calendar_year_leagues", lambda: {"NOR"})
+    # Norway's 2026 season (Mar-Dec) is labelled like the Aug-Jul season starting that year
+    assert config.season_of(pd.Timestamp("2026-03-15"), league="NOR") == "2026-27"
+    assert config.season_of(pd.Timestamp("2026-11-30"), league="NOR") == "2026-27"
+    assert config.season_of(pd.Timestamp("2027-04-01"), league="NOR") == "2027-28"
+    # other leagues unchanged
+    assert config.season_of(pd.Timestamp("2026-03-15"), start_month=7, league="E0") == "2025-26"
+    s = pd.Series(["2019", "2026"])
+    assert season_from_extra(s, calendar_year=True).tolist() == ["2019-20", "2026-27"]
+    with pytest.raises(ValueError):
+        season_from_extra(pd.Series(["2019/2020"]), calendar_year=True)
+    with pytest.raises(ValueError):
+        season_from_extra(pd.Series(["2020"]))

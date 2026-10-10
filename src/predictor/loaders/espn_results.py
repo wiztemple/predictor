@@ -116,7 +116,7 @@ def load_espn_results(cache_dir: Path, slugs: dict[str, str], mapper, after: dic
     raw = raw.dropna(subset=["home", "away"])
 
     df = pd.DataFrame({
-        "sport": "football", "league": raw["league"], "season": [season_of(d) for d in raw["date"]],
+        "sport": "football", "league": raw["league"], "season": [season_of(d, league=lg) for d, lg in zip(raw["date"], raw["league"])],
         "date": raw["date"], "home": raw["home"], "away": raw["away"],
         "home_score": raw["home_score"].astype(int), "away_score": raw["away_score"].astype(int),
         "home_corners": raw["home_corners"], "away_corners": raw["away_corners"],
