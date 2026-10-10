@@ -33,6 +33,7 @@ COUNTRY_LEAGUES = {
     "spain": ["SP1", "SP2"], "france": ["F1", "F2"], "netherlands": ["N1"], "belgium": ["B1"],
     "portugal": ["P1"], "turkey": ["T1"], "greece": ["G1"], "austria": ["AUT"], "switzerland": ["SWZ"],
     "denmark": ["DNK"], "romania": ["ROU"], "poland": ["POL"],
+    "liechtenstein": ["SWZ"],  # Vaduz plays in the Swiss leagues
 }
 EXTS = {".svg", ".png", ".webp", ".jpg", ".jpeg"}
 FILLER = {"fc", "afc", "cf", "sc", "ac", "as", "cd", "sk", "fk", "sv", "ssc", "club", "calcio", "the", "kv", "krc"}
@@ -52,7 +53,8 @@ def parse(path: Path, inbox: Path) -> tuple[str | None, str]:
     rel = path.relative_to(inbox)
     if len(rel.parts) > 1 and rel.parts[0].lower() in COUNTRY_LEAGUES:
         return rel.parts[0].lower(), path.stem
-    country, _, team = path.stem.partition("_")
+    stem = re.sub(r"[_-]\d+x\d+$", "", path.stem)  # e.g. vaduz_128x128
+    country, _, team = stem.partition("_")
     return (country.lower(), team) if country.lower() in COUNTRY_LEAGUES else (None, path.stem)
 
 

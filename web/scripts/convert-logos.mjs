@@ -18,7 +18,10 @@ for (const { src, dest } of plan) {
     // dest missing: convert
   }
   try {
-    await sharp(src, { density: 300 })
+    // render at ~512px whatever size the file declares (some SVGs declare huge canvases)
+    const { width = SIZE, height = SIZE } = await sharp(src).metadata();
+    const density = Math.max(1, Math.min(300, (72 * 512) / Math.max(width, height)));
+    await sharp(src, { density, limitInputPixels: false })
       .resize(SIZE, SIZE, { fit: "contain", background: { r: 0, g: 0, b: 0, alpha: 0 } })
       .webp({ quality: 85 })
       .toFile(dest);
