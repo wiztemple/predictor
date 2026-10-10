@@ -13,3 +13,6 @@ web/node_modules/
 .env.*
 data/picks/*.db
 *.db-journal
+
+# raw logo downloads (the site uses the converted copies in web/public/teams)
+logos/inbox/

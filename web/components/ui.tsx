@@ -1,4 +1,8 @@
+import logos from "@/data/team_logos.json";
 import { confidence } from "@/lib/markets";
+
+// Team name -> /teams/<slug>.webp, written by scripts/import_logos.py.
+const LOGOS: Record<string, string> = logos;
 
 // Deep, saturated badge colours: white initials stay readable (>= 4.5:1) on all of them.
 const BADGE = ["#0e7490", "#be185d", "#b91c1c", "#c2410c", "#b45309", "#15803d", "#0f766e", "#0369a1", "#1d4ed8", "#334155", "#4d7c0f", "#a16207"];
@@ -16,9 +20,16 @@ export function initials(name: string) {
   return (words[0] ?? name).slice(0, 2).toUpperCase();
 }
 
-/** Coloured circle with a team's initials; same team, same colour, everywhere. Decorative (name sits next to it). */
+/** The team's logo when we have one, else a coloured circle with its initials (same team, same colour,
+ *  everywhere). Decorative: the name always sits next to it. */
 export function TeamBadge({ name, size = "sm" }: { name: string; size?: "sm" | "md" | "lg" }) {
   const dim = size === "lg" ? "size-12 text-base" : size === "md" ? "size-8 text-xs" : "size-6 text-[10px]";
+  const logo = LOGOS[name];
+  if (logo) {
+    const px = size === "lg" ? 48 : size === "md" ? 32 : 24;
+    // eslint-disable-next-line @next/next/no-img-element -- static export: plain <img>, files are pre-sized
+    return <img src={logo} alt="" aria-hidden width={px} height={px} loading="lazy" className={`shrink-0 object-contain ${dim}`} />;
+  }
   return (
     <span
       aria-hidden

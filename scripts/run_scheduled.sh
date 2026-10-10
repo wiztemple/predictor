@@ -21,8 +21,11 @@ if [ "$(date +%u)" = "1" ] && [ "$(date +%H)" -lt 10 ]; then
   .venv/bin/python scripts/backtest.py --refresh && .venv/bin/python scripts/backtest_picks.py && .venv/bin/python scripts/backtest_corners.py
 fi
 
+# team logos dropped into logos/inbox/ (unmatched ones are listed in the log, never guessed)
+.venv/bin/python scripts/import_logos.py || echo "WARN: logo import failed"
+
 (cd web && node scripts/sync-data.mjs)
-git add data/predictions data/backtest/summary.json data/backtest/report.md data/backtest/corners.json data/models data/picks web/data
+git add web/public/teams data/predictions data/backtest/summary.json data/backtest/report.md data/backtest/corners.json data/models data/picks web/data
 if git diff --cached --quiet; then
   echo "no data changes to publish"
 else
