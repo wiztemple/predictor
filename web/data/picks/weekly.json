@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-10T20:13:29+00:00",
+ "generated_at": "2026-10-11T07:14:12+00:00",
  "lists": {
   "safe": {
    "label": "Safe 10",
@@ -9,13 +9,13 @@
      "week_start": "2026-10-06",
      "week_end": "2026-10-12",
      "locked_at": "2026-10-08T19:40:23.628150Z",
-     "won": 7,
+     "won": 8,
      "half_won": 0,
      "push": 0,
      "half_lost": 0,
      "lost": 0,
      "void": 0,
-     "pending": 3,
+     "pending": 2,
      "picks": [
       {
        "rank": 1,
@@ -126,8 +126,8 @@
        "selection": "1x",
        "label": "Paris SG or draw",
        "probability": 0.8987,
-       "state": "pending",
-       "score": null
+       "state": "won",
+       "score": "3-1"
       },
       {
        "rank": 9,
@@ -162,8 +162,8 @@
    ],
    "record": {
     "weeks": 0,
-    "picks": 7,
-    "won": 7,
+    "picks": 8,
+    "won": 8,
     "half_won": 0,
     "perfect_weeks": 0
    }
@@ -180,9 +180,9 @@
      "half_won": 0,
      "push": 0,
      "half_lost": 0,
-     "lost": 0,
+     "lost": 1,
      "void": 0,
-     "pending": 2,
+     "pending": 1,
      "picks": [
       {
        "rank": 1,
@@ -265,8 +265,8 @@
        "selection": "12",
        "label": "Monaco or Toulouse",
        "probability": 0.7671,
-       "state": "pending",
-       "score": null
+       "state": "lost",
+       "score": "2-2"
       },
       {
        "rank": 7,
@@ -329,7 +329,7 @@
    ],
    "record": {
     "weeks": 0,
-    "picks": 8,
+    "picks": 9,
     "won": 8,
     "half_won": 0,
     "perfect_weeks": 0
@@ -514,9 +514,9 @@
      "half_won": 0,
      "push": 0,
      "half_lost": 0,
-     "lost": 3,
+     "lost": 4,
      "void": 0,
-     "pending": 5,
+     "pending": 4,
      "picks": [
       {
        "rank": 1,
@@ -627,8 +627,8 @@
        "selection": "over",
        "label": "Over 2.5",
        "probability": 0.4964,
-       "state": "pending",
-       "score": null
+       "state": "lost",
+       "score": "1-0"
       },
       {
        "rank": 9,
@@ -663,7 +663,7 @@
    ],
    "record": {
     "weeks": 0,
-    "picks": 5,
+    "picks": 6,
     "won": 2,
     "half_won": 0,
     "perfect_weeks": 0
@@ -677,13 +677,13 @@
      "week_start": "2026-10-06",
      "week_end": "2026-10-12",
      "locked_at": "2026-10-08T19:52:24.552099Z",
-     "won": 6,
+     "won": 7,
      "half_won": 0,
      "push": 0,
      "half_lost": 0,
      "lost": 1,
      "void": 0,
-     "pending": 3,
+     "pending": 2,
      "picks": [
       {
        "rank": 1,
@@ -794,8 +794,8 @@
        "selection": "home",
        "label": "Paris SG win",
        "probability": 0.7472,
-       "state": "pending",
-       "score": null
+       "state": "won",
+       "score": "3-1"
       },
       {
        "rank": 9,
@@ -830,8 +830,8 @@
    ],
    "record": {
     "weeks": 0,
-    "picks": 7,
-    "won": 6,
+    "picks": 8,
+    "won": 7,
     "half_won": 0,
     "perfect_weeks": 0
    }
@@ -844,13 +844,13 @@
      "week_start": "2026-10-06",
      "week_end": "2026-10-12",
      "locked_at": "2026-10-08T19:52:24.552099Z",
-     "won": 3,
+     "won": 4,
      "half_won": 0,
      "push": 0,
      "half_lost": 0,
-     "lost": 3,
+     "lost": 4,
      "void": 0,
-     "pending": 4,
+     "pending": 2,
      "picks": [
       {
        "rank": 1,
@@ -933,8 +933,8 @@
        "selection": "over",
        "label": "Over 2.5",
        "probability": 0.6562,
-       "state": "pending",
-       "score": null
+       "state": "won",
+       "score": "3-1"
       },
       {
        "rank": 7,
@@ -947,8 +947,8 @@
        "selection": "over",
        "label": "Over 2.5",
        "probability": 0.6407,
-       "state": "pending",
-       "score": null
+       "state": "lost",
+       "score": "1-0"
       },
       {
        "rank": 8,
@@ -997,8 +997,8 @@
    ],
    "record": {
     "weeks": 0,
-    "picks": 6,
-    "won": 3,
+    "picks": 8,
+    "won": 4,
     "half_won": 0,
     "perfect_weeks": 0
    }
@@ -1011,13 +1011,13 @@
      "week_start": "2026-10-06",
      "week_end": "2026-10-12",
      "locked_at": "2026-10-08T19:52:24.552099Z",
-     "won": 1,
+     "won": 2,
      "half_won": 0,
      "push": 0,
      "half_lost": 0,
      "lost": 4,
      "void": 0,
-     "pending": 5,
+     "pending": 4,
      "picks": [
       {
        "rank": 1,
@@ -1100,8 +1100,8 @@
        "selection": "yes",
        "label": "Both teams score",
        "probability": 0.6184,
-       "state": "pending",
-       "score": null
+       "state": "won",
+       "score": "1-1"
       },
       {
        "rank": 7,
@@ -1164,8 +1164,8 @@
    ],
    "record": {
     "weeks": 0,
-    "picks": 5,
-    "won": 1,
+    "picks": 6,
+    "won": 2,
     "half_won": 0,
     "perfect_weeks": 0
    }
@@ -1179,12 +1179,12 @@
      "week_end": "2026-10-12",
      "locked_at": "2026-10-08T19:52:24.552099Z",
      "won": 0,
-     "half_won": 2,
+     "half_won": 3,
      "push": 0,
      "half_lost": 1,
-     "lost": 1,
+     "lost": 2,
      "void": 0,
-     "pending": 6,
+     "pending": 4,
      "picks": [
       {
        "rank": 1,
@@ -1239,8 +1239,8 @@
        "selection": "home:-0.75",
        "label": "Real Madrid \u22120.75",
        "probability": 0.5876,
-       "state": "pending",
-       "score": null
+       "state": "half_won",
+       "score": "1-0"
       },
       {
        "rank": 5,
@@ -1267,8 +1267,8 @@
        "selection": "away:0.25",
        "label": "Paris FC +0.25",
        "probability": 0.5872,
-       "state": "pending",
-       "score": null
+       "state": "lost",
+       "score": "1-0"
       },
       {
        "rank": 7,
@@ -1331,9 +1331,9 @@
    ],
    "record": {
     "weeks": 0,
-    "picks": 4,
+    "picks": 6,
     "won": 0,
-    "half_won": 2,
+    "half_won": 3,
     "perfect_weeks": 0
    }
   }

@@ -1,27 +1,27 @@
 {
- "generated_at": "2026-10-10T20:13:48+00:00",
+ "generated_at": "2026-10-11T07:14:19+00:00",
  "per_day": 10,
- "log_entries": 1822,
+ "log_entries": 1955,
  "first_logged": "2026-10-06T07:32:25.475774Z",
- "settled": 86,
+ "settled": 99,
  "top": {
-  "n": 20,
-  "won": 19,
-  "hit_rate": 0.95,
-  "avg_probability": 0.8751999999999999
+  "n": 22,
+  "won": 21,
+  "hit_rate": 0.9545454545454546,
+  "avg_probability": 0.8766045454545452
  },
  "all": {
-  "n": 86,
-  "won": 69,
-  "hit_rate": 0.8023255813953488,
-  "avg_probability": 0.8105395348837208
+  "n": 99,
+  "won": 81,
+  "hit_rate": 0.8181818181818182,
+  "avg_probability": 0.8102111111111111
  },
  "by_market": {
   "double_chance": {
-   "n": 13,
-   "won": 13,
+   "n": 15,
+   "won": 15,
    "hit_rate": 1.0,
-   "avg_probability": 0.8980153846153845
+   "avg_probability": 0.8970333333333332
   },
   "ou_1_5": {
    "n": 5,
@@ -39,8 +39,8 @@
  "days": [
   {
    "day": "2026-10-10",
-   "n": 8,
-   "won": 8
+   "n": 10,
+   "won": 10
   },
   {
    "day": "2026-10-09",
@@ -54,6 +54,32 @@
   }
  ],
  "recent": [
+  {
+   "match_id": "23da65e8695a",
+   "league": "F1",
+   "kickoff": "2026-10-10T18:45:00Z",
+   "home": "Paris SG",
+   "away": "Le Mans",
+   "label": "Paris SG or draw",
+   "market": "double_chance",
+   "probability": 0.8986,
+   "state": "won",
+   "score": "3-1",
+   "logged_at": "2026-10-10T06:43:46.420345Z"
+  },
+  {
+   "match_id": "381495eddac5",
+   "league": "B1",
+   "kickoff": "2026-10-10T18:45:00Z",
+   "home": "Genk",
+   "away": "Kortrijk",
+   "label": "Genk or draw",
+   "market": "double_chance",
+   "probability": 0.8827,
+   "state": "won",
+   "score": "3-0",
+   "logged_at": "2026-10-10T06:43:46.420345Z"
+  },
   {
    "match_id": "73f0f952f955",
    "league": "P1",
