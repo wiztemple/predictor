@@ -25,11 +25,12 @@ export function initials(name: string) {
 
 /** The team's logo when we have one, else a coloured circle with its initials (same team, same colour,
  *  everywhere). Decorative: the name always sits next to it. */
-export function TeamBadge({ name, size = "sm" }: { name: string; size?: "sm" | "md" | "lg" }) {
-  const dim = size === "lg" ? "size-12 text-base" : size === "md" ? "size-8 text-xs" : "size-6 text-[10px]";
+export function TeamBadge({ name, size = "sm" }: { name: string; size?: "xs" | "sm" | "md" | "lg" }) {
+  const dim =
+    size === "lg" ? "size-12 text-base" : size === "md" ? "size-8 text-xs" : size === "xs" ? "size-5 text-[9px]" : "size-6 text-[10px]";
   const logo = LOGOS[name];
   if (logo) {
-    const px = size === "lg" ? 48 : size === "md" ? 32 : 24;
+    const px = size === "lg" ? 48 : size === "md" ? 32 : size === "xs" ? 20 : 24;
     // eslint-disable-next-line @next/next/no-img-element -- static export: plain <img>, files are pre-sized
     return <img src={logo} alt="" aria-hidden width={px} height={px} loading="lazy" className={`shrink-0 object-contain ${dim}`} />;
   }

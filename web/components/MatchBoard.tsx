@@ -8,7 +8,7 @@ import type { Threshold } from "@/lib/picks";
 import { useUrlParam } from "@/lib/useUrlParam";
 import { leagueColor } from "@/lib/leagues";
 import { OutcomeCell } from "./OutcomeCell";
-import { ConfidenceBadge, ConfidenceBar, LeagueDot, TeamBadge } from "./ui";
+import { ConfidenceBadge, LeagueDot, TeamBadge } from "./ui";
 
 export type TrackTables = Partial<Record<MarketKey, { over?: Threshold[]; under?: Threshold[] }>>;
 
@@ -44,11 +44,11 @@ export function MatchBoard({ matches, leagues, track }: Props) {
   const [m, setM] = useUrlParam("m");
   const market: MarketKey = MARKETS.some((x) => x.key === m) ? (m as MarketKey) : "1x2";
   const setMarket = (k: MarketKey) => setM(k === "1x2" ? null : k);
-  const [day, setDay] = useState<string | null>(null);
+  const days = [...new Set(matches.map((m) => formatShortDay(m.kickoff)))];
+  // open on the next match day; "All days" is one tap away
+  const [day, setDay] = useState<string | null>(days[0] ?? null);
   const [league, setLeague] = useState<string | null>(null);
   const [minP, setMinP] = useState(0); // show only matches whose top option reaches this chance
-
-  const days = [...new Set(matches.map((m) => formatShortDay(m.kickoff)))];
   const leagueCount = new Map<string, number>();
   for (const m of matches) leagueCount.set(m.league, (leagueCount.get(m.league) ?? 0) + 1);
 
@@ -173,21 +173,20 @@ export function MatchBoard({ matches, leagues, track }: Props) {
 
       {/* top picks */}
       {picks.length > 0 ? (
-        <section className="mt-6">
+        <section className="mt-4">
           <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
-            <h2 className="text-lg font-bold">
+            <h2 className="text-base font-bold">
               Top picks <span className="text-accent">· {marketLabel}</span>
             </h2>
             {line ? <p className="text-xs text-text-3">{line}</p> : null}
           </div>
-          <p className="mt-1 text-xs text-text-3 sm:hidden">Swipe for more →</p>
-          <ol className="mt-3 flex snap-x gap-3 overflow-x-auto pb-2">
+          <ol className="mt-2 flex snap-x gap-2 overflow-x-auto pb-2">
             {picks.map(({ m, cell }, i) => {
               return (
-                <li key={m.id} className="w-60 shrink-0 snap-start">
+                <li key={m.id} className="w-48 shrink-0 snap-start">
                   <Link
                     href={`/match/${m.id}`}
-                    className="flex h-full flex-col rounded-xl border border-border bg-surface p-3 transition hover:-translate-y-0.5 hover:border-accent"
+                    className="flex h-full flex-col rounded-xl border border-border bg-surface p-2.5 transition hover:border-accent"
                   >
                     <div className="flex items-center justify-between text-xs text-text-3">
                       <span className="truncate">
@@ -197,22 +196,21 @@ export function MatchBoard({ matches, leagues, track }: Props) {
                         {formatShortDay(m.kickoff)} {formatTime(m.kickoff, m.kickoff_tbc)}
                       </span>
                     </div>
-                    <div className="mt-2 flex items-center gap-1.5 truncate text-sm text-text-2">
-                      <TeamBadge name={m.home} />
-                      <TeamBadge name={m.away} />
+                    <div className="mt-1.5 flex items-center gap-1 truncate text-xs text-text-2">
+                      <TeamBadge name={m.home} size="xs" />
+                      <TeamBadge name={m.away} size="xs" />
                       <span className="truncate">
                         {m.home} v {m.away}
                       </span>
                     </div>
-                    <div className="mt-1 truncate text-base font-semibold">{cell.pickLabel}</div>
-                    <div className="mt-auto flex items-end justify-between pt-3">
+                    <div className="mt-0.5 truncate text-sm font-semibold">{cell.pickLabel}</div>
+                    <div className="mt-auto flex items-end justify-between pt-1.5">
                       <div className="tabular">
-                        <span className="text-2xl font-extrabold">{pct(cell.p)}</span>
-                        <span className="ml-1.5 text-xs text-text-3">fair @{fairOdds(cell.p)}</span>
+                        <span className="text-lg font-extrabold">{pct(cell.p)}</span>
+                        <span className="ml-1 text-[11px] text-text-3">@{fairOdds(cell.p)}</span>
                       </div>
                       <ConfidenceBadge p={cell.p} />
                     </div>
-                    <ConfidenceBar p={cell.p} className="mt-2" />
                   </Link>
                 </li>
               );
@@ -222,17 +220,18 @@ export function MatchBoard({ matches, leagues, track }: Props) {
       ) : null}
 
       {/* all matches */}
-      <div className="mt-6 space-y-8">
+      <div className="mt-4 space-y-6">
         {shown.length === 0 ? <p className="text-text-3">No matches for this filter.</p> : null}
         {[...byDay.entries()].map(([d, groups]) => (
           <section key={d}>
             <h2 className="text-sm font-bold uppercase tracking-wide text-text-2">{d}</h2>
-            <div className="mt-2 space-y-4">
+            {/* league cards: one column on phones, two (newspaper-style) on wide screens */}
+            <div className="mt-2 gap-3 lg:columns-2 [&>*]:mb-3 [&>*]:break-inside-avoid">
               {[...groups.entries()]
                 .sort((a, b) => (order.get(a[0]) ?? 999) - (order.get(b[0]) ?? 999))
                 .map(([code, list]) => (
                   <div key={code} className="overflow-hidden rounded-xl border border-border bg-surface">
-                    <div className="flex items-center justify-between border-b border-border px-3 py-2 text-xs">
+                    <div className="flex items-center justify-between border-b border-border px-3 py-1.5 text-xs">
                       <span className="flex items-center gap-2 font-bold text-text">
                         <LeagueDot color={leagueColor(code)} code={code} />
                         {list[0].league_name}
@@ -260,37 +259,35 @@ function BoardRow({ m, market }: { m: BoardMatch; market: MarketKey }) {
   const cs = cells(m, market);
   const best = bestCell(m, market)?.label;
   const top = m.scores[0];
+  const extra =
+    isCorners(market) && m.corners
+      ? { label: "Exp. corners", value: m.corners.total.toFixed(1) }
+      : top && market !== "cs" && market !== "ten"
+        ? { label: "Likely score", value: `${top.home}-${top.away}` }
+        : null;
+  // one line per match on every screen: time | teams | (likely score, wider screens) | odds
   return (
-    <Link href={`/match/${m.id}`} className="flex flex-col gap-2 px-3 py-3 hover:bg-surface-2 sm:flex-row sm:items-center sm:gap-4">
-      <div className="flex min-w-0 flex-1 items-center gap-3">
-        <span className="w-11 shrink-0 text-xs text-text-3 tabular">{formatTime(m.kickoff, m.kickoff_tbc)}</span>
-        <div className="min-w-0 space-y-1">
-          <div className="flex items-center gap-2 truncate font-medium">
-            <TeamBadge name={m.home} />
-            <span className="truncate">{m.home}</span>
-          </div>
-          <div className="flex items-center gap-2 truncate font-medium">
-            <TeamBadge name={m.away} />
-            <span className="truncate">{m.away}</span>
-          </div>
+    <Link href={`/match/${m.id}`} className="flex items-center gap-2 px-3 py-2 hover:bg-surface-2 sm:gap-3">
+      <span className="w-9 shrink-0 text-[11px] text-text-3 tabular">{formatTime(m.kickoff, m.kickoff_tbc)}</span>
+      <div className="min-w-0 flex-1 space-y-0.5 text-sm">
+        <div className="flex items-center gap-1.5 font-medium">
+          <TeamBadge name={m.home} size="xs" />
+          <span className="truncate">{m.home}</span>
         </div>
-        {isCorners(market) && m.corners ? (
-          <span className="ml-auto w-14 shrink-0 text-center text-[11px] leading-tight text-text-3">
-            Exp. corners
-            <span className="mt-0.5 block text-base font-semibold text-text tabular">{m.corners.total.toFixed(1)}</span>
-          </span>
-        ) : top && market !== "cs" && market !== "ten" ? (
-          <span className="ml-auto w-14 shrink-0 text-center text-[11px] leading-tight text-text-3">
-            Likely score
-            <span className="mt-0.5 block text-base font-semibold text-text tabular">
-              {top.home}-{top.away}
-            </span>
-          </span>
-        ) : null}
+        <div className="flex items-center gap-1.5 font-medium">
+          <TeamBadge name={m.away} size="xs" />
+          <span className="truncate">{m.away}</span>
+        </div>
       </div>
-      <div className={`grid gap-1.5 sm:w-72 ${cs.length === 2 ? "grid-cols-2" : "grid-cols-3"}`}>
+      {extra ? (
+        <span className="hidden w-14 shrink-0 text-center text-[10px] leading-tight text-text-3 sm:block">
+          {extra.label}
+          <span className="block text-sm font-semibold text-text tabular">{extra.value}</span>
+        </span>
+      ) : null}
+      <div className={`grid w-36 shrink-0 gap-1 sm:w-56 lg:w-44 ${cs.length === 2 ? "grid-cols-2" : "grid-cols-3"}`}>
         {cs.map((c) => (
-          <OutcomeCell key={c.label} label={c.label} p={c.p} best={c.label === best} />
+          <OutcomeCell key={c.label} label={c.label} p={c.p} best={c.label === best} compact />
         ))}
       </div>
     </Link>

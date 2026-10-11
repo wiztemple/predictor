@@ -4,7 +4,7 @@ import Link from "next/link";
 import { type CSSProperties, useState } from "react";
 import { formatShortDay, formatTime, pct } from "@/lib/format";
 import { fairOdds } from "@/lib/markets";
-import { ConfidenceBadge, ConfidenceBar, TeamBadge } from "./ui";
+import { ConfidenceBadge, TeamBadge } from "./ui";
 
 // gold / silver / bronze for the top three
 const MEDAL: Record<number, CSSProperties> = {
@@ -26,29 +26,38 @@ export type PanelPick = {
   rank: number;
 };
 
-type Props = { picks: PanelPick[]; record: string | null; compact?: boolean; heading?: boolean };
+type Props = {
+  picks: PanelPick[];
+  record: string | null;
+  compact?: boolean;
+  heading?: boolean;
+  /** show this many per day, with a button for the rest (all when unset) */
+  limit?: number;
+};
 
 /** Each day's top picks across all markets: the exact list we log and track. */
-export function PicksPanel({ picks, record, compact = false, heading = true }: Props) {
+export function PicksPanel({ picks, record, compact = false, heading = true, limit }: Props) {
   const days = [...new Set(picks.map((p) => formatShortDay(p.kickoff)))];
   const [day, setDay] = useState(days[0] ?? null);
-  const shown = picks.filter((p) => formatShortDay(p.kickoff) === day).sort((a, b) => a.rank - b.rank);
+  const [all, setAll] = useState(false);
+  const dayPicks = picks.filter((p) => formatShortDay(p.kickoff) === day).sort((a, b) => a.rank - b.rank);
+  const shown = limit && !all ? dayPicks.slice(0, limit) : dayPicks;
 
   if (!picks.length) return null;
   return (
     <section className="rounded-2xl border border-border bg-surface">
-      <div className="p-4 sm:p-5">
+      <div className="p-3 sm:p-4">
       {heading ? (
         <>
           <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
-            <h2 className="text-xl font-extrabold tracking-tight">
+            <h2 className="text-lg font-extrabold tracking-tight">
               <span className="text-accent">Our likeliest picks</span>
             </h2>
             <Link href="/picks" className="text-sm font-semibold text-accent hover:underline">
               Picks record →
             </Link>
           </div>
-          <p className="mt-1 text-sm text-text-2">
+          <p className="mt-0.5 text-xs text-text-2">
             The single most likely bet in each match, any market. Top {Math.max(...picks.map((p) => p.rank))} per
             day.
             {record ? <span className="text-text-3"> {record}</span> : null}
@@ -56,13 +65,13 @@ export function PicksPanel({ picks, record, compact = false, heading = true }: P
         </>
       ) : null}
 
-      <div className={`flex gap-2 overflow-x-auto ${heading ? "mt-3" : ""}`}>
+      <div className={`flex gap-1.5 overflow-x-auto ${heading ? "mt-2" : ""}`}>
         {days.map((d) => (
           <button
             key={d}
             onClick={() => setDay(d)}
             aria-pressed={day === d}
-            className={`shrink-0 rounded-full border px-3 py-1.5 text-sm font-medium whitespace-nowrap transition-colors ${
+            className={`shrink-0 rounded-full border px-3 py-1 text-sm font-medium whitespace-nowrap transition-colors ${
               day === d
                 ? "tab-active"
                 : "border-border text-text-2 hover:border-accent hover:text-accent"
@@ -73,32 +82,31 @@ export function PicksPanel({ picks, record, compact = false, heading = true }: P
         ))}
       </div>
 
-      <ol className={`mt-3 grid grid-cols-1 gap-2 ${compact ? "" : "md:grid-cols-2"}`}>
+      <ol className={`mt-2 grid grid-cols-1 gap-1.5 ${compact ? "" : "md:grid-cols-2"}`}>
         {shown.map((p) => (
           <li key={p.id} className="min-w-0">
             <Link
               href={`/match/${p.id}`}
-              className="flex min-w-0 items-center gap-3 rounded-xl border border-border bg-surface px-3 py-2.5 transition hover:-translate-y-0.5 hover:border-accent"
+              className="flex min-w-0 items-center gap-2.5 rounded-lg border border-border bg-surface px-2.5 py-1.5 transition hover:border-accent"
             >
               <span
-                className="flex size-7 shrink-0 items-center justify-center rounded-full text-sm font-extrabold tabular"
+                className="flex size-6 shrink-0 items-center justify-center rounded-full text-xs font-extrabold tabular"
                 style={MEDAL[p.rank] ?? { background: "var(--surface)", color: "var(--text-3)" }}
               >
                 {p.rank}
               </span>
               <span className="min-w-0 flex-1">
-                <span className="block truncate font-bold">{p.label}</span>
-                <span className="mt-0.5 flex items-center gap-1.5 truncate text-xs text-text-3">
-                  <TeamBadge name={p.home} />
+                <span className="block truncate text-sm font-bold">{p.label}</span>
+                <span className="flex items-center gap-1.5 truncate text-xs text-text-3">
+                  <TeamBadge name={p.home} size="xs" />
                   <span className="truncate">
                     {p.home} v {p.away} · {p.league_name} · {formatTime(p.kickoff, p.kickoff_tbc)}
                   </span>
                 </span>
-                <ConfidenceBar p={p.p} className="mt-1.5" />
               </span>
               <span className="shrink-0 text-right tabular">
-                <span className="block text-lg leading-tight font-extrabold">{pct(p.p)}</span>
-                <span className="block text-[11px] text-text-3">@{fairOdds(p.p)}</span>
+                <span className="block text-base leading-tight font-extrabold">{pct(p.p)}</span>
+                <span className="block text-[10px] leading-tight text-text-3">@{fairOdds(p.p)}</span>
               </span>
               <span className="hidden sm:inline">
                 <ConfidenceBadge p={p.p} />
@@ -107,6 +115,14 @@ export function PicksPanel({ picks, record, compact = false, heading = true }: P
           </li>
         ))}
       </ol>
+      {limit && dayPicks.length > limit ? (
+        <button
+          onClick={() => setAll(!all)}
+          className="mt-2 w-full rounded-lg py-1.5 text-sm font-semibold text-accent hover:bg-surface-2"
+        >
+          {all ? "Show fewer" : `Show all ${dayPicks.length}`}
+        </button>
+      ) : null}
       </div>
     </section>
   );
