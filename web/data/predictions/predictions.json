@@ -1,6 +1,6 @@
 {
  "schema_version": "1.0",
- "generated_at": "2026-10-11T07:13:35+00:00",
+ "generated_at": "2026-10-11T07:36:57+00:00",
  "status": "preview",
  "data_through": "2026-10-10",
  "leagues": [
@@ -398,7 +398,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "1x",
@@ -689,7 +689,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "ou_3_5",
     "selection": "under",
@@ -980,7 +980,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -1271,7 +1271,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "1x",
@@ -1562,7 +1562,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "x2",
@@ -1853,7 +1853,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "ou_3_5",
     "selection": "under",
@@ -2144,7 +2144,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -2435,7 +2435,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -2726,7 +2726,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -3003,7 +3003,7 @@
     }
    ],
    "fixture_source": "football-data-extra",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -3280,7 +3280,7 @@
     }
    ],
    "fixture_source": "football-data-extra",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -3571,7 +3571,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -3862,7 +3862,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -4139,7 +4139,7 @@
     }
    ],
    "fixture_source": "football-data-extra",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -4416,7 +4416,7 @@
     }
    ],
    "fixture_source": "football-data-extra",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "ou_3_5",
     "selection": "under",
@@ -4693,7 +4693,7 @@
     }
    ],
    "fixture_source": "football-data-extra",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "1x",
@@ -4984,7 +4984,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "1x",
@@ -5275,7 +5275,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -5552,7 +5552,7 @@
     }
    ],
    "fixture_source": "football-data-extra",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -5829,7 +5829,7 @@
     }
    ],
    "fixture_source": "football-data-extra",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -6120,7 +6120,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -6411,7 +6411,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "ou_3_5",
     "selection": "under",
@@ -6702,7 +6702,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -6993,7 +6993,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "1x",
@@ -7284,7 +7284,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "ou_3_5",
     "selection": "under",
@@ -7575,7 +7575,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -7866,7 +7866,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "1x",
@@ -8157,7 +8157,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -8448,7 +8448,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -8739,7 +8739,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "1x",
@@ -9016,7 +9016,7 @@
     }
    ],
    "fixture_source": "football-data-extra",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "1x",
@@ -9307,7 +9307,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -9598,7 +9598,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "ou_3_5",
     "selection": "under",
@@ -9889,7 +9889,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -10180,7 +10180,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "1x",
@@ -10471,7 +10471,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "ou_3_5",
     "selection": "under",
@@ -10748,7 +10748,7 @@
     }
    ],
    "fixture_source": "football-data-extra",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "1x",
@@ -11025,7 +11025,7 @@
     }
    ],
    "fixture_source": "football-data-extra",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -11316,7 +11316,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -11593,7 +11593,7 @@
     }
    ],
    "fixture_source": "football-data-extra",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -11870,7 +11870,7 @@
     }
    ],
    "fixture_source": "football-data-extra",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -12147,7 +12147,7 @@
     }
    ],
    "fixture_source": "football-data-extra",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -12424,7 +12424,7 @@
     }
    ],
    "fixture_source": "football-data-extra",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "x2",
@@ -12715,7 +12715,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -13006,7 +13006,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "ou_3_5",
     "selection": "under",
@@ -13297,7 +13297,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "1x",
@@ -13588,7 +13588,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -13865,7 +13865,7 @@
     }
    ],
    "fixture_source": "football-data-extra",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "1x",
@@ -14142,7 +14142,7 @@
     }
    ],
    "fixture_source": "football-data-extra",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -14433,7 +14433,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "1x",
@@ -14724,7 +14724,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "x2",
@@ -15015,7 +15015,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "1x",
@@ -15306,7 +15306,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -15597,7 +15597,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "1x",
@@ -15888,7 +15888,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "ou_3_5",
     "selection": "under",
@@ -16179,7 +16179,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "1x",
@@ -16470,7 +16470,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -16747,7 +16747,7 @@
     }
    ],
    "fixture_source": "football-data-extra",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -17038,7 +17038,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -17329,7 +17329,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "ou_3_5",
     "selection": "under",
@@ -17606,7 +17606,7 @@
     }
    ],
    "fixture_source": "football-data-extra",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "ou_3_5",
     "selection": "under",
@@ -17883,7 +17883,7 @@
     }
    ],
    "fixture_source": "football-data-extra",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -18174,7 +18174,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -18465,7 +18465,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "x2",
@@ -18756,7 +18756,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -19047,7 +19047,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "ou_3_5",
     "selection": "under",
@@ -19338,7 +19338,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -19629,7 +19629,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "ou_3_5",
     "selection": "under",
@@ -19920,7 +19920,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "1x",
@@ -20211,7 +20211,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "1x",
@@ -20488,7 +20488,7 @@
     }
    ],
    "fixture_source": "football-data-extra",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "ou_3_5",
     "selection": "under",
@@ -20765,7 +20765,7 @@
     }
    ],
    "fixture_source": "football-data-extra",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -21056,7 +21056,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "1x",
@@ -21347,7 +21347,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "ou_3_5",
     "selection": "under",
@@ -21624,7 +21624,7 @@
     }
    ],
    "fixture_source": "football-data-extra",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -21901,7 +21901,7 @@
     }
    ],
    "fixture_source": "football-data-extra",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -22192,7 +22192,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -22469,7 +22469,7 @@
     }
    ],
    "fixture_source": "football-data-extra",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "1x",
@@ -22746,7 +22746,7 @@
     }
    ],
    "fixture_source": "football-data-extra",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -23037,7 +23037,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -23328,7 +23328,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -23619,7 +23619,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -23910,7 +23910,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -24201,7 +24201,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "ou_3_5",
     "selection": "under",
@@ -24492,7 +24492,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "1x",
@@ -24783,7 +24783,7 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "ou_3_5",
     "selection": "under",
@@ -25074,7 +25074,7 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "1x",
@@ -25365,7 +25365,7 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -25656,7 +25656,7 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "ou_3_5",
     "selection": "under",
@@ -25947,7 +25947,7 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "1x",
@@ -26238,7 +26238,7 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "ou_3_5",
     "selection": "under",
@@ -26529,7 +26529,7 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "1x",
@@ -26820,7 +26820,7 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -27111,7 +27111,7 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -27402,7 +27402,7 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -27693,7 +27693,7 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -27984,2632 +27984,13 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
     "label": "Over 1.5",
     "p": 0.7776,
     "day_rank": 2
-   }
-  },
-  {
-   "id": "f6dbe1013615",
-   "sport": "football",
-   "league": "D1",
-   "league_name": "Bundesliga",
-   "season": "2026-27",
-   "kickoff": "2026-10-16T00:00:00Z",
-   "kickoff_tbc": true,
-   "home": "Union Berlin",
-   "away": "Dortmund",
-   "probabilities": {
-    "home": 0.1648,
-    "draw": 0.2213,
-    "away": 0.6139
-   },
-   "extras": {
-    "expected_goals": {
-     "home": 1.0,
-     "away": 1.98
-    },
-    "over_1_5": 0.7892,
-    "over_2_5": 0.558,
-    "over_3_5": 0.3325,
-    "btts": 0.5521,
-    "top_scorelines": [
-     {
-      "home": 1,
-      "away": 2,
-      "p": 0.1095
-     },
-     {
-      "home": 0,
-      "away": 1,
-      "p": 0.1093
-     },
-     {
-      "home": 1,
-      "away": 1,
-      "p": 0.1092
-     },
-     {
-      "home": 0,
-      "away": 2,
-      "p": 0.1001
-     },
-     {
-      "home": 1,
-      "away": 3,
-      "p": 0.0674
-     }
-    ],
-    "margin": {
-     "cap": 6,
-     "probs": [
-      0.00687,
-      0.01621,
-      0.0439,
-      0.10212,
-      0.18636,
-      0.25844,
-      0.22129,
-      0.10961,
-      0.04091,
-      0.01131,
-      0.00245,
-      0.00046,
-      8e-05
-     ]
-    },
-    "markets": {
-     "result_btts": {
-      "1&GG": 0.0894,
-      "1&NG": 0.0755,
-      "X&GG": 0.1644,
-      "X&NG": 0.0568,
-      "2&GG": 0.2983,
-      "2&NG": 0.3156
-     },
-     "result_ou25": {
-      "1&O": 0.0981,
-      "1&U": 0.0667,
-      "X&O": 0.0553,
-      "X&U": 0.166,
-      "2&O": 0.4045,
-      "2&U": 0.2094
-     },
-     "dc_ou25": {
-      "1X&O": 0.1534,
-      "1X&U": 0.2327,
-      "12&O": 0.5027,
-      "12&U": 0.276,
-      "X2&O": 0.4598,
-      "X2&U": 0.3754
-     },
-     "home_ou0_5": {
-      "over": 0.6276,
-      "under": 0.3724
-     },
-     "home_ou1_5": {
-      "over": 0.2445,
-      "under": 0.7555
-     },
-     "away_ou0_5": {
-      "over": 0.8677,
-      "under": 0.1323
-     },
-     "away_ou1_5": {
-      "over": 0.5823,
-      "under": 0.4177
-     },
-     "clean_sheet": {
-      "home": 0.1323,
-      "away": 0.3724
-     },
-     "win_to_nil": {
-      "home": 0.0755,
-      "away": 0.3156
-     },
-     "exact_goals": {
-      "0": 0.0568,
-      "1": 0.154,
-      "2": 0.2312,
-      "3": 0.2255,
-      "4": 0.1564,
-      "5+": 0.176
-     },
-     "odd_even": {
-      "odd": 0.4996,
-      "even": 0.5004
-     },
-     "dnb": {
-      "1": 0.2117,
-      "2": 0.7883
-     },
-     "ht_result": {
-      "1": 0.1685,
-      "X": 0.3816,
-      "2": 0.4499
-     },
-     "htft": {
-      "1/1": 0.0903,
-      "1/X": 0.0461,
-      "1/2": 0.0321,
-      "X/1": 0.0629,
-      "X/X": 0.1291,
-      "X/2": 0.1897,
-      "2/1": 0.0116,
-      "2/X": 0.0461,
-      "2/2": 0.3921
-     },
-     "ht_ou0_5": {
-      "over": 0.733,
-      "under": 0.267
-     },
-     "ht_ou1_5": {
-      "over": 0.3814,
-      "under": 0.6186
-     },
-     "highest_half": {
-      "1st": 0.3056,
-      "2nd": 0.4497,
-      "equal": 0.2447
-     }
-    },
-    "score_grid": {
-     "max_goals": 6,
-     "cells": [
-      [
-       0.0568,
-       0.1093,
-       0.1001,
-       0.0615,
-       0.0284,
-       0.0112,
-       0.0037
-      ],
-      [
-       0.0447,
-       0.1092,
-       0.1095,
-       0.0674,
-       0.0333,
-       0.0131,
-       0.0043
-      ],
-      [
-       0.022,
-       0.0476,
-       0.0443,
-       0.0336,
-       0.0166,
-       0.0065,
-       0.0022
-      ],
-      [
-       0.0068,
-       0.0148,
-       0.0146,
-       0.0097,
-       0.0055,
-       0.0022,
-       0.0007
-      ],
-      [
-       0.0016,
-       0.0037,
-       0.0036,
-       0.0024,
-       0.0012,
-       0.0005,
-       0.0002
-      ],
-      [
-       0.0003,
-       0.0007,
-       0.0007,
-       0.0005,
-       0.0002,
-       0.0001,
-       0.0
-      ],
-      [
-       0.0001,
-       0.0001,
-       0.0001,
-       0.0001,
-       0.0,
-       0.0,
-       0.0
-      ]
-     ],
-     "other": 0.0042
-    },
-    "grid_adjusted": true,
-    "ten_min": {
-     "home": 0.0691,
-     "draw": 0.7879,
-     "away": 0.143,
-     "no_goal": 0.7768
-    },
-    "goals_model": "dixon_coles",
-    "goals_calibrated": true,
-    "corners": {
-     "expected": {
-      "home": 5.19,
-      "away": 4.45,
-      "total": 9.64
-     },
-     "over": {
-      "7.5": 0.7272,
-      "8.5": 0.6116,
-      "9.5": 0.4905,
-      "10.5": 0.3748,
-      "11.5": 0.2729
-     }
-    }
-   },
-   "model": {
-    "name": "blend",
-    "version": "1.0"
-   },
-   "other_models": [
-    {
-     "name": "dixon_coles",
-     "version": "1.0",
-     "probabilities": {
-      "home": 0.179,
-      "draw": 0.2255,
-      "away": 0.5955
-     }
-    },
-    {
-     "name": "elo",
-     "version": "1.0",
-     "probabilities": {
-      "home": 0.1507,
-      "draw": 0.217,
-      "away": 0.6323
-     }
-    }
-   ],
-   "fixture_source": "fixturedownload",
-   "generated_at": "2026-10-11T07:13:35+00:00",
-   "best_pick": {
-    "market": "double_chance",
-    "selection": "x2",
-    "label": "Dortmund or draw",
-    "p": 0.8352,
-    "day_rank": 6
-   }
-  },
-  {
-   "id": "77142a2d877e",
-   "sport": "football",
-   "league": "D1",
-   "league_name": "Bundesliga",
-   "season": "2026-27",
-   "kickoff": "2026-10-16T00:00:00Z",
-   "kickoff_tbc": true,
-   "home": "Leverkusen",
-   "away": "Freiburg",
-   "probabilities": {
-    "home": 0.5825,
-    "draw": 0.2251,
-    "away": 0.1924
-   },
-   "extras": {
-    "expected_goals": {
-     "home": 2.23,
-     "away": 1.24
-    },
-    "over_1_5": 0.8346,
-    "over_2_5": 0.6276,
-    "over_3_5": 0.4035,
-    "btts": 0.6047,
-    "top_scorelines": [
-     {
-      "home": 1,
-      "away": 1,
-      "p": 0.1008
-     },
-     {
-      "home": 2,
-      "away": 1,
-      "p": 0.0994
-     },
-     {
-      "home": 2,
-      "away": 0,
-      "p": 0.0819
-     },
-     {
-      "home": 1,
-      "away": 0,
-      "p": 0.0785
-     },
-     {
-      "home": 3,
-      "away": 1,
-      "p": 0.0621
-     }
-    ],
-    "margin": {
-     "cap": 6,
-     "probs": [
-      0.00024,
-      0.00102,
-      0.00446,
-      0.01778,
-      0.0505,
-      0.1184,
-      0.22509,
-      0.22684,
-      0.17001,
-      0.10747,
-      0.04841,
-      0.01993,
-      0.00985
-     ]
-    },
-    "markets": {
-     "result_btts": {
-      "1&GG": 0.312,
-      "1&NG": 0.2705,
-      "X&GG": 0.1776,
-      "X&NG": 0.0475,
-      "2&GG": 0.1151,
-      "2&NG": 0.0773
-     },
-     "result_ou25": {
-      "1&O": 0.4221,
-      "1&U": 0.1604,
-      "X&O": 0.0767,
-      "X&U": 0.1484,
-      "2&O": 0.1288,
-      "2&U": 0.0636
-     },
-     "dc_ou25": {
-      "1X&O": 0.4988,
-      "1X&U": 0.3088,
-      "12&O": 0.5509,
-      "12&U": 0.224,
-      "X2&O": 0.2055,
-      "X2&U": 0.212
-     },
-     "home_ou0_5": {
-      "over": 0.8752,
-      "under": 0.1248
-     },
-     "home_ou1_5": {
-      "over": 0.6169,
-      "under": 0.3831
-     },
-     "away_ou0_5": {
-      "over": 0.682,
-      "under": 0.318
-     },
-     "away_ou1_5": {
-      "over": 0.3219,
-      "under": 0.6781
-     },
-     "clean_sheet": {
-      "home": 0.318,
-      "away": 0.1248
-     },
-     "win_to_nil": {
-      "home": 0.2705,
-      "away": 0.0773
-     },
-     "exact_goals": {
-      "0": 0.0475,
-      "1": 0.1178,
-      "2": 0.207,
-      "3": 0.2241,
-      "4": 0.168,
-      "5+": 0.2355
-     },
-     "odd_even": {
-      "odd": 0.4937,
-      "even": 0.5063
-     },
-     "dnb": {
-      "1": 0.7517,
-      "2": 0.2483
-     },
-     "ht_result": {
-      "1": 0.4484,
-      "X": 0.3526,
-      "2": 0.199
-     },
-     "htft": {
-      "1/1": 0.3783,
-      "1/X": 0.0537,
-      "1/2": 0.0163,
-      "X/1": 0.1673,
-      "X/X": 0.1176,
-      "X/2": 0.0677,
-      "2/1": 0.0369,
-      "2/X": 0.0537,
-      "2/2": 0.1084
-     },
-     "ht_ou0_5": {
-      "over": 0.7837,
-      "under": 0.2163
-     },
-     "ht_ou1_5": {
-      "over": 0.4548,
-      "under": 0.5452
-     },
-     "highest_half": {
-      "1st": 0.3072,
-      "2nd": 0.4632,
-      "equal": 0.2296
-     }
-    },
-    "score_grid": {
-     "max_goals": 6,
-     "cells": [
-      [
-       0.0475,
-       0.0393,
-       0.0243,
-       0.0102,
-       0.0027,
-       0.0007,
-       0.0001
-      ],
-      [
-       0.0785,
-       0.1008,
-       0.053,
-       0.0184,
-       0.0057,
-       0.0014,
-       0.0003
-      ],
-      [
-       0.0819,
-       0.0994,
-       0.056,
-       0.0206,
-       0.0064,
-       0.0016,
-       0.0003
-      ],
-      [
-       0.0615,
-       0.0621,
-       0.0386,
-       0.0173,
-       0.0048,
-       0.0012,
-       0.0002
-      ],
-      [
-       0.0288,
-       0.0347,
-       0.0216,
-       0.0089,
-       0.003,
-       0.0007,
-       0.0001
-      ],
-      [
-       0.0129,
-       0.0155,
-       0.0096,
-       0.004,
-       0.0012,
-       0.0003,
-       0.0001
-      ],
-      [
-       0.0048,
-       0.0058,
-       0.0036,
-       0.0015,
-       0.0005,
-       0.0001,
-       0.0
-      ]
-     ],
-     "other": 0.0073
-    },
-    "grid_adjusted": true,
-    "ten_min": {
-     "home": 0.1571,
-     "draw": 0.7591,
-     "away": 0.0838,
-     "no_goal": 0.7441
-    },
-    "goals_model": "dixon_coles",
-    "goals_calibrated": true,
-    "corners": {
-     "expected": {
-      "home": 5.89,
-      "away": 3.75,
-      "total": 9.64
-     },
-     "over": {
-      "7.5": 0.727,
-      "8.5": 0.6113,
-      "9.5": 0.4902,
-      "10.5": 0.3745,
-      "11.5": 0.2727
-     }
-    }
-   },
-   "model": {
-    "name": "blend",
-    "version": "1.0"
-   },
-   "other_models": [
-    {
-     "name": "dixon_coles",
-     "version": "1.0",
-     "probabilities": {
-      "home": 0.5926,
-      "draw": 0.2082,
-      "away": 0.1992
-     }
-    },
-    {
-     "name": "elo",
-     "version": "1.0",
-     "probabilities": {
-      "home": 0.5724,
-      "draw": 0.242,
-      "away": 0.1856
-     }
-    }
-   ],
-   "fixture_source": "fixturedownload",
-   "generated_at": "2026-10-11T07:13:35+00:00",
-   "best_pick": {
-    "market": "ou_1_5",
-    "selection": "over",
-    "label": "Over 1.5",
-    "p": 0.8346,
-    "day_rank": 7
-   }
-  },
-  {
-   "id": "5065db905118",
-   "sport": "football",
-   "league": "D1",
-   "league_name": "Bundesliga",
-   "season": "2026-27",
-   "kickoff": "2026-10-16T00:00:00Z",
-   "kickoff_tbc": true,
-   "home": "M'gladbach",
-   "away": "Hoffenheim",
-   "probabilities": {
-    "home": 0.3677,
-    "draw": 0.2595,
-    "away": 0.3728
-   },
-   "extras": {
-    "expected_goals": {
-     "home": 1.81,
-     "away": 1.76
-    },
-    "over_1_5": 0.8417,
-    "over_2_5": 0.6384,
-    "over_3_5": 0.4151,
-    "btts": 0.6385,
-    "top_scorelines": [
-     {
-      "home": 1,
-      "away": 1,
-      "p": 0.104
-     },
-     {
-      "home": 1,
-      "away": 2,
-      "p": 0.0797
-     },
-     {
-      "home": 2,
-      "away": 1,
-      "p": 0.0766
-     },
-     {
-      "home": 2,
-      "away": 2,
-      "p": 0.0732
-     },
-     {
-      "home": 0,
-      "away": 1,
-      "p": 0.0548
-     }
-    ],
-    "margin": {
-     "cap": 6,
-     "probs": [
-      0.0023,
-      0.00642,
-      0.01982,
-      0.05653,
-      0.1075,
-      0.18027,
-      0.2595,
-      0.17341,
-      0.10636,
-      0.05759,
-      0.02078,
-      0.00693,
-      0.00258
-     ]
-    },
-    "markets": {
-     "result_btts": {
-      "1&GG": 0.2126,
-      "1&NG": 0.155,
-      "X&GG": 0.2088,
-      "X&NG": 0.0507,
-      "2&GG": 0.2171,
-      "2&NG": 0.1558
-     },
-     "result_ou25": {
-      "1&O": 0.2654,
-      "1&U": 0.1022,
-      "X&O": 0.1049,
-      "X&U": 0.1546,
-      "2&O": 0.2681,
-      "2&U": 0.1047
-     },
-     "dc_ou25": {
-      "1X&O": 0.3703,
-      "1X&U": 0.2569,
-      "12&O": 0.5336,
-      "12&U": 0.2069,
-      "X2&O": 0.373,
-      "X2&U": 0.2593
-     },
-     "home_ou0_5": {
-      "over": 0.7936,
-      "under": 0.2064
-     },
-     "home_ou1_5": {
-      "over": 0.4933,
-      "under": 0.5067
-     },
-     "away_ou0_5": {
-      "over": 0.7943,
-      "under": 0.2057
-     },
-     "away_ou1_5": {
-      "over": 0.4947,
-      "under": 0.5053
-     },
-     "clean_sheet": {
-      "home": 0.2057,
-      "away": 0.2064
-     },
-     "win_to_nil": {
-      "home": 0.155,
-      "away": 0.1558
-     },
-     "exact_goals": {
-      "0": 0.0507,
-      "1": 0.1077,
-      "2": 0.2032,
-      "3": 0.2233,
-      "4": 0.1746,
-      "5+": 0.2405
-     },
-     "odd_even": {
-      "odd": 0.4821,
-      "even": 0.5179
-     },
-     "dnb": {
-      "1": 0.4965,
-      "2": 0.5035
-     },
-     "ht_result": {
-      "1": 0.3184,
-      "X": 0.3626,
-      "2": 0.319
-     },
-     "htft": {
-      "1/1": 0.2233,
-      "1/X": 0.0648,
-      "1/2": 0.0302,
-      "X/1": 0.115,
-      "X/X": 0.1298,
-      "X/2": 0.1178,
-      "2/1": 0.0293,
-      "2/X": 0.0648,
-      "2/2": 0.2248
-     },
-     "ht_ou0_5": {
-      "over": 0.7908,
-      "under": 0.2092
-     },
-     "ht_ou1_5": {
-      "over": 0.4663,
-      "under": 0.5337
-     },
-     "highest_half": {
-      "1st": 0.3061,
-      "2nd": 0.4637,
-      "equal": 0.2302
-     }
-    },
-    "score_grid": {
-     "max_goals": 6,
-     "cells": [
-      [
-       0.0507,
-       0.0548,
-       0.0499,
-       0.0332,
-       0.012,
-       0.0042,
-       0.0012
-      ],
-      [
-       0.0528,
-       0.104,
-       0.0797,
-       0.0386,
-       0.0169,
-       0.0059,
-       0.0017
-      ],
-      [
-       0.0494,
-       0.0766,
-       0.0732,
-       0.0349,
-       0.0153,
-       0.0054,
-       0.0016
-      ],
-      [
-       0.0338,
-       0.0382,
-       0.0335,
-       0.0258,
-       0.0092,
-       0.0032,
-       0.0009
-      ],
-      [
-       0.0126,
-       0.0173,
-       0.0151,
-       0.0089,
-       0.0051,
-       0.0015,
-       0.0004
-      ],
-      [
-       0.0046,
-       0.0062,
-       0.0055,
-       0.0032,
-       0.0014,
-       0.0007,
-       0.0002
-      ],
-      [
-       0.0014,
-       0.0019,
-       0.0016,
-       0.001,
-       0.0004,
-       0.0001,
-       0.0001
-      ]
-     ],
-     "other": 0.0041
-    },
-    "grid_adjusted": true,
-    "ten_min": {
-     "home": 0.1241,
-     "draw": 0.7557,
-     "away": 0.1202,
-     "no_goal": 0.7387
-    },
-    "goals_model": "dixon_coles",
-    "goals_calibrated": true,
-    "corners": {
-     "expected": {
-      "home": 5.32,
-      "away": 4.61,
-      "total": 9.94
-     },
-     "over": {
-      "7.5": 0.7545,
-      "8.5": 0.6442,
-      "9.5": 0.5256,
-      "10.5": 0.4092,
-      "11.5": 0.3041
-     }
-    }
-   },
-   "model": {
-    "name": "blend",
-    "version": "1.0"
-   },
-   "other_models": [
-    {
-     "name": "dixon_coles",
-     "version": "1.0",
-     "probabilities": {
-      "home": 0.3951,
-      "draw": 0.2309,
-      "away": 0.374
-     }
-    },
-    {
-     "name": "elo",
-     "version": "1.0",
-     "probabilities": {
-      "home": 0.3402,
-      "draw": 0.2881,
-      "away": 0.3717
-     }
-    }
-   ],
-   "fixture_source": "fixturedownload",
-   "generated_at": "2026-10-11T07:13:35+00:00",
-   "best_pick": {
-    "market": "ou_1_5",
-    "selection": "over",
-    "label": "Over 1.5",
-    "p": 0.8417,
-    "day_rank": 5
-   }
-  },
-  {
-   "id": "8f73b25ea58f",
-   "sport": "football",
-   "league": "D1",
-   "league_name": "Bundesliga",
-   "season": "2026-27",
-   "kickoff": "2026-10-16T00:00:00Z",
-   "kickoff_tbc": true,
-   "home": "Ein Frankfurt",
-   "away": "FC Koln",
-   "probabilities": {
-    "home": 0.5587,
-    "draw": 0.2266,
-    "away": 0.2147
-   },
-   "extras": {
-    "expected_goals": {
-     "home": 2.27,
-     "away": 1.47
-    },
-    "over_1_5": 0.8547,
-    "over_2_5": 0.6603,
-    "over_3_5": 0.4392,
-    "btts": 0.6375,
-    "top_scorelines": [
-     {
-      "home": 2,
-      "away": 1,
-      "p": 0.0969
-     },
-     {
-      "home": 1,
-      "away": 1,
-      "p": 0.0954
-     },
-     {
-      "home": 2,
-      "away": 0,
-      "p": 0.0725
-     },
-     {
-      "home": 1,
-      "away": 0,
-      "p": 0.0674
-     },
-     {
-      "home": 2,
-      "away": 2,
-      "p": 0.0612
-     }
-    ],
-    "margin": {
-     "cap": 6,
-     "probs": [
-      0.00052,
-      0.00184,
-      0.00688,
-      0.02416,
-      0.05866,
-      0.12262,
-      0.22665,
-      0.2211,
-      0.16119,
-      0.1028,
-      0.04533,
-      0.0188,
-      0.00943
-     ]
-    },
-    "markets": {
-     "result_btts": {
-      "1&GG": 0.3191,
-      "1&NG": 0.2395,
-      "X&GG": 0.1847,
-      "X&NG": 0.0419,
-      "2&GG": 0.1337,
-      "2&NG": 0.081
-     },
-     "result_ou25": {
-      "1&O": 0.4188,
-      "1&U": 0.1399,
-      "X&O": 0.0893,
-      "X&U": 0.1373,
-      "2&O": 0.1523,
-      "2&U": 0.0624
-     },
-     "dc_ou25": {
-      "1X&O": 0.5081,
-      "1X&U": 0.2772,
-      "12&O": 0.571,
-      "12&U": 0.2023,
-      "X2&O": 0.2416,
-      "X2&U": 0.1998
-     },
-     "home_ou0_5": {
-      "over": 0.8771,
-      "under": 0.1229
-     },
-     "home_ou1_5": {
-      "over": 0.6278,
-      "under": 0.3722
-     },
-     "away_ou0_5": {
-      "over": 0.7185,
-      "under": 0.2815
-     },
-     "away_ou1_5": {
-      "over": 0.3757,
-      "under": 0.6243
-     },
-     "clean_sheet": {
-      "home": 0.2815,
-      "away": 0.1229
-     },
-     "win_to_nil": {
-      "home": 0.2395,
-      "away": 0.081
-     },
-     "exact_goals": {
-      "0": 0.0419,
-      "1": 0.1034,
-      "2": 0.1943,
-      "3": 0.2212,
-      "4": 0.1697,
-      "5+": 0.2694
-     },
-     "odd_even": {
-      "odd": 0.4936,
-      "even": 0.5064
-     },
-     "dnb": {
-      "1": 0.7224,
-      "2": 0.2776
-     },
-     "ht_result": {
-      "1": 0.4373,
-      "X": 0.3409,
-      "2": 0.2218
-     },
-     "htft": {
-      "1/1": 0.3602,
-      "1/X": 0.0576,
-      "1/2": 0.0195,
-      "X/1": 0.1581,
-      "X/X": 0.1115,
-      "X/2": 0.0712,
-      "2/1": 0.0403,
-      "2/X": 0.0576,
-      "2/2": 0.124
-     },
-     "ht_ou0_5": {
-      "over": 0.8083,
-      "under": 0.1917
-     },
-     "ht_ou1_5": {
-      "over": 0.4936,
-      "under": 0.5064
-     },
-     "highest_half": {
-      "1st": 0.3086,
-      "2nd": 0.471,
-      "equal": 0.2204
-     }
-    },
-    "score_grid": {
-     "max_goals": 6,
-     "cells": [
-      [
-       0.0419,
-       0.036,
-       0.0264,
-       0.0133,
-       0.0039,
-       0.0011,
-       0.0003
-      ],
-      [
-       0.0674,
-       0.0954,
-       0.0546,
-       0.0212,
-       0.0078,
-       0.0023,
-       0.0006
-      ],
-      [
-       0.0725,
-       0.0969,
-       0.0612,
-       0.0241,
-       0.0088,
-       0.0026,
-       0.0006
-      ],
-      [
-       0.0564,
-       0.0582,
-       0.0427,
-       0.0227,
-       0.0067,
-       0.002,
-       0.0005
-      ],
-      [
-       0.0254,
-       0.0331,
-       0.0243,
-       0.0119,
-       0.0047,
-       0.0011,
-       0.0003
-      ],
-      [
-       0.0115,
-       0.015,
-       0.011,
-       0.0054,
-       0.002,
-       0.0006,
-       0.0001
-      ],
-      [
-       0.0044,
-       0.0057,
-       0.0042,
-       0.002,
-       0.0008,
-       0.0002,
-       0.0001
-      ]
-     ],
-     "other": 0.0083
-    },
-    "grid_adjusted": true,
-    "ten_min": {
-     "home": 0.1569,
-     "draw": 0.7452,
-     "away": 0.0979,
-     "no_goal": 0.7276
-    },
-    "goals_model": "dixon_coles",
-    "goals_calibrated": true,
-    "corners": {
-     "expected": {
-      "home": 5.75,
-      "away": 4.31,
-      "total": 10.07
-     },
-     "over": {
-      "7.5": 0.7659,
-      "8.5": 0.658,
-      "9.5": 0.5408,
-      "10.5": 0.4244,
-      "11.5": 0.318
-     }
-    }
-   },
-   "model": {
-    "name": "blend",
-    "version": "1.0"
-   },
-   "other_models": [
-    {
-     "name": "dixon_coles",
-     "version": "1.0",
-     "probabilities": {
-      "home": 0.5524,
-      "draw": 0.2084,
-      "away": 0.2391
-     }
-    },
-    {
-     "name": "elo",
-     "version": "1.0",
-     "probabilities": {
-      "home": 0.5649,
-      "draw": 0.2448,
-      "away": 0.1903
-     }
-    }
-   ],
-   "fixture_source": "fixturedownload",
-   "generated_at": "2026-10-11T07:13:35+00:00",
-   "best_pick": {
-    "market": "ou_1_5",
-    "selection": "over",
-    "label": "Over 1.5",
-    "p": 0.8547,
-    "day_rank": 3
-   }
-  },
-  {
-   "id": "f1b66d2dc0cb",
-   "sport": "football",
-   "league": "D1",
-   "league_name": "Bundesliga",
-   "season": "2026-27",
-   "kickoff": "2026-10-16T00:00:00Z",
-   "kickoff_tbc": true,
-   "home": "Bayern Munich",
-   "away": "RB Leipzig",
-   "probabilities": {
-    "home": 0.709,
-    "draw": 0.1687,
-    "away": 0.1223
-   },
-   "extras": {
-    "expected_goals": {
-     "home": 2.96,
-     "away": 1.26
-    },
-    "over_1_5": 0.8849,
-    "over_2_5": 0.7141,
-    "over_3_5": 0.5013,
-    "btts": 0.6295,
-    "top_scorelines": [
-     {
-      "home": 2,
-      "away": 1,
-      "p": 0.0975
-     },
-     {
-      "home": 2,
-      "away": 0,
-      "p": 0.0823
-     },
-     {
-      "home": 1,
-      "away": 1,
-      "p": 0.0755
-     },
-     {
-      "home": 3,
-      "away": 0,
-      "p": 0.0741
-     },
-     {
-      "home": 3,
-      "away": 1,
-      "p": 0.0673
-     }
-    ],
-    "margin": {
-     "cap": 6,
-     "probs": [
-      0.00012,
-      0.00051,
-      0.00225,
-      0.00985,
-      0.03002,
-      0.07954,
-      0.16875,
-      0.22083,
-      0.19012,
-      0.14694,
-      0.07893,
-      0.04188,
-      0.03026
-     ]
-    },
-    "markets": {
-     "result_btts": {
-      "1&GG": 0.408,
-      "1&NG": 0.301,
-      "X&GG": 0.1403,
-      "X&NG": 0.0285,
-      "2&GG": 0.0813,
-      "2&NG": 0.041
-     },
-     "result_ou25": {
-      "1&O": 0.5616,
-      "1&U": 0.1473,
-      "X&O": 0.0648,
-      "X&U": 0.104,
-      "2&O": 0.0877,
-      "2&U": 0.0346
-     },
-     "dc_ou25": {
-      "1X&O": 0.6264,
-      "1X&U": 0.2513,
-      "12&O": 0.6493,
-      "12&U": 0.1819,
-      "X2&O": 0.1524,
-      "X2&U": 0.1386
-     },
-     "home_ou0_5": {
-      "over": 0.9305,
-      "under": 0.0695
-     },
-     "home_ou1_5": {
-      "over": 0.7387,
-      "under": 0.2613
-     },
-     "away_ou0_5": {
-      "over": 0.6705,
-      "under": 0.3295
-     },
-     "away_ou1_5": {
-      "over": 0.3052,
-      "under": 0.6948
-     },
-     "clean_sheet": {
-      "home": 0.3295,
-      "away": 0.0695
-     },
-     "win_to_nil": {
-      "home": 0.301,
-      "away": 0.041
-     },
-     "exact_goals": {
-      "0": 0.0285,
-      "1": 0.0867,
-      "2": 0.1708,
-      "3": 0.2128,
-      "4": 0.1598,
-      "5+": 0.3415
-     },
-     "odd_even": {
-      "odd": 0.5079,
-      "even": 0.4921
-     },
-     "dnb": {
-      "1": 0.8529,
-      "2": 0.1471
-     },
-     "ht_result": {
-      "1": 0.5506,
-      "X": 0.2924,
-      "2": 0.1571
-     },
-     "htft": {
-      "1/1": 0.4936,
-      "1/X": 0.0443,
-      "1/2": 0.0126,
-      "X/1": 0.1708,
-      "X/X": 0.0801,
-      "X/2": 0.0415,
-      "2/1": 0.0445,
-      "2/X": 0.0443,
-      "2/2": 0.0682
-     },
-     "ht_ou0_5": {
-      "over": 0.8449,
-      "under": 0.1551
-     },
-     "ht_ou1_5": {
-      "over": 0.5574,
-      "under": 0.4426
-     },
-     "highest_half": {
-      "1st": 0.3116,
-      "2nd": 0.4847,
-      "equal": 0.2037
-     }
-    },
-    "score_grid": {
-     "max_goals": 6,
-     "cells": [
-      [
-       0.0285,
-       0.0216,
-       0.013,
-       0.005,
-       0.0011,
-       0.0003,
-       0.0001
-      ],
-      [
-       0.0651,
-       0.0755,
-       0.0362,
-       0.0106,
-       0.0033,
-       0.0008,
-       0.0002
-      ],
-      [
-       0.0823,
-       0.0975,
-       0.0424,
-       0.0157,
-       0.005,
-       0.0012,
-       0.0003
-      ],
-      [
-       0.0741,
-       0.0673,
-       0.0424,
-       0.0176,
-       0.0049,
-       0.0012,
-       0.0003
-      ],
-      [
-       0.0384,
-       0.0499,
-       0.0314,
-       0.0132,
-       0.0041,
-       0.0009,
-       0.0002
-      ],
-      [
-       0.0227,
-       0.0295,
-       0.0186,
-       0.0078,
-       0.0025,
-       0.0006,
-       0.0001
-      ],
-      [
-       0.0112,
-       0.0146,
-       0.0092,
-       0.0038,
-       0.0012,
-       0.0003,
-       0.0001
-      ]
-     ],
-     "other": 0.0264
-    },
-    "grid_adjusted": true,
-    "ten_min": {
-     "home": 0.2025,
-     "draw": 0.7176,
-     "away": 0.0799,
-     "no_goal": 0.6987
-    },
-    "goals_model": "dixon_coles",
-    "goals_calibrated": true,
-    "corners": {
-     "expected": {
-      "home": 6.43,
-      "away": 3.91,
-      "total": 10.35
-     },
-     "over": {
-      "7.5": 0.7889,
-      "8.5": 0.6865,
-      "9.5": 0.5725,
-      "10.5": 0.4567,
-      "11.5": 0.3483
-     }
-    }
-   },
-   "model": {
-    "name": "blend",
-    "version": "1.0"
-   },
-   "other_models": [
-    {
-     "name": "dixon_coles",
-     "version": "1.0",
-     "probabilities": {
-      "home": 0.7168,
-      "draw": 0.1537,
-      "away": 0.1295
-     }
-    },
-    {
-     "name": "elo",
-     "version": "1.0",
-     "probabilities": {
-      "home": 0.7011,
-      "draw": 0.1838,
-      "away": 0.1151
-     }
-    }
-   ],
-   "fixture_source": "fixturedownload",
-   "generated_at": "2026-10-11T07:13:35+00:00",
-   "best_pick": {
-    "market": "ou_1_5",
-    "selection": "over",
-    "label": "Over 1.5",
-    "p": 0.8849,
-    "day_rank": 1
-   }
-  },
-  {
-   "id": "0e5f380e83c0",
-   "sport": "football",
-   "league": "D1",
-   "league_name": "Bundesliga",
-   "season": "2026-27",
-   "kickoff": "2026-10-16T00:00:00Z",
-   "kickoff_tbc": true,
-   "home": "Schalke 04",
-   "away": "Mainz",
-   "probabilities": {
-    "home": 0.3403,
-    "draw": 0.2836,
-    "away": 0.3761
-   },
-   "extras": {
-    "expected_goals": {
-     "home": 1.32,
-     "away": 1.1
-    },
-    "over_1_5": 0.7259,
-    "over_2_5": 0.4695,
-    "over_3_5": 0.251,
-    "btts": 0.5217,
-    "top_scorelines": [
-     {
-      "home": 1,
-      "away": 1,
-      "p": 0.1312
-     },
-     {
-      "home": 0,
-      "away": 1,
-      "p": 0.1018
-     },
-     {
-      "home": 1,
-      "away": 2,
-      "p": 0.0907
-     },
-     {
-      "home": 0,
-      "away": 0,
-      "p": 0.0897
-     },
-     {
-      "home": 1,
-      "away": 0,
-      "p": 0.0826
-     }
-    ],
-    "margin": {
-     "cap": 6,
-     "probs": [
-      0.00044,
-      0.00212,
-      0.01011,
-      0.03715,
-      0.10708,
-      0.21919,
-      0.28358,
-      0.17661,
-      0.10271,
-      0.04268,
-      0.01391,
-      0.0035,
-      0.00091
-     ]
-    },
-    "markets": {
-     "result_btts": {
-      "1&GG": 0.1528,
-      "1&NG": 0.1875,
-      "X&GG": 0.1939,
-      "X&NG": 0.0897,
-      "2&GG": 0.175,
-      "2&NG": 0.2011
-     },
-     "result_ou25": {
-      "1&O": 0.1964,
-      "1&U": 0.1439,
-      "X&O": 0.0628,
-      "X&U": 0.2208,
-      "2&O": 0.2104,
-      "2&U": 0.1657
-     },
-     "dc_ou25": {
-      "1X&O": 0.2592,
-      "1X&U": 0.3648,
-      "12&O": 0.4068,
-      "12&U": 0.3096,
-      "X2&O": 0.2731,
-      "X2&U": 0.3865
-     },
-     "home_ou0_5": {
-      "over": 0.7092,
-      "under": 0.2908
-     },
-     "home_ou1_5": {
-      "over": 0.3563,
-      "under": 0.6437
-     },
-     "away_ou0_5": {
-      "over": 0.7228,
-      "under": 0.2772
-     },
-     "away_ou1_5": {
-      "over": 0.3676,
-      "under": 0.6324
-     },
-     "clean_sheet": {
-      "home": 0.2772,
-      "away": 0.2908
-     },
-     "win_to_nil": {
-      "home": 0.1875,
-      "away": 0.2011
-     },
-     "exact_goals": {
-      "0": 0.0897,
-      "1": 0.1844,
-      "2": 0.2564,
-      "3": 0.2185,
-      "4": 0.1421,
-      "5+": 0.109
-     },
-     "odd_even": {
-      "odd": 0.4815,
-      "even": 0.5185
-     },
-     "dnb": {
-      "1": 0.475,
-      "2": 0.525
-     },
-     "ht_result": {
-      "1": 0.2699,
-      "X": 0.4505,
-      "2": 0.2796
-     },
-     "htft": {
-      "1/1": 0.1985,
-      "1/X": 0.0511,
-      "1/2": 0.0203,
-      "X/1": 0.1246,
-      "X/X": 0.1814,
-      "X/2": 0.1444,
-      "2/1": 0.0172,
-      "2/X": 0.0511,
-      "2/2": 0.2114
-     },
-     "ht_ou0_5": {
-      "over": 0.6554,
-      "under": 0.3446
-     },
-     "ht_ou1_5": {
-      "over": 0.2892,
-      "under": 0.7108
-     },
-     "highest_half": {
-      "1st": 0.2978,
-      "2nd": 0.4257,
-      "equal": 0.2766
-     }
-    },
-    "score_grid": {
-     "max_goals": 6,
-     "cells": [
-      [
-       0.0897,
-       0.1018,
-       0.0639,
-       0.0257,
-       0.0077,
-       0.0017,
-       0.0003
-      ],
-      [
-       0.0826,
-       0.1312,
-       0.0907,
-       0.036,
-       0.0099,
-       0.0022,
-       0.0004
-      ],
-      [
-       0.0613,
-       0.0726,
-       0.0534,
-       0.0237,
-       0.0065,
-       0.0014,
-       0.0003
-      ],
-      [
-       0.0295,
-       0.0345,
-       0.019,
-       0.0086,
-       0.0029,
-       0.0006,
-       0.0001
-      ],
-      [
-       0.0105,
-       0.0114,
-       0.0062,
-       0.0023,
-       0.0008,
-       0.0002,
-       0.0
-      ],
-      [
-       0.0028,
-       0.003,
-       0.0016,
-       0.0006,
-       0.0002,
-       0.0,
-       0.0
-      ],
-      [
-       0.0006,
-       0.0007,
-       0.0004,
-       0.0001,
-       0.0,
-       0.0,
-       0.0
-      ]
-     ],
-     "other": 0.0006
-    },
-    "grid_adjusted": true,
-    "ten_min": {
-     "home": 0.0969,
-     "draw": 0.823,
-     "away": 0.0801,
-     "no_goal": 0.8145
-    },
-    "goals_model": "dixon_coles",
-    "goals_calibrated": true,
-    "corners": {
-     "expected": {
-      "home": 5.32,
-      "away": 4.56,
-      "total": 9.87
-     },
-     "over": {
-      "7.5": 0.7489,
-      "8.5": 0.6374,
-      "9.5": 0.5182,
-      "10.5": 0.4019,
-      "11.5": 0.2973
-     }
-    }
-   },
-   "model": {
-    "name": "blend",
-    "version": "1.0"
-   },
-   "other_models": [
-    {
-     "name": "dixon_coles",
-     "version": "1.0",
-     "probabilities": {
-      "home": 0.4082,
-      "draw": 0.2885,
-      "away": 0.3033
-     }
-    },
-    {
-     "name": "elo",
-     "version": "1.0",
-     "probabilities": {
-      "home": 0.2724,
-      "draw": 0.2786,
-      "away": 0.4489
-     }
-    }
-   ],
-   "fixture_source": "fixturedownload",
-   "generated_at": "2026-10-11T07:13:35+00:00",
-   "best_pick": {
-    "market": "ou_3_5",
-    "selection": "under",
-    "label": "Under 3.5",
-    "p": 0.749,
-    "day_rank": 25
-   }
-  },
-  {
-   "id": "8dea91f45502",
-   "sport": "football",
-   "league": "D1",
-   "league_name": "Bundesliga",
-   "season": "2026-27",
-   "kickoff": "2026-10-16T00:00:00Z",
-   "kickoff_tbc": true,
-   "home": "Hamburg",
-   "away": "Stuttgart",
-   "probabilities": {
-    "home": 0.2376,
-    "draw": 0.2493,
-    "away": 0.5132
-   },
-   "extras": {
-    "expected_goals": {
-     "home": 1.26,
-     "away": 1.93
-    },
-    "over_1_5": 0.8106,
-    "over_2_5": 0.5896,
-    "over_3_5": 0.3639,
-    "btts": 0.592,
-    "top_scorelines": [
-     {
-      "home": 1,
-      "away": 1,
-      "p": 0.111
-     },
-     {
-      "home": 1,
-      "away": 2,
-      "p": 0.0959
-     },
-     {
-      "home": 0,
-      "away": 1,
-      "p": 0.081
-     },
-     {
-      "home": 0,
-      "away": 2,
-      "p": 0.0772
-     },
-     {
-      "home": 2,
-      "away": 1,
-      "p": 0.0622
-     }
-    ],
-    "margin": {
-     "cap": 6,
-     "probs": [
-      0.00526,
-      0.01281,
-      0.03559,
-      0.0871,
-      0.15251,
-      0.21989,
-      0.24925,
-      0.14049,
-      0.06465,
-      0.02412,
-      0.00644,
-      0.00151,
-      0.00036
-     ]
-    },
-    "markets": {
-     "result_btts": {
-      "1&GG": 0.1343,
-      "1&NG": 0.1032,
-      "X&GG": 0.1912,
-      "X&NG": 0.058,
-      "2&GG": 0.2664,
-      "2&NG": 0.2468
-     },
-     "result_ou25": {
-      "1&O": 0.1545,
-      "1&U": 0.0831,
-      "X&O": 0.0803,
-      "X&U": 0.169,
-      "2&O": 0.3549,
-      "2&U": 0.1583
-     },
-     "dc_ou25": {
-      "1X&O": 0.2347,
-      "1X&U": 0.2521,
-      "12&O": 0.5093,
-      "12&U": 0.2414,
-      "X2&O": 0.4351,
-      "X2&U": 0.3273
-     },
-     "home_ou0_5": {
-      "over": 0.6952,
-      "under": 0.3048
-     },
-     "home_ou1_5": {
-      "over": 0.341,
-      "under": 0.659
-     },
-     "away_ou0_5": {
-      "over": 0.8387,
-      "under": 0.1613
-     },
-     "away_ou1_5": {
-      "over": 0.5513,
-      "under": 0.4487
-     },
-     "clean_sheet": {
-      "home": 0.1613,
-      "away": 0.3048
-     },
-     "win_to_nil": {
-      "home": 0.1032,
-      "away": 0.2468
-     },
-     "exact_goals": {
-      "0": 0.058,
-      "1": 0.1314,
-      "2": 0.221,
-      "3": 0.2256,
-      "4": 0.1668,
-      "5+": 0.1971
-     },
-     "odd_even": {
-      "odd": 0.4871,
-      "even": 0.5129
-     },
-     "dnb": {
-      "1": 0.3165,
-      "2": 0.6835
-     },
-     "ht_result": {
-      "1": 0.2239,
-      "X": 0.379,
-      "2": 0.397
-     },
-     "htft": {
-      "1/1": 0.1349,
-      "1/X": 0.0567,
-      "1/2": 0.0323,
-      "X/1": 0.0844,
-      "X/X": 0.1359,
-      "X/2": 0.1587,
-      "2/1": 0.0183,
-      "2/X": 0.0567,
-      "2/2": 0.3221
-     },
-     "ht_ou0_5": {
-      "over": 0.7545,
-      "under": 0.2455
-     },
-     "ht_ou1_5": {
-      "over": 0.4122,
-      "under": 0.5878
-     },
-     "highest_half": {
-      "1st": 0.3047,
-      "2nd": 0.4535,
-      "equal": 0.2418
-     }
-    },
-    "score_grid": {
-     "max_goals": 6,
-     "cells": [
-      [
-       0.058,
-       0.081,
-       0.0772,
-       0.0529,
-       0.0229,
-       0.0088,
-       0.0028
-      ],
-      [
-       0.0504,
-       0.111,
-       0.0959,
-       0.0554,
-       0.0267,
-       0.0103,
-       0.0033
-      ],
-      [
-       0.0327,
-       0.0622,
-       0.061,
-       0.0349,
-       0.0169,
-       0.0065,
-       0.0021
-      ],
-      [
-       0.0146,
-       0.0235,
-       0.0227,
-       0.0165,
-       0.0071,
-       0.0027,
-       0.0009
-      ],
-      [
-       0.0041,
-       0.0074,
-       0.0072,
-       0.0046,
-       0.0025,
-       0.0009,
-       0.0003
-      ],
-      [
-       0.001,
-       0.0019,
-       0.0018,
-       0.0012,
-       0.0006,
-       0.0002,
-       0.0001
-      ],
-      [
-       0.0002,
-       0.0004,
-       0.0004,
-       0.0002,
-       0.0001,
-       0.0,
-       0.0
-      ]
-     ],
-     "other": 0.0037
-    },
-    "grid_adjusted": true,
-    "ten_min": {
-     "home": 0.0871,
-     "draw": 0.7758,
-     "away": 0.1372,
-     "no_goal": 0.7623
-    },
-    "goals_model": "dixon_coles",
-    "goals_calibrated": true,
-    "corners": {
-     "expected": {
-      "home": 5.09,
-      "away": 4.83,
-      "total": 9.92
-     },
-     "over": {
-      "7.5": 0.7528,
-      "8.5": 0.6421,
-      "9.5": 0.5233,
-      "10.5": 0.407,
-      "11.5": 0.302
-     }
-    }
-   },
-   "model": {
-    "name": "blend",
-    "version": "1.0"
-   },
-   "other_models": [
-    {
-     "name": "dixon_coles",
-     "version": "1.0",
-     "probabilities": {
-      "home": 0.2428,
-      "draw": 0.2328,
-      "away": 0.5244
-     }
-    },
-    {
-     "name": "elo",
-     "version": "1.0",
-     "probabilities": {
-      "home": 0.2324,
-      "draw": 0.2657,
-      "away": 0.5019
-     }
-    }
-   ],
-   "fixture_source": "fixturedownload",
-   "generated_at": "2026-10-11T07:13:35+00:00",
-   "best_pick": {
-    "market": "ou_1_5",
-    "selection": "over",
-    "label": "Over 1.5",
-    "p": 0.8106,
-    "day_rank": 11
-   }
-  },
-  {
-   "id": "77f21a447391",
-   "sport": "football",
-   "league": "D1",
-   "league_name": "Bundesliga",
-   "season": "2026-27",
-   "kickoff": "2026-10-16T00:00:00Z",
-   "kickoff_tbc": true,
-   "home": "Elversberg",
-   "away": "Augsburg",
-   "probabilities": {
-    "home": 0.4264,
-    "draw": 0.2662,
-    "away": 0.3075
-   },
-   "extras": {
-    "expected_goals": {
-     "home": 1.8,
-     "away": 1.24
-    },
-    "over_1_5": 0.7959,
-    "over_2_5": 0.5675,
-    "over_3_5": 0.3418,
-    "btts": 0.5807,
-    "top_scorelines": [
-     {
-      "home": 1,
-      "away": 1,
-      "p": 0.1163
-     },
-     {
-      "home": 2,
-      "away": 1,
-      "p": 0.0811
-     },
-     {
-      "home": 1,
-      "away": 2,
-      "p": 0.0783
-     },
-     {
-      "home": 1,
-      "away": 0,
-      "p": 0.0713
-     },
-     {
-      "home": 2,
-      "away": 0,
-      "p": 0.0672
-     }
-    ],
-    "margin": {
-     "cap": 6,
-     "probs": [
-      0.0005,
-      0.00209,
-      0.00896,
-      0.03282,
-      0.08528,
-      0.17781,
-      0.26616,
-      0.18664,
-      0.12767,
-      0.07102,
-      0.02802,
-      0.00946,
-      0.00356
-     ]
-    },
-    "markets": {
-     "result_btts": {
-      "1&GG": 0.2137,
-      "1&NG": 0.2127,
-      "X&GG": 0.1999,
-      "X&NG": 0.0663,
-      "2&GG": 0.1671,
-      "2&NG": 0.1404
-     },
-     "result_ou25": {
-      "1&O": 0.2878,
-      "1&U": 0.1385,
-      "X&O": 0.0836,
-      "X&U": 0.1826,
-      "2&O": 0.1961,
-      "2&U": 0.1114
-     },
-     "dc_ou25": {
-      "1X&O": 0.3714,
-      "1X&U": 0.3211,
-      "12&O": 0.4839,
-      "12&U": 0.2499,
-      "X2&O": 0.2796,
-      "X2&U": 0.294
-     },
-     "home_ou0_5": {
-      "over": 0.7933,
-      "under": 0.2067
-     },
-     "home_ou1_5": {
-      "over": 0.4845,
-      "under": 0.5155
-     },
-     "away_ou0_5": {
-      "over": 0.7211,
-      "under": 0.2789
-     },
-     "away_ou1_5": {
-      "over": 0.3808,
-      "under": 0.6192
-     },
-     "clean_sheet": {
-      "home": 0.2789,
-      "away": 0.2067
-     },
-     "win_to_nil": {
-      "home": 0.2127,
-      "away": 0.1404
-     },
-     "exact_goals": {
-      "0": 0.0663,
-      "1": 0.1378,
-      "2": 0.2285,
-      "3": 0.2257,
-      "4": 0.1664,
-      "5+": 0.1754
-     },
-     "odd_even": {
-      "odd": 0.4806,
-      "even": 0.5194
-     },
-     "dnb": {
-      "1": 0.581,
-      "2": 0.419
-     },
-     "ht_result": {
-      "1": 0.3443,
-      "X": 0.3965,
-      "2": 0.2592
-     },
-     "htft": {
-      "1/1": 0.2636,
-      "1/X": 0.0584,
-      "1/2": 0.0223,
-      "X/1": 0.1366,
-      "X/X": 0.1493,
-      "X/2": 0.1106,
-      "2/1": 0.0261,
-      "2/X": 0.0584,
-      "2/2": 0.1746
-     },
-     "ht_ou0_5": {
-      "over": 0.7343,
-      "under": 0.2657
-     },
-     "ht_ou1_5": {
-      "over": 0.3852,
-      "under": 0.6148
-     },
-     "highest_half": {
-      "1st": 0.3027,
-      "2nd": 0.4469,
-      "equal": 0.2504
-     }
-    },
-    "score_grid": {
-     "max_goals": 6,
-     "cells": [
-      [
-       0.0663,
-       0.0665,
-       0.0449,
-       0.021,
-       0.0061,
-       0.0015,
-       0.0003
-      ],
-      [
-       0.0713,
-       0.1163,
-       0.0783,
-       0.0305,
-       0.0095,
-       0.0024,
-       0.0005
-      ],
-      [
-       0.0672,
-       0.0811,
-       0.065,
-       0.0274,
-       0.0085,
-       0.0021,
-       0.0004
-      ],
-      [
-       0.0454,
-       0.0456,
-       0.0283,
-       0.0161,
-       0.0051,
-       0.0013,
-       0.0003
-      ],
-      [
-       0.0191,
-       0.0205,
-       0.0127,
-       0.0053,
-       0.0022,
-       0.0006,
-       0.0001
-      ],
-      [
-       0.0069,
-       0.0074,
-       0.0046,
-       0.0019,
-       0.0006,
-       0.0002,
-       0.0
-      ],
-      [
-       0.0021,
-       0.0022,
-       0.0014,
-       0.0006,
-       0.0002,
-       0.0,
-       0.0
-      ]
-     ],
-     "other": 0.0025
-    },
-    "grid_adjusted": true,
-    "ten_min": {
-     "home": 0.1283,
-     "draw": 0.785,
-     "away": 0.0867,
-     "no_goal": 0.7725
-    },
-    "goals_model": "dixon_coles",
-    "goals_calibrated": true,
-    "corners": {
-     "expected": {
-      "home": 5.9,
-      "away": 4.43,
-      "total": 10.33
-     },
-     "over": {
-      "7.5": 0.7876,
-      "8.5": 0.6849,
-      "9.5": 0.5707,
-      "10.5": 0.4548,
-      "11.5": 0.3465
-     }
-    }
-   },
-   "model": {
-    "name": "blend",
-    "version": "1.0"
-   },
-   "other_models": [
-    {
-     "name": "dixon_coles",
-     "version": "1.0",
-     "probabilities": {
-      "home": 0.4976,
-      "draw": 0.2439,
-      "away": 0.2585
-     }
-    },
-    {
-     "name": "elo",
-     "version": "1.0",
-     "probabilities": {
-      "home": 0.3552,
-      "draw": 0.2884,
-      "away": 0.3564
-     }
-    }
-   ],
-   "fixture_source": "fixturedownload",
-   "generated_at": "2026-10-11T07:13:35+00:00",
-   "best_pick": {
-    "market": "ou_1_5",
-    "selection": "over",
-    "label": "Over 1.5",
-    "p": 0.7959,
-    "day_rank": 13
-   }
-  },
-  {
-   "id": "acdbd738cb50",
-   "sport": "football",
-   "league": "D1",
-   "league_name": "Bundesliga",
-   "season": "2026-27",
-   "kickoff": "2026-10-16T00:00:00Z",
-   "kickoff_tbc": true,
-   "home": "Werder Bremen",
-   "away": "Paderborn",
-   "probabilities": {
-    "home": 0.5029,
-    "draw": 0.2679,
-    "away": 0.2292
-   },
-   "extras": {
-    "expected_goals": {
-     "home": 1.38,
-     "away": 0.99
-    },
-    "over_1_5": 0.7192,
-    "over_2_5": 0.4608,
-    "over_3_5": 0.2435,
-    "btts": 0.5109,
-    "top_scorelines": [
-     {
-      "home": 1,
-      "away": 1,
-      "p": 0.1298
-     },
-     {
-      "home": 1,
-      "away": 0,
-      "p": 0.1262
-     },
-     {
-      "home": 2,
-      "away": 1,
-      "p": 0.1042
-     },
-     {
-      "home": 2,
-      "away": 0,
-      "p": 0.0916
-     },
-     {
-      "home": 0,
-      "away": 0,
-      "p": 0.0854
-     }
-    ],
-    "margin": {
-     "cap": 6,
-     "probs": [
-      0.00015,
-      0.00083,
-      0.00439,
-      0.01809,
-      0.06166,
-      0.14407,
-      0.2679,
-      0.25896,
-      0.15296,
-      0.06267,
-      0.02122,
-      0.00557,
-      0.00152
-     ]
-    },
-    "markets": {
-     "result_btts": {
-      "1&GG": 0.2216,
-      "1&NG": 0.2813,
-      "X&GG": 0.1825,
-      "X&NG": 0.0854,
-      "2&GG": 0.1067,
-      "2&NG": 0.1225
-     },
-     "result_ou25": {
-      "1&O": 0.2851,
-      "1&U": 0.2178,
-      "X&O": 0.0527,
-      "X&U": 0.2152,
-      "2&O": 0.1229,
-      "2&U": 0.1063
-     },
-     "dc_ou25": {
-      "1X&O": 0.3378,
-      "1X&U": 0.433,
-      "12&O": 0.4081,
-      "12&U": 0.324,
-      "X2&O": 0.1756,
-      "X2&U": 0.3214
-     },
-     "home_ou0_5": {
-      "over": 0.7922,
-      "under": 0.2078
-     },
-     "home_ou1_5": {
-      "over": 0.4503,
-      "under": 0.5497
-     },
-     "away_ou0_5": {
-      "over": 0.6333,
-      "under": 0.3667
-     },
-     "away_ou1_5": {
-      "over": 0.2541,
-      "under": 0.7459
-     },
-     "clean_sheet": {
-      "home": 0.3667,
-      "away": 0.2078
-     },
-     "win_to_nil": {
-      "home": 0.2813,
-      "away": 0.1225
-     },
-     "exact_goals": {
-      "0": 0.0854,
-      "1": 0.1955,
-      "2": 0.2584,
-      "3": 0.2173,
-      "4": 0.1368,
-      "5+": 0.1067
-     },
-     "odd_even": {
-      "odd": 0.4905,
-      "even": 0.5095
-     },
-     "dnb": {
-      "1": 0.6869,
-      "2": 0.3131
-     },
-     "ht_result": {
-      "1": 0.3559,
-      "X": 0.4473,
-      "2": 0.1968
-     },
-     "htft": {
-      "1/1": 0.297,
-      "1/X": 0.0467,
-      "1/2": 0.0122,
-      "X/1": 0.1823,
-      "X/X": 0.1745,
-      "X/2": 0.0906,
-      "2/1": 0.0236,
-      "2/X": 0.0467,
-      "2/2": 0.1265
-     },
-     "ht_ou0_5": {
-      "over": 0.6525,
-      "under": 0.3475
-     },
-     "ht_ou1_5": {
-      "over": 0.2849,
-      "under": 0.7151
-     },
-     "highest_half": {
-      "1st": 0.2988,
-      "2nd": 0.4263,
-      "equal": 0.2749
-     }
-    },
-    "score_grid": {
-     "max_goals": 6,
-     "cells": [
-      [
-       0.0854,
-       0.0693,
-       0.0369,
-       0.0122,
-       0.0033,
-       0.0006,
-       0.0001
-      ],
-      [
-       0.1262,
-       0.1298,
-       0.0587,
-       0.0208,
-       0.0051,
-       0.001,
-       0.0002
-      ],
-      [
-       0.0916,
-       0.1042,
-       0.0453,
-       0.0144,
-       0.0035,
-       0.0007,
-       0.0001
-      ],
-      [
-       0.0422,
-       0.0517,
-       0.0255,
-       0.0068,
-       0.0016,
-       0.0003,
-       0.0001
-      ],
-      [
-       0.0157,
-       0.0178,
-       0.0088,
-       0.0029,
-       0.0006,
-       0.0001,
-       0.0
-      ],
-      [
-       0.0043,
-       0.0049,
-       0.0024,
-       0.0008,
-       0.0002,
-       0.0,
-       0.0
-      ],
-      [
-       0.001,
-       0.0011,
-       0.0006,
-       0.0002,
-       0.0,
-       0.0,
-       0.0
-      ]
-     ],
-     "other": 0.0008
-    },
-    "grid_adjusted": true,
-    "ten_min": {
-     "home": 0.1021,
-     "draw": 0.826,
-     "away": 0.0719,
-     "no_goal": 0.818
-    },
-    "goals_model": "dixon_coles",
-    "goals_calibrated": true,
-    "corners": {
-     "expected": {
-      "home": 5.56,
-      "away": 4.38,
-      "total": 9.94
-     },
-     "over": {
-      "7.5": 0.7546,
-      "8.5": 0.6443,
-      "9.5": 0.5258,
-      "10.5": 0.4094,
-      "11.5": 0.3042
-     }
-    }
-   },
-   "model": {
-    "name": "blend",
-    "version": "1.0"
-   },
-   "other_models": [
-    {
-     "name": "dixon_coles",
-     "version": "1.0",
-     "probabilities": {
-      "home": 0.4512,
-      "draw": 0.2872,
-      "away": 0.2616
-     }
-    },
-    {
-     "name": "elo",
-     "version": "1.0",
-     "probabilities": {
-      "home": 0.5546,
-      "draw": 0.2486,
-      "away": 0.1968
-     }
-    }
-   ],
-   "fixture_source": "fixturedownload",
-   "generated_at": "2026-10-11T07:13:35+00:00",
-   "best_pick": {
-    "market": "double_chance",
-    "selection": "1x",
-    "label": "Werder Bremen or draw",
-    "p": 0.7708,
-    "day_rank": 22
    }
   },
   {
@@ -30894,13 +28275,13 @@
     }
    ],
    "fixture_source": "espn",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
     "label": "Over 1.5",
     "p": 0.8687,
-    "day_rank": 2
+    "day_rank": 1
    }
   },
   {
@@ -31185,13 +28566,13 @@
     }
    ],
    "fixture_source": "espn",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
     "label": "Over 1.5",
     "p": 0.7658,
-    "day_rank": 23
+    "day_rank": 16
    }
   },
   {
@@ -31462,13 +28843,13 @@
     }
    ],
    "fixture_source": "espn",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
     "label": "Over 1.5",
     "p": 0.8077,
-    "day_rank": 12
+    "day_rank": 7
    }
   },
   {
@@ -31753,13 +29134,13 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
     "label": "Over 1.5",
     "p": 0.851,
-    "day_rank": 4
+    "day_rank": 3
    }
   },
   {
@@ -32030,13 +29411,13 @@
     }
    ],
    "fixture_source": "espn",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
     "label": "Over 1.5",
     "p": 0.7747,
-    "day_rank": 20
+    "day_rank": 14
    }
   },
   {
@@ -32321,13 +29702,13 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
     "label": "Over 1.5",
     "p": 0.7941,
-    "day_rank": 15
+    "day_rank": 9
    }
   },
   {
@@ -32612,13 +29993,13 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "1x",
     "label": "Annecy or draw",
     "p": 0.7821,
-    "day_rank": 18
+    "day_rank": 12
    }
   },
   {
@@ -32903,13 +30284,13 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "ou_3_5",
     "selection": "under",
     "label": "Under 3.5",
     "p": 0.8122,
-    "day_rank": 9
+    "day_rank": 5
    }
   },
   {
@@ -33194,13 +30575,13 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "1x",
     "label": "Reims or draw",
     "p": 0.7952,
-    "day_rank": 14
+    "day_rank": 8
    }
   },
   {
@@ -33485,13 +30866,13 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "ou_3_5",
     "selection": "under",
     "label": "Under 3.5",
     "p": 0.7656,
-    "day_rank": 24
+    "day_rank": 17
    }
   },
   {
@@ -33776,13 +31157,304 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
     "label": "Over 1.5",
     "p": 0.7893,
-    "day_rank": 16
+    "day_rank": 10
+   }
+  },
+  {
+   "id": "8f73b25ea58f",
+   "sport": "football",
+   "league": "D1",
+   "league_name": "Bundesliga",
+   "season": "2026-27",
+   "kickoff": "2026-10-16T18:30:00Z",
+   "kickoff_tbc": false,
+   "home": "Ein Frankfurt",
+   "away": "FC Koln",
+   "probabilities": {
+    "home": 0.5587,
+    "draw": 0.2266,
+    "away": 0.2147
+   },
+   "extras": {
+    "expected_goals": {
+     "home": 2.27,
+     "away": 1.47
+    },
+    "over_1_5": 0.8547,
+    "over_2_5": 0.6603,
+    "over_3_5": 0.4392,
+    "btts": 0.6375,
+    "top_scorelines": [
+     {
+      "home": 2,
+      "away": 1,
+      "p": 0.0969
+     },
+     {
+      "home": 1,
+      "away": 1,
+      "p": 0.0954
+     },
+     {
+      "home": 2,
+      "away": 0,
+      "p": 0.0725
+     },
+     {
+      "home": 1,
+      "away": 0,
+      "p": 0.0674
+     },
+     {
+      "home": 2,
+      "away": 2,
+      "p": 0.0612
+     }
+    ],
+    "margin": {
+     "cap": 6,
+     "probs": [
+      0.00052,
+      0.00184,
+      0.00688,
+      0.02416,
+      0.05866,
+      0.12262,
+      0.22665,
+      0.2211,
+      0.16119,
+      0.1028,
+      0.04533,
+      0.0188,
+      0.00943
+     ]
+    },
+    "markets": {
+     "result_btts": {
+      "1&GG": 0.3191,
+      "1&NG": 0.2395,
+      "X&GG": 0.1847,
+      "X&NG": 0.0419,
+      "2&GG": 0.1337,
+      "2&NG": 0.081
+     },
+     "result_ou25": {
+      "1&O": 0.4188,
+      "1&U": 0.1399,
+      "X&O": 0.0893,
+      "X&U": 0.1373,
+      "2&O": 0.1523,
+      "2&U": 0.0624
+     },
+     "dc_ou25": {
+      "1X&O": 0.5081,
+      "1X&U": 0.2772,
+      "12&O": 0.571,
+      "12&U": 0.2023,
+      "X2&O": 0.2416,
+      "X2&U": 0.1998
+     },
+     "home_ou0_5": {
+      "over": 0.8771,
+      "under": 0.1229
+     },
+     "home_ou1_5": {
+      "over": 0.6278,
+      "under": 0.3722
+     },
+     "away_ou0_5": {
+      "over": 0.7185,
+      "under": 0.2815
+     },
+     "away_ou1_5": {
+      "over": 0.3757,
+      "under": 0.6243
+     },
+     "clean_sheet": {
+      "home": 0.2815,
+      "away": 0.1229
+     },
+     "win_to_nil": {
+      "home": 0.2395,
+      "away": 0.081
+     },
+     "exact_goals": {
+      "0": 0.0419,
+      "1": 0.1034,
+      "2": 0.1943,
+      "3": 0.2212,
+      "4": 0.1697,
+      "5+": 0.2694
+     },
+     "odd_even": {
+      "odd": 0.4936,
+      "even": 0.5064
+     },
+     "dnb": {
+      "1": 0.7224,
+      "2": 0.2776
+     },
+     "ht_result": {
+      "1": 0.4373,
+      "X": 0.3409,
+      "2": 0.2218
+     },
+     "htft": {
+      "1/1": 0.3602,
+      "1/X": 0.0576,
+      "1/2": 0.0195,
+      "X/1": 0.1581,
+      "X/X": 0.1115,
+      "X/2": 0.0712,
+      "2/1": 0.0403,
+      "2/X": 0.0576,
+      "2/2": 0.124
+     },
+     "ht_ou0_5": {
+      "over": 0.8083,
+      "under": 0.1917
+     },
+     "ht_ou1_5": {
+      "over": 0.4936,
+      "under": 0.5064
+     },
+     "highest_half": {
+      "1st": 0.3086,
+      "2nd": 0.471,
+      "equal": 0.2204
+     }
+    },
+    "score_grid": {
+     "max_goals": 6,
+     "cells": [
+      [
+       0.0419,
+       0.036,
+       0.0264,
+       0.0133,
+       0.0039,
+       0.0011,
+       0.0003
+      ],
+      [
+       0.0674,
+       0.0954,
+       0.0546,
+       0.0212,
+       0.0078,
+       0.0023,
+       0.0006
+      ],
+      [
+       0.0725,
+       0.0969,
+       0.0612,
+       0.0241,
+       0.0088,
+       0.0026,
+       0.0006
+      ],
+      [
+       0.0564,
+       0.0582,
+       0.0427,
+       0.0227,
+       0.0067,
+       0.002,
+       0.0005
+      ],
+      [
+       0.0254,
+       0.0331,
+       0.0243,
+       0.0119,
+       0.0047,
+       0.0011,
+       0.0003
+      ],
+      [
+       0.0115,
+       0.015,
+       0.011,
+       0.0054,
+       0.002,
+       0.0006,
+       0.0001
+      ],
+      [
+       0.0044,
+       0.0057,
+       0.0042,
+       0.002,
+       0.0008,
+       0.0002,
+       0.0001
+      ]
+     ],
+     "other": 0.0083
+    },
+    "grid_adjusted": true,
+    "ten_min": {
+     "home": 0.1569,
+     "draw": 0.7452,
+     "away": 0.0979,
+     "no_goal": 0.7276
+    },
+    "goals_model": "dixon_coles",
+    "goals_calibrated": true,
+    "corners": {
+     "expected": {
+      "home": 5.75,
+      "away": 4.31,
+      "total": 10.07
+     },
+     "over": {
+      "7.5": 0.7659,
+      "8.5": 0.658,
+      "9.5": 0.5408,
+      "10.5": 0.4244,
+      "11.5": 0.318
+     }
+    }
+   },
+   "model": {
+    "name": "blend",
+    "version": "1.0"
+   },
+   "other_models": [
+    {
+     "name": "dixon_coles",
+     "version": "1.0",
+     "probabilities": {
+      "home": 0.5524,
+      "draw": 0.2084,
+      "away": 0.2391
+     }
+    },
+    {
+     "name": "elo",
+     "version": "1.0",
+     "probabilities": {
+      "home": 0.5649,
+      "draw": 0.2448,
+      "away": 0.1903
+     }
+    }
+   ],
+   "fixture_source": "fixturedownload",
+   "generated_at": "2026-10-11T07:36:57+00:00",
+   "best_pick": {
+    "market": "ou_1_5",
+    "selection": "over",
+    "label": "Over 1.5",
+    "p": 0.8547,
+    "day_rank": 2
    }
   },
   {
@@ -34067,13 +31739,13 @@
     }
    ],
    "fixture_source": "espn",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
     "label": "Over 1.5",
     "p": 0.8311,
-    "day_rank": 8
+    "day_rank": 4
    }
   },
   {
@@ -34358,13 +32030,13 @@
     }
    ],
    "fixture_source": "espn",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
     "label": "Over 1.5",
     "p": 0.7473,
-    "day_rank": 26
+    "day_rank": 18
    }
   },
   {
@@ -34649,13 +32321,13 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
     "label": "Over 1.5",
     "p": 0.8112,
-    "day_rank": 10
+    "day_rank": 6
    }
   },
   {
@@ -34940,13 +32612,13 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
     "label": "Over 1.5",
     "p": 0.7713,
-    "day_rank": 21
+    "day_rank": 15
    }
   },
   {
@@ -35231,13 +32903,13 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
     "label": "Over 1.5",
     "p": 0.7861,
-    "day_rank": 17
+    "day_rank": 11
    }
   },
   {
@@ -35522,13 +33194,13 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
     "label": "Over 1.5",
     "p": 0.776,
-    "day_rank": 19
+    "day_rank": 13
    }
   },
   {
@@ -35813,13 +33485,13 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "ou_3_5",
     "selection": "under",
     "label": "Under 3.5",
     "p": 0.8085,
-    "day_rank": 31
+    "day_rank": 34
    }
   },
   {
@@ -36104,13 +33776,13 @@
     }
    ],
    "fixture_source": "espn",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "ou_3_5",
     "selection": "under",
     "label": "Under 3.5",
     "p": 0.7575,
-    "day_rank": 56
+    "day_rank": 61
    }
   },
   {
@@ -36395,13 +34067,13 @@
     }
    ],
    "fixture_source": "espn",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
     "label": "Over 1.5",
     "p": 0.7963,
-    "day_rank": 37
+    "day_rank": 40
    }
   },
   {
@@ -36686,7 +34358,7 @@
     }
    ],
    "fixture_source": "espn",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -36977,13 +34649,13 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
     "label": "Over 1.5",
     "p": 0.7688,
-    "day_rank": 50
+    "day_rank": 55
    }
   },
   {
@@ -37268,13 +34940,13 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "1x",
     "label": "Middlesbrough or draw",
     "p": 0.8442,
-    "day_rank": 14
+    "day_rank": 15
    }
   },
   {
@@ -37559,13 +35231,13 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "1x",
     "label": "Millwall or draw",
     "p": 0.8089,
-    "day_rank": 30
+    "day_rank": 33
    }
   },
   {
@@ -37850,13 +35522,13 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "ou_3_5",
     "selection": "under",
     "label": "Under 3.5",
     "p": 0.7969,
-    "day_rank": 35
+    "day_rank": 38
    }
   },
   {
@@ -38141,13 +35813,13 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "ou_3_5",
     "selection": "under",
     "label": "Under 3.5",
     "p": 0.8167,
-    "day_rank": 24
+    "day_rank": 26
    }
   },
   {
@@ -38432,13 +36104,13 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
     "label": "Over 1.5",
     "p": 0.7755,
-    "day_rank": 47
+    "day_rank": 51
    }
   },
   {
@@ -38709,13 +36381,13 @@
     }
    ],
    "fixture_source": "espn",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "x2",
     "label": "Bodo/Glimt or draw",
     "p": 0.8593,
-    "day_rank": 11
+    "day_rank": 12
    }
   },
   {
@@ -39000,13 +36672,13 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "x2",
     "label": "Ath Madrid or draw",
     "p": 0.7622,
-    "day_rank": 53
+    "day_rank": 58
    }
   },
   {
@@ -39291,13 +36963,13 @@
     }
    ],
    "fixture_source": "espn",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
     "label": "Over 1.5",
     "p": 0.8096,
-    "day_rank": 29
+    "day_rank": 32
    }
   },
   {
@@ -39582,7 +37254,7 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "x2",
@@ -39873,13 +37545,13 @@
     }
    ],
    "fixture_source": "espn",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "1x",
     "label": "Ascoli or draw",
     "p": 0.7859,
-    "day_rank": 41
+    "day_rank": 45
    }
   },
   {
@@ -40164,13 +37836,13 @@
     }
    ],
    "fixture_source": "espn",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "1x",
     "label": "Benevento or draw",
     "p": 0.8133,
-    "day_rank": 25
+    "day_rank": 27
    }
   },
   {
@@ -40455,13 +38127,13 @@
     }
    ],
    "fixture_source": "espn",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "ou_3_5",
     "selection": "under",
     "label": "Under 3.5",
     "p": 0.7824,
-    "day_rank": 44
+    "day_rank": 48
    }
   },
   {
@@ -40746,13 +38418,13 @@
     }
    ],
    "fixture_source": "espn",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "ou_3_5",
     "selection": "under",
     "label": "Under 3.5",
     "p": 0.7966,
-    "day_rank": 36
+    "day_rank": 39
    }
   },
   {
@@ -41037,13 +38709,13 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
     "label": "Over 1.5",
     "p": 0.8349,
-    "day_rank": 17
+    "day_rank": 19
    }
   },
   {
@@ -41328,13 +39000,1468 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "x2",
     "label": "Galatasaray or draw",
     "p": 0.8673,
-    "day_rank": 9
+    "day_rank": 10
+   }
+  },
+  {
+   "id": "d6fbaa465751",
+   "sport": "football",
+   "league": "D1",
+   "league_name": "Bundesliga",
+   "season": "2026-27",
+   "kickoff": "2026-10-17T13:30:00Z",
+   "kickoff_tbc": false,
+   "home": "Union Berlin",
+   "away": "Dortmund",
+   "probabilities": {
+    "home": 0.1648,
+    "draw": 0.2213,
+    "away": 0.6139
+   },
+   "extras": {
+    "expected_goals": {
+     "home": 1.0,
+     "away": 1.98
+    },
+    "over_1_5": 0.7892,
+    "over_2_5": 0.558,
+    "over_3_5": 0.3325,
+    "btts": 0.5521,
+    "top_scorelines": [
+     {
+      "home": 1,
+      "away": 2,
+      "p": 0.1095
+     },
+     {
+      "home": 0,
+      "away": 1,
+      "p": 0.1093
+     },
+     {
+      "home": 1,
+      "away": 1,
+      "p": 0.1092
+     },
+     {
+      "home": 0,
+      "away": 2,
+      "p": 0.1001
+     },
+     {
+      "home": 1,
+      "away": 3,
+      "p": 0.0674
+     }
+    ],
+    "margin": {
+     "cap": 6,
+     "probs": [
+      0.00687,
+      0.01621,
+      0.0439,
+      0.10212,
+      0.18636,
+      0.25844,
+      0.22129,
+      0.10961,
+      0.04091,
+      0.01131,
+      0.00245,
+      0.00046,
+      8e-05
+     ]
+    },
+    "markets": {
+     "result_btts": {
+      "1&GG": 0.0894,
+      "1&NG": 0.0755,
+      "X&GG": 0.1644,
+      "X&NG": 0.0568,
+      "2&GG": 0.2983,
+      "2&NG": 0.3156
+     },
+     "result_ou25": {
+      "1&O": 0.0981,
+      "1&U": 0.0667,
+      "X&O": 0.0553,
+      "X&U": 0.166,
+      "2&O": 0.4045,
+      "2&U": 0.2094
+     },
+     "dc_ou25": {
+      "1X&O": 0.1534,
+      "1X&U": 0.2327,
+      "12&O": 0.5027,
+      "12&U": 0.276,
+      "X2&O": 0.4598,
+      "X2&U": 0.3754
+     },
+     "home_ou0_5": {
+      "over": 0.6276,
+      "under": 0.3724
+     },
+     "home_ou1_5": {
+      "over": 0.2445,
+      "under": 0.7555
+     },
+     "away_ou0_5": {
+      "over": 0.8677,
+      "under": 0.1323
+     },
+     "away_ou1_5": {
+      "over": 0.5823,
+      "under": 0.4177
+     },
+     "clean_sheet": {
+      "home": 0.1323,
+      "away": 0.3724
+     },
+     "win_to_nil": {
+      "home": 0.0755,
+      "away": 0.3156
+     },
+     "exact_goals": {
+      "0": 0.0568,
+      "1": 0.154,
+      "2": 0.2312,
+      "3": 0.2255,
+      "4": 0.1564,
+      "5+": 0.176
+     },
+     "odd_even": {
+      "odd": 0.4996,
+      "even": 0.5004
+     },
+     "dnb": {
+      "1": 0.2117,
+      "2": 0.7883
+     },
+     "ht_result": {
+      "1": 0.1685,
+      "X": 0.3816,
+      "2": 0.4499
+     },
+     "htft": {
+      "1/1": 0.0903,
+      "1/X": 0.0461,
+      "1/2": 0.0321,
+      "X/1": 0.0629,
+      "X/X": 0.1291,
+      "X/2": 0.1897,
+      "2/1": 0.0116,
+      "2/X": 0.0461,
+      "2/2": 0.3921
+     },
+     "ht_ou0_5": {
+      "over": 0.733,
+      "under": 0.267
+     },
+     "ht_ou1_5": {
+      "over": 0.3814,
+      "under": 0.6186
+     },
+     "highest_half": {
+      "1st": 0.3056,
+      "2nd": 0.4497,
+      "equal": 0.2447
+     }
+    },
+    "score_grid": {
+     "max_goals": 6,
+     "cells": [
+      [
+       0.0568,
+       0.1093,
+       0.1001,
+       0.0615,
+       0.0284,
+       0.0112,
+       0.0037
+      ],
+      [
+       0.0447,
+       0.1092,
+       0.1095,
+       0.0674,
+       0.0333,
+       0.0131,
+       0.0043
+      ],
+      [
+       0.022,
+       0.0476,
+       0.0443,
+       0.0336,
+       0.0166,
+       0.0065,
+       0.0022
+      ],
+      [
+       0.0068,
+       0.0148,
+       0.0146,
+       0.0097,
+       0.0055,
+       0.0022,
+       0.0007
+      ],
+      [
+       0.0016,
+       0.0037,
+       0.0036,
+       0.0024,
+       0.0012,
+       0.0005,
+       0.0002
+      ],
+      [
+       0.0003,
+       0.0007,
+       0.0007,
+       0.0005,
+       0.0002,
+       0.0001,
+       0.0
+      ],
+      [
+       0.0001,
+       0.0001,
+       0.0001,
+       0.0001,
+       0.0,
+       0.0,
+       0.0
+      ]
+     ],
+     "other": 0.0042
+    },
+    "grid_adjusted": true,
+    "ten_min": {
+     "home": 0.0691,
+     "draw": 0.7879,
+     "away": 0.143,
+     "no_goal": 0.7768
+    },
+    "goals_model": "dixon_coles",
+    "goals_calibrated": true,
+    "corners": {
+     "expected": {
+      "home": 5.19,
+      "away": 4.45,
+      "total": 9.64
+     },
+     "over": {
+      "7.5": 0.7272,
+      "8.5": 0.6116,
+      "9.5": 0.4905,
+      "10.5": 0.3748,
+      "11.5": 0.2729
+     }
+    }
+   },
+   "model": {
+    "name": "blend",
+    "version": "1.0"
+   },
+   "other_models": [
+    {
+     "name": "dixon_coles",
+     "version": "1.0",
+     "probabilities": {
+      "home": 0.179,
+      "draw": 0.2255,
+      "away": 0.5955
+     }
+    },
+    {
+     "name": "elo",
+     "version": "1.0",
+     "probabilities": {
+      "home": 0.1507,
+      "draw": 0.217,
+      "away": 0.6323
+     }
+    }
+   ],
+   "fixture_source": "fixturedownload",
+   "generated_at": "2026-10-11T07:36:57+00:00",
+   "best_pick": {
+    "market": "double_chance",
+    "selection": "x2",
+    "label": "Dortmund or draw",
+    "p": 0.8352,
+    "day_rank": 18
+   }
+  },
+  {
+   "id": "544dd98d2672",
+   "sport": "football",
+   "league": "D1",
+   "league_name": "Bundesliga",
+   "season": "2026-27",
+   "kickoff": "2026-10-17T13:30:00Z",
+   "kickoff_tbc": false,
+   "home": "Schalke 04",
+   "away": "Mainz",
+   "probabilities": {
+    "home": 0.3403,
+    "draw": 0.2836,
+    "away": 0.3761
+   },
+   "extras": {
+    "expected_goals": {
+     "home": 1.32,
+     "away": 1.1
+    },
+    "over_1_5": 0.7259,
+    "over_2_5": 0.4695,
+    "over_3_5": 0.251,
+    "btts": 0.5217,
+    "top_scorelines": [
+     {
+      "home": 1,
+      "away": 1,
+      "p": 0.1312
+     },
+     {
+      "home": 0,
+      "away": 1,
+      "p": 0.1018
+     },
+     {
+      "home": 1,
+      "away": 2,
+      "p": 0.0907
+     },
+     {
+      "home": 0,
+      "away": 0,
+      "p": 0.0897
+     },
+     {
+      "home": 1,
+      "away": 0,
+      "p": 0.0826
+     }
+    ],
+    "margin": {
+     "cap": 6,
+     "probs": [
+      0.00044,
+      0.00212,
+      0.01011,
+      0.03715,
+      0.10708,
+      0.21919,
+      0.28358,
+      0.17661,
+      0.10271,
+      0.04268,
+      0.01391,
+      0.0035,
+      0.00091
+     ]
+    },
+    "markets": {
+     "result_btts": {
+      "1&GG": 0.1528,
+      "1&NG": 0.1875,
+      "X&GG": 0.1939,
+      "X&NG": 0.0897,
+      "2&GG": 0.175,
+      "2&NG": 0.2011
+     },
+     "result_ou25": {
+      "1&O": 0.1964,
+      "1&U": 0.1439,
+      "X&O": 0.0628,
+      "X&U": 0.2208,
+      "2&O": 0.2104,
+      "2&U": 0.1657
+     },
+     "dc_ou25": {
+      "1X&O": 0.2592,
+      "1X&U": 0.3648,
+      "12&O": 0.4068,
+      "12&U": 0.3096,
+      "X2&O": 0.2731,
+      "X2&U": 0.3865
+     },
+     "home_ou0_5": {
+      "over": 0.7092,
+      "under": 0.2908
+     },
+     "home_ou1_5": {
+      "over": 0.3563,
+      "under": 0.6437
+     },
+     "away_ou0_5": {
+      "over": 0.7228,
+      "under": 0.2772
+     },
+     "away_ou1_5": {
+      "over": 0.3676,
+      "under": 0.6324
+     },
+     "clean_sheet": {
+      "home": 0.2772,
+      "away": 0.2908
+     },
+     "win_to_nil": {
+      "home": 0.1875,
+      "away": 0.2011
+     },
+     "exact_goals": {
+      "0": 0.0897,
+      "1": 0.1844,
+      "2": 0.2564,
+      "3": 0.2185,
+      "4": 0.1421,
+      "5+": 0.109
+     },
+     "odd_even": {
+      "odd": 0.4815,
+      "even": 0.5185
+     },
+     "dnb": {
+      "1": 0.475,
+      "2": 0.525
+     },
+     "ht_result": {
+      "1": 0.2699,
+      "X": 0.4505,
+      "2": 0.2796
+     },
+     "htft": {
+      "1/1": 0.1985,
+      "1/X": 0.0511,
+      "1/2": 0.0203,
+      "X/1": 0.1246,
+      "X/X": 0.1814,
+      "X/2": 0.1444,
+      "2/1": 0.0172,
+      "2/X": 0.0511,
+      "2/2": 0.2114
+     },
+     "ht_ou0_5": {
+      "over": 0.6554,
+      "under": 0.3446
+     },
+     "ht_ou1_5": {
+      "over": 0.2892,
+      "under": 0.7108
+     },
+     "highest_half": {
+      "1st": 0.2978,
+      "2nd": 0.4257,
+      "equal": 0.2766
+     }
+    },
+    "score_grid": {
+     "max_goals": 6,
+     "cells": [
+      [
+       0.0897,
+       0.1018,
+       0.0639,
+       0.0257,
+       0.0077,
+       0.0017,
+       0.0003
+      ],
+      [
+       0.0826,
+       0.1312,
+       0.0907,
+       0.036,
+       0.0099,
+       0.0022,
+       0.0004
+      ],
+      [
+       0.0613,
+       0.0726,
+       0.0534,
+       0.0237,
+       0.0065,
+       0.0014,
+       0.0003
+      ],
+      [
+       0.0295,
+       0.0345,
+       0.019,
+       0.0086,
+       0.0029,
+       0.0006,
+       0.0001
+      ],
+      [
+       0.0105,
+       0.0114,
+       0.0062,
+       0.0023,
+       0.0008,
+       0.0002,
+       0.0
+      ],
+      [
+       0.0028,
+       0.003,
+       0.0016,
+       0.0006,
+       0.0002,
+       0.0,
+       0.0
+      ],
+      [
+       0.0006,
+       0.0007,
+       0.0004,
+       0.0001,
+       0.0,
+       0.0,
+       0.0
+      ]
+     ],
+     "other": 0.0006
+    },
+    "grid_adjusted": true,
+    "ten_min": {
+     "home": 0.0969,
+     "draw": 0.823,
+     "away": 0.0801,
+     "no_goal": 0.8145
+    },
+    "goals_model": "dixon_coles",
+    "goals_calibrated": true,
+    "corners": {
+     "expected": {
+      "home": 5.32,
+      "away": 4.56,
+      "total": 9.87
+     },
+     "over": {
+      "7.5": 0.7489,
+      "8.5": 0.6374,
+      "9.5": 0.5182,
+      "10.5": 0.4019,
+      "11.5": 0.2973
+     }
+    }
+   },
+   "model": {
+    "name": "blend",
+    "version": "1.0"
+   },
+   "other_models": [
+    {
+     "name": "dixon_coles",
+     "version": "1.0",
+     "probabilities": {
+      "home": 0.4082,
+      "draw": 0.2885,
+      "away": 0.3033
+     }
+    },
+    {
+     "name": "elo",
+     "version": "1.0",
+     "probabilities": {
+      "home": 0.2724,
+      "draw": 0.2786,
+      "away": 0.4489
+     }
+    }
+   ],
+   "fixture_source": "fixturedownload",
+   "generated_at": "2026-10-11T07:36:57+00:00",
+   "best_pick": {
+    "market": "ou_3_5",
+    "selection": "under",
+    "label": "Under 3.5",
+    "p": 0.749,
+    "day_rank": 63
+   }
+  },
+  {
+   "id": "3534ecd4df1c",
+   "sport": "football",
+   "league": "D1",
+   "league_name": "Bundesliga",
+   "season": "2026-27",
+   "kickoff": "2026-10-17T13:30:00Z",
+   "kickoff_tbc": false,
+   "home": "Hamburg",
+   "away": "Stuttgart",
+   "probabilities": {
+    "home": 0.2376,
+    "draw": 0.2493,
+    "away": 0.5132
+   },
+   "extras": {
+    "expected_goals": {
+     "home": 1.26,
+     "away": 1.93
+    },
+    "over_1_5": 0.8106,
+    "over_2_5": 0.5896,
+    "over_3_5": 0.3639,
+    "btts": 0.592,
+    "top_scorelines": [
+     {
+      "home": 1,
+      "away": 1,
+      "p": 0.111
+     },
+     {
+      "home": 1,
+      "away": 2,
+      "p": 0.0959
+     },
+     {
+      "home": 0,
+      "away": 1,
+      "p": 0.081
+     },
+     {
+      "home": 0,
+      "away": 2,
+      "p": 0.0772
+     },
+     {
+      "home": 2,
+      "away": 1,
+      "p": 0.0622
+     }
+    ],
+    "margin": {
+     "cap": 6,
+     "probs": [
+      0.00526,
+      0.01281,
+      0.03559,
+      0.0871,
+      0.15251,
+      0.21989,
+      0.24925,
+      0.14049,
+      0.06465,
+      0.02412,
+      0.00644,
+      0.00151,
+      0.00036
+     ]
+    },
+    "markets": {
+     "result_btts": {
+      "1&GG": 0.1343,
+      "1&NG": 0.1032,
+      "X&GG": 0.1912,
+      "X&NG": 0.058,
+      "2&GG": 0.2664,
+      "2&NG": 0.2468
+     },
+     "result_ou25": {
+      "1&O": 0.1545,
+      "1&U": 0.0831,
+      "X&O": 0.0803,
+      "X&U": 0.169,
+      "2&O": 0.3549,
+      "2&U": 0.1583
+     },
+     "dc_ou25": {
+      "1X&O": 0.2347,
+      "1X&U": 0.2521,
+      "12&O": 0.5093,
+      "12&U": 0.2414,
+      "X2&O": 0.4351,
+      "X2&U": 0.3273
+     },
+     "home_ou0_5": {
+      "over": 0.6952,
+      "under": 0.3048
+     },
+     "home_ou1_5": {
+      "over": 0.341,
+      "under": 0.659
+     },
+     "away_ou0_5": {
+      "over": 0.8387,
+      "under": 0.1613
+     },
+     "away_ou1_5": {
+      "over": 0.5513,
+      "under": 0.4487
+     },
+     "clean_sheet": {
+      "home": 0.1613,
+      "away": 0.3048
+     },
+     "win_to_nil": {
+      "home": 0.1032,
+      "away": 0.2468
+     },
+     "exact_goals": {
+      "0": 0.058,
+      "1": 0.1314,
+      "2": 0.221,
+      "3": 0.2256,
+      "4": 0.1668,
+      "5+": 0.1971
+     },
+     "odd_even": {
+      "odd": 0.4871,
+      "even": 0.5129
+     },
+     "dnb": {
+      "1": 0.3165,
+      "2": 0.6835
+     },
+     "ht_result": {
+      "1": 0.2239,
+      "X": 0.379,
+      "2": 0.397
+     },
+     "htft": {
+      "1/1": 0.1349,
+      "1/X": 0.0567,
+      "1/2": 0.0323,
+      "X/1": 0.0844,
+      "X/X": 0.1359,
+      "X/2": 0.1587,
+      "2/1": 0.0183,
+      "2/X": 0.0567,
+      "2/2": 0.3221
+     },
+     "ht_ou0_5": {
+      "over": 0.7545,
+      "under": 0.2455
+     },
+     "ht_ou1_5": {
+      "over": 0.4122,
+      "under": 0.5878
+     },
+     "highest_half": {
+      "1st": 0.3047,
+      "2nd": 0.4535,
+      "equal": 0.2418
+     }
+    },
+    "score_grid": {
+     "max_goals": 6,
+     "cells": [
+      [
+       0.058,
+       0.081,
+       0.0772,
+       0.0529,
+       0.0229,
+       0.0088,
+       0.0028
+      ],
+      [
+       0.0504,
+       0.111,
+       0.0959,
+       0.0554,
+       0.0267,
+       0.0103,
+       0.0033
+      ],
+      [
+       0.0327,
+       0.0622,
+       0.061,
+       0.0349,
+       0.0169,
+       0.0065,
+       0.0021
+      ],
+      [
+       0.0146,
+       0.0235,
+       0.0227,
+       0.0165,
+       0.0071,
+       0.0027,
+       0.0009
+      ],
+      [
+       0.0041,
+       0.0074,
+       0.0072,
+       0.0046,
+       0.0025,
+       0.0009,
+       0.0003
+      ],
+      [
+       0.001,
+       0.0019,
+       0.0018,
+       0.0012,
+       0.0006,
+       0.0002,
+       0.0001
+      ],
+      [
+       0.0002,
+       0.0004,
+       0.0004,
+       0.0002,
+       0.0001,
+       0.0,
+       0.0
+      ]
+     ],
+     "other": 0.0037
+    },
+    "grid_adjusted": true,
+    "ten_min": {
+     "home": 0.0871,
+     "draw": 0.7758,
+     "away": 0.1372,
+     "no_goal": 0.7623
+    },
+    "goals_model": "dixon_coles",
+    "goals_calibrated": true,
+    "corners": {
+     "expected": {
+      "home": 5.09,
+      "away": 4.83,
+      "total": 9.92
+     },
+     "over": {
+      "7.5": 0.7528,
+      "8.5": 0.6421,
+      "9.5": 0.5233,
+      "10.5": 0.407,
+      "11.5": 0.302
+     }
+    }
+   },
+   "model": {
+    "name": "blend",
+    "version": "1.0"
+   },
+   "other_models": [
+    {
+     "name": "dixon_coles",
+     "version": "1.0",
+     "probabilities": {
+      "home": 0.2428,
+      "draw": 0.2328,
+      "away": 0.5244
+     }
+    },
+    {
+     "name": "elo",
+     "version": "1.0",
+     "probabilities": {
+      "home": 0.2324,
+      "draw": 0.2657,
+      "away": 0.5019
+     }
+    }
+   ],
+   "fixture_source": "fixturedownload",
+   "generated_at": "2026-10-11T07:36:57+00:00",
+   "best_pick": {
+    "market": "ou_1_5",
+    "selection": "over",
+    "label": "Over 1.5",
+    "p": 0.8106,
+    "day_rank": 30
+   }
+  },
+  {
+   "id": "967f559f4c64",
+   "sport": "football",
+   "league": "D1",
+   "league_name": "Bundesliga",
+   "season": "2026-27",
+   "kickoff": "2026-10-17T13:30:00Z",
+   "kickoff_tbc": false,
+   "home": "Elversberg",
+   "away": "Augsburg",
+   "probabilities": {
+    "home": 0.4264,
+    "draw": 0.2662,
+    "away": 0.3075
+   },
+   "extras": {
+    "expected_goals": {
+     "home": 1.8,
+     "away": 1.24
+    },
+    "over_1_5": 0.7959,
+    "over_2_5": 0.5675,
+    "over_3_5": 0.3418,
+    "btts": 0.5807,
+    "top_scorelines": [
+     {
+      "home": 1,
+      "away": 1,
+      "p": 0.1163
+     },
+     {
+      "home": 2,
+      "away": 1,
+      "p": 0.0811
+     },
+     {
+      "home": 1,
+      "away": 2,
+      "p": 0.0783
+     },
+     {
+      "home": 1,
+      "away": 0,
+      "p": 0.0713
+     },
+     {
+      "home": 2,
+      "away": 0,
+      "p": 0.0672
+     }
+    ],
+    "margin": {
+     "cap": 6,
+     "probs": [
+      0.0005,
+      0.00209,
+      0.00896,
+      0.03282,
+      0.08528,
+      0.17781,
+      0.26616,
+      0.18664,
+      0.12767,
+      0.07102,
+      0.02802,
+      0.00946,
+      0.00356
+     ]
+    },
+    "markets": {
+     "result_btts": {
+      "1&GG": 0.2137,
+      "1&NG": 0.2127,
+      "X&GG": 0.1999,
+      "X&NG": 0.0663,
+      "2&GG": 0.1671,
+      "2&NG": 0.1404
+     },
+     "result_ou25": {
+      "1&O": 0.2878,
+      "1&U": 0.1385,
+      "X&O": 0.0836,
+      "X&U": 0.1826,
+      "2&O": 0.1961,
+      "2&U": 0.1114
+     },
+     "dc_ou25": {
+      "1X&O": 0.3714,
+      "1X&U": 0.3211,
+      "12&O": 0.4839,
+      "12&U": 0.2499,
+      "X2&O": 0.2796,
+      "X2&U": 0.294
+     },
+     "home_ou0_5": {
+      "over": 0.7933,
+      "under": 0.2067
+     },
+     "home_ou1_5": {
+      "over": 0.4845,
+      "under": 0.5155
+     },
+     "away_ou0_5": {
+      "over": 0.7211,
+      "under": 0.2789
+     },
+     "away_ou1_5": {
+      "over": 0.3808,
+      "under": 0.6192
+     },
+     "clean_sheet": {
+      "home": 0.2789,
+      "away": 0.2067
+     },
+     "win_to_nil": {
+      "home": 0.2127,
+      "away": 0.1404
+     },
+     "exact_goals": {
+      "0": 0.0663,
+      "1": 0.1378,
+      "2": 0.2285,
+      "3": 0.2257,
+      "4": 0.1664,
+      "5+": 0.1754
+     },
+     "odd_even": {
+      "odd": 0.4806,
+      "even": 0.5194
+     },
+     "dnb": {
+      "1": 0.581,
+      "2": 0.419
+     },
+     "ht_result": {
+      "1": 0.3443,
+      "X": 0.3965,
+      "2": 0.2592
+     },
+     "htft": {
+      "1/1": 0.2636,
+      "1/X": 0.0584,
+      "1/2": 0.0223,
+      "X/1": 0.1366,
+      "X/X": 0.1493,
+      "X/2": 0.1106,
+      "2/1": 0.0261,
+      "2/X": 0.0584,
+      "2/2": 0.1746
+     },
+     "ht_ou0_5": {
+      "over": 0.7343,
+      "under": 0.2657
+     },
+     "ht_ou1_5": {
+      "over": 0.3852,
+      "under": 0.6148
+     },
+     "highest_half": {
+      "1st": 0.3027,
+      "2nd": 0.4469,
+      "equal": 0.2504
+     }
+    },
+    "score_grid": {
+     "max_goals": 6,
+     "cells": [
+      [
+       0.0663,
+       0.0665,
+       0.0449,
+       0.021,
+       0.0061,
+       0.0015,
+       0.0003
+      ],
+      [
+       0.0713,
+       0.1163,
+       0.0783,
+       0.0305,
+       0.0095,
+       0.0024,
+       0.0005
+      ],
+      [
+       0.0672,
+       0.0811,
+       0.065,
+       0.0274,
+       0.0085,
+       0.0021,
+       0.0004
+      ],
+      [
+       0.0454,
+       0.0456,
+       0.0283,
+       0.0161,
+       0.0051,
+       0.0013,
+       0.0003
+      ],
+      [
+       0.0191,
+       0.0205,
+       0.0127,
+       0.0053,
+       0.0022,
+       0.0006,
+       0.0001
+      ],
+      [
+       0.0069,
+       0.0074,
+       0.0046,
+       0.0019,
+       0.0006,
+       0.0002,
+       0.0
+      ],
+      [
+       0.0021,
+       0.0022,
+       0.0014,
+       0.0006,
+       0.0002,
+       0.0,
+       0.0
+      ]
+     ],
+     "other": 0.0025
+    },
+    "grid_adjusted": true,
+    "ten_min": {
+     "home": 0.1283,
+     "draw": 0.785,
+     "away": 0.0867,
+     "no_goal": 0.7725
+    },
+    "goals_model": "dixon_coles",
+    "goals_calibrated": true,
+    "corners": {
+     "expected": {
+      "home": 5.9,
+      "away": 4.43,
+      "total": 10.33
+     },
+     "over": {
+      "7.5": 0.7876,
+      "8.5": 0.6849,
+      "9.5": 0.5707,
+      "10.5": 0.4548,
+      "11.5": 0.3465
+     }
+    }
+   },
+   "model": {
+    "name": "blend",
+    "version": "1.0"
+   },
+   "other_models": [
+    {
+     "name": "dixon_coles",
+     "version": "1.0",
+     "probabilities": {
+      "home": 0.4976,
+      "draw": 0.2439,
+      "away": 0.2585
+     }
+    },
+    {
+     "name": "elo",
+     "version": "1.0",
+     "probabilities": {
+      "home": 0.3552,
+      "draw": 0.2884,
+      "away": 0.3564
+     }
+    }
+   ],
+   "fixture_source": "fixturedownload",
+   "generated_at": "2026-10-11T07:36:57+00:00",
+   "best_pick": {
+    "market": "ou_1_5",
+    "selection": "over",
+    "label": "Over 1.5",
+    "p": 0.7959,
+    "day_rank": 41
+   }
+  },
+  {
+   "id": "f791216d0611",
+   "sport": "football",
+   "league": "D1",
+   "league_name": "Bundesliga",
+   "season": "2026-27",
+   "kickoff": "2026-10-17T13:30:00Z",
+   "kickoff_tbc": false,
+   "home": "Werder Bremen",
+   "away": "Paderborn",
+   "probabilities": {
+    "home": 0.5029,
+    "draw": 0.2679,
+    "away": 0.2292
+   },
+   "extras": {
+    "expected_goals": {
+     "home": 1.38,
+     "away": 0.99
+    },
+    "over_1_5": 0.7192,
+    "over_2_5": 0.4608,
+    "over_3_5": 0.2435,
+    "btts": 0.5109,
+    "top_scorelines": [
+     {
+      "home": 1,
+      "away": 1,
+      "p": 0.1298
+     },
+     {
+      "home": 1,
+      "away": 0,
+      "p": 0.1262
+     },
+     {
+      "home": 2,
+      "away": 1,
+      "p": 0.1042
+     },
+     {
+      "home": 2,
+      "away": 0,
+      "p": 0.0916
+     },
+     {
+      "home": 0,
+      "away": 0,
+      "p": 0.0854
+     }
+    ],
+    "margin": {
+     "cap": 6,
+     "probs": [
+      0.00015,
+      0.00083,
+      0.00439,
+      0.01809,
+      0.06166,
+      0.14407,
+      0.2679,
+      0.25896,
+      0.15296,
+      0.06267,
+      0.02122,
+      0.00557,
+      0.00152
+     ]
+    },
+    "markets": {
+     "result_btts": {
+      "1&GG": 0.2216,
+      "1&NG": 0.2813,
+      "X&GG": 0.1825,
+      "X&NG": 0.0854,
+      "2&GG": 0.1067,
+      "2&NG": 0.1225
+     },
+     "result_ou25": {
+      "1&O": 0.2851,
+      "1&U": 0.2178,
+      "X&O": 0.0527,
+      "X&U": 0.2152,
+      "2&O": 0.1229,
+      "2&U": 0.1063
+     },
+     "dc_ou25": {
+      "1X&O": 0.3378,
+      "1X&U": 0.433,
+      "12&O": 0.4081,
+      "12&U": 0.324,
+      "X2&O": 0.1756,
+      "X2&U": 0.3214
+     },
+     "home_ou0_5": {
+      "over": 0.7922,
+      "under": 0.2078
+     },
+     "home_ou1_5": {
+      "over": 0.4503,
+      "under": 0.5497
+     },
+     "away_ou0_5": {
+      "over": 0.6333,
+      "under": 0.3667
+     },
+     "away_ou1_5": {
+      "over": 0.2541,
+      "under": 0.7459
+     },
+     "clean_sheet": {
+      "home": 0.3667,
+      "away": 0.2078
+     },
+     "win_to_nil": {
+      "home": 0.2813,
+      "away": 0.1225
+     },
+     "exact_goals": {
+      "0": 0.0854,
+      "1": 0.1955,
+      "2": 0.2584,
+      "3": 0.2173,
+      "4": 0.1368,
+      "5+": 0.1067
+     },
+     "odd_even": {
+      "odd": 0.4905,
+      "even": 0.5095
+     },
+     "dnb": {
+      "1": 0.6869,
+      "2": 0.3131
+     },
+     "ht_result": {
+      "1": 0.3559,
+      "X": 0.4473,
+      "2": 0.1968
+     },
+     "htft": {
+      "1/1": 0.297,
+      "1/X": 0.0467,
+      "1/2": 0.0122,
+      "X/1": 0.1823,
+      "X/X": 0.1745,
+      "X/2": 0.0906,
+      "2/1": 0.0236,
+      "2/X": 0.0467,
+      "2/2": 0.1265
+     },
+     "ht_ou0_5": {
+      "over": 0.6525,
+      "under": 0.3475
+     },
+     "ht_ou1_5": {
+      "over": 0.2849,
+      "under": 0.7151
+     },
+     "highest_half": {
+      "1st": 0.2988,
+      "2nd": 0.4263,
+      "equal": 0.2749
+     }
+    },
+    "score_grid": {
+     "max_goals": 6,
+     "cells": [
+      [
+       0.0854,
+       0.0693,
+       0.0369,
+       0.0122,
+       0.0033,
+       0.0006,
+       0.0001
+      ],
+      [
+       0.1262,
+       0.1298,
+       0.0587,
+       0.0208,
+       0.0051,
+       0.001,
+       0.0002
+      ],
+      [
+       0.0916,
+       0.1042,
+       0.0453,
+       0.0144,
+       0.0035,
+       0.0007,
+       0.0001
+      ],
+      [
+       0.0422,
+       0.0517,
+       0.0255,
+       0.0068,
+       0.0016,
+       0.0003,
+       0.0001
+      ],
+      [
+       0.0157,
+       0.0178,
+       0.0088,
+       0.0029,
+       0.0006,
+       0.0001,
+       0.0
+      ],
+      [
+       0.0043,
+       0.0049,
+       0.0024,
+       0.0008,
+       0.0002,
+       0.0,
+       0.0
+      ],
+      [
+       0.001,
+       0.0011,
+       0.0006,
+       0.0002,
+       0.0,
+       0.0,
+       0.0
+      ]
+     ],
+     "other": 0.0008
+    },
+    "grid_adjusted": true,
+    "ten_min": {
+     "home": 0.1021,
+     "draw": 0.826,
+     "away": 0.0719,
+     "no_goal": 0.818
+    },
+    "goals_model": "dixon_coles",
+    "goals_calibrated": true,
+    "corners": {
+     "expected": {
+      "home": 5.56,
+      "away": 4.38,
+      "total": 9.94
+     },
+     "over": {
+      "7.5": 0.7546,
+      "8.5": 0.6443,
+      "9.5": 0.5258,
+      "10.5": 0.4094,
+      "11.5": 0.3042
+     }
+    }
+   },
+   "model": {
+    "name": "blend",
+    "version": "1.0"
+   },
+   "other_models": [
+    {
+     "name": "dixon_coles",
+     "version": "1.0",
+     "probabilities": {
+      "home": 0.4512,
+      "draw": 0.2872,
+      "away": 0.2616
+     }
+    },
+    {
+     "name": "elo",
+     "version": "1.0",
+     "probabilities": {
+      "home": 0.5546,
+      "draw": 0.2486,
+      "away": 0.1968
+     }
+    }
+   ],
+   "fixture_source": "fixturedownload",
+   "generated_at": "2026-10-11T07:36:57+00:00",
+   "best_pick": {
+    "market": "double_chance",
+    "selection": "1x",
+    "label": "Werder Bremen or draw",
+    "p": 0.7708,
+    "day_rank": 54
    }
   },
   {
@@ -41619,13 +40746,13 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
     "label": "Over 1.5",
     "p": 0.8002,
-    "day_rank": 34
+    "day_rank": 37
    }
   },
   {
@@ -41910,13 +41037,13 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "ou_3_5",
     "selection": "under",
     "label": "Under 3.5",
     "p": 0.7807,
-    "day_rank": 45
+    "day_rank": 49
    }
   },
   {
@@ -42201,7 +41328,7 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "1x",
@@ -42492,13 +41619,13 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
     "label": "Over 1.5",
     "p": 0.7398,
-    "day_rank": 60
+    "day_rank": 66
    }
   },
   {
@@ -42783,13 +41910,13 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
     "label": "Over 1.5",
     "p": 0.7529,
-    "day_rank": 57
+    "day_rank": 62
    }
   },
   {
@@ -43074,13 +42201,13 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "ou_3_5",
     "selection": "under",
     "label": "Under 3.5",
     "p": 0.7408,
-    "day_rank": 58
+    "day_rank": 64
    }
   },
   {
@@ -43365,13 +42492,13 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
     "label": "Over 1.5",
     "p": 0.7955,
-    "day_rank": 38
+    "day_rank": 42
    }
   },
   {
@@ -43656,13 +42783,13 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "1x",
     "label": "Southampton or draw",
     "p": 0.8678,
-    "day_rank": 8
+    "day_rank": 9
    }
   },
   {
@@ -43736,7 +42863,7 @@
     },
     "markets": {
      "result_btts": {
-      "1&GG": 0.188,
+      "1&GG": 0.1879,
       "1&NG": 0.1498,
       "X&GG": 0.2013,
       "X&NG": 0.0595,
@@ -43947,13 +43074,13 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
     "label": "Over 1.5",
     "p": 0.8125,
-    "day_rank": 26
+    "day_rank": 28
    }
   },
   {
@@ -44238,13 +43365,13 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "ou_3_5",
     "selection": "under",
     "label": "Under 3.5",
     "p": 0.8006,
-    "day_rank": 33
+    "day_rank": 36
    }
   },
   {
@@ -44529,13 +43656,13 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "1x",
     "label": "Wrexham or draw",
     "p": 0.7873,
-    "day_rank": 40
+    "day_rank": 44
    }
   },
   {
@@ -44820,13 +43947,13 @@
     }
    ],
    "fixture_source": "espn",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "1x",
     "label": "Levadeiakos or draw",
     "p": 0.8341,
-    "day_rank": 19
+    "day_rank": 21
    }
   },
   {
@@ -45097,13 +44224,13 @@
     }
    ],
    "fixture_source": "espn",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
     "label": "Over 1.5",
     "p": 0.8214,
-    "day_rank": 22
+    "day_rank": 24
    }
   },
   {
@@ -45388,13 +44515,13 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "ou_3_5",
     "selection": "under",
     "label": "Under 3.5",
     "p": 0.7725,
-    "day_rank": 49
+    "day_rank": 53
    }
   },
   {
@@ -45679,13 +44806,13 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "1x",
     "label": "Hibernian or draw",
     "p": 0.7894,
-    "day_rank": 39
+    "day_rank": 43
    }
   },
   {
@@ -45970,13 +45097,13 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
     "label": "Over 1.5",
     "p": 0.7771,
-    "day_rank": 46
+    "day_rank": 50
    }
   },
   {
@@ -46261,13 +45388,13 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
     "label": "Over 1.5",
     "p": 0.7385,
-    "day_rank": 61
+    "day_rank": 67
    }
   },
   {
@@ -46552,13 +45679,13 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "1x",
     "label": "Villarreal or draw",
     "p": 0.8571,
-    "day_rank": 12
+    "day_rank": 13
    }
   },
   {
@@ -46843,13 +45970,13 @@
     }
    ],
    "fixture_source": "espn",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "ou_3_5",
     "selection": "under",
     "label": "Under 3.5",
     "p": 0.8608,
-    "day_rank": 10
+    "day_rank": 11
    }
   },
   {
@@ -47134,7 +46261,7 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "x2",
@@ -47411,13 +46538,13 @@
     }
    ],
    "fixture_source": "espn",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "x2",
     "label": "LASK or draw",
     "p": 0.8342,
-    "day_rank": 18
+    "day_rank": 20
    }
   },
   {
@@ -47702,13 +46829,13 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
     "label": "Over 1.5",
     "p": 0.8232,
-    "day_rank": 20
+    "day_rank": 22
    }
   },
   {
@@ -47993,13 +47120,13 @@
     }
    ],
    "fixture_source": "espn",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
     "label": "Over 1.5",
     "p": 0.7842,
-    "day_rank": 42
+    "day_rank": 46
    }
   },
   {
@@ -48284,13 +47411,13 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "x2",
     "label": "Inter or draw",
     "p": 0.8437,
-    "day_rank": 15
+    "day_rank": 16
    }
   },
   {
@@ -48561,7 +47688,7 @@
     }
    ],
    "fixture_source": "espn",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "1x",
@@ -48852,13 +47979,304 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "1x",
     "label": "Fenerbahce or draw",
     "p": 0.8949,
     "day_rank": 5
+   }
+  },
+  {
+   "id": "1bee32c97acf",
+   "sport": "football",
+   "league": "D1",
+   "league_name": "Bundesliga",
+   "season": "2026-27",
+   "kickoff": "2026-10-17T16:30:00Z",
+   "kickoff_tbc": false,
+   "home": "Bayern Munich",
+   "away": "RB Leipzig",
+   "probabilities": {
+    "home": 0.709,
+    "draw": 0.1687,
+    "away": 0.1223
+   },
+   "extras": {
+    "expected_goals": {
+     "home": 2.96,
+     "away": 1.26
+    },
+    "over_1_5": 0.8849,
+    "over_2_5": 0.7141,
+    "over_3_5": 0.5013,
+    "btts": 0.6295,
+    "top_scorelines": [
+     {
+      "home": 2,
+      "away": 1,
+      "p": 0.0975
+     },
+     {
+      "home": 2,
+      "away": 0,
+      "p": 0.0823
+     },
+     {
+      "home": 1,
+      "away": 1,
+      "p": 0.0755
+     },
+     {
+      "home": 3,
+      "away": 0,
+      "p": 0.0741
+     },
+     {
+      "home": 3,
+      "away": 1,
+      "p": 0.0673
+     }
+    ],
+    "margin": {
+     "cap": 6,
+     "probs": [
+      0.00012,
+      0.00051,
+      0.00225,
+      0.00985,
+      0.03002,
+      0.07954,
+      0.16875,
+      0.22083,
+      0.19012,
+      0.14694,
+      0.07893,
+      0.04188,
+      0.03026
+     ]
+    },
+    "markets": {
+     "result_btts": {
+      "1&GG": 0.408,
+      "1&NG": 0.301,
+      "X&GG": 0.1403,
+      "X&NG": 0.0285,
+      "2&GG": 0.0813,
+      "2&NG": 0.041
+     },
+     "result_ou25": {
+      "1&O": 0.5616,
+      "1&U": 0.1473,
+      "X&O": 0.0648,
+      "X&U": 0.104,
+      "2&O": 0.0877,
+      "2&U": 0.0346
+     },
+     "dc_ou25": {
+      "1X&O": 0.6264,
+      "1X&U": 0.2513,
+      "12&O": 0.6493,
+      "12&U": 0.1819,
+      "X2&O": 0.1524,
+      "X2&U": 0.1386
+     },
+     "home_ou0_5": {
+      "over": 0.9305,
+      "under": 0.0695
+     },
+     "home_ou1_5": {
+      "over": 0.7387,
+      "under": 0.2613
+     },
+     "away_ou0_5": {
+      "over": 0.6705,
+      "under": 0.3295
+     },
+     "away_ou1_5": {
+      "over": 0.3052,
+      "under": 0.6948
+     },
+     "clean_sheet": {
+      "home": 0.3295,
+      "away": 0.0695
+     },
+     "win_to_nil": {
+      "home": 0.301,
+      "away": 0.041
+     },
+     "exact_goals": {
+      "0": 0.0285,
+      "1": 0.0867,
+      "2": 0.1708,
+      "3": 0.2128,
+      "4": 0.1598,
+      "5+": 0.3415
+     },
+     "odd_even": {
+      "odd": 0.5079,
+      "even": 0.4921
+     },
+     "dnb": {
+      "1": 0.8529,
+      "2": 0.1471
+     },
+     "ht_result": {
+      "1": 0.5506,
+      "X": 0.2924,
+      "2": 0.1571
+     },
+     "htft": {
+      "1/1": 0.4936,
+      "1/X": 0.0443,
+      "1/2": 0.0126,
+      "X/1": 0.1708,
+      "X/X": 0.0801,
+      "X/2": 0.0415,
+      "2/1": 0.0445,
+      "2/X": 0.0443,
+      "2/2": 0.0682
+     },
+     "ht_ou0_5": {
+      "over": 0.8449,
+      "under": 0.1551
+     },
+     "ht_ou1_5": {
+      "over": 0.5574,
+      "under": 0.4426
+     },
+     "highest_half": {
+      "1st": 0.3116,
+      "2nd": 0.4847,
+      "equal": 0.2037
+     }
+    },
+    "score_grid": {
+     "max_goals": 6,
+     "cells": [
+      [
+       0.0285,
+       0.0216,
+       0.013,
+       0.005,
+       0.0011,
+       0.0003,
+       0.0001
+      ],
+      [
+       0.0651,
+       0.0755,
+       0.0362,
+       0.0106,
+       0.0033,
+       0.0008,
+       0.0002
+      ],
+      [
+       0.0823,
+       0.0975,
+       0.0424,
+       0.0157,
+       0.005,
+       0.0012,
+       0.0003
+      ],
+      [
+       0.0741,
+       0.0673,
+       0.0424,
+       0.0176,
+       0.0049,
+       0.0012,
+       0.0003
+      ],
+      [
+       0.0384,
+       0.0499,
+       0.0314,
+       0.0132,
+       0.0041,
+       0.0009,
+       0.0002
+      ],
+      [
+       0.0227,
+       0.0295,
+       0.0186,
+       0.0078,
+       0.0025,
+       0.0006,
+       0.0001
+      ],
+      [
+       0.0112,
+       0.0146,
+       0.0092,
+       0.0038,
+       0.0012,
+       0.0003,
+       0.0001
+      ]
+     ],
+     "other": 0.0264
+    },
+    "grid_adjusted": true,
+    "ten_min": {
+     "home": 0.2025,
+     "draw": 0.7176,
+     "away": 0.0799,
+     "no_goal": 0.6987
+    },
+    "goals_model": "dixon_coles",
+    "goals_calibrated": true,
+    "corners": {
+     "expected": {
+      "home": 6.43,
+      "away": 3.91,
+      "total": 10.35
+     },
+     "over": {
+      "7.5": 0.7889,
+      "8.5": 0.6865,
+      "9.5": 0.5725,
+      "10.5": 0.4567,
+      "11.5": 0.3483
+     }
+    }
+   },
+   "model": {
+    "name": "blend",
+    "version": "1.0"
+   },
+   "other_models": [
+    {
+     "name": "dixon_coles",
+     "version": "1.0",
+     "probabilities": {
+      "home": 0.7168,
+      "draw": 0.1537,
+      "away": 0.1295
+     }
+    },
+    {
+     "name": "elo",
+     "version": "1.0",
+     "probabilities": {
+      "home": 0.7011,
+      "draw": 0.1838,
+      "away": 0.1151
+     }
+    }
+   ],
+   "fixture_source": "fixturedownload",
+   "generated_at": "2026-10-11T07:36:57+00:00",
+   "best_pick": {
+    "market": "ou_1_5",
+    "selection": "over",
+    "label": "Over 1.5",
+    "p": 0.8849,
+    "day_rank": 8
    }
   },
   {
@@ -49143,13 +48561,13 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
     "label": "Over 1.5",
     "p": 0.8113,
-    "day_rank": 27
+    "day_rank": 29
    }
   },
   {
@@ -49434,13 +48852,13 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
     "label": "Over 1.5",
     "p": 0.8229,
-    "day_rank": 21
+    "day_rank": 23
    }
   },
   {
@@ -49725,13 +49143,13 @@
     }
    ],
    "fixture_source": "espn",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "1x",
     "label": "Sp Gijon or draw",
     "p": 0.7726,
-    "day_rank": 48
+    "day_rank": 52
    }
   },
   {
@@ -50002,13 +49420,13 @@
     }
    ],
    "fixture_source": "espn",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
     "label": "Over 1.5",
     "p": 0.7605,
-    "day_rank": 54
+    "day_rank": 59
    }
   },
   {
@@ -50293,13 +49711,13 @@
     }
    ],
    "fixture_source": "espn",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
     "label": "Over 1.5",
     "p": 0.768,
-    "day_rank": 51
+    "day_rank": 56
    }
   },
   {
@@ -50584,13 +50002,13 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
     "label": "Over 1.5",
     "p": 0.7826,
-    "day_rank": 43
+    "day_rank": 47
    }
   },
   {
@@ -50875,13 +50293,13 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "x2",
     "label": "Feyenoord or draw",
     "p": 0.8448,
-    "day_rank": 13
+    "day_rank": 14
    }
   },
   {
@@ -51166,13 +50584,13 @@
     }
    ],
    "fixture_source": "espn",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
     "label": "Over 1.5",
     "p": 0.74,
-    "day_rank": 59
+    "day_rank": 65
    }
   },
   {
@@ -51457,13 +50875,13 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "x2",
     "label": "Lens or draw",
     "p": 0.8371,
-    "day_rank": 16
+    "day_rank": 17
    }
   },
   {
@@ -51748,13 +51166,13 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "1x",
     "label": "Lille or draw",
     "p": 0.8102,
-    "day_rank": 28
+    "day_rank": 31
    }
   },
   {
@@ -52039,7 +51457,7 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "1x",
@@ -52330,13 +51748,13 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "1x",
     "label": "Sparta Rotterdam or draw",
     "p": 0.8197,
-    "day_rank": 23
+    "day_rank": 25
    }
   },
   {
@@ -52621,13 +52039,13 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "x2",
     "label": "Rangers or draw",
     "p": 0.8027,
-    "day_rank": 32
+    "day_rank": 35
    }
   },
   {
@@ -52912,13 +52330,13 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "ou_3_5",
     "selection": "under",
     "label": "Under 3.5",
     "p": 0.7638,
-    "day_rank": 52
+    "day_rank": 57
    }
   },
   {
@@ -53203,13 +52621,13 @@
     }
    ],
    "fixture_source": "espn",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
     "label": "Over 1.5",
     "p": 0.7583,
-    "day_rank": 55
+    "day_rank": 60
    }
   },
   {
@@ -53494,13 +52912,13 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
     "label": "Over 1.5",
     "p": 0.84,
-    "day_rank": 12
+    "day_rank": 13
    }
   },
   {
@@ -53785,13 +53203,13 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "1x",
     "label": "Udinese or draw",
     "p": 0.7723,
-    "day_rank": 39
+    "day_rank": 41
    }
   },
   {
@@ -54076,13 +53494,13 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
     "label": "Over 1.5",
     "p": 0.7542,
-    "day_rank": 49
+    "day_rank": 51
    }
   },
   {
@@ -54367,13 +53785,13 @@
     }
    ],
    "fixture_source": "espn",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
     "label": "Over 1.5",
     "p": 0.8172,
-    "day_rank": 20
+    "day_rank": 22
    }
   },
   {
@@ -54658,13 +54076,13 @@
     }
    ],
    "fixture_source": "espn",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
     "label": "Over 1.5",
     "p": 0.8274,
-    "day_rank": 16
+    "day_rank": 18
    }
   },
   {
@@ -54949,13 +54367,13 @@
     }
    ],
    "fixture_source": "espn",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
     "label": "Over 1.5",
     "p": 0.8176,
-    "day_rank": 19
+    "day_rank": 21
    }
   },
   {
@@ -55226,13 +54644,13 @@
     }
    ],
    "fixture_source": "espn",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "x2",
     "label": "Nordsjaelland or draw",
     "p": 0.7862,
-    "day_rank": 31
+    "day_rank": 33
    }
   },
   {
@@ -55503,13 +54921,13 @@
     }
    ],
    "fixture_source": "espn",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
     "label": "Over 1.5",
     "p": 0.8213,
-    "day_rank": 18
+    "day_rank": 20
    }
   },
   {
@@ -55794,7 +55212,7 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -56085,13 +55503,13 @@
     }
    ],
    "fixture_source": "espn",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "ou_3_5",
     "selection": "under",
     "label": "Under 3.5",
     "p": 0.7378,
-    "day_rank": 54
+    "day_rank": 56
    }
   },
   {
@@ -56362,7 +55780,7 @@
     }
    ],
    "fixture_source": "espn",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "1x",
@@ -56639,13 +56057,13 @@
     }
    ],
    "fixture_source": "espn",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
     "label": "Over 1.5",
     "p": 0.7809,
-    "day_rank": 35
+    "day_rank": 37
    }
   },
   {
@@ -56930,7 +56348,7 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -57207,13 +56625,13 @@
     }
    ],
    "fixture_source": "espn",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
     "label": "Over 1.5",
     "p": 0.786,
-    "day_rank": 32
+    "day_rank": 34
    }
   },
   {
@@ -57498,13 +56916,13 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "1x",
     "label": "Bournemouth or draw",
     "p": 0.7642,
-    "day_rank": 45
+    "day_rank": 47
    }
   },
   {
@@ -57789,13 +57207,13 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "1x",
     "label": "Brighton or draw",
     "p": 0.8135,
-    "day_rank": 22
+    "day_rank": 24
    }
   },
   {
@@ -58080,13 +57498,13 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
     "label": "Over 1.5",
     "p": 0.7682,
-    "day_rank": 42
+    "day_rank": 44
    }
   },
   {
@@ -58371,13 +57789,13 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "x2",
     "label": "Marseille or draw",
     "p": 0.7631,
-    "day_rank": 46
+    "day_rank": 48
    }
   },
   {
@@ -58662,13 +58080,13 @@
     }
    ],
    "fixture_source": "espn",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
     "label": "Over 1.5",
     "p": 0.7888,
-    "day_rank": 30
+    "day_rank": 32
    }
   },
   {
@@ -58953,13 +58371,13 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "x2",
     "label": "Como or draw",
     "p": 0.773,
-    "day_rank": 38
+    "day_rank": 40
    }
   },
   {
@@ -59244,13 +58662,13 @@
     }
    ],
    "fixture_source": "espn",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "ou_3_5",
     "selection": "under",
     "label": "Under 3.5",
     "p": 0.7902,
-    "day_rank": 28
+    "day_rank": 30
    }
   },
   {
@@ -59535,13 +58953,304 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "ou_3_5",
     "selection": "under",
     "label": "Under 3.5",
     "p": 0.809,
-    "day_rank": 25
+    "day_rank": 27
+   }
+  },
+  {
+   "id": "d50632d84568",
+   "sport": "football",
+   "league": "D1",
+   "league_name": "Bundesliga",
+   "season": "2026-27",
+   "kickoff": "2026-10-18T13:30:00Z",
+   "kickoff_tbc": false,
+   "home": "Leverkusen",
+   "away": "Freiburg",
+   "probabilities": {
+    "home": 0.5825,
+    "draw": 0.2251,
+    "away": 0.1924
+   },
+   "extras": {
+    "expected_goals": {
+     "home": 2.23,
+     "away": 1.24
+    },
+    "over_1_5": 0.8346,
+    "over_2_5": 0.6276,
+    "over_3_5": 0.4035,
+    "btts": 0.6047,
+    "top_scorelines": [
+     {
+      "home": 1,
+      "away": 1,
+      "p": 0.1008
+     },
+     {
+      "home": 2,
+      "away": 1,
+      "p": 0.0994
+     },
+     {
+      "home": 2,
+      "away": 0,
+      "p": 0.0819
+     },
+     {
+      "home": 1,
+      "away": 0,
+      "p": 0.0785
+     },
+     {
+      "home": 3,
+      "away": 1,
+      "p": 0.0621
+     }
+    ],
+    "margin": {
+     "cap": 6,
+     "probs": [
+      0.00024,
+      0.00102,
+      0.00446,
+      0.01778,
+      0.0505,
+      0.1184,
+      0.22509,
+      0.22684,
+      0.17001,
+      0.10747,
+      0.04841,
+      0.01993,
+      0.00985
+     ]
+    },
+    "markets": {
+     "result_btts": {
+      "1&GG": 0.312,
+      "1&NG": 0.2705,
+      "X&GG": 0.1776,
+      "X&NG": 0.0475,
+      "2&GG": 0.1151,
+      "2&NG": 0.0773
+     },
+     "result_ou25": {
+      "1&O": 0.4221,
+      "1&U": 0.1604,
+      "X&O": 0.0767,
+      "X&U": 0.1484,
+      "2&O": 0.1288,
+      "2&U": 0.0636
+     },
+     "dc_ou25": {
+      "1X&O": 0.4988,
+      "1X&U": 0.3088,
+      "12&O": 0.5509,
+      "12&U": 0.224,
+      "X2&O": 0.2055,
+      "X2&U": 0.212
+     },
+     "home_ou0_5": {
+      "over": 0.8752,
+      "under": 0.1248
+     },
+     "home_ou1_5": {
+      "over": 0.6169,
+      "under": 0.3831
+     },
+     "away_ou0_5": {
+      "over": 0.682,
+      "under": 0.318
+     },
+     "away_ou1_5": {
+      "over": 0.3219,
+      "under": 0.6781
+     },
+     "clean_sheet": {
+      "home": 0.318,
+      "away": 0.1248
+     },
+     "win_to_nil": {
+      "home": 0.2705,
+      "away": 0.0773
+     },
+     "exact_goals": {
+      "0": 0.0475,
+      "1": 0.1178,
+      "2": 0.207,
+      "3": 0.2241,
+      "4": 0.168,
+      "5+": 0.2355
+     },
+     "odd_even": {
+      "odd": 0.4937,
+      "even": 0.5063
+     },
+     "dnb": {
+      "1": 0.7517,
+      "2": 0.2483
+     },
+     "ht_result": {
+      "1": 0.4484,
+      "X": 0.3526,
+      "2": 0.199
+     },
+     "htft": {
+      "1/1": 0.3783,
+      "1/X": 0.0537,
+      "1/2": 0.0163,
+      "X/1": 0.1673,
+      "X/X": 0.1176,
+      "X/2": 0.0677,
+      "2/1": 0.0369,
+      "2/X": 0.0537,
+      "2/2": 0.1084
+     },
+     "ht_ou0_5": {
+      "over": 0.7837,
+      "under": 0.2163
+     },
+     "ht_ou1_5": {
+      "over": 0.4548,
+      "under": 0.5452
+     },
+     "highest_half": {
+      "1st": 0.3072,
+      "2nd": 0.4632,
+      "equal": 0.2296
+     }
+    },
+    "score_grid": {
+     "max_goals": 6,
+     "cells": [
+      [
+       0.0475,
+       0.0393,
+       0.0243,
+       0.0102,
+       0.0027,
+       0.0007,
+       0.0001
+      ],
+      [
+       0.0785,
+       0.1008,
+       0.053,
+       0.0184,
+       0.0057,
+       0.0014,
+       0.0003
+      ],
+      [
+       0.0819,
+       0.0994,
+       0.056,
+       0.0206,
+       0.0064,
+       0.0016,
+       0.0003
+      ],
+      [
+       0.0615,
+       0.0621,
+       0.0386,
+       0.0173,
+       0.0048,
+       0.0012,
+       0.0002
+      ],
+      [
+       0.0288,
+       0.0347,
+       0.0216,
+       0.0089,
+       0.003,
+       0.0007,
+       0.0001
+      ],
+      [
+       0.0129,
+       0.0155,
+       0.0096,
+       0.004,
+       0.0012,
+       0.0003,
+       0.0001
+      ],
+      [
+       0.0048,
+       0.0058,
+       0.0036,
+       0.0015,
+       0.0005,
+       0.0001,
+       0.0
+      ]
+     ],
+     "other": 0.0073
+    },
+    "grid_adjusted": true,
+    "ten_min": {
+     "home": 0.1571,
+     "draw": 0.7591,
+     "away": 0.0838,
+     "no_goal": 0.7441
+    },
+    "goals_model": "dixon_coles",
+    "goals_calibrated": true,
+    "corners": {
+     "expected": {
+      "home": 5.89,
+      "away": 3.75,
+      "total": 9.64
+     },
+     "over": {
+      "7.5": 0.727,
+      "8.5": 0.6113,
+      "9.5": 0.4902,
+      "10.5": 0.3745,
+      "11.5": 0.2727
+     }
+    }
+   },
+   "model": {
+    "name": "blend",
+    "version": "1.0"
+   },
+   "other_models": [
+    {
+     "name": "dixon_coles",
+     "version": "1.0",
+     "probabilities": {
+      "home": 0.5926,
+      "draw": 0.2082,
+      "away": 0.1992
+     }
+    },
+    {
+     "name": "elo",
+     "version": "1.0",
+     "probabilities": {
+      "home": 0.5724,
+      "draw": 0.242,
+      "away": 0.1856
+     }
+    }
+   ],
+   "fixture_source": "fixturedownload",
+   "generated_at": "2026-10-11T07:36:57+00:00",
+   "best_pick": {
+    "market": "ou_1_5",
+    "selection": "over",
+    "label": "Over 1.5",
+    "p": 0.8346,
+    "day_rank": 15
    }
   },
   {
@@ -59812,13 +59521,13 @@
     }
    ],
    "fixture_source": "espn",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
     "label": "Over 1.5",
     "p": 0.7496,
-    "day_rank": 51
+    "day_rank": 53
    }
   },
   {
@@ -60103,7 +59812,7 @@
     }
    ],
    "fixture_source": "espn",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "x2",
@@ -60394,13 +60103,13 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "1x",
     "label": "Celtic or draw",
     "p": 0.7894,
-    "day_rank": 29
+    "day_rank": 31
    }
   },
   {
@@ -60685,13 +60394,13 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "1x",
     "label": "Celta or draw",
     "p": 0.7698,
-    "day_rank": 41
+    "day_rank": 43
    }
   },
   {
@@ -60976,13 +60685,13 @@
     }
    ],
    "fixture_source": "espn",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "1x",
     "label": "Granada or draw",
     "p": 0.7786,
-    "day_rank": 37
+    "day_rank": 39
    }
   },
   {
@@ -61267,7 +60976,7 @@
     }
    ],
    "fixture_source": "espn",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "1x",
@@ -61558,13 +61267,13 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
     "label": "Over 1.5",
     "p": 0.7993,
-    "day_rank": 27
+    "day_rank": 29
    }
   },
   {
@@ -61835,7 +61544,7 @@
     }
    ],
    "fixture_source": "espn",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "1x",
@@ -62112,7 +61821,7 @@
     }
    ],
    "fixture_source": "espn",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "1x",
@@ -62389,13 +62098,13 @@
     }
    ],
    "fixture_source": "espn",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "1x",
     "label": "Sandefjord or draw",
     "p": 0.7586,
-    "day_rank": 47
+    "day_rank": 49
    }
   },
   {
@@ -62666,7 +62375,7 @@
     }
    ],
    "fixture_source": "espn",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -62957,13 +62666,13 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
     "label": "Over 1.5",
     "p": 0.7789,
-    "day_rank": 36
+    "day_rank": 38
    }
   },
   {
@@ -63248,13 +62957,13 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "ou_3_5",
     "selection": "under",
     "label": "Under 3.5",
     "p": 0.7656,
-    "day_rank": 44
+    "day_rank": 46
    }
   },
   {
@@ -63539,13 +63248,13 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
     "label": "Over 1.5",
     "p": 0.7818,
-    "day_rank": 34
+    "day_rank": 36
    }
   },
   {
@@ -63830,13 +63539,304 @@
     }
    ],
    "fixture_source": "espn",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
     "label": "Over 1.5",
     "p": 0.7515,
-    "day_rank": 50
+    "day_rank": 52
+   }
+  },
+  {
+   "id": "bcb8fd7f9f6e",
+   "sport": "football",
+   "league": "D1",
+   "league_name": "Bundesliga",
+   "season": "2026-27",
+   "kickoff": "2026-10-18T15:30:00Z",
+   "kickoff_tbc": false,
+   "home": "M'gladbach",
+   "away": "Hoffenheim",
+   "probabilities": {
+    "home": 0.3677,
+    "draw": 0.2595,
+    "away": 0.3728
+   },
+   "extras": {
+    "expected_goals": {
+     "home": 1.81,
+     "away": 1.76
+    },
+    "over_1_5": 0.8417,
+    "over_2_5": 0.6384,
+    "over_3_5": 0.4151,
+    "btts": 0.6385,
+    "top_scorelines": [
+     {
+      "home": 1,
+      "away": 1,
+      "p": 0.104
+     },
+     {
+      "home": 1,
+      "away": 2,
+      "p": 0.0797
+     },
+     {
+      "home": 2,
+      "away": 1,
+      "p": 0.0766
+     },
+     {
+      "home": 2,
+      "away": 2,
+      "p": 0.0732
+     },
+     {
+      "home": 0,
+      "away": 1,
+      "p": 0.0548
+     }
+    ],
+    "margin": {
+     "cap": 6,
+     "probs": [
+      0.0023,
+      0.00642,
+      0.01982,
+      0.05653,
+      0.1075,
+      0.18027,
+      0.2595,
+      0.17341,
+      0.10636,
+      0.05759,
+      0.02078,
+      0.00693,
+      0.00258
+     ]
+    },
+    "markets": {
+     "result_btts": {
+      "1&GG": 0.2126,
+      "1&NG": 0.155,
+      "X&GG": 0.2088,
+      "X&NG": 0.0507,
+      "2&GG": 0.2171,
+      "2&NG": 0.1558
+     },
+     "result_ou25": {
+      "1&O": 0.2654,
+      "1&U": 0.1022,
+      "X&O": 0.1049,
+      "X&U": 0.1546,
+      "2&O": 0.2681,
+      "2&U": 0.1047
+     },
+     "dc_ou25": {
+      "1X&O": 0.3703,
+      "1X&U": 0.2569,
+      "12&O": 0.5336,
+      "12&U": 0.2069,
+      "X2&O": 0.373,
+      "X2&U": 0.2593
+     },
+     "home_ou0_5": {
+      "over": 0.7936,
+      "under": 0.2064
+     },
+     "home_ou1_5": {
+      "over": 0.4933,
+      "under": 0.5067
+     },
+     "away_ou0_5": {
+      "over": 0.7943,
+      "under": 0.2057
+     },
+     "away_ou1_5": {
+      "over": 0.4947,
+      "under": 0.5053
+     },
+     "clean_sheet": {
+      "home": 0.2057,
+      "away": 0.2064
+     },
+     "win_to_nil": {
+      "home": 0.155,
+      "away": 0.1558
+     },
+     "exact_goals": {
+      "0": 0.0507,
+      "1": 0.1077,
+      "2": 0.2032,
+      "3": 0.2233,
+      "4": 0.1746,
+      "5+": 0.2405
+     },
+     "odd_even": {
+      "odd": 0.4821,
+      "even": 0.5179
+     },
+     "dnb": {
+      "1": 0.4965,
+      "2": 0.5035
+     },
+     "ht_result": {
+      "1": 0.3184,
+      "X": 0.3626,
+      "2": 0.319
+     },
+     "htft": {
+      "1/1": 0.2233,
+      "1/X": 0.0648,
+      "1/2": 0.0302,
+      "X/1": 0.115,
+      "X/X": 0.1298,
+      "X/2": 0.1178,
+      "2/1": 0.0293,
+      "2/X": 0.0648,
+      "2/2": 0.2248
+     },
+     "ht_ou0_5": {
+      "over": 0.7908,
+      "under": 0.2092
+     },
+     "ht_ou1_5": {
+      "over": 0.4663,
+      "under": 0.5337
+     },
+     "highest_half": {
+      "1st": 0.3061,
+      "2nd": 0.4637,
+      "equal": 0.2302
+     }
+    },
+    "score_grid": {
+     "max_goals": 6,
+     "cells": [
+      [
+       0.0507,
+       0.0548,
+       0.0499,
+       0.0332,
+       0.012,
+       0.0042,
+       0.0012
+      ],
+      [
+       0.0528,
+       0.104,
+       0.0797,
+       0.0386,
+       0.0169,
+       0.0059,
+       0.0017
+      ],
+      [
+       0.0494,
+       0.0766,
+       0.0732,
+       0.0349,
+       0.0153,
+       0.0054,
+       0.0016
+      ],
+      [
+       0.0338,
+       0.0382,
+       0.0335,
+       0.0258,
+       0.0092,
+       0.0032,
+       0.0009
+      ],
+      [
+       0.0126,
+       0.0173,
+       0.0151,
+       0.0089,
+       0.0051,
+       0.0015,
+       0.0004
+      ],
+      [
+       0.0046,
+       0.0062,
+       0.0055,
+       0.0032,
+       0.0014,
+       0.0007,
+       0.0002
+      ],
+      [
+       0.0014,
+       0.0019,
+       0.0016,
+       0.001,
+       0.0004,
+       0.0001,
+       0.0001
+      ]
+     ],
+     "other": 0.0041
+    },
+    "grid_adjusted": true,
+    "ten_min": {
+     "home": 0.1241,
+     "draw": 0.7557,
+     "away": 0.1202,
+     "no_goal": 0.7387
+    },
+    "goals_model": "dixon_coles",
+    "goals_calibrated": true,
+    "corners": {
+     "expected": {
+      "home": 5.32,
+      "away": 4.61,
+      "total": 9.94
+     },
+     "over": {
+      "7.5": 0.7545,
+      "8.5": 0.6442,
+      "9.5": 0.5256,
+      "10.5": 0.4092,
+      "11.5": 0.3041
+     }
+    }
+   },
+   "model": {
+    "name": "blend",
+    "version": "1.0"
+   },
+   "other_models": [
+    {
+     "name": "dixon_coles",
+     "version": "1.0",
+     "probabilities": {
+      "home": 0.3951,
+      "draw": 0.2309,
+      "away": 0.374
+     }
+    },
+    {
+     "name": "elo",
+     "version": "1.0",
+     "probabilities": {
+      "home": 0.3402,
+      "draw": 0.2881,
+      "away": 0.3717
+     }
+    }
+   ],
+   "fixture_source": "fixturedownload",
+   "generated_at": "2026-10-11T07:36:57+00:00",
+   "best_pick": {
+    "market": "ou_1_5",
+    "selection": "over",
+    "label": "Over 1.5",
+    "p": 0.8417,
+    "day_rank": 12
    }
   },
   {
@@ -64121,13 +64121,13 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "x2",
     "label": "Arsenal or draw",
     "p": 0.8069,
-    "day_rank": 26
+    "day_rank": 28
    }
   },
   {
@@ -64398,13 +64398,13 @@
     }
    ],
    "fixture_source": "espn",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
     "label": "Over 1.5",
     "p": 0.8273,
-    "day_rank": 17
+    "day_rank": 19
    }
   },
   {
@@ -64689,13 +64689,13 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "ou_3_5",
     "selection": "under",
     "label": "Under 3.5",
     "p": 0.7426,
-    "day_rank": 53
+    "day_rank": 55
    }
   },
   {
@@ -64980,13 +64980,13 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "1x",
     "label": "Buyuksehyr or draw",
     "p": 0.8361,
-    "day_rank": 13
+    "day_rank": 14
    }
   },
   {
@@ -65271,13 +65271,13 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "ou_3_5",
     "selection": "under",
     "label": "Under 3.5",
     "p": 0.7472,
-    "day_rank": 52
+    "day_rank": 54
    }
   },
   {
@@ -65562,13 +65562,13 @@
     }
    ],
    "fixture_source": "espn",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "1x",
     "label": "Girona or draw",
     "p": 0.8099,
-    "day_rank": 23
+    "day_rank": 25
    }
   },
   {
@@ -65853,13 +65853,13 @@
     }
    ],
    "fixture_source": "espn",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "ou_3_5",
     "selection": "under",
     "label": "Under 3.5",
     "p": 0.7666,
-    "day_rank": 43
+    "day_rank": 45
    }
   },
   {
@@ -66144,13 +66144,13 @@
     }
    ],
    "fixture_source": "espn",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "ou_3_5",
     "selection": "under",
     "label": "Under 3.5",
     "p": 0.7857,
-    "day_rank": 33
+    "day_rank": 35
    }
   },
   {
@@ -66421,13 +66421,13 @@
     }
    ],
    "fixture_source": "espn",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "1x",
     "label": "Tromso or draw",
     "p": 0.8172,
-    "day_rank": 21
+    "day_rank": 23
    }
   },
   {
@@ -66712,13 +66712,13 @@
     }
    ],
    "fixture_source": "espn",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "1x",
     "label": "Sampdoria or draw",
     "p": 0.7572,
-    "day_rank": 48
+    "day_rank": 50
    }
   },
   {
@@ -67003,7 +67003,7 @@
     }
    ],
    "fixture_source": "espn",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "1x",
@@ -67294,13 +67294,13 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
     "label": "Over 1.5",
     "p": 0.8099,
-    "day_rank": 24
+    "day_rank": 26
    }
   },
   {
@@ -67585,13 +67585,13 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
     "label": "Over 1.5",
     "p": 0.8341,
-    "day_rank": 14
+    "day_rank": 16
    }
   },
   {
@@ -67876,13 +67876,13 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "1x",
     "label": "Lyon or draw",
     "p": 0.8278,
-    "day_rank": 15
+    "day_rank": 17
    }
   },
   {
@@ -68167,13 +68167,13 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "ou_3_5",
     "selection": "under",
     "label": "Under 3.5",
     "p": 0.7715,
-    "day_rank": 40
+    "day_rank": 42
    }
   },
   {
@@ -68458,7 +68458,7 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "1x",
@@ -68749,7 +68749,7 @@
     }
    ],
    "fixture_source": "espn",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "ou_3_5",
     "selection": "under",
@@ -69040,7 +69040,7 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -69317,7 +69317,7 @@
     }
    ],
    "fixture_source": "espn",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -69608,7 +69608,7 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -69899,7 +69899,7 @@
     }
    ],
    "fixture_source": "espn",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -70190,7 +70190,7 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "ou_3_5",
     "selection": "under",
@@ -70481,7 +70481,7 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "ou_3_5",
     "selection": "under",
@@ -70772,7 +70772,7 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "ou_3_5",
     "selection": "under",
@@ -71063,7 +71063,7 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "ou_3_5",
     "selection": "under",
@@ -71354,7 +71354,7 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "1x",
@@ -71645,7 +71645,7 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-10-11T07:13:35+00:00",
+   "generated_at": "2026-10-11T07:36:57+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "1x",
