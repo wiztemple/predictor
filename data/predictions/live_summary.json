@@ -2,14 +2,14 @@
  "primary_model": "blend",
  "first_logged": "2026-10-06T06:14:01+00:00",
  "n_logged_matches": 372,
- "n_scored": 157,
- "n_pending": 213,
- "n_void": 2,
+ "n_scored": 160,
+ "n_pending": 207,
+ "n_void": 5,
  "model": {
-  "n": 157,
-  "log_loss": 0.953945715747133,
-  "brier": 0.5677026685350319,
-  "accuracy": 0.5668789808917197
+  "n": 160,
+  "log_loss": 0.9678536760009342,
+  "brier": 0.5754595155,
+  "accuracy": 0.5625
  },
  "same_matches_with_odds": {
   "n": 1,
@@ -82,10 +82,10 @@
    "accuracy": 0.625
   },
   "G1": {
-   "n": 6,
-   "log_loss": 0.7816091644995349,
-   "brier": 0.44384804499999997,
-   "accuracy": 0.8333333333333334
+   "n": 7,
+   "log_loss": 1.0573876013567083,
+   "brier": 0.5959075614285714,
+   "accuracy": 0.7142857142857143
   },
   "I1": {
    "n": 8,
@@ -136,10 +136,10 @@
    "accuracy": 0.625
   },
   "SP2": {
-   "n": 7,
-   "log_loss": 0.8710387914611932,
-   "brier": 0.5064347328571429,
-   "accuracy": 0.8571428571428571
+   "n": 9,
+   "log_loss": 0.9413693450642443,
+   "brier": 0.5534424433333334,
+   "accuracy": 0.7777777777777778
   },
   "T1": {
    "n": 8,
@@ -155,9 +155,9 @@
    "kickoff": "2026-10-21T18:00:00Z",
    "home": "Levante",
    "away": "Ath Bilbao",
-   "logged_at": "2026-10-12T05:41:40Z",
+   "logged_at": "2026-10-12T18:10:06Z",
    "probabilities": {
-    "home": 0.395,
+    "home": 0.3951,
     "draw": 0.2894,
     "away": 0.3155
    },
@@ -171,9 +171,9 @@
    "kickoff": "2026-10-20T18:45:00Z",
    "home": "Wolves",
    "away": "Portsmouth",
-   "logged_at": "2026-10-12T05:41:40Z",
+   "logged_at": "2026-10-12T18:10:06Z",
    "probabilities": {
-    "home": 0.6034,
+    "home": 0.6033,
     "draw": 0.222,
     "away": 0.1747
    },
@@ -187,11 +187,11 @@
    "kickoff": "2026-10-19T19:15:00Z",
    "home": "Sp Braga",
    "away": "Gil Vicente",
-   "logged_at": "2026-10-12T05:41:40Z",
+   "logged_at": "2026-10-12T18:10:06Z",
    "probabilities": {
     "home": 0.5746,
-    "draw": 0.2423,
-    "away": 0.1831
+    "draw": 0.2424,
+    "away": 0.183
    },
    "state": "pending",
    "score": null,
@@ -203,11 +203,11 @@
    "kickoff": "2026-10-19T19:00:00Z",
    "home": "Getafe",
    "away": "Vallecano",
-   "logged_at": "2026-10-12T05:41:40Z",
+   "logged_at": "2026-10-12T18:10:06Z",
    "probabilities": {
-    "home": 0.3769,
+    "home": 0.3768,
     "draw": 0.3261,
-    "away": 0.297
+    "away": 0.2971
    },
    "state": "pending",
    "score": null,
@@ -219,11 +219,11 @@
    "kickoff": "2026-10-19T19:00:00Z",
    "home": "Tottenham",
    "away": "Coventry",
-   "logged_at": "2026-10-12T05:41:40Z",
+   "logged_at": "2026-10-12T18:10:06Z",
    "probabilities": {
-    "home": 0.4615,
+    "home": 0.4614,
     "draw": 0.2805,
-    "away": 0.2579
+    "away": 0.258
    },
    "state": "pending",
    "score": null,
@@ -235,9 +235,9 @@
    "kickoff": "2026-10-19T18:45:00Z",
    "home": "Parma",
    "away": "Torino",
-   "logged_at": "2026-10-12T05:41:40Z",
+   "logged_at": "2026-10-12T18:10:06Z",
    "probabilities": {
-    "home": 0.3337,
+    "home": 0.3338,
     "draw": 0.3074,
     "away": 0.3588
    },
@@ -251,7 +251,7 @@
    "kickoff": "2026-10-19T18:45:00Z",
    "home": "Rodez",
    "away": "Montpellier",
-   "logged_at": "2026-10-12T05:41:40Z",
+   "logged_at": "2026-10-12T18:10:06Z",
    "probabilities": {
     "home": 0.3464,
     "draw": 0.2978,
@@ -267,11 +267,11 @@
    "kickoff": "2026-10-19T18:30:00Z",
    "home": "Celta B",
    "away": "Tenerife",
-   "logged_at": "2026-10-12T05:41:40Z",
+   "logged_at": "2026-10-12T18:10:06Z",
    "probabilities": {
-    "home": 0.4654,
-    "draw": 0.2725,
-    "away": 0.2621
+    "home": 0.4673,
+    "draw": 0.2713,
+    "away": 0.2615
    },
    "state": "pending",
    "score": null,
@@ -283,9 +283,9 @@
    "kickoff": "2026-10-19T17:00:00Z",
    "home": "Trabzonspor",
    "away": "Besiktas",
-   "logged_at": "2026-10-12T05:41:40Z",
+   "logged_at": "2026-10-12T18:10:06Z",
    "probabilities": {
-    "home": 0.4693,
+    "home": 0.4694,
     "draw": 0.2703,
     "away": 0.2604
    },
@@ -299,10 +299,10 @@
    "kickoff": "2026-10-19T17:00:00Z",
    "home": "Viborg",
    "away": "Midtjylland",
-   "logged_at": "2026-10-12T05:41:40Z",
+   "logged_at": "2026-10-12T18:10:06Z",
    "probabilities": {
-    "home": 0.2836,
-    "draw": 0.2729,
+    "home": 0.2835,
+    "draw": 0.273,
     "away": 0.4435
    },
    "state": "pending",
@@ -315,27 +315,11 @@
    "kickoff": "2026-10-19T16:30:00Z",
    "home": "Monza",
    "away": "Cagliari",
-   "logged_at": "2026-10-12T05:41:40Z",
+   "logged_at": "2026-10-12T18:10:06Z",
    "probabilities": {
-    "home": 0.248,
+    "home": 0.247,
     "draw": 0.2713,
-    "away": 0.4807
-   },
-   "state": "pending",
-   "score": null,
-   "outcome": null
-  },
-  {
-   "id": "52039bccf014",
-   "league": "SP1",
-   "kickoff": "2026-10-18T19:00:00Z",
-   "home": "Real Madrid",
-   "away": "Sevilla",
-   "logged_at": "2026-10-12T05:41:40Z",
-   "probabilities": {
-    "home": 0.7586,
-    "draw": 0.1565,
-    "away": 0.0849
+    "away": 0.4817
    },
    "state": "pending",
    "score": null,
@@ -347,11 +331,27 @@
    "kickoff": "2026-10-18T19:00:00Z",
    "home": "Burgos",
    "away": "Sabadell",
-   "logged_at": "2026-10-12T05:41:40Z",
+   "logged_at": "2026-10-12T18:10:06Z",
    "probabilities": {
-    "home": 0.456,
-    "draw": 0.3057,
-    "away": 0.2383
+    "home": 0.4454,
+    "draw": 0.309,
+    "away": 0.2456
+   },
+   "state": "pending",
+   "score": null,
+   "outcome": null
+  },
+  {
+   "id": "52039bccf014",
+   "league": "SP1",
+   "kickoff": "2026-10-18T19:00:00Z",
+   "home": "Real Madrid",
+   "away": "Sevilla",
+   "logged_at": "2026-10-12T18:10:06Z",
+   "probabilities": {
+    "home": 0.7586,
+    "draw": 0.1565,
+    "away": 0.0849
    },
    "state": "pending",
    "score": null,
@@ -363,11 +363,11 @@
    "kickoff": "2026-10-18T18:45:00Z",
    "home": "Juventus",
    "away": "Lazio",
-   "logged_at": "2026-10-12T05:41:40Z",
+   "logged_at": "2026-10-12T18:10:06Z",
    "probabilities": {
     "home": 0.4613,
-    "draw": 0.2908,
-    "away": 0.2479
+    "draw": 0.2909,
+    "away": 0.2478
    },
    "state": "pending",
    "score": null,
@@ -379,11 +379,11 @@
    "kickoff": "2026-10-18T18:45:00Z",
    "home": "Lyon",
    "away": "Nice",
-   "logged_at": "2026-10-12T05:41:40Z",
+   "logged_at": "2026-10-12T18:10:06Z",
    "probabilities": {
-    "home": 0.5944,
+    "home": 0.5945,
     "draw": 0.2278,
-    "away": 0.1778
+    "away": 0.1777
    },
    "state": "pending",
    "score": null,
@@ -395,11 +395,11 @@
    "kickoff": "2026-10-18T18:00:00Z",
    "home": "Nijmegen",
    "away": "For Sittard",
-   "logged_at": "2026-10-12T05:41:40Z",
+   "logged_at": "2026-10-12T18:10:06Z",
    "probabilities": {
-    "home": 0.5604,
+    "home": 0.5602,
     "draw": 0.2408,
-    "away": 0.1989
+    "away": 0.199
    },
    "state": "pending",
    "score": null,
@@ -411,11 +411,11 @@
    "kickoff": "2026-10-18T18:00:00Z",
    "home": "Twente",
    "away": "Utrecht",
-   "logged_at": "2026-10-12T05:41:40Z",
+   "logged_at": "2026-10-12T18:10:06Z",
    "probabilities": {
-    "home": 0.5316,
-    "draw": 0.2545,
-    "away": 0.2139
+    "home": 0.5314,
+    "draw": 0.2546,
+    "away": 0.214
    },
    "state": "pending",
    "score": null,
@@ -427,11 +427,11 @@
    "kickoff": "2026-10-18T18:00:00Z",
    "home": "PAOK",
    "away": "Iraklis",
-   "logged_at": "2026-10-12T05:41:40Z",
+   "logged_at": "2026-10-12T18:10:06Z",
    "probabilities": {
-    "home": 0.7026,
-    "draw": 0.2008,
-    "away": 0.0966
+    "home": 0.674,
+    "draw": 0.2147,
+    "away": 0.1114
    },
    "state": "pending",
    "score": null,
@@ -443,10 +443,10 @@
    "kickoff": "2026-10-18T17:30:00Z",
    "home": "Sampdoria",
    "away": "Arezzo",
-   "logged_at": "2026-10-12T05:41:40Z",
+   "logged_at": "2026-10-12T18:10:06Z",
    "probabilities": {
-    "home": 0.4514,
-    "draw": 0.3041,
+    "home": 0.4515,
+    "draw": 0.304,
     "away": 0.2445
    },
    "state": "pending",
@@ -459,11 +459,11 @@
    "kickoff": "2026-10-18T17:15:00Z",
    "home": "Tromso",
    "away": "KFUM Oslo",
-   "logged_at": "2026-10-12T05:41:40Z",
+   "logged_at": "2026-10-12T18:10:06Z",
    "probabilities": {
-    "home": 0.5976,
-    "draw": 0.2189,
-    "away": 0.1835
+    "home": 0.5978,
+    "draw": 0.219,
+    "away": 0.1832
    },
    "state": "pending",
    "score": null,
@@ -475,11 +475,11 @@
    "kickoff": "2026-10-18T17:00:00Z",
    "home": "Kifisia",
    "away": "Aris",
-   "logged_at": "2026-10-12T05:41:40Z",
+   "logged_at": "2026-10-12T18:10:06Z",
    "probabilities": {
-    "home": 0.274,
-    "draw": 0.3168,
-    "away": 0.4092
+    "home": 0.2717,
+    "draw": 0.3161,
+    "away": 0.4121
    },
    "state": "pending",
    "score": null,
@@ -491,27 +491,11 @@
    "kickoff": "2026-10-18T16:30:00Z",
    "home": "Valladolid",
    "away": "Eldense",
-   "logged_at": "2026-10-12T05:41:40Z",
+   "logged_at": "2026-10-12T18:10:06Z",
    "probabilities": {
-    "home": 0.4388,
-    "draw": 0.2872,
-    "away": 0.274
-   },
-   "state": "pending",
-   "score": null,
-   "outcome": null
-  },
-  {
-   "id": "51e3e2207f58",
-   "league": "SP2",
-   "kickoff": "2026-10-18T16:30:00Z",
-   "home": "Girona",
-   "away": "Andorra",
-   "logged_at": "2026-10-12T05:41:40Z",
-   "probabilities": {
-    "home": 0.5597,
-    "draw": 0.2437,
-    "away": 0.1966
+    "home": 0.4668,
+    "draw": 0.2789,
+    "away": 0.2543
    },
    "state": "pending",
    "score": null,
@@ -523,9 +507,9 @@
    "kickoff": "2026-10-18T16:30:00Z",
    "home": "Malaga",
    "away": "Sociedad",
-   "logged_at": "2026-10-12T05:41:40Z",
+   "logged_at": "2026-10-12T18:10:06Z",
    "probabilities": {
-    "home": 0.3153,
+    "home": 0.3154,
     "draw": 0.2939,
     "away": 0.3907
    },
@@ -534,16 +518,16 @@
    "outcome": null
   },
   {
-   "id": "4c0798965c4d",
-   "league": "I1",
-   "kickoff": "2026-10-18T16:00:00Z",
-   "home": "Milan",
-   "away": "Atalanta",
-   "logged_at": "2026-10-12T05:41:40Z",
+   "id": "51e3e2207f58",
+   "league": "SP2",
+   "kickoff": "2026-10-18T16:30:00Z",
+   "home": "Girona",
+   "away": "Andorra",
+   "logged_at": "2026-10-12T18:10:06Z",
    "probabilities": {
-    "home": 0.4124,
-    "draw": 0.2924,
-    "away": 0.2952
+    "home": 0.5588,
+    "draw": 0.2433,
+    "away": 0.1979
    },
    "state": "pending",
    "score": null,
@@ -555,10 +539,10 @@
    "kickoff": "2026-10-18T16:00:00Z",
    "home": "FC Copenhagen",
    "away": "Aarhus",
-   "logged_at": "2026-10-12T05:41:40Z",
+   "logged_at": "2026-10-12T18:10:06Z",
    "probabilities": {
     "home": 0.5243,
-    "draw": 0.2504,
+    "draw": 0.2505,
     "away": 0.2253
    },
    "state": "pending",
@@ -571,11 +555,27 @@
    "kickoff": "2026-10-18T16:00:00Z",
    "home": "Buyuksehyr",
    "away": "Gaziantep",
-   "logged_at": "2026-10-12T05:41:40Z",
+   "logged_at": "2026-10-12T18:10:06Z",
    "probabilities": {
-    "home": 0.628,
+    "home": 0.6279,
     "draw": 0.2203,
     "away": 0.1517
+   },
+   "state": "pending",
+   "score": null,
+   "outcome": null
+  },
+  {
+   "id": "4c0798965c4d",
+   "league": "I1",
+   "kickoff": "2026-10-18T16:00:00Z",
+   "home": "Milan",
+   "away": "Atalanta",
+   "logged_at": "2026-10-12T18:10:06Z",
+   "probabilities": {
+    "home": 0.4121,
+    "draw": 0.2925,
+    "away": 0.2954
    },
    "state": "pending",
    "score": null,
@@ -587,11 +587,11 @@
    "kickoff": "2026-10-18T15:30:00Z",
    "home": "Nott'm Forest",
    "away": "Arsenal",
-   "logged_at": "2026-10-12T05:41:40Z",
+   "logged_at": "2026-10-12T18:10:06Z",
    "probabilities": {
-    "home": 0.1837,
-    "draw": 0.2512,
-    "away": 0.5652
+    "home": 0.1838,
+    "draw": 0.2511,
+    "away": 0.565
    },
    "state": "pending",
    "score": null,
@@ -603,11 +603,11 @@
    "kickoff": "2026-10-18T15:30:00Z",
    "home": "M'gladbach",
    "away": "Hoffenheim",
-   "logged_at": "2026-10-12T05:41:40Z",
+   "logged_at": "2026-10-12T18:10:06Z",
    "probabilities": {
-    "home": 0.3617,
+    "home": 0.3616,
     "draw": 0.2595,
-    "away": 0.3788
+    "away": 0.3789
    },
    "state": "pending",
    "score": null,
@@ -619,7 +619,7 @@
    "kickoff": "2026-10-18T15:15:00Z",
    "home": "Cesena",
    "away": "Avellino",
-   "logged_at": "2026-10-12T05:41:40Z",
+   "logged_at": "2026-10-12T18:10:06Z",
    "probabilities": {
     "home": 0.3754,
     "draw": 0.314,
@@ -635,11 +635,11 @@
    "kickoff": "2026-10-18T15:15:00Z",
    "home": "Paris FC",
    "away": "Rennes",
-   "logged_at": "2026-10-12T05:41:40Z",
+   "logged_at": "2026-10-12T18:10:06Z",
    "probabilities": {
-    "home": 0.3795,
+    "home": 0.3794,
     "draw": 0.2636,
-    "away": 0.3569
+    "away": 0.3571
    },
    "state": "pending",
    "score": null,
@@ -651,11 +651,11 @@
    "kickoff": "2026-10-18T15:15:00Z",
    "home": "Le Havre",
    "away": "Auxerre",
-   "logged_at": "2026-10-12T05:41:40Z",
+   "logged_at": "2026-10-12T18:10:06Z",
    "probabilities": {
-    "home": 0.3753,
-    "draw": 0.284,
-    "away": 0.3407
+    "home": 0.3756,
+    "draw": 0.2839,
+    "away": 0.3405
    },
    "state": "pending",
    "score": null,
@@ -667,59 +667,11 @@
    "kickoff": "2026-10-18T15:15:00Z",
    "home": "Lorient",
    "away": "Monaco",
-   "logged_at": "2026-10-12T05:41:40Z",
+   "logged_at": "2026-10-12T18:10:06Z",
    "probabilities": {
-    "home": 0.305,
-    "draw": 0.2615,
-    "away": 0.4335
-   },
-   "state": "pending",
-   "score": null,
-   "outcome": null
-  },
-  {
-   "id": "ac44b1e6a653",
-   "league": "AUT",
-   "kickoff": "2026-10-18T15:00:00Z",
-   "home": "Sturm Graz",
-   "away": "Grazer AK",
-   "logged_at": "2026-10-12T05:41:40Z",
-   "probabilities": {
-    "home": 0.6275,
-    "draw": 0.2293,
-    "away": 0.1431
-   },
-   "state": "pending",
-   "score": null,
-   "outcome": null
-  },
-  {
-   "id": "b4ceb89d647d",
-   "league": "NOR",
-   "kickoff": "2026-10-18T15:00:00Z",
-   "home": "Valerenga",
-   "away": "Brann",
-   "logged_at": "2026-10-12T05:41:40Z",
-   "probabilities": {
-    "home": 0.3362,
-    "draw": 0.2402,
-    "away": 0.4235
-   },
-   "state": "pending",
-   "score": null,
-   "outcome": null
-  },
-  {
-   "id": "d47c6286958d",
-   "league": "NOR",
-   "kickoff": "2026-10-18T15:00:00Z",
-   "home": "Sandefjord",
-   "away": "Lillestrom",
-   "logged_at": "2026-10-12T05:41:40Z",
-   "probabilities": {
-    "home": 0.5018,
-    "draw": 0.2546,
-    "away": 0.2436
+    "home": 0.3048,
+    "draw": 0.2616,
+    "away": 0.4336
    },
    "state": "pending",
    "score": null,
@@ -731,11 +683,59 @@
    "kickoff": "2026-10-18T15:00:00Z",
    "home": "Molde",
    "away": "Start",
-   "logged_at": "2026-10-12T05:41:40Z",
+   "logged_at": "2026-10-12T18:10:06Z",
    "probabilities": {
-    "home": 0.7124,
-    "draw": 0.1649,
-    "away": 0.1227
+    "home": 0.7125,
+    "draw": 0.165,
+    "away": 0.1226
+   },
+   "state": "pending",
+   "score": null,
+   "outcome": null
+  },
+  {
+   "id": "b4ceb89d647d",
+   "league": "NOR",
+   "kickoff": "2026-10-18T15:00:00Z",
+   "home": "Valerenga",
+   "away": "Brann",
+   "logged_at": "2026-10-12T18:10:06Z",
+   "probabilities": {
+    "home": 0.3364,
+    "draw": 0.2404,
+    "away": 0.4232
+   },
+   "state": "pending",
+   "score": null,
+   "outcome": null
+  },
+  {
+   "id": "d47c6286958d",
+   "league": "NOR",
+   "kickoff": "2026-10-18T15:00:00Z",
+   "home": "Sandefjord",
+   "away": "Lillestrom",
+   "logged_at": "2026-10-12T18:10:06Z",
+   "probabilities": {
+    "home": 0.502,
+    "draw": 0.2546,
+    "away": 0.2434
+   },
+   "state": "pending",
+   "score": null,
+   "outcome": null
+  },
+  {
+   "id": "ac44b1e6a653",
+   "league": "AUT",
+   "kickoff": "2026-10-18T15:00:00Z",
+   "home": "Sturm Graz",
+   "away": "Grazer AK",
+   "logged_at": "2026-10-12T18:10:06Z",
+   "probabilities": {
+    "home": 0.6274,
+    "draw": 0.2295,
+    "away": 0.1432
    },
    "state": "pending",
    "score": null,
@@ -747,11 +747,11 @@
    "kickoff": "2026-10-18T14:45:00Z",
    "home": "Groningen",
    "away": "Ajax",
-   "logged_at": "2026-10-12T05:41:40Z",
+   "logged_at": "2026-10-12T18:10:06Z",
    "probabilities": {
-    "home": 0.2817,
+    "home": 0.2816,
     "draw": 0.2742,
-    "away": 0.4441
+    "away": 0.4442
    },
    "state": "pending",
    "score": null,
@@ -763,11 +763,11 @@
    "kickoff": "2026-10-18T14:30:00Z",
    "home": "Panathinaikos",
    "away": "Asteras Tripolis",
-   "logged_at": "2026-10-12T05:41:40Z",
+   "logged_at": "2026-10-12T18:10:06Z",
    "probabilities": {
-    "home": 0.7221,
-    "draw": 0.1929,
-    "away": 0.085
+    "home": 0.7179,
+    "draw": 0.1951,
+    "away": 0.0871
    },
    "state": "pending",
    "score": null,
@@ -779,7 +779,7 @@
    "kickoff": "2026-10-18T14:15:00Z",
    "home": "Celta",
    "away": "Alaves",
-   "logged_at": "2026-10-12T05:41:40Z",
+   "logged_at": "2026-10-12T18:10:06Z",
    "probabilities": {
     "home": 0.4948,
     "draw": 0.2775,
@@ -790,6 +790,6 @@
    "outcome": null
   }
  ],
- "generated_at": "2026-10-12T05:44:07+00:00",
- "log_entries": 2199
+ "generated_at": "2026-10-12T18:13:58+00:00",
+ "log_entries": 2363
 }
