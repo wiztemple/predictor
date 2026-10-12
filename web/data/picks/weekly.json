@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-11T10:39:15+00:00",
+ "generated_at": "2026-10-12T05:44:24+00:00",
  "lists": {
   "safe": {
    "label": "Safe 10",
@@ -9,13 +9,13 @@
      "week_start": "2026-10-06",
      "week_end": "2026-10-12",
      "locked_at": "2026-10-08T19:40:23.628150Z",
-     "won": 8,
+     "won": 9,
      "half_won": 0,
      "push": 0,
      "half_lost": 0,
      "lost": 0,
      "void": 0,
-     "pending": 2,
+     "pending": 1,
      "picks": [
       {
        "rank": 1,
@@ -42,8 +42,8 @@
        "selection": "1x",
        "label": "Benfica or draw",
        "probability": 0.9321,
-       "state": "pending",
-       "score": null
+       "state": "won",
+       "score": "2-0"
       },
       {
        "rank": 3,
@@ -162,8 +162,8 @@
    ],
    "record": {
     "weeks": 0,
-    "picks": 8,
-    "won": 8,
+    "picks": 9,
+    "won": 9,
     "half_won": 0,
     "perfect_weeks": 0
    }
@@ -176,13 +176,13 @@
      "week_start": "2026-10-06",
      "week_end": "2026-10-12",
      "locked_at": "2026-10-08T19:52:24.552099Z",
-     "won": 8,
+     "won": 9,
      "half_won": 0,
      "push": 0,
      "half_lost": 0,
      "lost": 1,
      "void": 0,
-     "pending": 1,
+     "pending": 0,
      "picks": [
       {
        "rank": 1,
@@ -293,8 +293,8 @@
        "selection": "12",
        "label": "Rennes or Auxerre",
        "probability": 0.7667,
-       "state": "pending",
-       "score": null
+       "state": "won",
+       "score": "4-1"
       },
       {
        "rank": 9,
@@ -328,9 +328,9 @@
     }
    ],
    "record": {
-    "weeks": 0,
-    "picks": 9,
-    "won": 8,
+    "weeks": 1,
+    "picks": 10,
+    "won": 9,
     "half_won": 0,
     "perfect_weeks": 0
    }
@@ -343,13 +343,13 @@
      "week_start": "2026-10-06",
      "week_end": "2026-10-12",
      "locked_at": "2026-10-08T19:52:24.552099Z",
-     "won": 4,
+     "won": 8,
      "half_won": 0,
      "push": 0,
      "half_lost": 0,
      "lost": 2,
      "void": 0,
-     "pending": 4,
+     "pending": 0,
      "picks": [
       {
        "rank": 1,
@@ -376,8 +376,8 @@
        "selection": "over",
        "label": "Over 2.5",
        "probability": 0.6243,
-       "state": "pending",
-       "score": null
+       "state": "won",
+       "score": "2-2"
       },
       {
        "rank": 3,
@@ -460,8 +460,8 @@
        "selection": "home",
        "label": "Betis win",
        "probability": 0.6201,
-       "state": "pending",
-       "score": null
+       "state": "won",
+       "score": "5-2"
       },
       {
        "rank": 9,
@@ -474,8 +474,8 @@
        "selection": "under",
        "label": "Under 3.5",
        "probability": 0.6188,
-       "state": "pending",
-       "score": null
+       "state": "won",
+       "score": "0-2"
       },
       {
        "rank": 10,
@@ -488,16 +488,16 @@
        "selection": "x2",
        "label": "Groningen or draw",
        "probability": 0.6185,
-       "state": "pending",
-       "score": null
+       "state": "won",
+       "score": "1-5"
       }
      ]
     }
    ],
    "record": {
-    "weeks": 0,
-    "picks": 6,
-    "won": 4,
+    "weeks": 1,
+    "picks": 10,
+    "won": 8,
     "half_won": 0,
     "perfect_weeks": 0
    }
@@ -510,13 +510,13 @@
      "week_start": "2026-10-06",
      "week_end": "2026-10-12",
      "locked_at": "2026-10-08T19:52:24.552099Z",
-     "won": 2,
+     "won": 4,
      "half_won": 0,
      "push": 0,
      "half_lost": 0,
      "lost": 4,
      "void": 0,
-     "pending": 4,
+     "pending": 2,
      "picks": [
       {
        "rank": 1,
@@ -529,8 +529,8 @@
        "selection": "x2",
        "label": "Cambuur or draw",
        "probability": 0.4995,
-       "state": "pending",
-       "score": null
+       "state": "won",
+       "score": "0-1"
       },
       {
        "rank": 2,
@@ -557,8 +557,8 @@
        "selection": "1x",
        "label": "Sassuolo or draw",
        "probability": 0.4993,
-       "state": "pending",
-       "score": null
+       "state": "won",
+       "score": "1-1"
       },
       {
        "rank": 4,
@@ -663,8 +663,8 @@
    ],
    "record": {
     "weeks": 0,
-    "picks": 6,
-    "won": 2,
+    "picks": 8,
+    "won": 4,
     "half_won": 0,
     "perfect_weeks": 0
    }
@@ -677,13 +677,13 @@
      "week_start": "2026-10-06",
      "week_end": "2026-10-12",
      "locked_at": "2026-10-08T19:52:24.552099Z",
-     "won": 7,
+     "won": 8,
      "half_won": 0,
      "push": 0,
      "half_lost": 0,
      "lost": 1,
      "void": 0,
-     "pending": 2,
+     "pending": 1,
      "picks": [
       {
        "rank": 1,
@@ -710,8 +710,8 @@
        "selection": "home",
        "label": "Benfica win",
        "probability": 0.805,
-       "state": "pending",
-       "score": null
+       "state": "won",
+       "score": "2-0"
       },
       {
        "rank": 3,
@@ -830,8 +830,8 @@
    ],
    "record": {
     "weeks": 0,
-    "picks": 8,
-    "won": 7,
+    "picks": 9,
+    "won": 8,
     "half_won": 0,
     "perfect_weeks": 0
    }
@@ -844,13 +844,13 @@
      "week_start": "2026-10-06",
      "week_end": "2026-10-12",
      "locked_at": "2026-10-08T19:52:24.552099Z",
-     "won": 4,
+     "won": 5,
      "half_won": 0,
      "push": 0,
      "half_lost": 0,
-     "lost": 4,
+     "lost": 5,
      "void": 0,
-     "pending": 2,
+     "pending": 0,
      "picks": [
       {
        "rank": 1,
@@ -905,8 +905,8 @@
        "selection": "over",
        "label": "Over 2.5",
        "probability": 0.6625,
-       "state": "pending",
-       "score": null
+       "state": "lost",
+       "score": "0-1"
       },
       {
        "rank": 5,
@@ -989,16 +989,16 @@
        "selection": "over",
        "label": "Over 2.5",
        "probability": 0.6291,
-       "state": "pending",
-       "score": null
+       "state": "won",
+       "score": "0-3"
       }
      ]
     }
    ],
    "record": {
-    "weeks": 0,
-    "picks": 8,
-    "won": 4,
+    "weeks": 1,
+    "picks": 10,
+    "won": 5,
     "half_won": 0,
     "perfect_weeks": 0
    }
@@ -1011,13 +1011,13 @@
      "week_start": "2026-10-06",
      "week_end": "2026-10-12",
      "locked_at": "2026-10-08T19:52:24.552099Z",
-     "won": 2,
+     "won": 3,
      "half_won": 0,
      "push": 0,
      "half_lost": 0,
-     "lost": 4,
-     "void": 0,
-     "pending": 4,
+     "lost": 6,
+     "void": 1,
+     "pending": 0,
      "picks": [
       {
        "rank": 1,
@@ -1030,8 +1030,8 @@
        "selection": "yes",
        "label": "Both teams score",
        "probability": 0.6558,
-       "state": "pending",
-       "score": null
+       "state": "lost",
+       "score": "0-1"
       },
       {
        "rank": 2,
@@ -1044,8 +1044,8 @@
        "selection": "yes",
        "label": "Both teams score",
        "probability": 0.6337,
-       "state": "pending",
-       "score": null
+       "state": "lost",
+       "score": "0-3"
       },
       {
        "rank": 3,
@@ -1086,8 +1086,8 @@
        "selection": "yes",
        "label": "Both teams score",
        "probability": 0.6258,
-       "state": "pending",
-       "score": null
+       "state": "won",
+       "score": "2-2"
       },
       {
        "rank": 6,
@@ -1156,16 +1156,16 @@
        "selection": "yes",
        "label": "Both teams score",
        "probability": 0.6105,
-       "state": "pending",
+       "state": "void",
        "score": null
       }
      ]
     }
    ],
    "record": {
-    "weeks": 0,
-    "picks": 6,
-    "won": 2,
+    "weeks": 1,
+    "picks": 9,
+    "won": 3,
     "half_won": 0,
     "perfect_weeks": 0
    }
@@ -1178,13 +1178,13 @@
      "week_start": "2026-10-06",
      "week_end": "2026-10-12",
      "locked_at": "2026-10-08T19:52:24.552099Z",
-     "won": 0,
+     "won": 2,
      "half_won": 3,
      "push": 0,
      "half_lost": 1,
      "lost": 2,
-     "void": 0,
-     "pending": 4,
+     "void": 1,
+     "pending": 1,
      "picks": [
       {
        "rank": 1,
@@ -1225,8 +1225,8 @@
        "selection": "away:-0.5",
        "label": "Marseille \u22120.5",
        "probability": 0.5877,
-       "state": "pending",
-       "score": null
+       "state": "won",
+       "score": "0-2"
       },
       {
        "rank": 4,
@@ -1281,7 +1281,7 @@
        "selection": "away:0.5",
        "label": "M'gladbach +0.5",
        "probability": 0.5872,
-       "state": "pending",
+       "state": "void",
        "score": null
       },
       {
@@ -1309,8 +1309,8 @@
        "selection": "home:0",
        "label": "Rio Ave 0",
        "probability": 0.5869,
-       "state": "pending",
-       "score": null
+       "state": "won",
+       "score": "3-2"
       },
       {
        "rank": 10,
@@ -1331,8 +1331,8 @@
    ],
    "record": {
     "weeks": 0,
-    "picks": 6,
-    "won": 0,
+    "picks": 8,
+    "won": 2,
     "half_won": 3,
     "perfect_weeks": 0
    }

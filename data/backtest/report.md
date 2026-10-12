@@ -5,94 +5,95 @@ All choices below were made on seasons before 2023-24.
 
 ## 1. Choices made on pre-test data
 
-Blend weight on Elo (tune seasons ['2021-22', '2022-23']): **0.5** (log loss 1.0082; Elo only 1.0107, Dixon-Coles only 1.0110)
+Blend weight on Elo (tune seasons ['2021-22', '2022-23']): **0.5** (log loss 1.0082; Elo only 1.0108, Dixon-Coles only 1.0108)
 
-Calibration choice: calibrators fitted on 2020-21..2022-23 (exclusive), scored on 2022-23 (6802 matches). Log loss:
+Calibration choice: calibrators fitted on 2020-21..2022-23 (exclusive), scored on 2022-23 (7044 matches). Log loss:
 
 | base | none | isotonic | platt |
 |---|---|---|---|
-| Elo | 1.0071 | 1.0093 | 1.0066 |
-| Dixon-Coles | 1.0084 | 1.0110 | 1.0087 |
-| Elo + Dixon-Coles blend | 1.0053 | 1.0067 | 1.0057 |
+| Elo | 1.0067 | 1.0088 | 1.0063 |
+| Dixon-Coles | 1.0078 | 1.0103 | 1.0082 |
+| Elo + Dixon-Coles blend | 1.0048 | 1.0062 | 1.0053 |
 
-Gradient boosting (no odds), 2022-23: 1.0089
-Bookmaker, 2022-23: 0.9880
+Gradient boosting (no odds), 2022-23: 1.0100
+Bookmaker, 2022-23: 0.9874
 
 Chosen calibration per base: {'elo': 'platt', 'dixon_coles': 'none', 'blend': 'none'}
 **Pre-registered production model: Elo + Dixon-Coles blend (calibration: none)**
 
-## 2. Test period: 2023-24, 2024-25, 2025-26, 2026-27 (21481 matches)
+## 2. Test period: 2023-24, 2024-25, 2025-26, 2026-27 (22527 matches)
 
 Overall (lower log loss / Brier is better):
 
 | model | log loss | Brier | accuracy |
 |---|---|---|---|
-| Bookmaker (closing, margin removed) | 0.9913 | 0.5920 | 51.2% |
-| Elo | 1.0114 | 0.6055 | 49.3% |
-| Elo + Platt calibration | 1.0104 | 0.6050 | 49.3% |
-| Dixon-Coles | 1.0141 | 0.6072 | 49.4% |
-| Elo + Dixon-Coles blend **(production)** | 1.0102 | 0.6047 | 49.5% |
-| Gradient boosting (no odds) | 1.0117 | 0.6056 | 49.5% |
-| Gradient boosting (with odds) | 0.9937 | 0.5935 | 51.2% |
+| Bookmaker (closing, margin removed) | nan | nan | 51.4% |
+| Elo | 1.0099 | 0.6044 | 49.5% |
+| Elo + Platt calibration | 1.0091 | 0.6040 | 49.6% |
+| Dixon-Coles | 1.0124 | 0.6060 | 49.6% |
+| Elo + Dixon-Coles blend **(production)** | 1.0086 | 0.6036 | 49.8% |
+| Gradient boosting (no odds) | 1.0104 | 0.6046 | 49.6% |
+| Gradient boosting (with odds) | 0.9963 | 0.5943 | 51.2% |
 
 Log loss by league:
 
 | league | bookmaker | elo | elo+platt | dixon_coles | blend | gbm | gbm_odds |
 |---|---|---|---|---|---|---|---|
-| ALL | 0.9913 | 1.0114 | 1.0104 | 1.0141 | 1.0102 | 1.0117 | 0.9937 |
-| AUT | 1.0169 | 1.0341 | 1.0310 | 1.0355 | 1.0327 | 1.0313 | 1.0176 |
-| B1 | 0.9869 | 1.0054 | 1.0027 | 1.0073 | 1.0040 | 1.0038 | 0.9915 |
-| D1 | 0.9607 | 0.9872 | 0.9890 | 0.9908 | 0.9874 | 0.9857 | 0.9627 |
-| D2 | 1.0407 | 1.0518 | 1.0520 | 1.0586 | 1.0532 | 1.0539 | 1.0429 |
-| DNK | 1.0002 | 1.0233 | 1.0229 | 1.0263 | 1.0229 | 1.0238 | 1.0034 |
-| E0 | 0.9639 | 0.9851 | 0.9839 | 0.9842 | 0.9826 | 0.9894 | 0.9705 |
-| E1 | 1.0269 | 1.0465 | 1.0462 | 1.0473 | 1.0453 | 1.0500 | 1.0339 |
-| F1 | 0.9845 | 1.0032 | 1.0023 | 1.0073 | 1.0033 | 1.0045 | 0.9842 |
-| F2 | 1.0484 | 1.0691 | 1.0687 | 1.0728 | 1.0683 | 1.0690 | 1.0492 |
-| G1 | 0.9312 | 0.9557 | 0.9537 | 0.9548 | 0.9519 | 0.9542 | 0.9324 |
-| I1 | 0.9624 | 0.9833 | 0.9836 | 0.9845 | 0.9804 | 0.9869 | 0.9674 |
-| I2 | 1.0365 | 1.0605 | 1.0615 | 1.0633 | 1.0591 | 1.0614 | 1.0364 |
-| N1 | 0.9382 | 0.9582 | 0.9544 | 0.9619 | 0.9567 | 0.9532 | 0.9364 |
-| P1 | 0.9118 | 0.9327 | 0.9297 | 0.9402 | 0.9300 | 0.9310 | 0.9155 |
-| POL | 1.0453 | 1.0563 | 1.0548 | 1.0582 | 1.0559 | 1.0557 | 1.0493 |
-| ROU | 1.0195 | 1.0409 | 1.0388 | 1.0430 | 1.0398 | 1.0410 | 1.0254 |
-| SC0 | 0.9561 | 0.9720 | 0.9685 | 0.9719 | 0.9693 | 0.9670 | 0.9563 |
-| SP1 | 0.9527 | 0.9686 | 0.9690 | 0.9735 | 0.9686 | 0.9696 | 0.9530 |
-| SP2 | 1.0279 | 1.0484 | 1.0472 | 1.0512 | 1.0478 | 1.0508 | 1.0281 |
-| SWZ | 1.0224 | 1.0391 | 1.0391 | 1.0361 | 1.0352 | 1.0362 | 1.0234 |
-| T1 | 0.9434 | 0.9761 | 0.9744 | 0.9821 | 0.9753 | 0.9758 | 0.9430 |
+| ALL | nan | 1.0099 | 1.0091 | 1.0124 | 1.0086 | 1.0104 | 0.9963 |
+| AUT | nan | 1.0348 | 1.0315 | 1.0361 | 1.0334 | 1.0326 | 1.0266 |
+| B1 | nan | 1.0049 | 1.0026 | 1.0068 | 1.0035 | 1.0049 | 1.0006 |
+| D1 | nan | 0.9878 | 0.9895 | 0.9924 | 0.9884 | 0.9904 | 0.9727 |
+| D2 | nan | 1.0516 | 1.0519 | 1.0587 | 1.0531 | 1.0535 | 1.0447 |
+| DNK | nan | 1.0231 | 1.0226 | 1.0264 | 1.0229 | 1.0249 | 1.0109 |
+| E0 | nan | 0.9856 | 0.9846 | 0.9845 | 0.9830 | 0.9888 | 0.9731 |
+| E1 | nan | 1.0459 | 1.0459 | 1.0471 | 1.0448 | 1.0506 | 1.0383 |
+| F1 | nan | 1.0012 | 1.0003 | 1.0054 | 1.0013 | 1.0042 | 0.9855 |
+| F2 | nan | 1.0684 | 1.0677 | 1.0719 | 1.0675 | 1.0691 | 1.0523 |
+| G1 | nan | 0.9543 | 0.9522 | 0.9535 | 0.9506 | 0.9502 | 0.9257 |
+| I1 | nan | 0.9823 | 0.9828 | 0.9842 | 0.9798 | 0.9842 | 0.9689 |
+| I2 | nan | 1.0606 | 1.0614 | 1.0632 | 1.0591 | 1.0607 | 1.0423 |
+| N1 | nan | 0.9589 | 0.9552 | 0.9624 | 0.9573 | 0.9550 | 0.9482 |
+| NOR | nan | 0.9848 | 0.9876 | 0.9817 | 0.9811 | 0.9878 | 0.9746 |
+| P1 | nan | 0.9303 | 0.9274 | 0.9380 | 0.9277 | 0.9277 | 0.9186 |
+| POL | 1.0453 | 1.0563 | 1.0548 | 1.0582 | 1.0559 | 1.0575 | 1.0502 |
+| ROU | 1.0194 | 1.0411 | 1.0391 | 1.0433 | 1.0400 | 1.0408 | 1.0230 |
+| SC0 | nan | 0.9710 | 0.9673 | 0.9708 | 0.9683 | 0.9634 | 0.9572 |
+| SP1 | nan | 0.9671 | 0.9678 | 0.9728 | 0.9676 | 0.9683 | 0.9564 |
+| SP2 | nan | 1.0478 | 1.0468 | 1.0501 | 1.0470 | 1.0487 | 1.0264 |
+| SWZ | 1.0224 | 1.0391 | 1.0393 | 1.0361 | 1.0352 | 1.0344 | 1.0228 |
+| T1 | nan | 0.9756 | 0.9741 | 0.9816 | 0.9748 | 0.9767 | 0.9548 |
 
 Log loss by season:
 
 | season | n | bookmaker | elo | elo+platt | dixon_coles | blend | gbm | gbm_odds |
 |---|---|---|---|---|---|---|---|---|
-| 2023-24 | 6848 | 0.9829 | 1.0022 | 1.0023 | 1.0069 | 1.0022 | 1.0038 | 0.9853 |
-| 2024-25 | 6718 | 0.9893 | 1.0111 | 1.0092 | 1.0119 | 1.0088 | 1.0115 | 0.9919 |
-| 2025-26 | 6689 | 1.0018 | 1.0210 | 1.0196 | 1.0224 | 1.0192 | 1.0196 | 1.0042 |
-| 2026-27 | 1226 | 0.9916 | 1.0133 | 1.0126 | 1.0199 | 1.0135 | 1.0136 | 0.9928 |
+| 2023-24 | 7090 | 0.9822 | 1.0015 | 1.0019 | 1.0059 | 1.0013 | 1.0034 | 0.9837 |
+| 2024-25 | 6960 | 0.9901 | 1.0121 | 1.0102 | 1.0128 | 1.0098 | 1.0121 | 0.9933 |
+| 2025-26 | 6929 | 0.9987 | 1.0182 | 1.0172 | 1.0199 | 1.0166 | 1.0176 | 1.0008 |
+| 2026-27 | 1548 | nan | 1.0005 | 1.0003 | 1.0065 | 1.0004 | 1.0022 | 1.0479 |
 
 Gap to the bookmaker (model minus bookmaker log loss; negative = model better), 95% CI from a bootstrap over weeks:
 
-- Elo: +0.0201  [+0.0177, +0.0227]
-- Elo + Platt calibration: +0.0191  [+0.0167, +0.0215]
-- Dixon-Coles: +0.0228  [+0.0203, +0.0251]
-- Elo + Dixon-Coles blend: +0.0189  [+0.0167, +0.0210]
-- Gradient boosting (no odds): +0.0204  [+0.0180, +0.0227]
-- Gradient boosting (with odds): +0.0024  [+0.0013, +0.0034]
+- Elo: +nan  [+0.0180, +0.0232]
+- Elo + Platt calibration: +nan  [+0.0173, +0.0223]
+- Dixon-Coles: +nan  [+0.0206, +0.0252]
+- Elo + Dixon-Coles blend: +nan  [+0.0170, +0.0214]
+- Gradient boosting (no odds): +nan  [+0.0185, +0.0234]
+- Gradient boosting (with odds): +nan  [+0.0012, +0.0031]
 
 By bookmaker odds source (the benchmark is weaker where Pinnacle closing odds are missing):
 
 | odds source | n | bookmaker | Elo + Dixon-Coles blend | gap |
 |---|---|---|---|---|
-| avg_closing | 5208 | 0.9999 | 1.0189 | +0.0190 |
-| pinnacle_closing | 16273 | 0.9885 | 1.0074 | +0.0189 |
+| avg_closing | 5411 | 0.9965 | 1.0160 | +0.0195 |
+| pinnacle_closing | 16963 | 0.9878 | 1.0068 | +0.0190 |
 
 Matches involving a newly promoted team:
 
 | subset | n | bookmaker | Elo | Dixon-Coles | Elo + Dixon-Coles blend |
 |---|---|---|---|---|---|
-| others | 14178 | 0.9895 | 1.0090 | 1.0107 | 1.0079 |
-| promoted team | 7303 | 0.9948 | 1.0162 | 1.0206 | 1.0147 |
+| others | 14937 | nan | 1.0067 | 1.0084 | 1.0056 |
+| promoted team | 7590 | nan | 1.0160 | 1.0202 | 1.0144 |
 
 ## 3. Calibration on the test period
 
@@ -100,36 +101,36 @@ Expected calibration error (count-weighted |predicted - observed|, 10 bins):
 
 | model | home | draw | away |
 |---|---|---|---|
-| Bookmaker (closing, margin removed) | 0.0111 | 0.0083 | 0.0123 |
-| Dixon-Coles | 0.0090 | 0.0161 | 0.0128 |
-| Elo | 0.0097 | 0.0062 | 0.0118 |
-| Elo + Dixon-Coles blend | 0.0073 | 0.0076 | 0.0102 |
+| Bookmaker (closing, margin removed) | nan | nan | nan |
+| Dixon-Coles | 0.0079 | 0.0146 | 0.0120 |
+| Elo | 0.0098 | 0.0049 | 0.0112 |
+| Elo + Dixon-Coles blend | 0.0064 | 0.0064 | 0.0096 |
 
 Reliability table, Elo + Dixon-Coles blend (bins with n >= 30):
 
 | outcome | bin | n | mean predicted | observed |
 |---|---|---|---|---|
-| home | 0.0-0.1 | 230 | 0.081 | 0.096 |
-| home | 0.1-0.2 | 1216 | 0.157 | 0.150 |
-| home | 0.2-0.3 | 2595 | 0.257 | 0.264 |
-| home | 0.3-0.4 | 5192 | 0.354 | 0.360 |
-| home | 0.4-0.5 | 5794 | 0.448 | 0.444 |
-| home | 0.5-0.6 | 3537 | 0.544 | 0.536 |
-| home | 0.6-0.7 | 1713 | 0.642 | 0.660 |
-| home | 0.7-0.8 | 793 | 0.747 | 0.770 |
-| home | 0.8-0.9 | 386 | 0.839 | 0.839 |
-| draw | 0.0-0.1 | 153 | 0.082 | 0.092 |
-| draw | 0.1-0.2 | 2002 | 0.163 | 0.166 |
-| draw | 0.2-0.3 | 16487 | 0.262 | 0.271 |
-| draw | 0.3-0.4 | 2839 | 0.314 | 0.313 |
-| away | 0.0-0.1 | 959 | 0.070 | 0.049 |
-| away | 0.1-0.2 | 3534 | 0.159 | 0.149 |
-| away | 0.2-0.3 | 6954 | 0.252 | 0.251 |
-| away | 0.3-0.4 | 5378 | 0.345 | 0.331 |
-| away | 0.4-0.5 | 2520 | 0.443 | 0.426 |
-| away | 0.5-0.6 | 1143 | 0.545 | 0.526 |
-| away | 0.6-0.7 | 633 | 0.643 | 0.659 |
-| away | 0.7-0.8 | 310 | 0.741 | 0.742 |
+| home | 0.0-0.1 | 231 | 0.081 | 0.095 |
+| home | 0.1-0.2 | 1267 | 0.157 | 0.150 |
+| home | 0.2-0.3 | 2718 | 0.257 | 0.264 |
+| home | 0.3-0.4 | 5410 | 0.354 | 0.359 |
+| home | 0.4-0.5 | 6044 | 0.448 | 0.447 |
+| home | 0.5-0.6 | 3743 | 0.544 | 0.537 |
+| home | 0.6-0.7 | 1826 | 0.642 | 0.659 |
+| home | 0.7-0.8 | 859 | 0.747 | 0.773 |
+| home | 0.8-0.9 | 402 | 0.839 | 0.843 |
+| draw | 0.0-0.1 | 161 | 0.082 | 0.087 |
+| draw | 0.1-0.2 | 2184 | 0.164 | 0.163 |
+| draw | 0.2-0.3 | 17326 | 0.261 | 0.269 |
+| draw | 0.3-0.4 | 2856 | 0.314 | 0.313 |
+| away | 0.0-0.1 | 1002 | 0.070 | 0.049 |
+| away | 0.1-0.2 | 3721 | 0.159 | 0.149 |
+| away | 0.2-0.3 | 7267 | 0.252 | 0.251 |
+| away | 0.3-0.4 | 5623 | 0.345 | 0.333 |
+| away | 0.4-0.5 | 2662 | 0.443 | 0.428 |
+| away | 0.5-0.6 | 1222 | 0.545 | 0.526 |
+| away | 0.6-0.7 | 660 | 0.644 | 0.661 |
+| away | 0.7-0.8 | 320 | 0.740 | 0.738 |
 | away | 0.8-0.9 | 50 | 0.825 | 0.740 |
 
 ## 4. Goals markets (Dixon-Coles)
@@ -138,19 +139,19 @@ Calibration choice: fitted on 2020-21..2022-23 (exclusive), scored on 2022-23. L
 
 | market | none | platt | isotonic | chosen |
 |---|---|---|---|---|
-| over_1_5 | 0.5720 | 0.5696 | 0.5702 | **platt** |
-| over_2_5 | 0.6847 | 0.6816 | 0.6820 | **platt** |
-| over_3_5 | 0.5790 | 0.5757 | 0.5764 | **platt** |
-| btts | 0.6930 | 0.6894 | 0.6899 | **platt** |
+| over_1_5 | 0.5685 | 0.5660 | 0.5668 | **platt** |
+| over_2_5 | 0.6839 | 0.6812 | 0.6815 | **platt** |
+| over_3_5 | 0.5827 | 0.5798 | 0.5801 | **platt** |
+| btts | 0.6922 | 0.6887 | 0.6891 | **platt** |
 
-Test period (21481 matches). Log loss (lower is better):
+Test period (22527 matches). Log loss (lower is better):
 
 | market | baseline | model raw | model calibrated | bookmaker | calibration error raw -> calibrated |
 |---|---|---|---|---|---|
-| over_1_5 | 0.5471 | 0.5449 | 0.5425 | - | 0.0228 -> 0.0079 |
-| over_2_5 | 0.6904 | 0.6858 | 0.6826 | 0.6715 | 0.0314 -> 0.0162 |
-| over_3_5 | 0.6112 | 0.6063 | 0.6035 | - | 0.0229 -> 0.0120 |
-| btts | 0.6894 | 0.6894 | 0.6860 | - | 0.0330 -> 0.0145 |
+| over_1_5 | 0.5450 | 0.5428 | 0.5405 | - | 0.0231 -> 0.0090 |
+| over_2_5 | 0.6898 | 0.6853 | 0.6821 | 0.6715 | 0.0314 -> 0.0171 |
+| over_3_5 | 0.6133 | 0.6087 | 0.6059 | - | 0.0235 -> 0.0135 |
+| btts | 0.6893 | 0.6892 | 0.6859 | - | 0.0320 -> 0.0147 |
 
 Over/under 2.5 vs bookmaker on 17457 matches: model 0.6821, bookmaker 0.6715, gap +0.0106 [+0.0087, +0.0125]
 
@@ -158,42 +159,42 @@ Calibrated: when the model gave at least X%, how often did it happen?
 
 | market | side | min | n | avg predicted | happened |
 |---|---|---|---|---|---|
-| over_1_5 | over | 50% | 21481 | 75.4% | 76.1% |
-| over_1_5 | over | 60% | 21459 | 75.4% | 76.1% |
-| over_1_5 | over | 70% | 18283 | 76.8% | 77.3% |
-| over_1_5 | over | 80% | 3955 | 82.6% | 83.6% |
-| over_2_5 | over | 50% | 11519 | 56.1% | 57.8% |
-| over_2_5 | over | 60% | 2107 | 63.7% | 66.2% |
-| over_2_5 | over | 70% | 126 | 73.1% | 80.2% |
-| over_2_5 | over | 80% | 5 | 80.8% | 100.0% |
-| over_2_5 | under | 50% | 9962 | 55.1% | 53.6% |
-| over_2_5 | under | 60% | 1159 | 62.4% | 58.1% |
-| over_2_5 | under | 70% | 2 | 71.2% | 100.0% |
-| over_3_5 | over | 50% | 100 | 53.4% | 52.0% |
-| over_3_5 | over | 60% | 7 | 62.2% | 71.4% |
-| over_3_5 | under | 50% | 21381 | 71.0% | 69.8% |
-| over_3_5 | under | 60% | 20270 | 71.8% | 70.7% |
-| over_3_5 | under | 70% | 12524 | 75.3% | 74.6% |
-| over_3_5 | under | 80% | 1419 | 82.0% | 78.6% |
-| btts | over | 50% | 15994 | 54.9% | 56.1% |
-| btts | over | 60% | 1324 | 61.9% | 62.7% |
-| btts | over | 70% | 7 | 72.1% | 42.9% |
-| btts | under | 50% | 5487 | 52.6% | 50.4% |
-| btts | under | 60% | 31 | 61.4% | 61.3% |
+| over_1_5 | over | 50% | 22527 | 75.4% | 76.3% |
+| over_1_5 | over | 60% | 22504 | 75.4% | 76.3% |
+| over_1_5 | over | 70% | 19235 | 76.8% | 77.5% |
+| over_1_5 | over | 80% | 4233 | 82.6% | 83.7% |
+| over_2_5 | over | 50% | 12321 | 56.3% | 58.1% |
+| over_2_5 | over | 60% | 2418 | 63.8% | 66.0% |
+| over_2_5 | over | 70% | 143 | 73.4% | 76.9% |
+| over_2_5 | over | 80% | 7 | 80.8% | 85.7% |
+| over_2_5 | under | 50% | 10206 | 55.2% | 53.5% |
+| over_2_5 | under | 60% | 1217 | 62.5% | 57.8% |
+| over_2_5 | under | 70% | 4 | 70.8% | 50.0% |
+| over_3_5 | over | 50% | 117 | 53.7% | 48.7% |
+| over_3_5 | over | 60% | 8 | 62.5% | 62.5% |
+| over_3_5 | under | 50% | 22410 | 70.8% | 69.5% |
+| over_3_5 | under | 60% | 21092 | 71.7% | 70.6% |
+| over_3_5 | under | 70% | 12876 | 75.4% | 74.4% |
+| over_3_5 | under | 80% | 1513 | 82.0% | 78.0% |
+| btts | over | 50% | 16728 | 55.1% | 56.2% |
+| btts | over | 60% | 1523 | 62.0% | 62.4% |
+| btts | over | 70% | 7 | 72.3% | 42.9% |
+| btts | under | 50% | 5799 | 52.7% | 50.2% |
+| btts | under | 60% | 45 | 61.2% | 53.3% |
 
-Production calibrators ({'over_1_5': 'platt', 'over_2_5': 'platt', 'over_3_5': 'platt', 'btts': 'platt'}) fitted on 41993 out-of-sample matches -> data/models/goals_calibration.json
+Production calibrators ({'over_1_5': 'platt', 'over_2_5': 'platt', 'over_3_5': 'platt', 'btts': 'platt'}) fitted on 43762 out-of-sample matches -> data/models/goals_calibration.json
 
 ## 5. Asian handicap (main line), test period
 
-21481 matches. Home side, stake-weighted: predicted win/push/lose 43.2% / 13.7% / 43.1%, actual 43.2% / 14.3% / 42.5%.
+22527 matches. Home side, stake-weighted: predicted win/push/lose 43.3% / 13.6% / 43.1%, actual 43.3% / 14.1% / 42.6%.
 Average profit per unit at our own fair odds: -0.001 (0 = calibrated; negative = we were too optimistic).
 
 | our chance | bets | avg chance | won | push | lost | profit at fair odds |
 |---|---|---|---|---|---|---|
-| <45% | 99 | 44.7% | 28.3% | 29.8% | 41.9% | -0.069 |
-| 45-50% | 21382 | 48.1% | 40.6% | 14.2% | 45.2% | -0.013 |
-| 50-55% | 21382 | 51.9% | 45.2% | 14.2% | 40.6% | +0.011 |
-| 55-60% | 99 | 55.3% | 41.9% | 29.8% | 28.3% | +0.055 |
+| <45% | 100 | 44.7% | 28.0% | 29.5% | 42.5% | -0.078 |
+| 45-50% | 22427 | 48.1% | 40.6% | 14.1% | 45.3% | -0.015 |
+| 50-55% | 22427 | 51.9% | 45.3% | 14.1% | 40.6% | +0.013 |
+| 55-60% | 100 | 55.3% | 42.5% | 29.5% | 28.0% | +0.062 |
 
 Against bookmaker closing AH odds, at the bookmaker's own line (16283 matches, pushes excluded). Log loss, lower is better:
 
@@ -202,9 +203,9 @@ Against bookmaker closing AH odds, at the bookmaker's own line (16283 matches, p
 | avg_closing | 3777 | 0.7105 | 0.6923 | +0.0182 |
 | b365_closing | 1 | 1.0260 | 0.6545 | +0.3715 |
 | pinnacle_closing | 12505 | 0.7107 | 0.6922 | +0.0184 |
-| ALL | 16283 | 0.7107 | 0.6922 | +0.0184 [+0.0157, +0.0212] |
+| ALL | 16283 | 0.7107 | 0.6922 | +0.0184 [+0.0158, +0.0212] |
 
-Backing our side whenever our fair odds beat the closing price (any edge): 13548 bets, avg odds 1.95, profit -480.3 units, ROI -3.5%
+Backing our side whenever our fair odds beat the closing price (any edge): 13549 bets, avg odds 1.95, profit -479.5 units, ROI -3.5%
 
 Backing our side whenever our fair odds beat the closing price (edge 5%+): 9798 bets, avg odds 1.95, profit -407.0 units, ROI -4.2%
 
@@ -227,18 +228,18 @@ Baseline = each league's outcome frequencies in earlier seasons. Log loss, lower
 
 | market | n | model | baseline | gap | calibration error |
 |---|---|---|---|---|---|
-| Result & both teams score | 21481 | 1.6673 | 1.7373 | -0.0700 | 0.3 pts |
-| Result & over/under 2.5 | 21481 | 1.6514 | 1.7212 | -0.0698 | 0.5 pts |
-| Home team over/under 0.5 | 21481 | 0.5092 | 0.5326 | -0.0234 | 1.6 pts |
-| Home team over/under 1.5 | 21481 | 0.6532 | 0.6863 | -0.0331 | 0.9 pts |
-| Away team over/under 0.5 | 21481 | 0.5910 | 0.6116 | -0.0206 | 0.8 pts |
-| Away team over/under 1.5 | 21481 | 0.6187 | 0.6457 | -0.0270 | 1.2 pts |
-| Exact total goals | 21481 | 1.7192 | 1.7298 | -0.0105 | 0.3 pts |
-| Odd/even goals | 21481 | 0.6932 | 0.6933 | -0.0001 | 0.7 pts |
+| Result & both teams score | 22527 | 1.6658 | 1.7364 | -0.0706 | 0.3 pts |
+| Result & over/under 2.5 | 22527 | 1.6491 | 1.7196 | -0.0704 | 0.4 pts |
+| Home team over/under 0.5 | 22527 | 0.5079 | 0.5319 | -0.0239 | 1.5 pts |
+| Home team over/under 1.5 | 22527 | 0.6534 | 0.6866 | -0.0332 | 1.0 pts |
+| Away team over/under 0.5 | 22527 | 0.5902 | 0.6109 | -0.0207 | 0.9 pts |
+| Away team over/under 1.5 | 22527 | 0.6194 | 0.6465 | -0.0271 | 1.1 pts |
+| Exact total goals | 22527 | 1.7189 | 1.7294 | -0.0105 | 0.3 pts |
+| Odd/even goals | 22527 | 0.6932 | 0.6933 | -0.0001 | 0.8 pts |
 | Half-time result | 17452 | 1.0433 | 1.0800 | -0.0367 | 0.2 pts |
 | Half-time/full-time | 17452 | 1.8946 | 1.9692 | -0.0746 | 0.4 pts |
 | 1st half over/under 0.5 | 17452 | 0.5982 | 0.6016 | -0.0034 | 1.7 pts |
 | 1st half over/under 1.5 | 17452 | 0.6411 | 0.6452 | -0.0041 | 1.7 pts |
 | Highest-scoring half | 17452 | 1.0723 | 1.0730 | -0.0007 | 0.4 pts |
-| Home win to nil | 21481 | 0.5147 | 0.5407 | -0.0259 | 0.5 pts |
-| Away win to nil | 21481 | 0.4057 | 0.4307 | -0.0251 | 1.1 pts |
+| Home win to nil | 22527 | 0.5146 | 0.5406 | -0.0260 | 0.5 pts |
+| Away win to nil | 22527 | 0.4057 | 0.4313 | -0.0255 | 1.0 pts |
