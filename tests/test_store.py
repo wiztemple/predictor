@@ -1,3 +1,4 @@
+import numpy as np
 from datetime import datetime, timedelta, timezone
 
 import pandas as pd
@@ -52,16 +53,22 @@ def test_settle_uses_latest_pre_kickoff_pick_and_handles_void(engine):
         "home_score": [0], "away_score": [1], "odds_home": [1.6], "odds_draw": [4.0], "odds_away": [6.0],
         "odds_over_2_5": [1.8], "odds_under_2_5": [2.0],
     })
+    # results run only to 10 Oct: Chelsea v Everton stays pending (the feed may just be behind)
     counts = settle(engine, results, datetime(2026, 10, 15, tzinfo=timezone.utc))
-    assert counts == {"won": 0, "lost": 1, "void": 1, "pending": 0}
+    assert counts == {"won": 0, "lost": 1, "void": 0, "pending": 1, "corrected": 0}
+    # a week later the league's results have moved on without it: postponed -> void
+    later = pd.concat([results, results.assign(home="Spurs", away="Fulham", date=pd.Timestamp("2026-10-18"))])
+    counts = settle(engine, later, datetime(2026, 10, 19, tzinfo=timezone.utc))
+    assert counts == {"won": 0, "lost": 0, "void": 1, "pending": 0, "corrected": 0}
     with engine.connect() as c:
         rows = {r["match_id"]: r for r in c.execute(select(official_picks)).mappings()}
     a = rows["a"]
     assert a["label"] == "Arsenal or draw" and a["probability"] == 0.95  # the later pre-kickoff pick counts
     assert a["state"] == "lost" and a["market_probability"] == pytest.approx(0.6 + 0.24, abs=0.03)
     assert rows["p"]["state"] == "void"
-    # settling again does nothing (append-only, idempotent)
-    assert settle(engine, results, datetime(2026, 10, 16, tzinfo=timezone.utc)) == {"won": 0, "lost": 0, "void": 0, "pending": 0}
+    # settling again does nothing (idempotent)
+    assert settle(engine, later, datetime(2026, 10, 20, tzinfo=timezone.utc)) == \
+        {"won": 0, "lost": 0, "void": 0, "pending": 0, "corrected": 0}
 
     s = summary(engine, per_day=10)
     assert s["settled"] == 2 and s["top"]["n"] == 1 and s["top"]["won"] == 0
@@ -119,9 +126,14 @@ def test_weekly_lists_lock_once_and_settle(engine):
     top = wins["picks"][0]
     results = pd.DataFrame({"league": ["E0"], "home": [top["home"]], "away": [top["away"]],
                             "date": [pd.Timestamp(top["kickoff"][:10])], "home_score": [2], "away_score": [0]})
-    settle_weekly(engine, results, datetime(2026, 10, 16, tzinfo=timezone.utc))
+    # the rest have no result: pending while the league's results haven't moved past them...
+    assert settle_weekly(engine, results, datetime(2026, 10, 16, tzinfo=timezone.utc))["void"] == 0
     w = weekly_summary(engine, LISTS)["lists"]["wins"]["weeks"][0]
-    assert w["picks"][0]["state"] == "won" and w["picks"][0]["score"] == "2-0" and w["pending"] == 0
+    assert w["picks"][0]["state"] == "won" and w["picks"][0]["score"] == "2-0" and w["pending"] == 9
+    # ...and void once they have (postponed)
+    later = pd.concat([results, results.assign(home="X", away="Y", date=pd.Timestamp("2026-10-25"))])
+    settle_weekly(engine, later, datetime(2026, 10, 26, tzinfo=timezone.utc))
+    assert weekly_summary(engine, LISTS)["lists"]["wins"]["weeks"][0]["pending"] == 0
 
 
 def test_weekly_v1_rows_migrate_as_safe(engine):
@@ -148,3 +160,27 @@ def test_export_audit_writes_every_row(engine, tmp_path):
     assert counts["picks_log"] == 2
     rows = [json.loads(l) for l in open(tmp_path / "picks_log.jsonl")]
     assert [r["match_id"] for r in rows] == ["a", "b"] and all(r["logged_at"] < r["kickoff"] for r in rows)
+
+
+def test_placeholder_kickoff_and_late_result_are_settled_not_voided(engine):
+    from predictor.store import corrections
+
+    # logged with a 00:00 placeholder on 9 Oct; actually played 11 Oct
+    log_picks(engine, doc(rec("k", "2026-10-09T00:00:00Z", home="Chelsea", away="Everton", o15=0.9)), MARKETS, T0)
+    res = pd.DataFrame({"league": ["E0"], "home": ["Chelsea"], "away": ["Everton"],
+                        "date": pd.to_datetime(["2026-10-11"]), "home_score": [2], "away_score": [1],
+                        "odds_home": [np.nan], "odds_draw": [np.nan], "odds_away": [np.nan]})
+    assert settle(engine, res, datetime(2026, 10, 12, tzinfo=timezone.utc))["won"] == 1
+
+    # a pick voided under the old rule is corrected (and logged) once its result is known
+    log_picks(engine, doc(rec("v", "2026-10-09T15:00:00Z", home="Spurs", away="Fulham", o15=0.9)), MARKETS, T0)
+    with engine.begin() as c:
+        c.execute(official_picks.update().values(state="void"))  # simulate the old early void
+    res2 = pd.concat([res, res.assign(home="Spurs", away="Fulham", home_score=0, away_score=0)])
+    counts = settle(engine, res2, datetime(2026, 10, 13, tzinfo=timezone.utc))
+    assert counts["corrected"] == 1  # "k" was void and now has a result; "v" settles normally
+    with engine.connect() as c:
+        st = {r["match_id"]: r["state"] for r in c.execute(select(official_picks)).mappings()}
+        log = c.execute(select(corrections)).mappings().all()
+    assert st["v"] in ("won", "lost") and st["k"] == "won"
+    assert len(log) == 1 and log[0]["before_state"] == "void" and log[0]["after_state"] == "won"

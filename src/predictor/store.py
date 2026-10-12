@@ -93,6 +93,52 @@ def database_url(cfg: dict, project_root: Path) -> str:
     return url
 
 
+# Every change to an already-settled pick (so far only: a provisional void replaced by the real
+# result once it became available). Published with the audit files.
+corrections = Table(
+    "corrections", meta,
+    Column("id", Integer, primary_key=True, autoincrement=True),
+    Column("corrected_at", DateTime, nullable=False),
+    Column("table_name", String(24), nullable=False),     # official_picks / weekly_lists
+    Column("pick_key", String(120), nullable=False),      # match_id, or list|week_start|rank
+    Column("league", String(16), nullable=False),
+    Column("home", String(80), nullable=False),
+    Column("away", String(80), nullable=False),
+    Column("label", String(200), nullable=False),
+    Column("before_state", String(10), nullable=False),
+    Column("after_state", String(10), nullable=False),
+    Column("home_score", Integer, nullable=True),
+    Column("away_score", Integer, nullable=True),
+    Column("reason", String(300), nullable=False),
+)
+
+MATCH_WINDOW_DAYS = 7  # a fixture can't recur within a week, so search this far either side of the logged date
+
+
+def _kick_day(kickoff, tz: str) -> pd.Timestamp:
+    return pd.Timestamp(kickoff).tz_localize("UTC").tz_convert(tz).tz_localize(None).normalize()
+
+
+def find_result(matches: pd.DataFrame, league: str, home: str, away: str, kick_day: pd.Timestamp,
+                window_days: int = MATCH_WINDOW_DAYS):
+    """The result of this fixture dated nearest to `kick_day` (within the window), or None.
+    Logged kickoffs can be placeholders (00:00 'time to be confirmed') or move after logging."""
+    c = matches[(matches["league"] == league) & (matches["home"] == home) & (matches["away"] == away)]
+    gap = (c["date"] - kick_day).abs()
+    c = c[gap <= pd.Timedelta(days=window_days)]
+    return None if c.empty else c.loc[gap[c.index].idxmin()]
+
+
+def can_void(matches: pd.DataFrame, league: str, kick_day: pd.Timestamp, now_n, kickoff,
+             void_after_days: int, window_days: int = MATCH_WINDOW_DAYS) -> bool:
+    """Void only when the match must have been postponed: enough time has passed AND the league's
+    results already run past the whole matching window. A results feed that's merely behind
+    leaves the pick pending instead."""
+    latest = matches.loc[matches["league"] == league, "date"].max()
+    return (now_n - kickoff > timedelta(days=void_after_days)
+            and pd.notna(latest) and latest >= kick_day + pd.Timedelta(days=window_days))
+
+
 def connect(url: str) -> Engine:
     # Poolers (Neon "-pooler", PgBouncer) don't reliably support psycopg's automatic
     # server-side prepared statements, so turn them off for Postgres.
@@ -177,13 +223,11 @@ def settle(engine: Engine, matches: pd.DataFrame, now: datetime, tolerance_days:
                       + [c for c in ("odds_over_2_5", "odds_under_2_5") if c in matches]]
         rows = []
         for o in official.to_dict(orient="records"):
-            kick_day = pd.Timestamp(o["kickoff"]).tz_localize("UTC").tz_convert(tz).tz_localize(None).normalize()
-            cand = res[(res["league"] == o["league"]) & (res["home"] == o["home"]) & (res["away"] == o["away"])
-                       & ((res["date"] - kick_day).abs() <= pd.Timedelta(days=tolerance_days))]
+            kick_day = _kick_day(o["kickoff"], tz)
+            m = find_result(res, o["league"], o["home"], o["away"], kick_day, max(tolerance_days, MATCH_WINDOW_DAYS))
             base = {k: o[k] for k in ("match_id", "logged_at", "sport", "league", "season", "kickoff", "home", "away",
                                       "market", "selection", "label", "probability", "day", "day_rank")}
-            if len(cand):
-                m = cand.iloc[0]
+            if m is not None:
                 w = won(o["market"], o["selection"], m["home_score"], m["away_score"])
                 rows.append({**base, "state": "won" if w else "lost", "won": w,
                              "home_score": int(m["home_score"]), "away_score": int(m["away_score"]),
@@ -191,7 +235,7 @@ def settle(engine: Engine, matches: pd.DataFrame, now: datetime, tolerance_days:
                              "market_probability": market_probability(o["market"], o["selection"], m),
                              "settled_at": now_n})
                 counts["won" if w else "lost"] += 1
-            elif now_n - o["kickoff"] > timedelta(days=void_after_days):
+            elif can_void(res, o["league"], kick_day, now_n, o["kickoff"], void_after_days):
                 rows.append({**base, "state": "void", "won": None, "home_score": None, "away_score": None,
                              "closing_odds": None, "market_probability": None, "settled_at": now_n})
                 counts["void"] += 1
@@ -199,7 +243,31 @@ def settle(engine: Engine, matches: pd.DataFrame, now: datetime, tolerance_days:
                 counts["pending"] += 1
         if rows:
             conn.execute(official_picks.insert(), rows)
+        counts["corrected"] = _recheck_daily_voids(conn, res, now_n, tz)
     return counts
+
+
+def _recheck_daily_voids(conn, res: pd.DataFrame, now_n, tz: str) -> int:
+    """A void is provisional: if the match's result has since appeared, settle it for real and log it."""
+    n = 0
+    for o in conn.execute(select(official_picks).where(official_picks.c.state == "void")).mappings().all():
+        m = find_result(res, o["league"], o["home"], o["away"], _kick_day(o["kickoff"], tz))
+        if m is None:
+            continue
+        w = won(o["market"], o["selection"], m["home_score"], m["away_score"])
+        state = "won" if w else "lost"
+        conn.execute(official_picks.update().where(official_picks.c.match_id == o["match_id"]).values(
+            state=state, won=w, home_score=int(m["home_score"]), away_score=int(m["away_score"]),
+            closing_odds=closing_odds(o["market"], o["selection"], m),
+            market_probability=market_probability(o["market"], o["selection"], m), settled_at=now_n))
+        conn.execute(corrections.insert().values(
+            corrected_at=now_n, table_name="official_picks", pick_key=o["match_id"], league=o["league"],
+            home=o["home"], away=o["away"], label=o["label"], before_state="void", after_state=state,
+            home_score=int(m["home_score"]), away_score=int(m["away_score"]),
+            reason=f"voided while the result was unavailable; result {int(m['home_score'])}-{int(m['away_score'])} "
+                   f"dated {m['date']:%Y-%m-%d} found later"))
+        n += 1
+    return n
 
 
 def _stats(df: pd.DataFrame) -> dict[str, Any]:
@@ -374,16 +442,14 @@ def settle_weekly(engine: Engine, matches: pd.DataFrame, now: datetime, toleranc
         open_rows = conn.execute(select(weekly_lists).where(weekly_lists.c.state.is_(None),
                                                             weekly_lists.c.kickoff <= now_n)).mappings().all()
         for o in open_rows:
-            kick_day = pd.Timestamp(o["kickoff"]).tz_localize("UTC").tz_convert(tz).tz_localize(None).normalize()
-            cand = matches[(matches["league"] == o["league"]) & (matches["home"] == o["home"])
-                           & (matches["away"] == o["away"])
-                           & ((matches["date"] - kick_day).abs() <= pd.Timedelta(days=tolerance_days))]
-            if len(cand):
-                m = cand.iloc[0]
+            kick_day = _kick_day(o["kickoff"], tz)
+            m = find_result(matches, o["league"], o["home"], o["away"], kick_day,
+                            max(tolerance_days, MATCH_WINDOW_DAYS))
+            if m is not None:
                 vals = {"state": settle_state(o["market"], o["selection"], int(m["home_score"]), int(m["away_score"])),
                         "home_score": int(m["home_score"]), "away_score": int(m["away_score"]), "settled_at": now_n}
                 counts["settled"] += 1
-            elif now_n - o["kickoff"] > timedelta(days=void_after_days):
+            elif can_void(matches, o["league"], kick_day, now_n, o["kickoff"], void_after_days):
                 vals = {"state": "void", "settled_at": now_n}
                 counts["void"] += 1
             else:
@@ -392,6 +458,24 @@ def settle_weekly(engine: Engine, matches: pd.DataFrame, now: datetime, toleranc
             conn.execute(weekly_lists.update().where(weekly_lists.c.list == o["list"],
                                                      weekly_lists.c.week_start == o["week_start"],
                                                      weekly_lists.c.rank == o["rank"]).values(**vals))
+        # provisional voids whose result has since appeared
+        counts["corrected"] = 0
+        for o in conn.execute(select(weekly_lists).where(weekly_lists.c.state == "void")).mappings().all():
+            m = find_result(matches, o["league"], o["home"], o["away"], _kick_day(o["kickoff"], tz))
+            if m is None:
+                continue
+            hs, as_ = int(m["home_score"]), int(m["away_score"])
+            state = settle_state(o["market"], o["selection"], hs, as_)
+            conn.execute(weekly_lists.update().where(weekly_lists.c.list == o["list"],
+                                                     weekly_lists.c.week_start == o["week_start"],
+                                                     weekly_lists.c.rank == o["rank"]).values(
+                state=state, home_score=hs, away_score=as_, settled_at=now_n))
+            conn.execute(corrections.insert().values(
+                corrected_at=now_n, table_name="weekly_lists", pick_key=f"{o['list']}|{o['week_start']}|{o['rank']}",
+                league=o["league"], home=o["home"], away=o["away"], label=o["label"], before_state="void",
+                after_state=state, home_score=hs, away_score=as_,
+                reason=f"voided while the result was unavailable; result {hs}-{as_} dated {m['date']:%Y-%m-%d} found later"))
+            counts["corrected"] += 1
     return counts
 
 
@@ -435,7 +519,8 @@ def weekly_summary(engine: Engine, lists: dict) -> dict[str, Any]:
 def export_audit(engine: Engine, out_dir: Path) -> dict[str, int]:
     """Write every stored pick and settlement to plain JSONL files (one row per line, in insertion
     order) so they can be published and checked: a pick's logged_at is always before its kickoff,
-    and rows are only ever appended. Diffs of these files in git show any change."""
+    and picks are only ever appended. The one kind of later change - a provisional void replaced
+    by the real result - is listed in corrections.jsonl. Diffs of these files in git show any change."""
     import json
 
     out_dir = Path(out_dir)
@@ -445,7 +530,8 @@ def export_audit(engine: Engine, out_dir: Path) -> dict[str, int]:
         for name, table, order in (("picks_log", picks_log, [picks_log.c.id]),
                                    ("official_picks", official_picks, [official_picks.c.kickoff, official_picks.c.match_id]),
                                    ("weekly_lists", weekly_lists, [weekly_lists.c.week_start, weekly_lists.c.list,
-                                                                   weekly_lists.c.rank])):
+                                                                   weekly_lists.c.rank]),
+                                   ("corrections", corrections, [corrections.c.id])):
             rows = conn.execute(select(table).order_by(*order)).mappings().all()
             with open(out_dir / f"{name}.jsonl", "w") as f:
                 for r in rows:

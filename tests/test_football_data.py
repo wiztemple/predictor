@@ -88,7 +88,7 @@ def test_load_matches_dedup(tmp_path):
     (tmp_path / "E0_1920.csv").write_text(CSV)
     (tmp_path / "E0_1920_copy.csv").write_text(CSV)  # ignored: name doesn't match pattern
     (tmp_path / "D1_1920.csv").write_text(CSV.replace("E0,", "D1,"))
-    df = load_matches(tmp_path, leagues=["E0", "D1"])
+    df = load_matches(tmp_path, leagues=["E0", "D1"], results_backup=False)
     assert len(df) == 6
     assert df["date"].is_monotonic_increasing
     with pytest.raises(Exception):
