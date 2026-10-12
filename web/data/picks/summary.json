@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-12T18:14:19+00:00",
+ "generated_at": "2026-10-12T18:24:33+00:00",
  "per_day": 10,
  "log_entries": 2468,
  "first_logged": "2026-10-06T07:32:25.475774Z",
@@ -11,10 +11,10 @@
   "avg_probability": 0.876565625
  },
  "all": {
-  "n": 161,
-  "won": 130,
-  "hit_rate": 0.8074534161490683,
-  "avg_probability": 0.8078763975155279
+  "n": 163,
+  "won": 132,
+  "hit_rate": 0.8098159509202454,
+  "avg_probability": 0.807844171779141
  },
  "by_market": {
   "double_chance": {
