@@ -1,46 +1,61 @@
 {
- "generated_at": "2026-10-12T18:24:33+00:00",
+ "generated_at": "2026-10-13T06:07:43+00:00",
  "per_day": 10,
- "log_entries": 2468,
+ "log_entries": 2557,
  "first_logged": "2026-10-06T07:32:25.475774Z",
- "settled": 166,
+ "settled": 177,
  "top": {
-  "n": 32,
-  "won": 28,
-  "hit_rate": 0.875,
-  "avg_probability": 0.876565625
+  "n": 37,
+  "won": 31,
+  "hit_rate": 0.8378378378378378,
+  "avg_probability": 0.8699054054054055,
+  "vs_market": {
+   "n": 2,
+   "ours": 0.85485,
+   "market": 0.7987081170900512
+  }
  },
  "all": {
-  "n": 163,
-  "won": 132,
-  "hit_rate": 0.8098159509202454,
-  "avg_probability": 0.807844171779141
+  "n": 174,
+  "won": 141,
+  "hit_rate": 0.8103448275862069,
+  "avg_probability": 0.8066522988505748,
+  "vs_market": {
+   "n": 2,
+   "ours": 0.85485,
+   "market": 0.7987081170900512
+  }
  },
  "by_market": {
   "double_chance": {
-   "n": 24,
-   "won": 22,
-   "hit_rate": 0.9166666666666666,
-   "avg_probability": 0.8899083333333334
+   "n": 26,
+   "won": 23,
+   "hit_rate": 0.8846153846153846,
+   "avg_probability": 0.8872115384615386,
+   "vs_market": {
+    "n": 2,
+    "ours": 0.85485,
+    "market": 0.7987081170900512
+   }
   },
   "ou_1_5": {
-   "n": 6,
-   "won": 4,
-   "hit_rate": 0.6666666666666666,
-   "avg_probability": 0.8318666666666666
+   "n": 8,
+   "won": 6,
+   "hit_rate": 0.75,
+   "avg_probability": 0.8280625
   },
   "ou_3_5": {
-   "n": 2,
+   "n": 3,
    "won": 2,
-   "hit_rate": 1.0,
-   "avg_probability": 0.8505499999999999
+   "hit_rate": 0.6666666666666666,
+   "avg_probability": 0.8315
   }
  },
  "days": [
   {
    "day": "2026-10-12",
-   "n": 2,
-   "won": 0
+   "n": 7,
+   "won": 3
   },
   {
    "day": "2026-10-11",
@@ -64,6 +79,71 @@
   }
  ],
  "recent": [
+  {
+   "match_id": "de81436cbc94",
+   "league": "P1",
+   "kickoff": "2026-10-12T19:15:00Z",
+   "home": "Famalicao",
+   "away": "Alverca",
+   "label": "Famalicao or draw",
+   "market": "double_chance",
+   "probability": 0.8104,
+   "state": "lost",
+   "score": "1-4",
+   "logged_at": "2026-10-12T05:41:40.431862Z"
+  },
+  {
+   "match_id": "4fbaed2e4d14",
+   "league": "DNK",
+   "kickoff": "2026-10-12T17:00:00Z",
+   "home": "Aarhus",
+   "away": "Sonderjyske",
+   "label": "Over 1.5",
+   "market": "ou_1_5",
+   "probability": 0.8241,
+   "state": "won",
+   "score": "3-0",
+   "logged_at": "2026-10-12T05:41:40.431862Z"
+  },
+  {
+   "match_id": "7427d333f5ad",
+   "league": "NOR",
+   "kickoff": "2026-10-12T17:00:00Z",
+   "home": "KFUM Oslo",
+   "away": "Valerenga",
+   "label": "Over 1.5",
+   "market": "ou_1_5",
+   "probability": 0.8092,
+   "state": "won",
+   "score": "2-1",
+   "logged_at": "2026-10-12T05:41:40.431862Z"
+  },
+  {
+   "match_id": "c3ea68917b30",
+   "league": "I1",
+   "kickoff": "2026-10-12T16:30:00Z",
+   "home": "Atalanta",
+   "away": "Venezia",
+   "label": "Atalanta or draw",
+   "market": "double_chance",
+   "probability": 0.8993,
+   "state": "won",
+   "score": "3-1",
+   "logged_at": "2026-10-12T05:41:40.431862Z"
+  },
+  {
+   "match_id": "f341f49ae18e",
+   "league": "SP2",
+   "kickoff": "2026-10-12T16:30:00Z",
+   "home": "Oviedo",
+   "away": "Eibar",
+   "label": "Under 3.5",
+   "market": "ou_3_5",
+   "probability": 0.7934,
+   "state": "lost",
+   "score": "3-1",
+   "logged_at": "2026-10-12T05:41:40.431862Z"
+  },
   {
    "match_id": "562b5e0f4746",
    "league": "G1",
