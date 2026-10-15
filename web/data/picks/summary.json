@@ -1,14 +1,14 @@
 {
- "generated_at": "2026-10-14T05:35:33+00:00",
+ "generated_at": "2026-10-15T06:02:43+00:00",
  "per_day": 10,
- "log_entries": 2660,
+ "log_entries": 2808,
  "first_logged": "2026-10-06T07:32:25.475774Z",
- "settled": 206,
+ "settled": 210,
  "top": {
-  "n": 53,
-  "won": 46,
-  "hit_rate": 0.8679245283018868,
-  "avg_probability": 0.8503754716981136,
+  "n": 57,
+  "won": 49,
+  "hit_rate": 0.8596491228070176,
+  "avg_probability": 0.8451456140350877,
   "vs_market": {
    "n": 4,
    "ours": 0.8417500000000001,
@@ -16,10 +16,10 @@
   }
  },
  "all": {
-  "n": 206,
-  "won": 169,
-  "hit_rate": 0.8203883495145631,
-  "avg_probability": 0.8045995145631069,
+  "n": 210,
+  "won": 172,
+  "hit_rate": 0.819047619047619,
+  "avg_probability": 0.8040519047619049,
   "vs_market": {
    "n": 8,
    "ours": 0.8114375,
@@ -39,10 +39,10 @@
    }
   },
   "ou_1_5": {
-   "n": 15,
-   "won": 13,
-   "hit_rate": 0.8666666666666667,
-   "avg_probability": 0.8209333333333333
+   "n": 19,
+   "won": 16,
+   "hit_rate": 0.8421052631578947,
+   "avg_probability": 0.811442105263158
   },
   "ou_3_5": {
    "n": 7,
@@ -52,6 +52,11 @@
   }
  },
  "days": [
+  {
+   "day": "2026-10-14",
+   "n": 4,
+   "won": 3
+  },
   {
    "day": "2026-10-13",
    "n": 8,
@@ -84,6 +89,58 @@
   }
  ],
  "recent": [
+  {
+   "match_id": "cbc91ca63c4d",
+   "league": "E1",
+   "kickoff": "2026-10-14T19:00:00Z",
+   "home": "Lincoln",
+   "away": "West Ham",
+   "label": "Over 1.5",
+   "market": "ou_1_5",
+   "probability": 0.7771,
+   "state": "won",
+   "score": "0-6",
+   "logged_at": "2026-10-14T05:32:04.813735Z"
+  },
+  {
+   "match_id": "b2ab8695536a",
+   "league": "E1",
+   "kickoff": "2026-10-14T18:45:00Z",
+   "home": "Norwich",
+   "away": "Southampton",
+   "label": "Over 1.5",
+   "market": "ou_1_5",
+   "probability": 0.831,
+   "state": "lost",
+   "score": "0-1",
+   "logged_at": "2026-10-14T05:32:04.813735Z"
+  },
+  {
+   "match_id": "8d7373f2f8aa",
+   "league": "E1",
+   "kickoff": "2026-10-14T18:45:00Z",
+   "home": "Portsmouth",
+   "away": "Sheffield United",
+   "label": "Over 1.5",
+   "market": "ou_1_5",
+   "probability": 0.7494,
+   "state": "won",
+   "score": "3-2",
+   "logged_at": "2026-10-14T05:32:04.813735Z"
+  },
+  {
+   "match_id": "cb9df240a191",
+   "league": "E1",
+   "kickoff": "2026-10-14T18:45:00Z",
+   "home": "QPR",
+   "away": "Derby",
+   "label": "Over 1.5",
+   "market": "ou_1_5",
+   "probability": 0.7459,
+   "state": "won",
+   "score": "4-1",
+   "logged_at": "2026-10-14T05:32:04.813735Z"
+  },
   {
    "match_id": "2c132677d530",
    "league": "E1",
