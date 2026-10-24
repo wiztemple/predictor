@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-23T10:38:27+00:00",
+ "generated_at": "2026-10-24T07:28:03+00:00",
  "lists": {
   "safe": {
    "label": "Safe 10",
@@ -488,9 +488,9 @@
      "half_won": 0,
      "push": 0,
      "half_lost": 0,
-     "lost": 0,
+     "lost": 1,
      "void": 0,
-     "pending": 10,
+     "pending": 9,
      "picks": [
       {
        "rank": 1,
@@ -601,8 +601,8 @@
        "selection": "1x",
        "label": "Alanyaspor or draw",
        "probability": 0.7672,
-       "state": "pending",
-       "score": null
+       "state": "lost",
+       "score": "1-2"
       },
       {
        "rank": 9,
@@ -945,7 +945,7 @@
    ],
    "record": {
     "weeks": 2,
-    "picks": 20,
+    "picks": 21,
     "won": 18,
     "half_won": 0,
     "perfect_weeks": 0
@@ -1434,13 +1434,13 @@
      "week_start": "2026-10-20",
      "week_end": "2026-10-26",
      "locked_at": "2026-10-20T06:14:03.394333Z",
-     "won": 0,
+     "won": 2,
      "half_won": 0,
      "push": 0,
      "half_lost": 0,
-     "lost": 0,
+     "lost": 1,
      "void": 0,
-     "pending": 10,
+     "pending": 7,
      "picks": [
       {
        "rank": 1,
@@ -1523,8 +1523,8 @@
        "selection": "under",
        "label": "Under 2.5",
        "probability": 0.4987,
-       "state": "pending",
-       "score": null
+       "state": "won",
+       "score": "1-0"
       },
       {
        "rank": 7,
@@ -1551,8 +1551,8 @@
        "selection": "over",
        "label": "Over 2.5",
        "probability": 0.4974,
-       "state": "pending",
-       "score": null
+       "state": "won",
+       "score": "1-3"
       },
       {
        "rank": 9,
@@ -1565,8 +1565,8 @@
        "selection": "under",
        "label": "Under 2.5",
        "probability": 0.4974,
-       "state": "pending",
-       "score": null
+       "state": "lost",
+       "score": "2-1"
       },
       {
        "rank": 10,
@@ -1895,8 +1895,8 @@
    ],
    "record": {
     "weeks": 2,
-    "picks": 19,
-    "won": 11,
+    "picks": 22,
+    "won": 13,
     "half_won": 0,
     "perfect_weeks": 0
    }
@@ -3334,13 +3334,13 @@
      "week_start": "2026-10-20",
      "week_end": "2026-10-26",
      "locked_at": "2026-10-20T06:14:03.394333Z",
-     "won": 0,
+     "won": 1,
      "half_won": 0,
      "push": 0,
      "half_lost": 0,
-     "lost": 0,
+     "lost": 1,
      "void": 0,
-     "pending": 10,
+     "pending": 8,
      "picks": [
       {
        "rank": 1,
@@ -3423,8 +3423,8 @@
        "selection": "home:0.25",
        "label": "Sochaux +0.25",
        "probability": 0.5866,
-       "state": "pending",
-       "score": null
+       "state": "lost",
+       "score": "1-3"
       },
       {
        "rank": 7,
@@ -3465,8 +3465,8 @@
        "selection": "home:0.5",
        "label": "Dunkerque +0.5",
        "probability": 0.5858,
-       "state": "pending",
-       "score": null
+       "state": "won",
+       "score": "1-1"
       },
       {
        "rank": 10,
@@ -3795,8 +3795,8 @@
    ],
    "record": {
     "weeks": 2,
-    "picks": 20,
-    "won": 7,
+    "picks": 22,
+    "won": 8,
     "half_won": 4,
     "perfect_weeks": 0
    }
