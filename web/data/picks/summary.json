@@ -1,14 +1,14 @@
 {
- "generated_at": "2026-10-29T07:00:24+00:00",
+ "generated_at": "2026-10-30T06:45:36+00:00",
  "per_day": 10,
- "log_entries": 5588,
+ "log_entries": 5779,
  "first_logged": "2026-10-06T07:32:25.475774Z",
- "settled": 602,
+ "settled": 604,
  "top": {
-  "n": 164,
-  "won": 144,
-  "hit_rate": 0.8780487804878049,
-  "avg_probability": 0.8440341463414635,
+  "n": 166,
+  "won": 146,
+  "hit_rate": 0.8795180722891566,
+  "avg_probability": 0.8432427710843373,
   "vs_market": {
    "n": 11,
    "ours": 0.8391727272727273,
@@ -16,10 +16,10 @@
   }
  },
  "all": {
-  "n": 600,
-  "won": 484,
-  "hit_rate": 0.8066666666666666,
-  "avg_probability": 0.8046679999999999,
+  "n": 602,
+  "won": 486,
+  "hit_rate": 0.8073089700996677,
+  "avg_probability": 0.804580564784053,
   "vs_market": {
    "n": 24,
    "ours": 0.816825,
@@ -39,10 +39,10 @@
    }
   },
   "ou_1_5": {
-   "n": 59,
-   "won": 54,
-   "hit_rate": 0.9152542372881356,
-   "avg_probability": 0.816613559322034
+   "n": 61,
+   "won": 56,
+   "hit_rate": 0.9180327868852459,
+   "avg_probability": 0.8153590163934428
   },
   "ou_3_5": {
    "n": 20,
@@ -52,6 +52,11 @@
   }
  },
  "days": [
+  {
+   "day": "2026-10-29",
+   "n": 2,
+   "won": 2
+  },
   {
    "day": "2026-10-28",
    "n": 10,
@@ -149,6 +154,32 @@
   }
  ],
  "recent": [
+  {
+   "match_id": "f78fc084fe3c",
+   "league": "I1",
+   "kickoff": "2026-10-29T19:45:00Z",
+   "home": "Fiorentina",
+   "away": "Atalanta",
+   "label": "Over 1.5",
+   "market": "ou_1_5",
+   "probability": 0.7669,
+   "state": "won",
+   "score": "2-2",
+   "logged_at": "2026-10-29T06:57:18.905533Z"
+  },
+  {
+   "match_id": "97efc22a2862",
+   "league": "I1",
+   "kickoff": "2026-10-29T17:30:00Z",
+   "home": "Frosinone",
+   "away": "Lecce",
+   "label": "Over 1.5",
+   "market": "ou_1_5",
+   "probability": 0.7898,
+   "state": "won",
+   "score": "5-1",
+   "logged_at": "2026-10-28T05:31:48.422246Z"
+  },
   {
    "match_id": "76c267e540c7",
    "league": "SC0",
@@ -901,32 +932,6 @@
    "probability": 0.8095,
    "state": "won",
    "score": "1-1",
-   "logged_at": "2026-10-22T07:05:17.714286Z"
-  },
-  {
-   "match_id": "6c28a488ac90",
-   "league": "F2",
-   "kickoff": "2026-10-23T18:00:00Z",
-   "home": "Sochaux",
-   "away": "Annecy",
-   "label": "Under 3.5",
-   "market": "ou_3_5",
-   "probability": 0.8046,
-   "state": "lost",
-   "score": "1-3",
-   "logged_at": "2026-10-22T07:05:17.714286Z"
-  },
-  {
-   "match_id": "ad01f64fab2c",
-   "league": "T1",
-   "kickoff": "2026-10-23T17:00:00Z",
-   "home": "Alanyaspor",
-   "away": "Kocaelispor",
-   "label": "Under 3.5",
-   "market": "ou_3_5",
-   "probability": 0.8351,
-   "state": "won",
-   "score": "1-2",
    "logged_at": "2026-10-22T07:05:17.714286Z"
   }
  ]
