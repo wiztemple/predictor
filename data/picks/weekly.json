@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-30T10:40:39+00:00",
+ "generated_at": "2026-10-31T06:52:49+00:00",
  "lists": {
   "safe": {
    "label": "Safe 10",
@@ -9,13 +9,13 @@
      "week_start": "2026-10-27",
      "week_end": "2026-11-02",
      "locked_at": "2026-10-27T06:16:48.230838Z",
-     "won": 2,
+     "won": 3,
      "half_won": 0,
      "push": 0,
      "half_lost": 0,
      "lost": 0,
      "void": 0,
-     "pending": 8,
+     "pending": 7,
      "picks": [
       {
        "rank": 1,
@@ -98,8 +98,8 @@
        "selection": "x2",
        "label": "Sp Lisbon or draw",
        "probability": 0.9293,
-       "state": "pending",
-       "score": null
+       "state": "won",
+       "score": "0-2"
       },
       {
        "rank": 7,
@@ -624,8 +624,8 @@
    ],
    "record": {
     "weeks": 3,
-    "picks": 32,
-    "won": 28,
+    "picks": 33,
+    "won": 29,
     "half_won": 0,
     "perfect_weeks": 1
    }
@@ -2525,13 +2525,13 @@
      "week_start": "2026-10-27",
      "week_end": "2026-11-02",
      "locked_at": "2026-10-27T06:16:48.230838Z",
-     "won": 1,
+     "won": 2,
      "half_won": 0,
      "push": 0,
      "half_lost": 0,
      "lost": 1,
      "void": 0,
-     "pending": 8,
+     "pending": 7,
      "picks": [
       {
        "rank": 1,
@@ -2614,8 +2614,8 @@
        "selection": "away",
        "label": "Sp Lisbon win",
        "probability": 0.8049,
-       "state": "pending",
-       "score": null
+       "state": "won",
+       "score": "0-2"
       },
       {
        "rank": 7,
@@ -3140,8 +3140,8 @@
    ],
    "record": {
     "weeks": 3,
-    "picks": 32,
-    "won": 26,
+    "picks": 33,
+    "won": 27,
     "half_won": 0,
     "perfect_weeks": 0
    }
@@ -3783,13 +3783,13 @@
      "week_start": "2026-10-27",
      "week_end": "2026-11-02",
      "locked_at": "2026-10-27T06:16:48.230838Z",
-     "won": 0,
+     "won": 1,
      "half_won": 0,
      "push": 0,
      "half_lost": 0,
      "lost": 0,
      "void": 0,
-     "pending": 10,
+     "pending": 9,
      "picks": [
       {
        "rank": 1,
@@ -3844,8 +3844,8 @@
        "selection": "yes",
        "label": "Both teams score",
        "probability": 0.6324,
-       "state": "pending",
-       "score": null
+       "state": "won",
+       "score": "4-1"
       },
       {
        "rank": 5,
@@ -4398,8 +4398,8 @@
    ],
    "record": {
     "weeks": 3,
-    "picks": 30,
-    "won": 17,
+    "picks": 31,
+    "won": 18,
     "half_won": 0,
     "perfect_weeks": 0
    }
