@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-04T05:34:23+00:00",
+ "generated_at": "2026-11-05T06:14:19+00:00",
  "lists": {
   "safe": {
    "label": "Safe 10",
@@ -3924,13 +3924,13 @@
      "week_start": "2026-11-03",
      "week_end": "2026-11-09",
      "locked_at": "2026-11-03T06:10:50.723479Z",
-     "won": 0,
+     "won": 1,
      "half_won": 0,
      "push": 0,
      "half_lost": 0,
      "lost": 0,
      "void": 0,
-     "pending": 10,
+     "pending": 9,
      "picks": [
       {
        "rank": 1,
@@ -4013,8 +4013,8 @@
        "selection": "over",
        "label": "Over 2.5",
        "probability": 0.6657,
-       "state": "pending",
-       "score": null
+       "state": "won",
+       "score": "3-3"
       },
       {
        "rank": 7,
@@ -4693,8 +4693,8 @@
    ],
    "record": {
     "weeks": 4,
-    "picks": 40,
-    "won": 27,
+    "picks": 41,
+    "won": 28,
     "half_won": 0,
     "perfect_weeks": 0
    }
@@ -4707,13 +4707,13 @@
      "week_start": "2026-11-03",
      "week_end": "2026-11-09",
      "locked_at": "2026-11-03T06:10:50.723479Z",
-     "won": 0,
+     "won": 1,
      "half_won": 0,
      "push": 0,
      "half_lost": 0,
      "lost": 0,
      "void": 0,
-     "pending": 10,
+     "pending": 9,
      "picks": [
       {
        "rank": 1,
@@ -4768,8 +4768,8 @@
        "selection": "yes",
        "label": "Both teams score",
        "probability": 0.6386,
-       "state": "pending",
-       "score": null
+       "state": "won",
+       "score": "3-3"
       },
       {
        "rank": 5,
@@ -5476,8 +5476,8 @@
    ],
    "record": {
     "weeks": 4,
-    "picks": 40,
-    "won": 22,
+    "picks": 41,
+    "won": 23,
     "half_won": 0,
     "perfect_weeks": 0
    }
