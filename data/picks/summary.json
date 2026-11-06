@@ -1,14 +1,14 @@
 {
- "generated_at": "2026-11-05T06:14:29+00:00",
+ "generated_at": "2026-11-06T06:58:33+00:00",
  "per_day": 10,
- "log_entries": 7044,
+ "log_entries": 7082,
  "first_logged": "2026-10-06T07:32:25.475774Z",
- "settled": 810,
+ "settled": 811,
  "top": {
-  "n": 219,
-  "won": 191,
-  "hit_rate": 0.8721461187214612,
-  "avg_probability": 0.844783105022831,
+  "n": 220,
+  "won": 192,
+  "hit_rate": 0.8727272727272727,
+  "avg_probability": 0.8442995454545454,
   "vs_market": {
    "n": 13,
    "ours": 0.8476538461538461,
@@ -16,10 +16,10 @@
   }
  },
  "all": {
-  "n": 807,
-  "won": 654,
-  "hit_rate": 0.8104089219330854,
-  "avg_probability": 0.8046898389095416,
+  "n": 808,
+  "won": 655,
+  "hit_rate": 0.8106435643564357,
+  "avg_probability": 0.804607797029703,
   "vs_market": {
    "n": 31,
    "ours": 0.8203451612903225,
@@ -39,10 +39,10 @@
    }
   },
   "ou_1_5": {
-   "n": 83,
-   "won": 74,
-   "hit_rate": 0.891566265060241,
-   "avg_probability": 0.8140542168674698
+   "n": 84,
+   "won": 75,
+   "hit_rate": 0.8928571428571429,
+   "avg_probability": 0.8131535714285713
   },
   "ou_3_5": {
    "n": 23,
@@ -54,8 +54,8 @@
  "days": [
   {
    "day": "2026-11-04",
-   "n": 3,
-   "won": 3
+   "n": 4,
+   "won": 4
   },
   {
    "day": "2026-11-03",
@@ -222,6 +222,19 @@
    "state": "won",
    "score": "2-0",
    "logged_at": "2026-11-04T05:31:39.915184Z"
+  },
+  {
+   "match_id": "dd9a9f7da157",
+   "league": "B1",
+   "kickoff": "2026-11-04T19:30:00Z",
+   "home": "Kortrijk",
+   "away": "Mechelen",
+   "label": "Over 1.5",
+   "market": "ou_1_5",
+   "probability": 0.7384,
+   "state": "won",
+   "score": "1-3",
+   "logged_at": "2026-11-03T06:10:50.723479Z"
   },
   {
    "match_id": "d868ee4bfa73",
@@ -950,19 +963,6 @@
    "state": "lost",
    "score": "2-0",
    "logged_at": "2026-10-28T05:31:48.422246Z"
-  },
-  {
-   "match_id": "f4946d50d34c",
-   "league": "SC0",
-   "kickoff": "2026-10-28T19:45:00Z",
-   "home": "Dundee",
-   "away": "Kilmarnock",
-   "label": "Over 1.5",
-   "market": "ou_1_5",
-   "probability": 0.8012,
-   "state": "won",
-   "score": "3-1",
-   "logged_at": "2026-10-27T06:16:48.230838Z"
   }
  ]
 }
