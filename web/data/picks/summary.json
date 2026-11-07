@@ -1,14 +1,14 @@
 {
- "generated_at": "2026-11-06T10:35:44+00:00",
+ "generated_at": "2026-11-07T07:15:43+00:00",
  "per_day": 10,
- "log_entries": 7252,
+ "log_entries": 7395,
  "first_logged": "2026-10-06T07:32:25.475774Z",
- "settled": 811,
+ "settled": 832,
  "top": {
-  "n": 220,
-  "won": 192,
-  "hit_rate": 0.8727272727272727,
-  "avg_probability": 0.8442995454545454,
+  "n": 229,
+  "won": 198,
+  "hit_rate": 0.8646288209606987,
+  "avg_probability": 0.8431375545851528,
   "vs_market": {
    "n": 13,
    "ours": 0.8476538461538461,
@@ -16,10 +16,10 @@
   }
  },
  "all": {
-  "n": 808,
-  "won": 655,
-  "hit_rate": 0.8106435643564357,
-  "avg_probability": 0.804607797029703,
+  "n": 829,
+  "won": 670,
+  "hit_rate": 0.8082026537997588,
+  "avg_probability": 0.8041168878166467,
   "vs_market": {
    "n": 31,
    "ours": 0.8203451612903225,
@@ -28,10 +28,10 @@
  },
  "by_market": {
   "double_chance": {
-   "n": 113,
-   "won": 98,
-   "hit_rate": 0.8672566371681416,
-   "avg_probability": 0.8771823008849557,
+   "n": 114,
+   "won": 99,
+   "hit_rate": 0.868421052631579,
+   "avg_probability": 0.8769078947368422,
    "vs_market": {
     "n": 13,
     "ours": 0.8476538461538461,
@@ -39,19 +39,24 @@
    }
   },
   "ou_1_5": {
-   "n": 84,
-   "won": 75,
-   "hit_rate": 0.8928571428571429,
-   "avg_probability": 0.8131535714285713
+   "n": 91,
+   "won": 79,
+   "hit_rate": 0.8681318681318682,
+   "avg_probability": 0.8132197802197803
   },
   "ou_3_5": {
-   "n": 23,
-   "won": 19,
-   "hit_rate": 0.8260869565217391,
-   "avg_probability": 0.7964956521739132
+   "n": 24,
+   "won": 20,
+   "hit_rate": 0.8333333333333334,
+   "avg_probability": 0.7961666666666666
   }
  },
  "days": [
+  {
+   "day": "2026-11-06",
+   "n": 9,
+   "won": 6
+  },
   {
    "day": "2026-11-04",
    "n": 4,
@@ -184,6 +189,123 @@
   }
  ],
  "recent": [
+  {
+   "match_id": "a0956cc568d7",
+   "league": "E1",
+   "kickoff": "2026-11-06T20:00:00Z",
+   "home": "Derby",
+   "away": "Bolton",
+   "label": "Over 1.5",
+   "market": "ou_1_5",
+   "probability": 0.7869,
+   "state": "won",
+   "score": "3-1",
+   "logged_at": "2026-11-06T10:32:16.035463Z"
+  },
+  {
+   "match_id": "f9ef7a91b3da",
+   "league": "F1",
+   "kickoff": "2026-11-06T19:45:00Z",
+   "home": "Toulouse",
+   "away": "Strasbourg",
+   "label": "Over 1.5",
+   "market": "ou_1_5",
+   "probability": 0.8008,
+   "state": "won",
+   "score": "3-1",
+   "logged_at": "2026-11-06T10:32:16.035463Z"
+  },
+  {
+   "match_id": "58b853f56637",
+   "league": "F2",
+   "kickoff": "2026-11-06T19:00:00Z",
+   "home": "Dijon",
+   "away": "Red Star",
+   "label": "Over 1.5",
+   "market": "ou_1_5",
+   "probability": 0.8253,
+   "state": "lost",
+   "score": "1-0",
+   "logged_at": "2026-11-06T10:32:16.035463Z"
+  },
+  {
+   "match_id": "2afd97e88ff3",
+   "league": "N1",
+   "kickoff": "2026-11-06T19:00:00Z",
+   "home": "Willem II",
+   "away": "Zwolle",
+   "label": "Over 1.5",
+   "market": "ou_1_5",
+   "probability": 0.8173,
+   "state": "won",
+   "score": "1-1",
+   "logged_at": "2026-11-06T10:32:16.035463Z"
+  },
+  {
+   "match_id": "e94882aafd79",
+   "league": "F2",
+   "kickoff": "2026-11-06T19:00:00Z",
+   "home": "Boulogne",
+   "away": "Annecy",
+   "label": "Under 3.5",
+   "market": "ou_3_5",
+   "probability": 0.7886,
+   "state": "won",
+   "score": "3-0",
+   "logged_at": "2026-11-06T10:32:16.035463Z"
+  },
+  {
+   "match_id": "cd6952ca6c8f",
+   "league": "AUT",
+   "kickoff": "2026-11-06T18:30:00Z",
+   "home": "SK Rapid",
+   "away": "Wolfsberger AC",
+   "label": "SK Rapid or draw",
+   "market": "double_chance",
+   "probability": 0.8459,
+   "state": "won",
+   "score": "6-0",
+   "logged_at": "2026-11-04T05:31:39.915184Z"
+  },
+  {
+   "match_id": "083115c41ddd",
+   "league": "DNK",
+   "kickoff": "2026-11-06T18:00:00Z",
+   "home": "Silkeborg",
+   "away": "Lyngby",
+   "label": "Over 1.5",
+   "market": "ou_1_5",
+   "probability": 0.8275,
+   "state": "lost",
+   "score": "1-0",
+   "logged_at": "2026-11-06T10:32:16.035463Z"
+  },
+  {
+   "match_id": "65fc2c0f58dd",
+   "league": "D2",
+   "kickoff": "2026-11-06T17:30:00Z",
+   "home": "Braunschweig",
+   "away": "Cottbus",
+   "label": "Over 1.5",
+   "market": "ou_1_5",
+   "probability": 0.8231,
+   "state": "lost",
+   "score": "0-0",
+   "logged_at": "2026-11-06T10:32:16.035463Z"
+  },
+  {
+   "match_id": "5c973c366a4b",
+   "league": "D2",
+   "kickoff": "2026-11-06T17:30:00Z",
+   "home": "Dresden",
+   "away": "Greuther Furth",
+   "label": "Over 1.5",
+   "market": "ou_1_5",
+   "probability": 0.8172,
+   "state": "won",
+   "score": "3-0",
+   "logged_at": "2026-11-06T10:32:16.035463Z"
+  },
   {
    "match_id": "c189a1b7fde1",
    "league": "E1",
@@ -846,123 +968,6 @@
    "state": "won",
    "score": "2-0",
    "logged_at": "2026-10-30T10:36:22.351007Z"
-  },
-  {
-   "match_id": "83077482baff",
-   "league": "F1",
-   "kickoff": "2026-10-30T18:00:00Z",
-   "home": "Le Havre",
-   "away": "Paris SG",
-   "label": "Paris SG or draw",
-   "market": "double_chance",
-   "probability": 0.8859,
-   "state": "won",
-   "score": "1-5",
-   "logged_at": "2026-10-30T10:36:22.351007Z"
-  },
-  {
-   "match_id": "aa33e7eace61",
-   "league": "NOR",
-   "kickoff": "2026-10-30T18:00:00Z",
-   "home": "Bodo/Glimt",
-   "away": "Viking",
-   "label": "Over 1.5",
-   "market": "ou_1_5",
-   "probability": 0.823,
-   "state": "won",
-   "score": "3-2",
-   "logged_at": "2026-10-30T10:36:22.351007Z"
-  },
-  {
-   "match_id": "b3cc9041c9a3",
-   "league": "T1",
-   "kickoff": "2026-10-30T17:00:00Z",
-   "home": "Konyaspor",
-   "away": "Galatasaray",
-   "label": "Galatasaray or draw",
-   "market": "double_chance",
-   "probability": 0.8411,
-   "state": "won",
-   "score": "0-4",
-   "logged_at": "2026-10-30T10:36:22.351007Z"
-  },
-  {
-   "match_id": "f78fc084fe3c",
-   "league": "I1",
-   "kickoff": "2026-10-29T19:45:00Z",
-   "home": "Fiorentina",
-   "away": "Atalanta",
-   "label": "Over 1.5",
-   "market": "ou_1_5",
-   "probability": 0.7669,
-   "state": "won",
-   "score": "2-2",
-   "logged_at": "2026-10-29T06:57:18.905533Z"
-  },
-  {
-   "match_id": "97efc22a2862",
-   "league": "I1",
-   "kickoff": "2026-10-29T17:30:00Z",
-   "home": "Frosinone",
-   "away": "Lecce",
-   "label": "Over 1.5",
-   "market": "ou_1_5",
-   "probability": 0.7898,
-   "state": "won",
-   "score": "5-1",
-   "logged_at": "2026-10-28T05:31:48.422246Z"
-  },
-  {
-   "match_id": "76c267e540c7",
-   "league": "SC0",
-   "kickoff": "2026-10-28T20:00:00Z",
-   "home": "Hearts",
-   "away": "Rangers",
-   "label": "Over 1.5",
-   "market": "ou_1_5",
-   "probability": 0.7864,
-   "state": "won",
-   "score": "2-2",
-   "logged_at": "2026-10-27T06:16:48.230838Z"
-  },
-  {
-   "match_id": "ecdd9027ae65",
-   "league": "SC0",
-   "kickoff": "2026-10-28T19:45:00Z",
-   "home": "Celtic",
-   "away": "Dundee United",
-   "label": "Celtic or draw",
-   "market": "double_chance",
-   "probability": 0.9216,
-   "state": "won",
-   "score": "2-2",
-   "logged_at": "2026-10-28T05:31:48.422246Z"
-  },
-  {
-   "match_id": "466edfeb2ab6",
-   "league": "I1",
-   "kickoff": "2026-10-28T19:45:00Z",
-   "home": "Monza",
-   "away": "Napoli",
-   "label": "Napoli or draw",
-   "market": "double_chance",
-   "probability": 0.8556,
-   "state": "won",
-   "score": "1-4",
-   "logged_at": "2026-10-28T05:31:48.422246Z"
-  },
-  {
-   "match_id": "f30abc40854b",
-   "league": "I1",
-   "kickoff": "2026-10-28T19:45:00Z",
-   "home": "Genoa",
-   "away": "Juventus",
-   "label": "Juventus or draw",
-   "market": "double_chance",
-   "probability": 0.8026,
-   "state": "lost",
-   "score": "2-0",
-   "logged_at": "2026-10-28T05:31:48.422246Z"
   }
  ]
 }
