@@ -1,61 +1,61 @@
 {
- "generated_at": "2026-11-10T05:46:46+00:00",
+ "generated_at": "2026-11-11T05:35:40+00:00",
  "per_day": 10,
- "log_entries": 7615,
+ "log_entries": 7630,
  "first_logged": "2026-10-06T07:32:25.475774Z",
- "settled": 979,
+ "settled": 1002,
  "top": {
-  "n": 250,
-  "won": 218,
-  "hit_rate": 0.872,
-  "avg_probability": 0.8468088,
+  "n": 254,
+  "won": 222,
+  "hit_rate": 0.8740157480314961,
+  "avg_probability": 0.8466149606299213,
   "vs_market": {
-   "n": 13,
-   "ours": 0.8476538461538461,
-   "market": 0.8533277541498122
+   "n": 14,
+   "ours": 0.8488071428571428,
+   "market": 0.8507089544182841
   }
  },
  "all": {
-  "n": 975,
-  "won": 786,
-  "hit_rate": 0.8061538461538461,
-  "avg_probability": 0.804343794871795,
+  "n": 998,
+  "won": 803,
+  "hit_rate": 0.8046092184368737,
+  "avg_probability": 0.8041934869739479,
   "vs_market": {
-   "n": 31,
-   "ours": 0.8203451612903225,
-   "market": 0.8110534817827232
+   "n": 37,
+   "ours": 0.8203162162162162,
+   "market": 0.807995948601761
   }
  },
  "by_market": {
   "double_chance": {
-   "n": 131,
-   "won": 116,
-   "hit_rate": 0.8854961832061069,
-   "avg_probability": 0.8787229007633587,
+   "n": 132,
+   "won": 117,
+   "hit_rate": 0.8863636363636364,
+   "avg_probability": 0.8786098484848484,
    "vs_market": {
-    "n": 13,
-    "ours": 0.8476538461538461,
-    "market": 0.8533277541498122
+    "n": 14,
+    "ours": 0.8488071428571428,
+    "market": 0.8507089544182841
    }
   },
   "ou_1_5": {
-   "n": 95,
-   "won": 82,
-   "hit_rate": 0.8631578947368421,
-   "avg_probability": 0.8155947368421054
+   "n": 97,
+   "won": 84,
+   "hit_rate": 0.865979381443299,
+   "avg_probability": 0.8156556701030928
   },
   "ou_3_5": {
-   "n": 24,
-   "won": 20,
-   "hit_rate": 0.8333333333333334,
-   "avg_probability": 0.7961666666666666
+   "n": 25,
+   "won": 21,
+   "hit_rate": 0.84,
+   "avg_probability": 0.7978039999999998
   }
  },
  "days": [
   {
    "day": "2026-11-09",
-   "n": 3,
-   "won": 2
+   "n": 4,
+   "won": 3
   },
   {
    "day": "2026-11-08",
@@ -64,13 +64,13 @@
   },
   {
    "day": "2026-11-07",
-   "n": 8,
-   "won": 8
+   "n": 10,
+   "won": 10
   },
   {
    "day": "2026-11-06",
-   "n": 9,
-   "won": 6
+   "n": 10,
+   "won": 7
   },
   {
    "day": "2026-11-04",
@@ -241,6 +241,19 @@
    "probability": 0.8238,
    "state": "lost",
    "score": "1-0",
+   "logged_at": "2026-11-09T07:23:53.275244Z"
+  },
+  {
+   "match_id": "bcb158229e93",
+   "league": "ROU",
+   "kickoff": "2026-11-09T18:00:00Z",
+   "home": "FC Botosani",
+   "away": "Otelul",
+   "label": "Over 1.5",
+   "market": "ou_1_5",
+   "probability": 0.745,
+   "state": "won",
+   "score": "1-1",
    "logged_at": "2026-11-09T07:23:53.275244Z"
   },
   {
@@ -426,6 +439,32 @@
    "logged_at": "2026-11-07T07:12:48.825028Z"
   },
   {
+   "match_id": "2749819a2626",
+   "league": "SWZ",
+   "kickoff": "2026-11-07T17:00:00Z",
+   "home": "Luzern",
+   "away": "Young Boys",
+   "label": "Over 1.5",
+   "market": "ou_1_5",
+   "probability": 0.8921,
+   "state": "won",
+   "score": "2-3",
+   "logged_at": "2026-11-06T10:32:16.035463Z"
+  },
+  {
+   "match_id": "26dc5cc5ec94",
+   "league": "POL",
+   "kickoff": "2026-11-07T16:30:00Z",
+   "home": "Gornik Zabrze",
+   "away": "Wieczysta Krakow",
+   "label": "Gornik Zabrze or draw",
+   "market": "double_chance",
+   "probability": 0.8638,
+   "state": "won",
+   "score": "2-1",
+   "logged_at": "2026-11-07T07:12:48.825028Z"
+  },
+  {
    "match_id": "0954851f4877",
    "league": "T1",
    "kickoff": "2026-11-07T16:00:00Z",
@@ -554,6 +593,19 @@
    "state": "won",
    "score": "6-0",
    "logged_at": "2026-11-04T05:31:39.915184Z"
+  },
+  {
+   "match_id": "4828b332b83a",
+   "league": "ROU",
+   "kickoff": "2026-11-06T18:30:00Z",
+   "home": "FC Arges",
+   "away": "Dinamo Bucuresti",
+   "label": "Under 3.5",
+   "market": "ou_3_5",
+   "probability": 0.8371,
+   "state": "won",
+   "score": "2-1",
+   "logged_at": "2026-11-06T10:32:16.035463Z"
   },
   {
    "match_id": "083115c41ddd",
@@ -931,58 +983,6 @@
    "state": "won",
    "score": "2-0",
    "logged_at": "2026-11-01T10:36:51.347685Z"
-  },
-  {
-   "match_id": "a81fa2104ae1",
-   "league": "ROU",
-   "kickoff": "2026-11-01T15:30:00Z",
-   "home": "Univ. Craiova",
-   "away": "FC Botosani",
-   "label": "Univ. Craiova or draw",
-   "market": "double_chance",
-   "probability": 0.8996,
-   "state": "won",
-   "score": "2-1",
-   "logged_at": "2026-10-30T10:36:22.351007Z"
-  },
-  {
-   "match_id": "2ebcb28f255e",
-   "league": "SP1",
-   "kickoff": "2026-11-01T15:15:00Z",
-   "home": "Santander",
-   "away": "Real Madrid",
-   "label": "Real Madrid or draw",
-   "market": "double_chance",
-   "probability": 0.8841,
-   "state": "won",
-   "score": "0-3",
-   "logged_at": "2026-11-01T05:51:15.695394Z"
-  },
-  {
-   "match_id": "d4aed587499f",
-   "league": "I1",
-   "kickoff": "2026-11-01T14:00:00Z",
-   "home": "Frosinone",
-   "away": "Torino",
-   "label": "Over 1.5",
-   "market": "ou_1_5",
-   "probability": 0.8522,
-   "state": "won",
-   "score": "2-0",
-   "logged_at": "2026-11-01T10:36:51.347685Z"
-  },
-  {
-   "match_id": "7fbe7b4aa2ee",
-   "league": "AUT",
-   "kickoff": "2026-11-01T13:30:00Z",
-   "home": "Salzburg",
-   "away": "A. Lustenau",
-   "label": "Salzburg or draw",
-   "market": "double_chance",
-   "probability": 0.9248,
-   "state": "won",
-   "score": "5-1",
-   "logged_at": "2026-11-01T05:51:15.695394Z"
   }
  ]
 }
