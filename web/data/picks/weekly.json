@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-13T10:59:30+00:00",
+ "generated_at": "2026-11-14T06:40:18+00:00",
  "lists": {
   "safe": {
    "label": "Safe 10",
@@ -13,9 +13,9 @@
      "half_won": 0,
      "push": 0,
      "half_lost": 0,
-     "lost": 0,
+     "lost": 1,
      "void": 0,
-     "pending": 10,
+     "pending": 9,
      "picks": [
       {
        "rank": 1,
@@ -84,8 +84,8 @@
        "selection": "under",
        "label": "Under 3.5",
        "probability": 0.821,
-       "state": "pending",
-       "score": null
+       "state": "lost",
+       "score": "3-1"
       },
       {
        "rank": 6,
@@ -932,7 +932,7 @@
    ],
    "record": {
     "weeks": 5,
-    "picks": 50,
+    "picks": 51,
     "won": 46,
     "half_won": 0,
     "perfect_weeks": 3
@@ -950,9 +950,9 @@
      "half_won": 0,
      "push": 0,
      "half_lost": 0,
-     "lost": 0,
+     "lost": 1,
      "void": 0,
-     "pending": 10,
+     "pending": 9,
      "picks": [
       {
        "rank": 1,
@@ -1077,8 +1077,8 @@
        "selection": "x2",
        "label": "Burgos or draw",
        "probability": 0.7187,
-       "state": "pending",
-       "score": null
+       "state": "lost",
+       "score": "3-1"
       },
       {
        "rank": 10,
@@ -1105,8 +1105,8 @@
      "push": 0,
      "half_lost": 0,
      "lost": 1,
-     "void": 0,
-     "pending": 1,
+     "void": 1,
+     "pending": 0,
      "picks": [
       {
        "rank": 1,
@@ -1161,7 +1161,7 @@
        "selection": "1x",
        "label": "Castellon or draw",
        "probability": 0.7679,
-       "state": "pending",
+       "state": "void",
        "score": null
       },
       {
@@ -1868,8 +1868,8 @@
     }
    ],
    "record": {
-    "weeks": 4,
-    "picks": 49,
+    "weeks": 5,
+    "picks": 50,
     "won": 36,
     "half_won": 0,
     "perfect_weeks": 0
@@ -1887,9 +1887,9 @@
      "half_won": 0,
      "push": 0,
      "half_lost": 0,
-     "lost": 0,
+     "lost": 1,
      "void": 0,
-     "pending": 10,
+     "pending": 9,
      "picks": [
       {
        "rank": 1,
@@ -1902,8 +1902,8 @@
        "selection": "under",
        "label": "Under 2.5",
        "probability": 0.6197,
-       "state": "pending",
-       "score": null
+       "state": "lost",
+       "score": "3-1"
       },
       {
        "rank": 2,
@@ -2806,7 +2806,7 @@
    ],
    "record": {
     "weeks": 5,
-    "picks": 50,
+    "picks": 51,
     "won": 33,
     "half_won": 0,
     "perfect_weeks": 0
@@ -2820,13 +2820,13 @@
      "week_start": "2026-11-10",
      "week_end": "2026-11-16",
      "locked_at": "2026-11-10T05:43:48.555027Z",
-     "won": 0,
+     "won": 1,
      "half_won": 0,
      "push": 0,
      "half_lost": 0,
      "lost": 0,
      "void": 0,
-     "pending": 10,
+     "pending": 9,
      "picks": [
       {
        "rank": 1,
@@ -2951,8 +2951,8 @@
        "selection": "yes",
        "label": "Both teams score",
        "probability": 0.4524,
-       "state": "pending",
-       "score": null
+       "state": "won",
+       "score": "3-1"
       },
       {
        "rank": 10,
@@ -3743,8 +3743,8 @@
    ],
    "record": {
     "weeks": 4,
-    "picks": 48,
-    "won": 25,
+    "picks": 49,
+    "won": 26,
     "half_won": 0,
     "perfect_weeks": 0
    }
@@ -3761,9 +3761,9 @@
      "half_won": 0,
      "push": 0,
      "half_lost": 0,
-     "lost": 0,
+     "lost": 1,
      "void": 0,
-     "pending": 10,
+     "pending": 9,
      "picks": [
       {
        "rank": 1,
@@ -3888,8 +3888,8 @@
        "selection": "away",
        "label": "Burgos win",
        "probability": 0.4103,
-       "state": "pending",
-       "score": null
+       "state": "lost",
+       "score": "3-1"
       },
       {
        "rank": 10,
@@ -4680,7 +4680,7 @@
    ],
    "record": {
     "weeks": 5,
-    "picks": 50,
+    "picks": 51,
     "won": 43,
     "half_won": 0,
     "perfect_weeks": 0
@@ -4694,13 +4694,13 @@
      "week_start": "2026-11-10",
      "week_end": "2026-11-16",
      "locked_at": "2026-11-10T05:43:48.555027Z",
-     "won": 0,
+     "won": 1,
      "half_won": 0,
      "push": 0,
      "half_lost": 0,
      "lost": 0,
      "void": 0,
-     "pending": 10,
+     "pending": 9,
      "picks": [
       {
        "rank": 1,
@@ -4839,8 +4839,8 @@
        "selection": "over",
        "label": "Over 2.5",
        "probability": 0.3803,
-       "state": "pending",
-       "score": null
+       "state": "won",
+       "score": "3-1"
       }
      ]
     },
@@ -5617,8 +5617,8 @@
    ],
    "record": {
     "weeks": 5,
-    "picks": 50,
-    "won": 36,
+    "picks": 51,
+    "won": 37,
     "half_won": 0,
     "perfect_weeks": 0
    }
@@ -5631,13 +5631,13 @@
      "week_start": "2026-11-10",
      "week_end": "2026-11-16",
      "locked_at": "2026-11-10T05:43:48.555027Z",
-     "won": 0,
+     "won": 1,
      "half_won": 0,
      "push": 0,
      "half_lost": 0,
      "lost": 0,
      "void": 0,
-     "pending": 10,
+     "pending": 9,
      "picks": [
       {
        "rank": 1,
@@ -5776,8 +5776,8 @@
        "selection": "yes",
        "label": "Both teams score",
        "probability": 0.4524,
-       "state": "pending",
-       "score": null
+       "state": "won",
+       "score": "3-1"
       }
      ]
     },
@@ -6554,8 +6554,8 @@
    ],
    "record": {
     "weeks": 5,
-    "picks": 50,
-    "won": 30,
+    "picks": 51,
+    "won": 31,
     "half_won": 0,
     "perfect_weeks": 0
    }
