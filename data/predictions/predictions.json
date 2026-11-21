@@ -1,6 +1,6 @@
 {
  "schema_version": "1.0",
- "generated_at": "2026-11-21T06:10:50+00:00",
+ "generated_at": "2026-11-21T10:36:10+00:00",
  "status": "preview",
  "data_through": "2026-11-20",
  "leagues": [
@@ -116,297 +116,6 @@
   }
  ],
  "predictions": [
-  {
-   "id": "a36fc4a80b42",
-   "sport": "football",
-   "league": "T1",
-   "league_name": "Süper Lig",
-   "season": "2026-27",
-   "kickoff": "2026-11-21T10:30:00Z",
-   "kickoff_tbc": false,
-   "home": "Genclerbirligi",
-   "away": "Gaziantep",
-   "probabilities": {
-    "home": 0.4705,
-    "draw": 0.2766,
-    "away": 0.2529
-   },
-   "extras": {
-    "expected_goals": {
-     "home": 1.51,
-     "away": 1.05
-    },
-    "over_1_5": 0.747,
-    "over_2_5": 0.4957,
-    "over_3_5": 0.274,
-    "btts": 0.5341,
-    "top_scorelines": [
-     {
-      "home": 1,
-      "away": 1,
-      "p": 0.1286
-     },
-     {
-      "home": 1,
-      "away": 0,
-      "p": 0.1013
-     },
-     {
-      "home": 2,
-      "away": 1,
-      "p": 0.0954
-     },
-     {
-      "home": 0,
-      "away": 0,
-      "p": 0.0843
-     },
-     {
-      "home": 2,
-      "away": 0,
-      "p": 0.0827
-     }
-    ],
-    "margin": {
-     "cap": 6,
-     "probs": [
-      0.00022,
-      0.00113,
-      0.00567,
-      0.0226,
-      0.06925,
-      0.15403,
-      0.27665,
-      0.22665,
-      0.14352,
-      0.06714,
-      0.02413,
-      0.00691,
-      0.0021
-     ]
-    },
-    "markets": {
-     "result_btts": {
-      "1&GG": 0.2166,
-      "1&NG": 0.2539,
-      "X&GG": 0.1923,
-      "X&NG": 0.0843,
-      "2&GG": 0.1253,
-      "2&NG": 0.1277
-     },
-     "result_ou25": {
-      "1&O": 0.2864,
-      "1&U": 0.184,
-      "X&O": 0.0637,
-      "X&U": 0.213,
-      "2&O": 0.1456,
-      "2&U": 0.1073
-     },
-     "dc_ou25": {
-      "1X&O": 0.3501,
-      "1X&U": 0.397,
-      "12&O": 0.432,
-      "12&U": 0.2913,
-      "X2&O": 0.2093,
-      "X2&U": 0.3202
-     },
-     "home_ou0_5": {
-      "over": 0.788,
-      "under": 0.212
-     },
-     "home_ou1_5": {
-      "over": 0.4601,
-      "under": 0.5399
-     },
-     "away_ou0_5": {
-      "over": 0.6618,
-      "under": 0.3382
-     },
-     "away_ou1_5": {
-      "over": 0.2944,
-      "under": 0.7056
-     },
-     "clean_sheet": {
-      "home": 0.3382,
-      "away": 0.212
-     },
-     "win_to_nil": {
-      "home": 0.2539,
-      "away": 0.1277
-     },
-     "exact_goals": {
-      "0": 0.0843,
-      "1": 0.1686,
-      "2": 0.2513,
-      "3": 0.2218,
-      "4": 0.149,
-      "5+": 0.125
-     },
-     "odd_even": {
-      "odd": 0.4789,
-      "even": 0.5211
-     },
-     "dnb": {
-      "1": 0.6504,
-      "2": 0.3496
-     },
-     "ht_result": {
-      "1": 0.3493,
-      "X": 0.4338,
-      "2": 0.2168
-     },
-     "htft": {
-      "1/1": 0.2823,
-      "1/X": 0.0521,
-      "1/2": 0.0149,
-      "X/1": 0.1641,
-      "X/X": 0.1724,
-      "X/2": 0.0974,
-      "2/1": 0.0241,
-      "2/X": 0.0521,
-      "2/2": 0.1406
-     },
-     "ht_ou0_5": {
-      "over": 0.6759,
-      "under": 0.3241
-     },
-     "ht_ou1_5": {
-      "over": 0.3129,
-      "under": 0.6871
-     },
-     "highest_half": {
-      "1st": 0.298,
-      "2nd": 0.4298,
-      "equal": 0.2721
-     }
-    },
-    "score_grid": {
-     "max_goals": 6,
-     "cells": [
-      [
-       0.0843,
-       0.0673,
-       0.0399,
-       0.0152,
-       0.0041,
-       0.0009,
-       0.0002
-      ],
-      [
-       0.1013,
-       0.1286,
-       0.066,
-       0.024,
-       0.0063,
-       0.0013,
-       0.0002
-      ],
-      [
-       0.0827,
-       0.0954,
-       0.0533,
-       0.0181,
-       0.0048,
-       0.001,
-       0.0002
-      ],
-      [
-       0.0451,
-       0.0498,
-       0.0262,
-       0.0094,
-       0.0024,
-       0.0005,
-       0.0001
-      ],
-      [
-       0.0177,
-       0.0188,
-       0.0099,
-       0.0035,
-       0.0009,
-       0.0002,
-       0.0
-      ],
-      [
-       0.0053,
-       0.0057,
-       0.003,
-       0.001,
-       0.0003,
-       0.0001,
-       0.0
-      ],
-      [
-       0.0013,
-       0.0014,
-       0.0007,
-       0.0003,
-       0.0001,
-       0.0,
-       0.0
-      ]
-     ],
-     "other": 0.0011
-    },
-    "grid_adjusted": true,
-    "ten_min": {
-     "home": 0.1105,
-     "draw": 0.8139,
-     "away": 0.0756,
-     "no_goal": 0.8046
-    },
-    "goals_model": "dixon_coles",
-    "goals_calibrated": true,
-    "corners": {
-     "expected": {
-      "home": 5.01,
-      "away": 4.46,
-      "total": 9.47
-     },
-     "over": {
-      "7.5": 0.7103,
-      "8.5": 0.5918,
-      "9.5": 0.4697,
-      "10.5": 0.3548,
-      "11.5": 0.2552
-     }
-    }
-   },
-   "model": {
-    "name": "blend",
-    "version": "1.0"
-   },
-   "other_models": [
-    {
-     "name": "dixon_coles",
-     "version": "1.0",
-     "probabilities": {
-      "home": 0.4678,
-      "draw": 0.2776,
-      "away": 0.2547
-     }
-    },
-    {
-     "name": "elo",
-     "version": "1.0",
-     "probabilities": {
-      "home": 0.4731,
-      "draw": 0.2757,
-      "away": 0.2511
-     }
-    }
-   ],
-   "fixture_source": "football-data",
-   "generated_at": "2026-11-21T06:10:50+00:00",
-   "best_pick": {
-    "market": "double_chance",
-    "selection": "1x",
-    "label": "Genclerbirligi or draw",
-    "p": 0.7471,
-    "day_rank": 88
-   }
-  },
   {
    "id": "138ce5a4ac73",
    "sport": "football",
@@ -689,7 +398,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "1x",
@@ -980,7 +689,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "1x",
@@ -1271,7 +980,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "1x",
@@ -1562,7 +1271,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "1x",
@@ -1853,7 +1562,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -2144,7 +1853,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -2435,7 +2144,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "1x",
@@ -2726,7 +2435,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "x2",
@@ -3003,7 +2712,7 @@
     }
    ],
    "fixture_source": "football-data-extra",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -3280,7 +2989,7 @@
     }
    ],
    "fixture_source": "football-data-extra",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_3_5",
     "selection": "under",
@@ -3571,7 +3280,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_3_5",
     "selection": "under",
@@ -3862,7 +3571,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_3_5",
     "selection": "under",
@@ -4153,7 +3862,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -4444,7 +4153,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "1x",
@@ -4721,7 +4430,7 @@
     }
    ],
    "fixture_source": "football-data-extra",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -5012,7 +4721,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "1x",
@@ -5303,7 +5012,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "1x",
@@ -5594,7 +5303,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "1x",
@@ -5885,7 +5594,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_3_5",
     "selection": "under",
@@ -6176,7 +5885,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_3_5",
     "selection": "under",
@@ -6467,7 +6176,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_3_5",
     "selection": "under",
@@ -6758,7 +6467,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_3_5",
     "selection": "under",
@@ -7049,7 +6758,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -7340,7 +7049,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -7631,7 +7340,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "1x",
@@ -7922,7 +7631,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "x2",
@@ -8213,7 +7922,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -8504,7 +8213,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -8795,7 +8504,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "1x",
@@ -9086,7 +8795,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -9377,7 +9086,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -9668,7 +9377,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -9959,7 +9668,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -10250,7 +9959,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -10541,7 +10250,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -10832,7 +10541,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "1x",
@@ -11123,7 +10832,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "1x",
@@ -11414,7 +11123,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_3_5",
     "selection": "under",
@@ -11705,7 +11414,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_3_5",
     "selection": "under",
@@ -11996,7 +11705,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "1x",
@@ -12287,7 +11996,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "1x",
@@ -12564,7 +12273,7 @@
     }
    ],
    "fixture_source": "football-data-extra",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -12855,7 +12564,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "1x",
@@ -13146,7 +12855,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "1x",
@@ -13437,7 +13146,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "1x",
@@ -13728,7 +13437,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -14019,7 +13728,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_3_5",
     "selection": "under",
@@ -14310,13 +14019,13 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
     "label": "Over 1.5",
     "p": 0.7457,
-    "day_rank": 89
+    "day_rank": 88
    }
   },
   {
@@ -14601,7 +14310,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -14878,7 +14587,7 @@
     }
    ],
    "fixture_source": "football-data-extra",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "1x",
@@ -15155,7 +14864,7 @@
     }
    ],
    "fixture_source": "football-data-extra",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -15432,7 +15141,7 @@
     }
    ],
    "fixture_source": "football-data-extra",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -15723,7 +15432,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "x2",
@@ -16014,7 +15723,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "x2",
@@ -16305,7 +16014,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -16582,7 +16291,7 @@
     }
    ],
    "fixture_source": "football-data-extra",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_3_5",
     "selection": "under",
@@ -16873,7 +16582,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "x2",
@@ -17150,7 +16859,7 @@
     }
    ],
    "fixture_source": "football-data-extra",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -17427,7 +17136,7 @@
     }
    ],
    "fixture_source": "football-data-extra",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "1x",
@@ -17704,7 +17413,7 @@
     }
    ],
    "fixture_source": "football-data-extra",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -17995,7 +17704,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "1x",
@@ -18286,7 +17995,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "x2",
@@ -18577,7 +18286,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "x2",
@@ -18868,7 +18577,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "x2",
@@ -19159,7 +18868,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -19450,7 +19159,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "1x",
@@ -19741,7 +19450,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "1x",
@@ -20032,7 +19741,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -20323,7 +20032,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -20600,7 +20309,7 @@
     }
    ],
    "fixture_source": "football-data-extra",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "x2",
@@ -20891,7 +20600,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -21168,7 +20877,7 @@
     }
    ],
    "fixture_source": "football-data-extra",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "1x",
@@ -21459,7 +21168,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -21736,7 +21445,7 @@
     }
    ],
    "fixture_source": "football-data-extra",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -22027,7 +21736,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_3_5",
     "selection": "under",
@@ -22304,7 +22013,7 @@
     }
    ],
    "fixture_source": "football-data-extra",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -22595,7 +22304,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "x2",
@@ -22886,7 +22595,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -23177,7 +22886,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -23468,7 +23177,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_3_5",
     "selection": "under",
@@ -23759,7 +23468,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "1x",
@@ -24050,7 +23759,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -24341,7 +24050,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "1x",
@@ -24632,7 +24341,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -24923,7 +24632,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -25214,7 +24923,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -25505,7 +25214,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "1x",
@@ -25796,7 +25505,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_3_5",
     "selection": "under",
@@ -26087,7 +25796,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -26378,7 +26087,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "1x",
@@ -26655,7 +26364,7 @@
     }
    ],
    "fixture_source": "football-data-extra",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -26946,7 +26655,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "1x",
@@ -27237,7 +26946,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "1x",
@@ -27528,7 +27237,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -27819,7 +27528,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -28110,7 +27819,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -28401,7 +28110,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -28678,7 +28387,7 @@
     }
    ],
    "fixture_source": "football-data-extra",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -28955,7 +28664,7 @@
     }
    ],
    "fixture_source": "football-data-extra",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "1x",
@@ -29246,7 +28955,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "1x",
@@ -29537,7 +29246,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -29814,7 +29523,7 @@
     }
    ],
    "fixture_source": "football-data-extra",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -30105,7 +29814,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "1x",
@@ -30396,7 +30105,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "x2",
@@ -30673,7 +30382,7 @@
     }
    ],
    "fixture_source": "football-data-extra",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "x2",
@@ -30950,7 +30659,7 @@
     }
    ],
    "fixture_source": "football-data-extra",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -31241,7 +30950,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "1x",
@@ -31532,7 +31241,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -31809,7 +31518,7 @@
     }
    ],
    "fixture_source": "football-data-extra",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -32100,7 +31809,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_3_5",
     "selection": "under",
@@ -32391,7 +32100,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "1x",
@@ -32682,7 +32391,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -32973,7 +32682,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "1x",
@@ -33264,7 +32973,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -33555,7 +33264,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -33846,7 +33555,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -34137,7 +33846,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "x2",
@@ -34414,7 +34123,7 @@
     }
    ],
    "fixture_source": "football-data-extra",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -34705,7 +34414,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "1x",
@@ -34996,7 +34705,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -35287,7 +34996,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -35578,7 +35287,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "1x",
@@ -35855,7 +35564,7 @@
     }
    ],
    "fixture_source": "football-data-extra",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "x2",
@@ -36132,7 +35841,7 @@
     }
    ],
    "fixture_source": "football-data-extra",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -36409,7 +36118,7 @@
     }
    ],
    "fixture_source": "football-data-extra",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -36700,7 +36409,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -36977,7 +36686,7 @@
     }
    ],
    "fixture_source": "football-data-extra",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "x2",
@@ -37254,7 +36963,7 @@
     }
    ],
    "fixture_source": "football-data-extra",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -37531,7 +37240,7 @@
     }
    ],
    "fixture_source": "football-data-extra",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -37808,7 +37517,7 @@
     }
    ],
    "fixture_source": "football-data-extra",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -38099,7 +37808,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "1x",
@@ -38390,7 +38099,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -38681,7 +38390,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_3_5",
     "selection": "under",
@@ -38972,7 +38681,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -39263,7 +38972,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -39540,7 +39249,7 @@
     }
    ],
    "fixture_source": "football-data-extra",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_3_5",
     "selection": "under",
@@ -39817,7 +39526,7 @@
     }
    ],
    "fixture_source": "football-data-extra",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -40108,7 +39817,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "1x",
@@ -40399,7 +40108,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -40690,7 +40399,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "1x",
@@ -40981,7 +40690,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "1x",
@@ -41272,7 +40981,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "1x",
@@ -41563,7 +41272,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -41854,7 +41563,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_3_5",
     "selection": "under",
@@ -42145,7 +41854,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_3_5",
     "selection": "under",
@@ -42422,7 +42131,7 @@
     }
    ],
    "fixture_source": "football-data-extra",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -42699,7 +42408,7 @@
     }
    ],
    "fixture_source": "football-data-extra",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_3_5",
     "selection": "under",
@@ -42990,7 +42699,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "1x",
@@ -43281,7 +42990,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -43572,7 +43281,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_3_5",
     "selection": "under",
@@ -43863,7 +43572,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "1x",
@@ -44154,7 +43863,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_3_5",
     "selection": "under",
@@ -44445,7 +44154,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -44722,7 +44431,7 @@
     }
    ],
    "fixture_source": "football-data-extra",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -44999,7 +44708,7 @@
     }
    ],
    "fixture_source": "football-data-extra",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -45276,7 +44985,7 @@
     }
    ],
    "fixture_source": "football-data-extra",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_3_5",
     "selection": "under",
@@ -45567,7 +45276,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -45858,7 +45567,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "1x",
@@ -46149,7 +45858,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_3_5",
     "selection": "under",
@@ -46440,7 +46149,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -46731,7 +46440,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -47022,7 +46731,7 @@
     }
    ],
    "fixture_source": "football-data",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -47313,7 +47022,7 @@
     }
    ],
    "fixture_source": "espn",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -47604,7 +47313,7 @@
     }
    ],
    "fixture_source": "espn",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "1x",
@@ -47895,7 +47604,7 @@
     }
    ],
    "fixture_source": "espn",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_3_5",
     "selection": "under",
@@ -48186,7 +47895,7 @@
     }
    ],
    "fixture_source": "espn",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "1x",
@@ -48477,7 +48186,7 @@
     }
    ],
    "fixture_source": "espn",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -48768,7 +48477,7 @@
     }
    ],
    "fixture_source": "espn",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_3_5",
     "selection": "under",
@@ -49059,7 +48768,7 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -49350,7 +49059,7 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -49641,7 +49350,7 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_3_5",
     "selection": "under",
@@ -49932,7 +49641,7 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -50223,7 +49932,7 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -50514,7 +50223,7 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -50805,7 +50514,7 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -51096,7 +50805,7 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "1x",
@@ -51387,7 +51096,7 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "1x",
@@ -51678,7 +51387,7 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "1x",
@@ -51969,7 +51678,7 @@
     }
    ],
    "fixture_source": "espn",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "1x",
@@ -52260,7 +51969,7 @@
     }
    ],
    "fixture_source": "espn",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "1x",
@@ -52551,7 +52260,7 @@
     }
    ],
    "fixture_source": "espn",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_3_5",
     "selection": "under",
@@ -52842,7 +52551,7 @@
     }
    ],
    "fixture_source": "espn",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -53133,7 +52842,7 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -53424,7 +53133,7 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -53715,7 +53424,7 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_3_5",
     "selection": "under",
@@ -54006,7 +53715,7 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_3_5",
     "selection": "under",
@@ -54297,7 +54006,7 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_3_5",
     "selection": "under",
@@ -54588,7 +54297,7 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -54879,7 +54588,7 @@
     }
    ],
    "fixture_source": "espn",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -55170,7 +54879,7 @@
     }
    ],
    "fixture_source": "espn",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -55447,7 +55156,7 @@
     }
    ],
    "fixture_source": "espn",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -55724,7 +55433,7 @@
     }
    ],
    "fixture_source": "espn",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_3_5",
     "selection": "under",
@@ -56015,7 +55724,7 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "1x",
@@ -56306,7 +56015,7 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -56597,7 +56306,7 @@
     }
    ],
    "fixture_source": "espn",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_3_5",
     "selection": "under",
@@ -56888,7 +56597,7 @@
     }
    ],
    "fixture_source": "espn",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "1x",
@@ -57179,7 +56888,7 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -57470,7 +57179,7 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "x2",
@@ -57761,7 +57470,7 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -58052,7 +57761,7 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -58343,7 +58052,7 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -58634,7 +58343,7 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -58925,7 +58634,7 @@
     }
    ],
    "fixture_source": "espn",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -59216,7 +58925,7 @@
     }
    ],
    "fixture_source": "espn",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -59507,7 +59216,7 @@
     }
    ],
    "fixture_source": "espn",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_3_5",
     "selection": "under",
@@ -59798,7 +59507,7 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_3_5",
     "selection": "under",
@@ -60089,7 +59798,7 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -60380,7 +60089,7 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -60671,7 +60380,7 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "1x",
@@ -60962,7 +60671,7 @@
     }
    ],
    "fixture_source": "espn",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "1x",
@@ -61253,7 +60962,7 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -61544,7 +61253,7 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "1x",
@@ -61835,7 +61544,7 @@
     }
    ],
    "fixture_source": "espn",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "1x",
@@ -62126,7 +61835,7 @@
     }
    ],
    "fixture_source": "espn",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_3_5",
     "selection": "under",
@@ -62417,7 +62126,7 @@
     }
    ],
    "fixture_source": "espn",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -62708,7 +62417,7 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -62999,7 +62708,7 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "1x",
@@ -63290,7 +62999,7 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "x2",
@@ -63581,7 +63290,7 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_3_5",
     "selection": "under",
@@ -63872,7 +63581,7 @@
     }
    ],
    "fixture_source": "espn",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -64163,7 +63872,7 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "1x",
@@ -64454,7 +64163,7 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -64745,7 +64454,7 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "1x",
@@ -65036,7 +64745,7 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_3_5",
     "selection": "under",
@@ -65327,7 +65036,7 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -65618,7 +65327,7 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -65909,7 +65618,7 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "1x",
@@ -66200,7 +65909,7 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -66491,7 +66200,7 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -66782,7 +66491,7 @@
     }
    ],
    "fixture_source": "espn",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "1x",
@@ -67073,7 +66782,7 @@
     }
    ],
    "fixture_source": "espn",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_3_5",
     "selection": "under",
@@ -67350,7 +67059,7 @@
     }
    ],
    "fixture_source": "espn",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "1x",
@@ -67641,7 +67350,7 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -67932,7 +67641,7 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "1x",
@@ -68223,7 +67932,7 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "1x",
@@ -68514,7 +68223,7 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -68805,7 +68514,7 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_3_5",
     "selection": "under",
@@ -69096,7 +68805,7 @@
     }
    ],
    "fixture_source": "espn",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_3_5",
     "selection": "under",
@@ -69387,7 +69096,7 @@
     }
    ],
    "fixture_source": "espn",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_3_5",
     "selection": "under",
@@ -69678,7 +69387,7 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -69969,7 +69678,7 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "1x",
@@ -70260,7 +69969,7 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_3_5",
     "selection": "under",
@@ -70537,7 +70246,7 @@
     }
    ],
    "fixture_source": "espn",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -70828,7 +70537,7 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -71119,7 +70828,7 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "x2",
@@ -71410,7 +71119,7 @@
     }
    ],
    "fixture_source": "espn",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -71701,7 +71410,7 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "x2",
@@ -71978,7 +71687,7 @@
     }
    ],
    "fixture_source": "espn",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -72269,7 +71978,7 @@
     }
    ],
    "fixture_source": "espn",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -72560,7 +72269,7 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -72851,7 +72560,7 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -73142,7 +72851,7 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "x2",
@@ -73433,7 +73142,7 @@
     }
    ],
    "fixture_source": "espn",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_3_5",
     "selection": "under",
@@ -73724,7 +73433,7 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "1x",
@@ -74015,7 +73724,7 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -74306,7 +74015,7 @@
     }
    ],
    "fixture_source": "espn",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -74597,7 +74306,7 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_3_5",
     "selection": "under",
@@ -74874,7 +74583,7 @@
     }
    ],
    "fixture_source": "espn",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -75165,7 +74874,7 @@
     }
    ],
    "fixture_source": "espn",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "1x",
@@ -75456,7 +75165,7 @@
     }
    ],
    "fixture_source": "espn",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -75747,7 +75456,7 @@
     }
    ],
    "fixture_source": "espn",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -76038,7 +75747,7 @@
     }
    ],
    "fixture_source": "espn",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "1x",
@@ -76329,7 +76038,7 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -76620,7 +76329,7 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "x2",
@@ -76911,7 +76620,7 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "1x",
@@ -77202,7 +76911,7 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "1x",
@@ -77493,7 +77202,7 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "1x",
@@ -77784,7 +77493,7 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -78075,7 +77784,7 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "1x",
@@ -78366,7 +78075,7 @@
     }
    ],
    "fixture_source": "espn",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -78657,7 +78366,7 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "1x",
@@ -78948,7 +78657,7 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -79239,7 +78948,7 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -79530,7 +79239,7 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -79821,7 +79530,7 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -80112,7 +79821,7 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -80403,7 +80112,7 @@
     }
    ],
    "fixture_source": "espn",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -80694,7 +80403,7 @@
     }
    ],
    "fixture_source": "espn",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -80985,7 +80694,7 @@
     }
    ],
    "fixture_source": "espn",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -81276,7 +80985,7 @@
     }
    ],
    "fixture_source": "espn",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -81553,7 +81262,7 @@
     }
    ],
    "fixture_source": "espn",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -81830,7 +81539,7 @@
     }
    ],
    "fixture_source": "espn",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -82121,7 +81830,7 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "1x",
@@ -82412,7 +82121,7 @@
     }
    ],
    "fixture_source": "espn",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "1x",
@@ -82703,7 +82412,7 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "x2",
@@ -82980,7 +82689,7 @@
     }
    ],
    "fixture_source": "espn",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "1x",
@@ -83257,7 +82966,7 @@
     }
    ],
    "fixture_source": "espn",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -83548,7 +83257,7 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -83839,7 +83548,7 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -84116,7 +83825,7 @@
     }
    ],
    "fixture_source": "espn",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -84407,7 +84116,7 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -84698,7 +84407,7 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "x2",
@@ -84989,7 +84698,7 @@
     }
    ],
    "fixture_source": "espn",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "1x",
@@ -85280,7 +84989,7 @@
     }
    ],
    "fixture_source": "espn",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_3_5",
     "selection": "under",
@@ -85571,7 +85280,7 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -85862,7 +85571,7 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_3_5",
     "selection": "under",
@@ -86153,7 +85862,7 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -86444,7 +86153,7 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_3_5",
     "selection": "under",
@@ -86735,7 +86444,7 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -87026,7 +86735,7 @@
     }
    ],
    "fixture_source": "espn",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -87303,7 +87012,7 @@
     }
    ],
    "fixture_source": "espn",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -87594,7 +87303,7 @@
     }
    ],
    "fixture_source": "espn",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "x2",
@@ -87885,7 +87594,7 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -88176,7 +87885,7 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "x2",
@@ -88467,7 +88176,7 @@
     }
    ],
    "fixture_source": "espn",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_3_5",
     "selection": "under",
@@ -88758,7 +88467,7 @@
     }
    ],
    "fixture_source": "espn",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -89049,7 +88758,7 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -89326,7 +89035,7 @@
     }
    ],
    "fixture_source": "espn",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -89603,7 +89312,7 @@
     }
    ],
    "fixture_source": "espn",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -89880,7 +89589,7 @@
     }
    ],
    "fixture_source": "espn",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "1x",
@@ -90157,7 +89866,7 @@
     }
    ],
    "fixture_source": "espn",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -90448,7 +90157,7 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "1x",
@@ -90739,7 +90448,7 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -91030,7 +90739,7 @@
     }
    ],
    "fixture_source": "espn",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_3_5",
     "selection": "under",
@@ -91321,7 +91030,7 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -91612,7 +91321,7 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "1x",
@@ -91889,7 +91598,7 @@
     }
    ],
    "fixture_source": "espn",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -92180,7 +91889,7 @@
     }
    ],
    "fixture_source": "espn",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "x2",
@@ -92471,7 +92180,7 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "1x",
@@ -92762,7 +92471,7 @@
     }
    ],
    "fixture_source": "espn",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "x2",
@@ -93053,7 +92762,7 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -93344,7 +93053,7 @@
     }
    ],
    "fixture_source": "espn",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -93635,7 +93344,7 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "1x",
@@ -93926,7 +93635,7 @@
     }
    ],
    "fixture_source": "espn",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "1x",
@@ -94203,7 +93912,7 @@
     }
    ],
    "fixture_source": "espn",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "1x",
@@ -94494,7 +94203,7 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -94785,7 +94494,7 @@
     }
    ],
    "fixture_source": "espn",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -95076,7 +94785,7 @@
     }
    ],
    "fixture_source": "espn",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "1x",
@@ -95367,7 +95076,7 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -95658,7 +95367,7 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -95949,7 +95658,7 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_3_5",
     "selection": "under",
@@ -96240,7 +95949,7 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -96531,7 +96240,7 @@
     }
    ],
    "fixture_source": "espn",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "1x",
@@ -96822,7 +96531,7 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -97113,7 +96822,7 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -97404,7 +97113,7 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "x2",
@@ -97681,7 +97390,7 @@
     }
    ],
    "fixture_source": "espn",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -97958,7 +97667,7 @@
     }
    ],
    "fixture_source": "espn",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -98249,7 +97958,7 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -98540,7 +98249,7 @@
     }
    ],
    "fixture_source": "espn",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_1_5",
     "selection": "over",
@@ -98831,7 +98540,7 @@
     }
    ],
    "fixture_source": "espn",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "1x",
@@ -99122,7 +98831,7 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "x2",
@@ -99413,7 +99122,7 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "ou_3_5",
     "selection": "under",
@@ -99704,7 +99413,7 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "x2",
@@ -99995,7 +99704,7 @@
     }
    ],
    "fixture_source": "fixturedownload",
-   "generated_at": "2026-11-21T06:10:50+00:00",
+   "generated_at": "2026-11-21T10:36:10+00:00",
    "best_pick": {
     "market": "double_chance",
     "selection": "1x",
