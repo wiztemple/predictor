@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-20T10:36:23+00:00",
+ "generated_at": "2026-11-21T06:11:19+00:00",
  "lists": {
   "safe": {
    "label": "Safe 10",
@@ -9,13 +9,13 @@
      "week_start": "2026-11-17",
      "week_end": "2026-11-23",
      "locked_at": "2026-11-17T05:41:10.480026Z",
-     "won": 0,
+     "won": 1,
      "half_won": 0,
      "push": 0,
      "half_lost": 0,
      "lost": 0,
      "void": 0,
-     "pending": 10,
+     "pending": 9,
      "picks": [
       {
        "rank": 1,
@@ -28,8 +28,8 @@
        "selection": "1x",
        "label": "Bayern Munich or draw",
        "probability": 0.9607,
-       "state": "pending",
-       "score": null
+       "state": "won",
+       "score": "1-1"
       },
       {
        "rank": 2,
@@ -1086,8 +1086,8 @@
    ],
    "record": {
     "weeks": 6,
-    "picks": 60,
-    "won": 52,
+    "picks": 61,
+    "won": 53,
     "half_won": 0,
     "perfect_weeks": 3
    }
@@ -1100,13 +1100,13 @@
      "week_start": "2026-11-17",
      "week_end": "2026-11-23",
      "locked_at": "2026-11-17T05:41:10.480026Z",
-     "won": 0,
+     "won": 1,
      "half_won": 0,
      "push": 0,
      "half_lost": 0,
-     "lost": 0,
+     "lost": 2,
      "void": 0,
-     "pending": 10,
+     "pending": 7,
      "picks": [
       {
        "rank": 1,
@@ -1147,8 +1147,8 @@
        "selection": "under",
        "label": "Under 3.5",
        "probability": 0.7686,
-       "state": "pending",
-       "score": null
+       "state": "won",
+       "score": "0-1"
       },
       {
        "rank": 4,
@@ -1175,8 +1175,8 @@
        "selection": "1x",
        "label": "Andorra or draw",
        "probability": 0.7684,
-       "state": "pending",
-       "score": null
+       "state": "lost",
+       "score": "1-3"
       },
       {
        "rank": 6,
@@ -1217,8 +1217,8 @@
        "selection": "under",
        "label": "Under 3.5",
        "probability": 0.7674,
-       "state": "pending",
-       "score": null
+       "state": "lost",
+       "score": "3-1"
       },
       {
        "rank": 9,
@@ -2177,8 +2177,8 @@
    ],
    "record": {
     "weeks": 6,
-    "picks": 59,
-    "won": 41,
+    "picks": 62,
+    "won": 42,
     "half_won": 0,
     "perfect_weeks": 0
    }
@@ -2191,13 +2191,13 @@
      "week_start": "2026-11-17",
      "week_end": "2026-11-23",
      "locked_at": "2026-11-17T05:41:10.480026Z",
-     "won": 0,
+     "won": 1,
      "half_won": 0,
      "push": 0,
      "half_lost": 0,
      "lost": 0,
      "void": 0,
-     "pending": 10,
+     "pending": 9,
      "picks": [
       {
        "rank": 1,
@@ -2322,8 +2322,8 @@
        "selection": "x2",
        "label": "Rodez or draw",
        "probability": 0.6217,
-       "state": "pending",
-       "score": null
+       "state": "won",
+       "score": "1-3"
       },
       {
        "rank": 10,
@@ -3268,8 +3268,8 @@
    ],
    "record": {
     "weeks": 6,
-    "picks": 60,
-    "won": 38,
+    "picks": 61,
+    "won": 39,
     "half_won": 0,
     "perfect_weeks": 0
    }
@@ -3282,13 +3282,13 @@
      "week_start": "2026-11-17",
      "week_end": "2026-11-23",
      "locked_at": "2026-11-17T05:41:10.480026Z",
-     "won": 0,
+     "won": 1,
      "half_won": 0,
      "push": 0,
      "half_lost": 0,
      "lost": 0,
      "void": 0,
-     "pending": 10,
+     "pending": 9,
      "picks": [
       {
        "rank": 1,
@@ -3315,8 +3315,8 @@
        "selection": "over",
        "label": "Over 2.5",
        "probability": 0.4996,
-       "state": "pending",
-       "score": null
+       "state": "won",
+       "score": "2-1"
       },
       {
        "rank": 3,
@@ -4359,8 +4359,8 @@
    ],
    "record": {
     "weeks": 5,
-    "picks": 58,
-    "won": 31,
+    "picks": 59,
+    "won": 32,
     "half_won": 0,
     "perfect_weeks": 0
    }
@@ -4377,9 +4377,9 @@
      "half_won": 0,
      "push": 0,
      "half_lost": 0,
-     "lost": 0,
+     "lost": 1,
      "void": 0,
-     "pending": 10,
+     "pending": 9,
      "picks": [
       {
        "rank": 1,
@@ -4392,8 +4392,8 @@
        "selection": "home",
        "label": "Bayern Munich win",
        "probability": 0.8826,
-       "state": "pending",
-       "score": null
+       "state": "lost",
+       "score": "1-1"
       },
       {
        "rank": 2,
@@ -5450,7 +5450,7 @@
    ],
    "record": {
     "weeks": 6,
-    "picks": 60,
+    "picks": 61,
     "won": 49,
     "half_won": 0,
     "perfect_weeks": 0
@@ -5468,9 +5468,9 @@
      "half_won": 0,
      "push": 0,
      "half_lost": 0,
-     "lost": 0,
+     "lost": 1,
      "void": 0,
-     "pending": 10,
+     "pending": 9,
      "picks": [
       {
        "rank": 1,
@@ -5483,8 +5483,8 @@
        "selection": "over",
        "label": "Over 2.5",
        "probability": 0.7666,
-       "state": "pending",
-       "score": null
+       "state": "lost",
+       "score": "1-1"
       },
       {
        "rank": 2,
@@ -6541,7 +6541,7 @@
    ],
    "record": {
     "weeks": 6,
-    "picks": 60,
+    "picks": 61,
     "won": 41,
     "half_won": 0,
     "perfect_weeks": 0
@@ -6555,13 +6555,13 @@
      "week_start": "2026-11-17",
      "week_end": "2026-11-23",
      "locked_at": "2026-11-17T05:41:10.480026Z",
-     "won": 0,
+     "won": 2,
      "half_won": 0,
      "push": 0,
      "half_lost": 0,
-     "lost": 0,
+     "lost": 1,
      "void": 0,
-     "pending": 10,
+     "pending": 7,
      "picks": [
       {
        "rank": 1,
@@ -6644,8 +6644,8 @@
        "selection": "yes",
        "label": "Both teams score",
        "probability": 0.6521,
-       "state": "pending",
-       "score": null
+       "state": "lost",
+       "score": "1-0"
       },
       {
        "rank": 7,
@@ -6658,8 +6658,8 @@
        "selection": "yes",
        "label": "Both teams score",
        "probability": 0.6466,
-       "state": "pending",
-       "score": null
+       "state": "won",
+       "score": "2-4"
       },
       {
        "rank": 8,
@@ -6700,8 +6700,8 @@
        "selection": "yes",
        "label": "Both teams score",
        "probability": 0.6254,
-       "state": "pending",
-       "score": null
+       "state": "won",
+       "score": "1-2"
       }
      ]
     },
@@ -7632,8 +7632,8 @@
    ],
    "record": {
     "weeks": 6,
-    "picks": 60,
-    "won": 36,
+    "picks": 63,
+    "won": 38,
     "half_won": 0,
     "perfect_weeks": 0
    }
